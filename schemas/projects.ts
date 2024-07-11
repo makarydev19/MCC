@@ -54,27 +54,28 @@ const projects = {
             title: 'End Date',
             type: 'date',
             description: 'Set the end date if the project is not still in progress.',
-            validation: (Rule: Rule) => Rule.custom((endDate: string | undefined, context: any) => {
-                const stillInProgress = context.document.stillInProgress;
-
+            validation: (Rule) =>
+              Rule.custom((endDate, context) => {
+                const stillInProgress = context?.document?.stillInProgress;
+      
                 if (stillInProgress) {
-                    return true;
+                  return true;
                 }
-
+      
                 if (!endDate) {
-                    return 'End Date is required';
+                  return 'End Date is required';
                 }
-
+      
                 return true;
-            })
-        }),
-        defineField({
+              }),
+          }),
+          defineField({
             name: 'stillInProgress',
             title: 'Still in Progress',
             type: 'boolean',
             initialValue: false,
             description: 'Check if the project is still ongoing.',
-        }),
+          }),
         defineField({
             name: "images",
             title: "Images",
