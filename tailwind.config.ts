@@ -1,6 +1,10 @@
 import type { Config } from "tailwindcss";
 
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 const config: Config = {
+
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +12,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        footerbg: '#4a0505',
+        bgcolor: '#f8f7f7',
+        btncolor: '#a01414',
+        primary: "#c60f0f",
+        secondary: "#4a0505",
+        tertiary: {
+          dark: "#ff3737",
+          light: "#0c0c0c",
+        },
+      },
+      fontFamily: {
+        Koulen: ["var(--font-oppins)", ...fontFamily.sans],
       },
     },
   },
-  plugins: [],
 };
 export default config;
+
