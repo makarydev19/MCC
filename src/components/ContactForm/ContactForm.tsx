@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
       .sendForm(
         "mcc_service_8cqyuxo",
         "template_11hycd7",
-        e.target,
+        e.target as HTMLFormElement,
         "G5i2ybEI37ORqpQQE"
       )
       .then(
@@ -51,6 +51,7 @@ const ContactForm: React.FC = () => {
         }
       );
   };
+
   return (
     <section className="container mx-auto md:px-32 px-5 py-20">
       <div className="flex flex-col gap-4">
@@ -74,7 +75,7 @@ const ContactForm: React.FC = () => {
             data-aos-duration="800"
             className="text-center font-sans tracking-wide lg:text-2xl text-md"
           >
-            wether its commercial or residential.
+            whether its commercial or residential.
           </p>
         </div>
       </div>
