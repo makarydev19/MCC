@@ -20,7 +20,7 @@ const Projects = () => {
     const projectType = searchParams.get("projectType");
 
     if (projectType) setProjectSectorFilter(projectType);
-  }, [searchParams]);
+  }, []);
 
   async function fetchData() {
     return getProjects();
