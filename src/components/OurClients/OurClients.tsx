@@ -16,80 +16,151 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 const OurClients = () => {
   return (
-    <section className="md:px-32 px-5 py-32">
-      <div className="text-center">
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-heading capitalize"
-        >
-          Our Clients
-        </h1>
-        <hr className="underline w-[25%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " />
-      </div>
+    <section className="py-10 sm:py-16 lg:py-24">
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="center-center"
-        className="mt-20 lg:block hidden"
+        className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-24"
       >
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={100}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Autoplay]}
-          className="mySwiper"
-        >
-          {Clients.map((clients) => (
-            <SwiperSlide key={clients.id} className="mb-10 ml-0">
-              <Image
-                src={clients.img}
-                alt=""
-                width={300}
-                height={300}
-                className=""
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="mx-auto text-center">
+          <h2 className="font-heading">
+            Trusted by world class companies, design teams & popular designers
+          </h2>
+        </div>
+        <div className="mt-20 lg:block hidden">
+          <Swiper
+            slidesPerView={5}
+            spaceBetween={100}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+          >
+            {Clients.map((clients) => (
+              <SwiperSlide key={clients.id} className="mb-10 ml-0">
+                <Image
+                  src={clients.img}
+                  alt=""
+                  width={300}
+                  height={300}
+                  className=""
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="mt-10 lg:hidden block">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={50}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+          >
+            {Clients.map((clients) => (
+              <SwiperSlide key={clients.id} className="mb-10 ml-0">
+                <Image
+                  src={clients.img}
+                  alt=""
+                  width={300}
+                  height={300}
+                  className=""
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
-        className="mt-10 lg:hidden block"
-      >
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={50}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Autoplay]}
-          className="mySwiper"
-        >
-          {Clients.map((clients) => (
-            <SwiperSlide key={clients.id} className="mb-10 ml-0">
-              <Image
-                src={clients.img}
-                alt=""
-                width={300}
-                height={300}
-                className=""
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <p className="mt-10 text-base text-center text-gray-500 md:mt-20">
+        and, 1000+ more companies
+      </p>
     </section>
+
+    // <section className="md:px-32 px-5 py-32">
+    //   <div className="text-center">
+    //     <h1
+    //       data-aos="fade-up"
+    //       data-aos-duration="800"
+    //       className="font-heading capitalize"
+    //     >
+    //       Our Clients
+    //     </h1>
+    //     <hr className="underline w-[25%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " />
+    //   </div>
+    // <div
+    //   data-aos="fade-up"
+    //   data-aos-anchor-placement="center-center"
+    //   className="mt-20 lg:block hidden"
+    // >
+    //   <Swiper
+    //     slidesPerView={5}
+    //     spaceBetween={100}
+    //     autoplay={{
+    //       delay: 2500,
+    //       disableOnInteraction: false,
+    //     }}
+    //     pagination={{
+    //       clickable: true,
+    //     }}
+    //     modules={[Pagination, Autoplay]}
+    //     className="mySwiper"
+    //   >
+    //     {Clients.map((clients) => (
+    //       <SwiperSlide key={clients.id} className="mb-10 ml-0">
+    //         <Image
+    //           src={clients.img}
+    //           alt=""
+    //           width={300}
+    //           height={300}
+    //           className=""
+    //         />
+    //       </SwiperSlide>
+    //     ))}
+    //   </Swiper>
+    // </div>
+    // <div
+    //   data-aos="fade-up"
+    //   data-aos-anchor-placement="center-center"
+    //   className="mt-10 lg:hidden block"
+    // >
+    //   <Swiper
+    //     slidesPerView={3}
+    //     spaceBetween={50}
+    //     autoplay={{
+    //       delay: 2500,
+    //       disableOnInteraction: false,
+    //     }}
+    //     pagination={{
+    //       clickable: true,
+    //     }}
+    //     modules={[Pagination, Autoplay]}
+    //     className="mySwiper"
+    //   >
+    //     {Clients.map((clients) => (
+    //       <SwiperSlide key={clients.id} className="mb-10 ml-0">
+    //         <Image
+    //           src={clients.img}
+    //           alt=""
+    //           width={300}
+    //           height={300}
+    //           className=""
+    //         />
+    //       </SwiperSlide>
+    //     ))}
+    //   </Swiper>
+    // </div>
+    // </section>
   );
 };
 

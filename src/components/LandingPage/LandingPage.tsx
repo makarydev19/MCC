@@ -1,15 +1,26 @@
-
+import Counts from "../Counts/Counts";
 
 const LandingPage = () => {
   return (
-    <section className="rounded-b-2xl pt-40 px-5 lg:px-32 pb-10 mb-20 h-[95vh] landing-bg drop-shadow-sm">
-      <h1 className="lg:text-6xl text-4xl text-wrap uppercase lg:w-5/6 text-white leading-tight tracking-wide">
-        Modern Construction Company
-      </h1>
-      <h2 className="text-3xl text-wrap mt-5 mb-10 lg:w-3/4 leading-tight text-white">
-        We Build Your Dreams
-      </h2>
-      
+    <section className="flex items-center mb-20 h-[85vh] landing-bg drop-shadow-sm rounded-b-3xl">
+      <div className="w-full h-full lg:flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-0 py-44">
+        <div className="flex flex-col gap-y-10">
+          <h1 className="lg:text-8xl text-5xl text-center text-white">
+            We Build Your Dreams
+          </h1>
+          <p className="text-gray-100 lg:text-3xl text-2xl text-center">
+            Modern Construction Company
+          </p>
+        </div>
+        <div
+          // data-aos="fade-up"
+          // data-aos-duration="900"
+          // data-aos-anchor-placement="top-bottom"
+          className="lg:-mb-44 lg:mt-0 mt-28 w-full"
+        >
+          <Counts />
+        </div>
+      </div>
     </section>
   );
 };

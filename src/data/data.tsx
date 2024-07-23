@@ -92,3 +92,26 @@ export const Clients = [
   { id: 5, img: `/MI-removebg-preview.png` },
   { id: 6, img: `/Oriental_Weaver-removebg-preview.png` },
 ];
+
+export const CountsBox = [
+  {
+    id: 1,
+    num: 20,
+    title: "Projects",
+  },
+  {
+    id: 2,
+    num: 15,
+    title: "Clients",
+  },
+  {
+    id: 3,
+    num: 100,
+    title: "Employees",
+  },
+  {
+    id: 4,
+    num: 10,
+    title: "Cities",
+  },
+];

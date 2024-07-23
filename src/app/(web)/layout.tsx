@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-const poppins = Kanit({
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
   style: ["italic", "normal"],
-  variable: "--font-poppins",
+  variable: "--font-roboto",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -21,10 +28,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
-    <html lang="en" className="scroll-smooth bg-bgcolor">
-      <body className={poppins.className}>
+    <html lang="en" className={`scroll-smooth bg-background ${inter.variable}`}>
+      <body className={roboto.className}>
         <main className="font-normal">
           <Header />
           {children}

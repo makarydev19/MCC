@@ -3,7 +3,6 @@ import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
-
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,21 +12,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        footerbg: '#4a0505',
-        bgcolor: '#f8f7f7',
-        btncolor: '#a01414',
-        primary: "#c60f0f",
-        secondary: "#4a0505",
-        tertiary: {
-          dark: "#ff3737",
-          light: "#0c0c0c",
-        },
+        text: "#030303",
+        background: "#f4f4f4",
+        primary: "#1c1c1c",
+        secondary: "#d40000",
+        accent: "#000000",
       },
+
       fontFamily: {
-        Koulen: ["var(--font-oppins)", ...fontFamily.sans],
+        roboto: ["var(--font-roboto)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
     },
   },
 };
 export default config;
-

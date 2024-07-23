@@ -4,11 +4,16 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="mx-auto md:px-32 px-5 py-12 bg-footerbg">
+    <footer className="mx-auto md:px-32 px-5 py-12 bg-accent">
       <div className="flex flex-col gap-y-7">
         <div className="flex items-center gap-x-5">
-          <div className="bg-white w-fit rounded-full p-2">
-            <Image src={`/MCC-New-Logo.png`} alt="" width={60} height={60} />
+          <div className="bg-white w-fit rounded-2xl p-2">
+            <Image
+              src={`/MCC_Logo-removebg-preview.png`}
+              alt=""
+              width={60}
+              height={60}
+            />
           </div>
           <h3 className="text-md text-white font-serif">
             Modern Construction Company

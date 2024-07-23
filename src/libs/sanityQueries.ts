@@ -2,7 +2,8 @@ import { groq } from 'next-sanity';
 
 export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject == true][0] {
     _id,
-    description,
+    constructionWorks,
+    finishingWorks,
     images,
     projectName,
     slug,
@@ -16,7 +17,8 @@ export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject
 
 export const getProjectsQuery = groq`*[_type == "projects"] {
     _id,
-    description,
+    constructionWorks,
+    finishingWorks,
     images,
     latestProject,
     projectName,
@@ -32,7 +34,8 @@ export const getProjectsQuery = groq`*[_type == "projects"] {
 
 export const getProject = groq`*[_type == "projects" && slug.current == $slug][0] {
      _id,
-    description,
+    constructionWorks,
+    finishingWorks,
     images,
     latestProject,
     projectName,

@@ -21,7 +21,7 @@ const projects = {
             name: "projectName",
             title: "Project Name",
             type: "string",
-            validation: Rule => Rule.required().max(50).error('Maximum 50 Characters')
+            validation: Rule => Rule.required().max(100).error('Maximum 100 Characters')
         }),
         defineField({
             name: "slug",
@@ -32,16 +32,22 @@ const projects = {
             validation: Rule => Rule.required(),
         }),
         defineField({
-            name: "description",
-            title: "Description",
+            name: "constructionWorks",
+            title: "Construction Works",
             type: "text",
-            validation: Rule => Rule.required().max(200).error('Minimum 100 Characters')
+            validation: Rule => Rule.required().max(500).error('Minimum 500 Characters')
+        }),
+        defineField({
+            name: "finishingWorks",
+            title: "Finishing Works",
+            type: "text",
+            validation: Rule => Rule.max(500).error('Minimum 500 Characters')
         }),
         defineField({
             name: "client",
             title: "Client",
             type: "string",
-            validation: Rule => Rule.required().max(50).error('Maximum 50 Characters')
+            validation: Rule => Rule.required().max(100).error('Maximum 100 Characters')
         }),
         defineField({
             name: "startDate",

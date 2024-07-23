@@ -4,23 +4,21 @@ import OurFeatures from "@/components/OurFeatures/OurFeatures";
 import ChairmanOfBoards from "@/components/ChairmanOfBoards/ChairmanOfBoards";
 import OurClients from "@/components/OurClients/OurClients";
 import LatestProject from "@/components/LatestProject/LatestProject";
-import ContactForm from "@/components/ContactForm/ContactForm";
+import ContactUsForm from "@/components/ContactUsForm/ContactUsForm";
 
 import { getLatestProject } from "@/libs/apis";
-import Counts from "@/components/Counts/Counts";
 
 const Home = async () => {
   const latestProject = await getLatestProject();
   return (
     <>
       <LandingPage />
-      <Counts />
       <WhoWeAre />
       <OurFeatures />
       <ChairmanOfBoards />
       <OurClients />
       <LatestProject latestProject={latestProject} />
-      <ContactForm />
+      <ContactUsForm />
     </>
   );
 };

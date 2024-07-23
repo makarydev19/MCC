@@ -32,7 +32,7 @@ const WhoWeAre = () => {
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="800"
-          className="text-lg font-sans font-medium text-primary uppercase"
+          className="text-lg font-sans font-medium text-secondary uppercase"
         >
           Who We Are
         </h2>

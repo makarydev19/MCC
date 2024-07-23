@@ -3,7 +3,7 @@ import Image from "next/image";
 const ChairmanOfBoards = () => {
   return (
     <section className="md:px-32 px-2 py-20">
-      <div>
+      <div className="flex flex-col justify-center items-center gap-y-3">
         <h1
           data-aos="fade-up"
           data-aos-duration="800"
@@ -11,7 +11,10 @@ const ChairmanOfBoards = () => {
         >
           Chairman Of Boards
         </h1>
-        <hr className="underline w-[50%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " />
+        <p data-aos="fade-up" data-aos-duration="800" className="font-title">
+          Building trust and excellence from the foundation up
+        </p>
+        {/* <hr className="underline w-[50%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " /> */}
       </div>
       <div className="flex flex-col lg:gap-y-32 gap-y-12">
         <div className="flex lg:flex-nowrap flex-wrap px-2 mt-20 lg:gap-y-0 gap-y-8 w-full h-full items-center">

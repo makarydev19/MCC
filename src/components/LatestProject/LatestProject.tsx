@@ -14,21 +14,30 @@ type Props = {
 const LatestProject: FC<Props> = (props) => {
   const { latestProject } = props;
   return (
-    <section className="container mx-auto md:px-32 px-5 py-24">
-      <h1
-        data-aos="fade-up"
-        data-aos-duration="800"
-        className="font-heading text-center"
-      >
-        Latest Project
-      </h1>
-      <hr className="underline w-[35%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " />
+    <section className="container mx-auto md:px-16 px-5 py-24">
+      <div className="flex flex-col gap-y-3">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="800"
+          className="font-heading text-center"
+        >
+          Latest Project
+        </h1>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="800"
+          className="font-title lg:w-[35rem] w-0 self-center"
+        >
+          Experience the pinnacle of our construction expertise in our latest
+          creation
+        </p>
+      </div>
       <div className="flex lg:flex-row flex-col gap-12 mt-20 items-center">
         <div className="md:grid grid-cols-1 grid-rows-2 gap-4 lg:w-[50%]">
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="rounded-2xl overflow-hidden h-44 mb-4 md:mb-0"
+            className="rounded-2xl overflow-hidden h-48 mb-4 md:mb-0"
           >
             <Image
               alt={latestProject.projectName}
@@ -41,7 +50,7 @@ const LatestProject: FC<Props> = (props) => {
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="grid grid-cols-2 grid-rows-1 gap-4"
+            className="grid grid-cols-2 grid-rows-1 gap-4 h-48"
           >
             {latestProject.images.slice(1, 3).map((image) => (
               <div key={image._key} className="rounded-2xl overflow-hidden">
@@ -61,7 +70,12 @@ const LatestProject: FC<Props> = (props) => {
             <h2 className="text-3xl font-medium capitalize">
               {latestProject.projectName}
             </h2>
-            <p className="text-lg mt-8">{latestProject.description}</p>
+            {/* <p className="text-lg mt-8">
+              Construction Works: {latestProject.constructionWorks}
+            </p>
+            <p className="text-lg mt-4">
+              Finishing Works: {latestProject.finishingWorks}
+            </p> */}
           </div>
           <div className="flex flex-wrap items-end">
             <div
@@ -69,18 +83,17 @@ const LatestProject: FC<Props> = (props) => {
               data-aos-anchor-placement="bottom-bottom"
               className="flex flex-col gap-3"
             >
-              <h3 className="text-2xl">Project Info</h3>
+              {/* <h3 className="text-2xl">Project Info</h3> */}
               <p className="text-lg">Client: {latestProject.client}</p>
               <p className="capitalize text-lg">
                 Category: {latestProject.projectSector}
               </p>
               <p className="text-lg">Completed On: {latestProject.endDate}</p>
-            </div>
-            <div>
-              <Link href={`/rooms/${latestProject.slug.current}`}>
-                <div className="mx-3">
+
+              <Link href={`/projects`}>
+                <div className="">
                   <button
-                    className="overflow-hidden relative mt-10 md:absolute lg:left-[80%] md:-mt-14 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:w-32 w-80 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group"
+                    className="overflow-hidden relative mt-10 md:w-40 w-80 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group"
                     data-aos="flip-down"
                   >
                     All Projects

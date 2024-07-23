@@ -25,7 +25,8 @@ export type Project = {
     _id: string;
     projectName: string;
     slug: Slug;
-    description: string;
+    constructionWorks: string;
+    finishingWorks: string;
     client: string;
     startDate: string;
     endDate: string;
