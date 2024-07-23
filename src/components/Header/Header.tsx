@@ -153,7 +153,7 @@ const Header = () => {
                   <motion.div key={links.id} className="overflow-hidden">
                     <motion.div
                       variants={mobileLinkVars}
-                      className="text-5xl uppercase"
+                      className="text-4xl uppercase"
                     >
                       <Link onClick={toggleMenu} href={links.href}>
                         {links.title}
