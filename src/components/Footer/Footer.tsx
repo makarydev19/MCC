@@ -23,7 +23,7 @@ const Footer = () => {
           <ul className="flex items-center gap-x-7">
             {Links.slice(1).map((links) => (
               <li key={links.id}>
-                <Link href={links.href} className="text-[10px] text-white">
+                <Link href={links.href} className="text-[7px] text-white">
                   {links.title}
                 </Link>
               </li>
