@@ -121,11 +121,15 @@ const Header = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen p-10 origin-top bg-primary text-white"
+            className="fixed left-0 top-0 w-full h-screen py-10 origin-top bg-primary text-white"
           >
             <div className="flex h-full flex-col">
-              <div className="flex justify-between">
-                <Link href="/" className="flex gap-x-2 items-center">
+              <div className="flex justify-between px-5">
+                <Link
+                  onClick={toggleMenu}
+                  href="/"
+                  className="flex gap-x-2 items-center"
+                >
                   <Image
                     src={`/MCC_Logo-removebg-preview.png`}
                     alt=""
