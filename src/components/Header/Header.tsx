@@ -155,7 +155,9 @@ const Header = () => {
                       variants={mobileLinkVars}
                       className="text-5xl uppercase"
                     >
-                      <Link href={links.href}>{links.title}</Link>
+                      <Link onClick={toggleMenu} href={links.href}>
+                        {links.title}
+                      </Link>
                     </motion.div>
                   </motion.div>
                 ))}
