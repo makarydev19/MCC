@@ -26,7 +26,7 @@ const WhoWeAre = () => {
   }, [aos]);
 
   return (
-    <section className="md:px-32 px-5 py-10">
+    <section id="#aboutus" className="md:px-32 px-5 py-10">
       <div className="mt-10 lg:m-0">
         <h2
           data-aos="fade-down"

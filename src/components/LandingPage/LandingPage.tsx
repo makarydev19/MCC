@@ -2,8 +2,8 @@ import Counts from "../Counts/Counts";
 
 const LandingPage = () => {
   return (
-    <section className="flex items-center mb-20 h-[85vh] landing-bg drop-shadow-sm rounded-b-3xl">
-      <div className="w-full h-full lg:flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-0 py-44">
+    <section className="mb-56 lg:h-[75vh] md:h-[30vh] h-[55vh] landing-bg drop-shadow-sm rounded-b-3xl">
+      <div className="w-full h-full flex gap-y-20 flex-col items-center justify-end backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
         <div className="flex flex-col gap-y-10">
           <h1 className="lg:text-8xl text-5xl text-center text-white">
             We Build Your Dreams
@@ -12,11 +12,13 @@ const LandingPage = () => {
             Modern Construction Company
           </p>
         </div>
+      </div>
+      <div className="w-full lg:-mt-11 -mt-5">
         <div
           // data-aos="fade-up"
           // data-aos-duration="900"
           // data-aos-anchor-placement="top-bottom"
-          className="lg:-mb-44 lg:mt-0 mt-28 w-full"
+          className=""
         >
           <Counts />
         </div>

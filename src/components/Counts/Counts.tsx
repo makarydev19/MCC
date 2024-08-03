@@ -8,7 +8,7 @@ const Counts = () => {
     <div
       data-aos="fade-up"
       data-aos-duration="800"
-      className="flex w-[95%] items-center justify-center flex-wrap-reverse md:gap-x-5 mx-auto gap-y-2 gap-x-3 lg:-mb-20"
+      className="flex w-[95%] items-center justify-center flex-wrap md:gap-x-5 mx-auto gap-y-2 gap-x-3"
     >
       {CountsBox.map((counts) => (
         <div

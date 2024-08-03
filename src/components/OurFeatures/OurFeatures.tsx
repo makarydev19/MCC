@@ -130,12 +130,6 @@ const OurFeatures = () => {
             {Services.map((services) => (
               <SwiperSlide key={services.id}>
                 <div className="group flex flex-col justify-start items-start gap-24 w-72 h-72 duration-500 relative rounded-lg p-4 bg-black bg-opacity-60 backdrop-blur-lg hover:-translate-y-2 hover:shadow-xl shadow-gray-800 border-[1px] border-[#efefef60]">
-                  <div
-                    data-aos="fade-up"
-                    data-aos-duration="700"
-                    data-aos-easing="ease-in-sine"
-                    className="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-10 -right-10 w-1/2 h-1/2 rounded-lg bg-secondary z-50"
-                  ></div>
                   <div>
                     <h2 className="absolute md:top-[50%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-9xl font-bold mb-2 text-gray-100 opacity-10 tracking-widest font-roboto">
                       {services.num}

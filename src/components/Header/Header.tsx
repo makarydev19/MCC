@@ -74,17 +74,22 @@ const Header = () => {
   const isActive = (href: string) => (pathname === href ? "active" : "");
 
   return (
-    <header className="lg:py-8 z-10 w-full lg:w-[90%] absolute top-[4%] lg:top-[10%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <header className="lg:py-8 z-[100] w-full lg:w-[90%] fixed top-[4%] lg:top-[10%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <nav className="relative flex items-center justify-between h-16 bg-white md:rounded-md rounded-b-2xl shadow-lg lg:h-20 px-8 lg:py-6">
-          <Link href="/" className="w-14">
-            <Image
-              src={`/MCC_Logo-removebg-preview.png`}
-              alt=""
-              width={70}
-              height={70}
-            />
-          </Link>
+          <div className="flex flex-col items-center">
+            <Link href="/" className="lg:w-16 w-12">
+              <Image
+                src={`/MCC_Logo-removebg-preview.png`}
+                alt=""
+                width={70}
+                height={70}
+              />
+            </Link>
+            <h2 className="text-[0.6rem] w-40 text-center hidden lg:block">
+              Modern Construction Company
+            </h2>
+          </div>
           <ul className="lg:flex items-center justify-between hidden gap-x-10">
             {Links.slice(0, -1).map((links) => (
               <li

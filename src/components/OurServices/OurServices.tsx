@@ -26,86 +26,120 @@ const OurServices = () => {
   }, [aos]);
   return (
     <section className="pb-20">
-      <div className="rounded-b-2xl servicesbg-page h-[80vh]">
-        <div className="w-full h-full lg:flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-0 py-44">
+      <div className="rounded-b-2xl servicesbg-page lg:h-[75vh] h-[45vh]">
+        <div className="w-full h-full flex gap-y-5 flex-col items-center justify-end backdrop-brightness-[.4] rounded-b-xl lg:py-32 py-10">
           <h1 className="lg:text-8xl text-5xl text-center text-white">
             What We Do
           </h1>
-          <p className="text-gray-100 lg:text-3xl text-2xl text-center">
+          <p className="text-gray-100 lg:text-3xl w-[95%] text-xl text-center">
             Building the future with comprehensive construction solutions
           </p>
         </div>
       </div>
-      <section className="lg:px-1 px-5">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 absolute top-[75%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%]">
-          <div className="grid grid-cols-1 gap-5 mt-12 sm:grid-cols-3 lg:mt-20 lg:gap-x-12">
-            <div className="transition-all duration-200 bg-white shadow-xl rounded-xl">
-              <div className="py-10 px-9 flex flex-col items-center justify-center">
-                <svg
-                  className="w-16 h-10 text-gray-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-                <h3 className="mt-8 text-3xl">Modern Design</h3>
+      <section className="lg:px-1 px-5 lg:-mt-28 -mt-14 sticky">
+        <section className="py-10 sm:py-16 lg:py-24">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-28">
+            <div className="max-w-xl mx-auto text-center">
+              <div className="inline-flex px-4 py-1.5 mx-auto rounded-full bg-gradient-to-r from-fuchsia-600 to-blue-600">
+                <p className="text-xs font-semibold tracking-widest text-white uppercase">
+                  130+ Handcoded Blocks
+                </p>
               </div>
+              <h2 className="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                Celebration helps you build beautiful website
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-gray-600">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+              </p>
             </div>
 
-            <div className="transition-all duration-200 bg-white shadow-xl rounded-xl">
-              <div className="py-10 px-9 flex flex-col items-center justify-center">
-                <svg
-                  className="w-16 h-10 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
-                  />
-                </svg>
-                <h3 className="mt-8 text-lg font-semibold text-black">
-                  Professional Services
-                </h3>
+            <div className="grid grid-cols-1 gap-5 mt-12 sm:grid-cols-3 lg:mt-20 lg:gap-x-12">
+              <div className="transition-all duration-200 bg-white hover:shadow-xl">
+                <div className="py-10 px-9">
+                  <svg
+                    className="w-16 h-16 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                  <h3 className="mt-8 text-lg font-semibold text-black">
+                    Secured Payments
+                  </h3>
+                  <p className="mt-4 text-base text-gray-600">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint. Velit officia consequat duis enim velit
+                    mollit.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="transition-all duration-200 bg-white shadow-xl rounded-xl">
-              <div className="py-10 px-9 flex flex-col items-center justify-center">
-                <svg
-                  className="w-16 h-10 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-                <h3 className="mt-8 text-lg font-semibold text-black">
-                  High Quality
-                </h3>
+              <div className="transition-all duration-200 bg-white hover:shadow-xl">
+                <div className="py-10 px-9">
+                  <svg
+                    className="w-16 h-16 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                    />
+                  </svg>
+                  <h3 className="mt-8 text-lg font-semibold text-black">
+                    Secured Payments
+                  </h3>
+                  <p className="mt-4 text-base text-gray-600">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint. Velit officia consequat duis enim velit
+                    mollit.
+                  </p>
+                </div>
+              </div>
+
+              <div className="transition-all duration-200 bg-white hover:shadow-xl">
+                <div className="py-10 px-9">
+                  <svg
+                    className="w-16 h-16 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                  <h3 className="mt-8 text-lg font-semibold text-black">
+                    Secured Payments
+                  </h3>
+                  <p className="mt-4 text-base text-gray-600">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint. Velit officia consequat duis enim velit
+                    mollit.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <section className="mt-64">
+        <section className="mt-10">
           <div className="flex flex-col gap-y-3 items-center">
             <h1
               data-aos="fade-up"
