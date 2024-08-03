@@ -9,6 +9,7 @@ import { Project } from "@/models/project";
 import Search from "@/components/Search/Search";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import Link from "next/link";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const Projects = () => {
   const [projectSectorFilter, setProjectSectorFilter] = useState("");
@@ -96,14 +97,12 @@ const Projects = () => {
   return (
     <section>
       <div className="projects-page lg:h-[75vh] h-[45vh] rounded-b-xl">
-        <div className="w-full h-full flex gap-y-20 flex-col items-center justify-end backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
-          <div className="flex flex-col lg:gap-y-10 gap-y-5">
-            <h1 className="lg:text-8xl text-5xl text-center text-white">
-              What <br className="lg:hidden block" /> We've Built
-            </h1>
-            <p className="text-gray-100 lg:text-3xl text-2xl w-[95%] mx-auto text-center">
-              Transforming blueprints into beautiful, functional spaces
-            </p>
+        <div className="w-full h-full flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
+          <div>
+            <TextGenerateEffect
+              className="text-gray-100 lg:text-7xl text-3xl w-[95%] mx-auto text-center"
+              words="Transforming blueprints into beautiful, functional spaces"
+            />
           </div>
         </div>
       </div>
@@ -125,7 +124,7 @@ const Projects = () => {
       </div>
       <div className="lg:px-20 px-5">
         <div className="flex flex-col gap-y-2 lg:mt-32 mt-10">
-          <h1 className="font-heading text-center">Latest Projects</h1>
+          <h1 className="lg:text-4xl text-3xl text-center">What We've Built</h1>
           <p className="font-title">
             From blueprints to grand openings, see our freshest projects come to
             life

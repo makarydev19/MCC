@@ -8,6 +8,8 @@ const nextConfig = {
       "www.freepik.com",
       "img.freepik.com",
       "i.ibb.co",
+      "ibb.co",
+      "files.fm"
     ],
   },
   

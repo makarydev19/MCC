@@ -40,7 +40,7 @@
 }
 
 .active {
-  @apply bg-accent py-2 px-6 border-[1px] rounded-lg text-white shadow-lg;
+  @apply py-1 px-2 border-b-[1.5px] border-blue-400 rounded-lg;
 }
 
 .landing-bg {
