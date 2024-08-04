@@ -23,7 +23,7 @@ const OurClients = () => {
         className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-24"
       >
         <div className="mx-auto text-center">
-          <h2 className="font-heading">
+          <h2 className="font-heading dark:text-[whitesmoke]">
             Trusted by world class companies, design teams & popular designers
           </h2>
         </div>

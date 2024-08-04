@@ -1,16 +1,17 @@
 import Image from "next/image";
+import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 const AboutUs = () => {
   return (
     <section className="pb-20">
       <div className="rounded-b-2xl servicesbg-page lg:h-[75vh] h-[45vh]">
-        <div className="w-full h-full flex gap-y-5 flex-col items-center justify-end backdrop-brightness-[.4] rounded-b-xl lg:py-32 py-10">
-          <h1 className="lg:text-8xl text-5xl text-center text-white">
-            About Us
-          </h1>
-          <p className="text-gray-100 lg:text-3xl w-[95%] text-xl text-center">
-            Building the future with comprehensive construction solutions
-          </p>
+        <div className="w-full h-full flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
+          <div>
+            <TextGenerateEffect
+              className="text-gray-100 lg:text-7xl text-3xl w-[95%] mx-auto text-center"
+              words="Building the future with comprehensive construction solutions"
+            />
+          </div>
         </div>
       </div>
       <div className="lg:px-20 px-0">
@@ -18,8 +19,10 @@ const AboutUs = () => {
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-12">
               <div className="relative lg:mb-12">
-                <img
+                <Image
                   className="absolute -right-0 -bottom-8 xl:-bottom-12 xl:-right-4"
+                  width={100}
+                  height={100}
                   src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
                   alt=""
                 />

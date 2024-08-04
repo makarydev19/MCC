@@ -19,14 +19,14 @@ const LatestProject: FC<Props> = (props) => {
         <h1
           data-aos="fade-up"
           data-aos-duration="800"
-          className="font-heading text-center"
+          className="font-heading text-center dark:text-[whitesmoke]"
         >
           Latest Project
         </h1>
         <p
           data-aos="fade-up"
           data-aos-duration="800"
-          className="font-title lg:w-[35rem] w-[100%] self-center"
+          className="font-title lg:w-[35rem] w-[100%] self-center dark:text-[#f5f5f5d4]"
         >
           Experience the pinnacle of our construction expertise in our latest
           creation
@@ -60,10 +60,10 @@ const LatestProject: FC<Props> = (props) => {
                   <div className="backdrop-blur-3xl shadow-2xl rounded-md">
                     <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
                       {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
-                      <span className="block text-xl font-bold text-black sm:text-4xl lg:text-2xl capitalize">
+                      <span className="block text-xl font-boldsm:text-4xl lg:text-2xl capitalize">
                         {latestProject.projectSector}
                       </span>
-                      <span className="block mt-2 text-sm font-medium leading-snug text-black sm:text-base">
+                      <span className="block mt-2 text-sm font-medium leading-snug sm:text-base">
                         {" "}
                         Completed on:
                         <br />
@@ -76,7 +76,7 @@ const LatestProject: FC<Props> = (props) => {
             </div>
 
             <div className="md:order-1">
-              <h2 className="text-3xl font-bold leading-tight text-black sm:text-3xl lg:text-4xl">
+              <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
                 {latestProject.projectName}
               </h2>
               <p className="mt-4 text-base leading-relaxed text-gray-600">

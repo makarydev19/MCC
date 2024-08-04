@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -10,8 +10,11 @@ import { cn } from "@/libs/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+
 import { Links } from "@/data/data";
 import { usePathname } from "next/navigation";
+import ThemeContext from "@/Context/themeContext";
 
 export const FloatingNav = ({
   navItems,
@@ -104,6 +107,8 @@ export const FloatingNav = ({
     },
   };
 
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+
   const pathname = usePathname();
 
   const isActive = (href: string) => (pathname === href ? "active" : "");
@@ -135,6 +140,7 @@ export const FloatingNav = ({
             height={70}
           />
         </Link>
+
         <button
           title="toggle"
           className="text-3xl lg:hidden transition-transform transform hover:scale-110"
@@ -142,13 +148,14 @@ export const FloatingNav = ({
         >
           <HiMenuAlt3 />
         </button>
+
         <div className="hidden lg:flex items-center justify-between lg:gap-x-6">
           {navItems.map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
               href={navItem.link}
               className={cn(
-                `rounded-2xl ${isActive(navItem.link)} text-black transition-all duration-200 hover:translate-y-1 border-b-[1.5px] px-4 py-2`
+                `rounded-xl ${isActive(navItem.link)}  transition-all duration-200 hover:translate-y-1 border-b-[1px] border-[#fefefe2a] px-4 py-2`
               )}
             >
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
@@ -156,6 +163,27 @@ export const FloatingNav = ({
               <span className="hidden sm:block text-md">{navItem.name}</span>
             </Link>
           ))}
+          <ul>
+            <li className="ml-2">
+              {darkTheme ? (
+                <MdOutlineLightMode
+                  className="cursor-pointer ml-4 size-7"
+                  onClick={() => {
+                    setDarkTheme(false);
+                    localStorage.removeItem("mcc-theme");
+                  }}
+                />
+              ) : (
+                <MdDarkMode
+                  className="cursor-pointer ml-4 size-7"
+                  onClick={() => {
+                    setDarkTheme(true);
+                    localStorage.setItem("mcc-theme", "true");
+                  }}
+                />
+              )}
+            </li>
+          </ul>
         </div>
         <Link href="/contactUs" className="hidden lg:block">
           <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">

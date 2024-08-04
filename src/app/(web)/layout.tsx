@@ -3,6 +3,7 @@ import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import ThemeProvider from "@/components/ThemeProvider/theme-provider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -29,13 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth bg-background ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`scroll-smooth bg-background ${inter.variable} dark:text-white text-black`}
+    >
       <body className={roboto.className}>
-        <main className="font-normal">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <ThemeProvider>
+          <main className="font-normal">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
