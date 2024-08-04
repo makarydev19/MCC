@@ -123,7 +123,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex lg:max-w-[60vw] max-w-[90vw] fixed top-2 lg:top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-2xl dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] lg:px-1 px-7 py-2 items-center lg:justify-around justify-between space-x-4",
+          "flex lg:max-w-[60vw] max-w-[90vw] fixed top-2 lg:top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-2xl dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] lg:px-1 px-7 py-3 items-center lg:justify-around justify-between space-x-4",
           className
         )}
       >
@@ -142,15 +142,16 @@ export const FloatingNav = ({
         >
           <HiMenuAlt3 />
         </button>
-        <div className="hidden lg:flex items-center justify-between lg:gap-x-12">
+        <div className="hidden lg:flex items-center justify-between lg:gap-x-6">
           {navItems.map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
               href={navItem.link}
               className={cn(
-                `rounded-2xl ${isActive(navItem.link)} text-black transition-all duration-200 hover:translate-y-1`
+                `rounded-2xl ${isActive(navItem.link)} text-black transition-all duration-200 hover:translate-y-1 border-b-[1.5px] px-4 py-2`
               )}
             >
+              <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
               <span className="block sm:hidden">{navItem.icon}</span>
               <span className="hidden sm:block text-md">{navItem.name}</span>
             </Link>
@@ -159,7 +160,7 @@ export const FloatingNav = ({
         <Link href="/contactUs" className="hidden lg:block">
           <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
             <span>Contact Us</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
           </button>
         </Link>
       </motion.div>

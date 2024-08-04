@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useMemo } from "react";
 import {
   motion,
   useScroll,
@@ -21,10 +21,10 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
-  const ref = React.useRef(null);
+  const firstRow = useMemo(() => products.slice(0, 5), [products]);
+  const secondRow = useMemo(() => products.slice(5, 10), [products]);
+  const thirdRow = useMemo(() => products.slice(10, 15), [products]);
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -56,10 +56,11 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -80,7 +81,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}

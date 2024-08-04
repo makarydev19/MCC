@@ -109,22 +109,16 @@ const WhoWeAre = () => {
                 />
               </div>
               <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
-              <Link href="/aboutUs" className="relative">
-                <button
-                  className="overflow-hidden relative mt-10 w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group"
-                  data-aos="flip-down"
-                >
-                  More Info!
-                  <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
-                  <span className="absolute w-36 h-32 -top-8 -left-2 bg-red-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
-                  <span className="absolute w-36 h-32 -top-8 -left-2 bg-secondary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
-                  <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                    Explore!
-                  </span>
-                </button>
-              </Link>
             </div>
           </div>
+          <Link href="/aboutUs" className="relative mx-auto">
+            <button className="p-[3px] relative mt-12">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-lg" />
+              <div className="px-12 py-2 text-lg bg-white rounded-[6px] relative group transition duration-200 text-black hover:bg-transparent hover:text-white">
+                More Info
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
       <hr className="bg-slate-700 w-[80%]" />
