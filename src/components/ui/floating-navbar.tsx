@@ -141,28 +141,7 @@ export const FloatingNav = ({
           />
         </Link>
 
-        <button
-          title="toggle"
-          className="text-3xl lg:hidden transition-transform transform hover:scale-110"
-          onClick={toggleMenu}
-        >
-          <HiMenuAlt3 />
-        </button>
-
-        <div className="hidden lg:flex items-center justify-between lg:gap-x-6">
-          {navItems.map((navItem: any, idx: number) => (
-            <Link
-              key={`link=${idx}`}
-              href={navItem.link}
-              className={cn(
-                `rounded-xl ${isActive(navItem.link)}  transition-all duration-200 hover:translate-y-1 border-b-[1px] border-[#fefefe2a] px-4 py-2`
-              )}
-            >
-              <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
-              <span className="block sm:hidden">{navItem.icon}</span>
-              <span className="hidden sm:block text-md">{navItem.name}</span>
-            </Link>
-          ))}
+        <div className="flex items-center gap-5">
           <ul>
             <li className="ml-2">
               {darkTheme ? (
@@ -184,6 +163,29 @@ export const FloatingNav = ({
               )}
             </li>
           </ul>
+          <button
+            title="toggle"
+            className="text-3xl lg:hidden transition-transform transform hover:scale-110"
+            onClick={toggleMenu}
+          >
+            <HiMenuAlt3 />
+          </button>
+        </div>
+
+        <div className="hidden lg:flex items-center justify-between lg:gap-x-6">
+          {navItems.map((navItem: any, idx: number) => (
+            <Link
+              key={`link=${idx}`}
+              href={navItem.link}
+              className={cn(
+                `rounded-xl ${isActive(navItem.link)}  transition-all duration-200 hover:translate-y-1 border-b-[1px] border-[#fefefe2a] px-4 py-2`
+              )}
+            >
+              <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden sm:block text-md">{navItem.name}</span>
+            </Link>
+          ))}
         </div>
         <Link href="/contactUs" className="hidden lg:block">
           <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
