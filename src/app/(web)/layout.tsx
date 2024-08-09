@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth bg-background ${inter.variable} dark:text-white text-black`}
+      className={`scroll-smooth bg-zinc-50 ${inter.variable} dark:text-white text-black`}
     >
       <body className={roboto.className}>
         <ThemeProvider>

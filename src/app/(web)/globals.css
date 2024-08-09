@@ -7,6 +7,16 @@
   }
 }
 
+/* Custom class to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /*scrollbar style*/
 
 ::-webkit-scrollbar {
@@ -40,7 +50,7 @@
 }
 
 .active {
-  @apply py-1 px-2 border-b-[1.5px] border-red-400 rounded-lg;
+  @apply py-2 px-5 border-[1.5px] border-red-400 rounded-lg;
 }
 
 .landing-bg {
@@ -48,7 +58,7 @@
 }
 
 .services-bg {
-  background: url(/pexels-rezwan-1145434.jpg) no-repeat center / cover fixed;
+  background: url(/pexels-rezwan-1145434.jpg) no-repeat center / cover;
 }
 
 .servicesbg-page {
@@ -59,6 +69,10 @@
 .projects-page {
   background: url(/monochrome-scene-depicting-life-workers-construction-industry-site.jpg)
     no-repeat center / cover;
+}
+
+.aboutUs-page {
+  background: url(/pexels-wdnet-224924\ \(1\).jpg) no-repeat center / cover;
 }
 
 hr {
@@ -157,4 +171,14 @@ p {
 .custom-swiper-button-next:hover,
 .custom-swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.backdrop-blur-custom {
+  -webkit-backdrop-filter: blur(3rem); /* Safari */
+  backdrop-filter: blur(3rem); /* Other browsers */
+}
+
+.backdrop-blur-custom2 {
+  -webkit-backdrop-filter: blur(5rem); /* Safari */
+  backdrop-filter: blur(5rem); /* Other browsers */
 }

@@ -36,7 +36,7 @@ const ChairmanOfBoards = () => {
             />
           </div>
           <div
-            className="lg:w-[45%] lg:m-0 p-5 dark:bg-primary bg-white shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-36 z-50"
+            className="lg:w-[45%] lg:m-0 p-5  backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-36 z-50"
             data-aos="fade-up"
             data-aos-duration="800"
           >
@@ -56,7 +56,7 @@ const ChairmanOfBoards = () => {
         </div>
         <div className="flex flex-wrap-reverse lg:flex-nowrap px-2 lg:gap-y-0 gap-y-8 w-full h-full items-center">
           <div
-            className="lg:w-[55%] lg:m-0 p-5 dark:bg-primary bg-white shadow-2xl rounded-lg z-50 -mt-28"
+            className="lg:w-[55%] lg:m-0 p-5 backdrop-blur-custom2 shadow-2xl rounded-lg z-50 -mt-28"
             data-aos="fade-down"
             data-aos-duration="800"
           >
@@ -100,7 +100,7 @@ const ChairmanOfBoards = () => {
             />
           </div>
           <div
-            className="lg:w-[45%] lg:m-0 p-5 dark:bg-primary bg-white shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-24 z-50"
+            className="lg:w-[45%] lg:m-0 p-5  backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-24 z-50"
             data-aos="fade-up"
             data-aos-duration="800"
           >

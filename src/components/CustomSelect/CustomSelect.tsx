@@ -47,18 +47,18 @@ const CustomSelect: FC<CustomSelectProps> = ({
   return (
     <div className="relative" ref={selectRef}>
       <div
-        className="flex items-center justify-between w-full p-2 bg-white cursor-pointer"
+        className="flex items-center justify-between w-full p-2 bg-white dark:bg-zinc-900 cursor-pointer"
         onClick={toggleDropdown}
       >
         <span>{value || placeholder || "Select an option"}</span>
         <FaChevronDown className="text-sm" />
       </div>
       {isOpen && (
-        <div className="absolute z-10 w-full mt-2 overflow-y-auto bg-white shadow-lg max-h-48">
+        <div className="absolute z-10 w-full mt-2 overflow-y-auto bg-white dark:bg-zinc-900 shadow-lg max-h-48">
           {options.map((option) => (
             <div
               key={option}
-              className="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
+              className="px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer dark:hover:bg-zinc-800 hover:bg-gray-100"
               onClick={() => handleOptionClick(option)}
             >
               {option}

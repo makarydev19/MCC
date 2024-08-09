@@ -49,14 +49,16 @@ const Search: FC<Props> = ({
   ];
 
   return (
-    <div className="lg:w-full mx-auto w-[90%] bg-white lg:px-10 px-2 py-4 rounded-md shadow-xl">
+    <div className="lg:w-full mx-auto w-[90%] bg-white dark:bg-zinc-900 lg:px-10 px-2 py-4 rounded-md shadow-5xl">
       <div className="relative flex gap-5 items-center justify-between">
         <div className="flex flex-wrap flex-grow gap-4">
           {/* Project Sector Select with Icon */}
           <div className="flex flex-col lg:border-0 border-l-[1.5px] border-[#00000022]">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
-              <FaBuilding className="text-gray-500 " />
-              <h3 className="text-gray-800 font-medium">Project Sector</h3>
+              <FaBuilding className="text-gray-500 dark:text-gray-200" />
+              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+                Project Sector
+              </h3>
             </div>
             <div className="relative lg:w-[15rem] w-[19.4rem]">
               <CustomSelect
@@ -69,10 +71,12 @@ const Search: FC<Props> = ({
           </div>
 
           {/* End Date Select with Icon */}
-          <div className="flex flex-col border-l-[1.5px]  border-[#00000022]">
+          <div className="flex flex-col border-l-[1.5px]  border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
-              <FaCalendarAlt className="text-gray-500" />
-              <h3 className="text-gray-800 font-medium">End Date</h3>
+              <FaCalendarAlt className="text-gray-500 dark:text-gray-200" />
+              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+                End Date
+              </h3>
             </div>
             <div className="flex flex-col relative lg:w-[15rem] w-[19.4rem]">
               <CustomSelect
@@ -85,10 +89,12 @@ const Search: FC<Props> = ({
           </div>
 
           {/* Location Select with Icon */}
-          <div className="flex flex-col border-l-[1.5px] border-[#00000022]">
+          <div className="flex flex-col border-l-[1.5px] border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex items-center gap-x-4 pb-1">
-              <FaLocationDot className="text-gray-500" />
-              <h3 className="text-gray-800 font-medium">Location</h3>
+              <FaLocationDot className="text-gray-500 dark:text-gray-200" />
+              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+                Location
+              </h3>
             </div>
             <div className="relative lg:w-[15rem] w-[19.4rem]">
               <CustomSelect

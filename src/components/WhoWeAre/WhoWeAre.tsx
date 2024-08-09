@@ -71,7 +71,7 @@ const WhoWeAre = () => {
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
             <div
-              className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:h-[65vh] lg:w-[20vw] h-[48vh]"
+              className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[48vh]"
               data-aos="fade-up"
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
@@ -99,7 +99,7 @@ const WhoWeAre = () => {
                   className="scale-animation img"
                 />
               </div>
-              <div className="shadow-2xl rounded-2xl overflow-hidden lg:h-32 md:h-48 h-32">
+              <div className="shadow-2xl rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
                 <Image
                   src={`/pexels-pixabay-209272.jpg`}
                   alt=""

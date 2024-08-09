@@ -38,6 +38,9 @@ const LatestProject: FC<Props> = (props) => {
           <div className="grid items-center md:grid-cols-2 md:gap-x-20 gap-y-10">
             <div className="relative lg:pl-16 lg:pr-10 px-10 md:pl-0 xl:pr-0 md:order-2">
               <Image
+                data-aos="fade-in"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
                 width={100}
                 height={100}
                 className="absolute top-6 -right-4 xl:-right-12"
@@ -46,7 +49,12 @@ const LatestProject: FC<Props> = (props) => {
               />
 
               <div className="relative max-w-xs ml-auto">
-                <div className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg">
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-easing="ease-in-sine"
+                  className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg"
+                >
                   <Image
                     alt={latestProject.projectName}
                     src={latestProject.coverImage.url}
@@ -56,8 +64,13 @@ const LatestProject: FC<Props> = (props) => {
                   />
                 </div>
 
-                <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
-                  <div className="backdrop-blur-3xl shadow-2xl rounded-md">
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-easing="ease-in-sine"
+                  className="absolute bottom-5 lg:-left-16 -left-10 z-50"
+                >
+                  <div className="backdrop-blur-custom shadow-2xl rounded-md">
                     <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
                       {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
                       <span className="block text-xl font-boldsm:text-4xl lg:text-2xl capitalize">
@@ -76,14 +89,27 @@ const LatestProject: FC<Props> = (props) => {
             </div>
 
             <div className="md:order-1">
-              <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
+              <h2
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
+                className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl"
+              >
                 {latestProject.projectName}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-gray-600">
+              <p
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
+                className="mt-4 text-base leading-relaxed text-gray-500"
+              >
                 {latestProject.client}
               </p>
 
               <a
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
                 href="/projects"
                 className="inline-flex items-center justify-center px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
                 role="button"

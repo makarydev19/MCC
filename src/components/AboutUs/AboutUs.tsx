@@ -1,19 +1,41 @@
+"use client";
+
 import Image from "next/image";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { FlipWords } from "../ui/flip-words";
+import { AuroraBackground } from "../ui/aurora-background";
+import { motion } from "framer-motion";
+import Counts from "../Counts/Counts";
+import OurClients from "../OurClients/OurClients";
 
 const AboutUs = () => {
+  const words = ["construction", "building", "architectural"];
   return (
     <section className="pb-20">
-      <div className="rounded-b-2xl servicesbg-page lg:h-[75vh] h-[45vh]">
-        <div className="w-full h-full flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
-          <div>
-            <TextGenerateEffect
-              className="text-gray-100 lg:text-7xl text-3xl w-[95%] mx-auto text-center"
-              words="Building the future with comprehensive construction solutions"
-            />
-          </div>
-        </div>
-      </div>
+      <AuroraBackground>
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative flex flex-col gap-4 items-center justify-center px-4"
+        >
+          <h1 className="lg:text-7xl text-5xl dark:text-white">
+            <p className="text-2xl">About Us</p>
+            We specialize in turning your <br />
+            <FlipWords
+              words={words}
+              className="text-red-700 dark:text-secondary"
+            />{" "}
+            <br />
+            dreams into reality
+          </h1>
+        </motion.div>
+      </AuroraBackground>
+      <Counts />
       <div className="lg:px-20 px-0">
         <section className="py-10 sm:py-16 lg:py-24">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -61,16 +83,16 @@ const AboutUs = () => {
                 >
                   Our Vision
                 </h2>
-                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
+                <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl lg:leading-tight">
                   We make things easy for projects.
                 </h2>
-                <p className="text-xl leading-relaxed text-gray-900 mt-9">
+                <p className="text-xl leading-relaxed text-gray-900 mt-9 dark:text-gray-400">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
                   error, laudantium dolore voluptas, earum a ad possimus quia
                   sapiente voluptatum natus amet sint praesentium? Libero
                   numquam autem itaque voluptate voluptas?
                 </p>
-                <p className="mt-6 text-xl leading-relaxed text-gray-900">
+                <p className="mt-6 text-xl leading-relaxed text-gray-900 dark:text-gray-400">
                   Velit officia conse duis enim velit mollit. Exercit ation
                   veniam consequat sunt nostrud amet.
                 </p>
@@ -90,10 +112,10 @@ const AboutUs = () => {
                 >
                   Our Mission
                 </h2>
-                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
                   Grow business with Celebration.
                 </h2>
-                <p className="mt-4 text-xl leading-relaxed text-gray-600">
+                <p className="mt-4 text-xl leading-relaxed text-gray-600 dark:text-gray-400">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Autem quam voluptate iure non quidem! Sed quidem, et minima
                   debitis aliquid inventore obcaecati adipisci a dignissimos?
@@ -110,7 +132,7 @@ const AboutUs = () => {
                   />
 
                   <div className="absolute -bottom-10 -left-16">
-                    <div className="bg-yellow-300">
+                    <div className="bg-red-300">
                       <div className="px-8 py-10">
                         <span className="block text-4xl font-bold text-black lg:text-5xl">
                           {" "}
@@ -130,6 +152,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
+        <OurClients />
       </div>
     </section>
   );

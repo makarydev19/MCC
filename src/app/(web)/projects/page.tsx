@@ -8,8 +8,10 @@ import { getProjects } from "@/libs/apis";
 import { Project } from "@/models/project";
 import Search from "@/components/Search/Search";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
+
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
 
 const Projects = () => {
   const [projectSectorFilter, setProjectSectorFilter] = useState("");
@@ -125,7 +127,7 @@ const Projects = () => {
       <div className="lg:px-20 px-5">
         <div className="flex flex-col gap-y-2 lg:mt-32 mt-10">
           <h1 className="lg:text-4xl text-3xl text-center">What We've Built</h1>
-          <p className="font-title">
+          <p className="font-title dark:text-zinc-300">
             From blueprints to grand openings, see our freshest projects come to
             life
           </p>
@@ -168,6 +170,10 @@ const Projects = () => {
             </button>
           </Link>
         </div>
+      </div>
+
+      <div>
+        <LayoutGridDemo />
       </div>
     </section>
   );

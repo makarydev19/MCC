@@ -7,7 +7,7 @@ const ContactUsForm = () => {
         <h1
           data-aos="fade-up"
           data-aos-duration="800"
-          className="text-center font-heading w-[80%] md:w-[100%] mx-auto"
+          className="text-center font-heading w-[80%] md:w-[100%] mx-auto dark:text-[whitesmoke]"
         >
           What Can Us Do For You ?
         </h1>
@@ -15,14 +15,14 @@ const ContactUsForm = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="800"
-            className="text-center font-sans tracking-wide lg:text-2xl text-md"
+            className="text-center font-sans tracking-wide lg:text-2xl text-md dark:text-gray-400"
           >
             We are ready to work on a project of any complexity
           </p>
           <p
             data-aos="fade-up"
             data-aos-duration="800"
-            className="text-center font-sans tracking-wide lg:text-2xl text-md"
+            className="text-center font-sans tracking-wide lg:text-2xl text-md dark:text-gray-400"
           >
             whether its commercial or residential.
           </p>
@@ -30,12 +30,12 @@ const ContactUsForm = () => {
       </div>
 
       <Form />
-      <section className="py-10 bg-white sm:py-16 lg:py-16 mt-9 rounded-xl">
+      <section className="py-10 bg-white dark:bg-zinc-950 border dark:border-zinc-900 sm:py-16 lg:py-16 mt-9 rounded-xl">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-8 xl:gap-x-20">
             <div className="flex items-start">
               <svg
-                className="flex-shrink-0 w-10 h-10 text-blue-600"
+                className="flex-shrink-0 w-10 h-10 text-secondary dark:text-red-800"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -49,11 +49,13 @@ const ContactUsForm = () => {
                 />
               </svg>
               <div className="ml-6">
-                <p className="text-base font-medium text-black/50">Call us</p>
-                <p className="mt-4 text-xl font-medium text-gray-900">
+                <p className="text-base font-medium text-black/50 dark:text-zinc-500">
+                  Call us
+                </p>
+                <p className="mt-4 text-xl font-medium text-gray-900 dark:text-gray-100">
                   (316) 555-0116
                 </p>
-                <p className="mt-1 text-xl font-medium text-gray-900">
+                <p className="mt-1 text-xl font-medium text-gray-900 dark:text-gray-100">
                   (316) 555-0117
                 </p>
               </div>
@@ -61,7 +63,7 @@ const ContactUsForm = () => {
 
             <div className="flex items-start">
               <svg
-                className="flex-shrink-0 w-10 h-10 text-blue-600"
+                className="flex-shrink-0 w-10 h-10 text-secondary dark:text-red-800"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -75,11 +77,13 @@ const ContactUsForm = () => {
                 />
               </svg>
               <div className="ml-6">
-                <p className="text-base font-medium text-black/50">Email us</p>
-                <p className="mt-4 text-xl font-medium text-gray-900">
+                <p className="text-base font-medium text-black/50 dark:text-zinc-500">
+                  Email us
+                </p>
+                <p className="mt-4 text-xl font-medium text-gray-900 dark:text-gray-100">
                   contact@example.com
                 </p>
-                <p className="mt-1 text-xl font-medium text-gray-900">
+                <p className="mt-1 text-xl font-medium text-gray-900 dark:text-gray-100">
                   support@example.com
                 </p>
               </div>
@@ -87,7 +91,7 @@ const ContactUsForm = () => {
 
             <div className="flex items-start">
               <svg
-                className="flex-shrink-0 w-10 h-10 text-blue-600"
+                className="flex-shrink-0 w-10 h-10 text-secondary dark:text-red-800"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -107,8 +111,10 @@ const ContactUsForm = () => {
                 />
               </svg>
               <div className="ml-6">
-                <p className="text-base font-medium text-black/50">Location</p>
-                <p className="mt-4 text-xl font-medium leading-relaxed text-gray-900">
+                <p className="text-base font-medium text-black/50 dark:text-zinc-500">
+                  Location
+                </p>
+                <p className="mt-4 text-xl font-medium leading-relaxed text-gray-900 dark:text-gray-100">
                   8502 Preston Rd. Inglewood, Maine 98380, USA
                 </p>
               </div>
