@@ -15,7 +15,7 @@ const OurFeatures = () => {
       className="my-20 services-bg h-full w-full"
     >
       <div className="w-full h-full lg:flex gap-20 items-center justify-center backdrop-brightness-[.3]">
-        <div className="px-10 py-10 mx-auto">
+        <div className="lg:px-10 px-5 py-10 mx-auto">
           <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
             <h1
               className="md:text-5xl text-4xl md:w-[80%] text-wrap text-white mb-5 lg:text-left text-center font-roboto"
@@ -61,7 +61,7 @@ const OurFeatures = () => {
                     className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
                   >
                     <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-white dark:bg-zinc-900 border-gray-100 shadow w-60 md:w-80 group rounded-xl hover:shadow-lg hover:-translate-y-1">
-                      <a href="#" title="" className="w-full lg:h-72 h-48">
+                      <Link href="/services" className="w-full lg:h-72 h-48">
                         <Image
                           width={1000}
                           height={1000}
@@ -69,7 +69,7 @@ const OurFeatures = () => {
                           src={services.img2}
                           alt="thumbnail-1"
                         />
-                      </a>
+                      </Link>
                       <div className="flex-1 px-4 py-5 sm:p-6">
                         <a href="#" title="" className="">
                           <p className="text-lg font-bold text-gray-900 dark:text-white">
@@ -90,7 +90,7 @@ const OurFeatures = () => {
                               Explore
                             </p>
                           </div>
-                          <a href="#" title="" className="" role="button">
+                          <Link href="/services">
                             <svg
                               className="w-5 h-5 text-gray-300 transition-all duration-200 group-hover:text-gray-500"
                               xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ const OurFeatures = () => {
                               <line x1="17" y1="7" x2="7" y2="17"></line>
                               <polyline points="8 7 17 7 17 16"></polyline>
                             </svg>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

@@ -65,7 +65,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex lg:max-w-[75vw] max-w-[90vw] fixed top-2 lg:top-7 inset-x-0 mx-auto border border-transparent dark:border-white/[0.1] rounded-2xl dark:bg-zinc-950 bg-zinc-50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-7 py-4 items-center justify-between",
+          "flex lg:max-w-[90%] max-w-[90%] fixed top-0 lg:top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.1] rounded-b-2xl dark:bg-zinc-950 bg-zinc-50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-4 items-center justify-between",
           className
         )}
       >
@@ -85,7 +85,7 @@ export const FloatingNav = ({
           <ToggleMenu />
         </div>
 
-        <div className="hidden lg:flex items-center justify-between lg:gap-x-4">
+        <div className="hidden lg:flex items-center justify-between lg:gap-x-8">
           {navItems.map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
@@ -95,21 +95,21 @@ export const FloatingNav = ({
               )}
             >
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
-              <span className="hidden sm:block text-[1rem] font-semibold">
+              <span className="hidden sm:block text-[1rem] uppercase font-inter leading-4">
                 {navItem.name}
               </span>
             </Link>
           ))}
         </div>
+        <Link href="/contactUs" className="hidden lg:block">
+          <button className="uppercase border text-[1rem] relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
+            <span>Contact Us</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
+          </button>
+        </Link>
         <div className="hidden lg:block">
           <ToggleTheme />
         </div>
-        <Link href="/contactUs" className="hidden lg:block">
-          <button className="border text-[1rem] font-semibold relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
-            <span>Contact Us</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
-          </button>
-        </Link>
       </motion.div>
     </AnimatePresence>
   );

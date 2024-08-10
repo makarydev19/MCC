@@ -24,21 +24,21 @@ const Search: FC<Props> = ({
 }) => {
   const projectSectors = [
     "All",
+    "Administrative",
     "Commercial",
     "Residential",
-    "Administrative",
-    "Touristic",
     "Service",
+    "Touristic",
   ];
   const locations = [
     "All",
-    "Sharm El-Sheikh",
     "El-Obour City",
-    "Porto Pyramids",
+    "Giza",
+    "North Coast",
     "Octobor",
     "Port-Said",
+    "Sharm El-Sheikh",
     "The New Administrative Capital",
-    "North Coast",
   ];
   const years = [
     "All",
@@ -49,11 +49,11 @@ const Search: FC<Props> = ({
   ];
 
   return (
-    <div className="lg:w-full mx-auto w-[90%] bg-white dark:bg-zinc-900 lg:px-10 px-2 py-4 rounded-md shadow-5xl">
+    <div className="lg:w-full mx-auto w-[90%] bg-white dark:bg-zinc-900 lg:px-10 px-2 py-4 rounded-md shadow-2xl">
       <div className="relative flex gap-5 items-center justify-between">
         <div className="flex flex-wrap flex-grow gap-4">
           {/* Project Sector Select with Icon */}
-          <div className="flex flex-col lg:border-0 border-l-[1.5px] border-[#00000022]">
+          <div className="flex flex-col lg:border-0 border-l-[1.5px] border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
               <FaBuilding className="text-gray-500 dark:text-gray-200" />
               <h3 className="text-gray-800 dark:text-gray-200 font-medium">

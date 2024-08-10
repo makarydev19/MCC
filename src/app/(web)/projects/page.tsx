@@ -97,7 +97,7 @@ const Projects = () => {
   );
 
   return (
-    <section>
+    <section className="pb-20">
       <div className="projects-page lg:h-[75vh] h-[45vh] rounded-b-xl">
         <div className="w-full h-full flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
           <div>
@@ -126,7 +126,7 @@ const Projects = () => {
       </div>
       <div className="lg:px-20 px-5">
         <div className="flex flex-col gap-y-2 lg:mt-32 mt-10">
-          <h1 className="lg:text-4xl text-3xl text-center">What We've Built</h1>
+          <h1 className="lg:text-6xl text-4xl text-center">What We've Built</h1>
           <p className="font-title dark:text-zinc-300">
             From blueprints to grand openings, see our freshest projects come to
             life
@@ -153,8 +153,10 @@ const Projects = () => {
       <div className="h-[60vh] my-20 services-bg">
         <div className="w-full h-full flex flex-col gap-y-7 items-center justify-center backdrop-brightness-[.3]">
           <div className="flex flex-col gap-y-5 items-center justify-center">
-            <h1 className="text-white text-5xl ">Find Construction Team</h1>
-            <p className="text-lg text-white text-center w-[70%]">
+            <h1 className="text-white lg:text-5xl text-3xl text-center">
+              Find Construction Team
+            </h1>
+            <p className="lg:text-lg text-md text-white text-center w-[70%]">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
               sequi quod tempore totam magni ex consequatur ad ipsam.
             </p>
@@ -172,9 +174,16 @@ const Projects = () => {
         </div>
       </div>
 
-      <div>
+      <section>
+        <div className="flex flex-col gap-y-10 lg:w-[60%] w-[90%] mx-auto">
+          <h1 className="lg:text-6xl text-4xl text-center">Projects by Area</h1>
+          <p className="text-center lg:text-xl text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam
+            animi harum
+          </p>
+        </div>
         <LayoutGridDemo />
-      </div>
+      </section>
     </section>
   );
 };

@@ -71,8 +71,8 @@ const WhoWeAre = () => {
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
             <div
-              className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[48vh]"
-              data-aos="fade-up"
+              className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]"
+              data-aos="fade-right"
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
             >
@@ -86,7 +86,7 @@ const WhoWeAre = () => {
             </div>
             <div
               className="-mt-3"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-offset="200"
               data-aos-easing="ease-in-sine"
             >
@@ -111,12 +111,9 @@ const WhoWeAre = () => {
               <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
             </div>
           </div>
-          <Link href="/aboutUs" className="relative mx-auto">
-            <button className="p-[3px] relative mt-12">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-lg" />
-              <div className="px-12 py-2 text-lg bg-white rounded-[6px] relative group transition duration-200 text-black hover:bg-transparent hover:text-white">
-                More Info
-              </div>
+          <Link href="/aboutUs" className="relative mx-auto mt-10">
+            <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
+              Explore more
             </button>
           </Link>
         </div>

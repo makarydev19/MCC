@@ -64,12 +64,7 @@ const LatestProject: FC<Props> = (props) => {
                   />
                 </div>
 
-                <div
-                  data-aos="fade-up"
-                  data-aos-offset="200"
-                  data-aos-easing="ease-in-sine"
-                  className="absolute bottom-5 lg:-left-16 -left-10 z-50"
-                >
+                <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
                   <div className="backdrop-blur-custom shadow-2xl rounded-md">
                     <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
                       {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}

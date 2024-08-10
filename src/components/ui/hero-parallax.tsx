@@ -107,18 +107,14 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <>
-      <div className="max-w-7xl relative mx-auto py-20 md:py-28 px-4 w-full left-0 top-0">
+      <div className="max-w-7xl relative flex flex-col items-center justify-center mx-auto py-20 px-4 w-full left-0 top-0">
+        <p className="text-center lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
-          className="lg:text-7xl text-5xl text-center"
-          words={"We Build Your Dreams"}
+          className="uppercase lg:text-7xl text-4xl text-center w-[90%] mx-auto"
+          words={"From concept to completion, we bring your dreams to life"}
         />
-        <p className="lg:max-w-[70vw] max-w-[90vw] mx-auto text-base md:text-xl mt-8 dark:text-neutral-200 text-center">
-          We build beautiful products with the latest technologies and
-          frameworks. We are a team of passionate developers and designers that
-          love to build amazing products.
-        </p>
       </div>
-      <div className="absolute w-full top-[30%]">
+      <div className="absolute w-full lg:top-[40%] top-[30%]">
         <Counts />
       </div>
     </>

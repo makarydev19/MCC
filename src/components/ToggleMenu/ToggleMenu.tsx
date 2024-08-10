@@ -113,13 +113,17 @@ const ToggleMenu = () => {
                 exit="initial"
                 className="flex flex-col h-full justify-center font-roboto items-center gap-7"
               >
-                {Links.slice(1).map((links) => (
+                {Links.map((links) => (
                   <motion.div key={links.id} className="overflow-hidden">
                     <motion.div
                       variants={mobileLinkVars}
                       className="text-4xl uppercase"
                     >
-                      <Link onClick={toggleMenu} href={links.href}>
+                      <Link
+                        onClick={toggleMenu}
+                        href={links.href}
+                        className="uppercase"
+                      >
                         {links.title}
                       </Link>
                     </motion.div>
