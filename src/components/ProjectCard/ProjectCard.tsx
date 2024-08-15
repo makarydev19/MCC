@@ -10,17 +10,7 @@ type Props = {
 
 const ProjectCard: FC<Props> = (props) => {
   const {
-    project: {
-      projectName,
-      location,
-      slug,
-      constructionWorks,
-      finishingWorks,
-      projectSector,
-      coverImage,
-      stillInProgress,
-      endDate,
-    },
+    project: { projectName, location, slug, coverImage },
   } = props;
 
   return (

@@ -29,7 +29,7 @@ const WhoWeAre = () => {
     <section className="md:px-32 px-5 py-10">
       <div className="lg:m-0">
         <h2
-          data-aos="fade-down"
+          data-aos="fade-in"
           data-aos-easing="linear"
           data-aos-duration="800"
           className="text-lg font-sans font-medium text-secondary uppercase"
@@ -70,12 +70,7 @@ const WhoWeAre = () => {
             </p>
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
-            <div
-              className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]"
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
-            >
+            <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
               <Image
                 src={`/pexels-technobulka-10816119.jpg`}
                 alt=""
@@ -84,12 +79,7 @@ const WhoWeAre = () => {
                 className="img scale-animation"
               />
             </div>
-            <div
-              className="-mt-3"
-              data-aos="fade-right"
-              data-aos-offset="200"
-              data-aos-easing="ease-in-sine"
-            >
+            <div className="-mt-3">
               <div className="mb-3 shadow-2xl rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
                 <Image
                   src={`/pexels-matreding-11739070.jpg`}

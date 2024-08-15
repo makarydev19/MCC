@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Project } from "@/models/project";
 import { FC } from "react";
 
-import Link from "next/link";
-
 type Props = {
   latestProject: Project;
 };
@@ -50,7 +48,7 @@ const LatestProject: FC<Props> = (props) => {
 
               <div className="relative max-w-xs ml-auto">
                 <div
-                  data-aos="fade-up"
+                  data-aos="fade-in"
                   data-aos-offset="200"
                   data-aos-easing="ease-in-sine"
                   className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg"
@@ -85,7 +83,7 @@ const LatestProject: FC<Props> = (props) => {
 
             <div className="md:order-1">
               <h2
-                data-aos="fade-right"
+                data-aos="fade-in"
                 data-aos-offset="200"
                 data-aos-easing="ease-in-sine"
                 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl"
@@ -93,7 +91,7 @@ const LatestProject: FC<Props> = (props) => {
                 {latestProject.projectName}
               </h2>
               <p
-                data-aos="fade-right"
+                data-aos="fade-in"
                 data-aos-offset="200"
                 data-aos-easing="ease-in-sine"
                 className="mt-4 text-base leading-relaxed text-gray-500"

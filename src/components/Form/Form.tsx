@@ -52,7 +52,12 @@ const ContactForm: React.FC = () => {
       );
   };
   return (
-    <div className="mt-6 overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl">
+    <div
+      data-aos="fade-in"
+      data-aos-offset="200"
+      data-aos-easing="ease-in-sine"
+      className="mt-6 overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl"
+    >
       <div className="px-6 py-12 sm:p-12">
         <h3 className="text-3xl font-semibold text-center text-gray-900 dark:text-[whitesmoke]">
           Send us a message
