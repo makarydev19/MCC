@@ -28,7 +28,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
 
   return (
     <section>
-      <div className="h-full w-full dark:bg-black bg-[#FBFCF8] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col items-start relative lg:px-20 px-1">
+      <div className="h-full w-full dark:bg-black bg-[#FBFCF8] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-20 px-1">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-zinc-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         {/* <Spotlight fill="red" className="top-[40%]" /> */}
@@ -38,7 +38,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             coverImage={project.coverImage}
           />
         </div>
-        <p className="text-2xl text-left lg:text-5xl lg:h-[30vh] lg:w-[55%] w-[95%] font-bold relative bg-clip-text dark:text-transparent text-black bg-gradient-to-b from-neutral-200 to-neutral-500 lg:mt-0 mt-28 px-4">
+        <p className="text-2xl text-left lg:text-5xl lg:h-[30vh] lg:w-[55%] w-[95%] font-bold relative bg-clip-text dark:text-transparent text-black bg-gradient-to-b from-neutral-200 to-neutral-500 lg:mt-0 mt-32 px-4">
           {project.projectName}
         </p>
         <hr className="bg-slate-700 w-[80%] mb-10" />
@@ -67,7 +67,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           </div>
         </div>
 
-        <div className="flex flex-row flex-wrap gap-x-12 w-[95%] justify-between lg:sticky lg:top-28 lg:pr-0 pr-14 gap-y-6 lg:w-[30%]">
+        <div className="flex flex-row flex-wrap gap-x-8 w-[95%] justify-between lg:sticky lg:top-28 lg:pr-0 pr-14 gap-y-6 lg:w-[30%]">
           <div>
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
               Sector

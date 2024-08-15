@@ -45,7 +45,7 @@ const ProjectPhotoGallery: FC<{
     <div className="container mx-auto">
       <div className="relative flex items-center justify-center">
         <div className="relative rounded-2xl overflow-hidden">
-          <div className="lg:w-[60rem] lg:h-96 w-[100%] mx-auto h-60 shadow-xl">
+          <div className="lg:w-[60rem] lg:h-96 w-[30rem] mx-auto h-60 shadow-xl">
             <Image
               src={coverImage.url}
               alt={`Project Photo ${currentPhotoIndex + 1}`}
@@ -76,7 +76,7 @@ const ProjectPhotoGallery: FC<{
             {currentPhotoIndex + 1} / {photos.length}
           </span> */}
         </div>
-        <div className="absolute lg:left-[65%] left-[17%] lg:top-[90%] top-[80%]">
+        <div className="absolute lg:left-[65%] lg:top-[90%] top-[90%]">
           {remainingPhotosCount > 0 && (
             <div
               className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-2xl"

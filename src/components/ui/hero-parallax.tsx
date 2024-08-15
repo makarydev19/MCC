@@ -110,7 +110,7 @@ export const Header = () => {
       <div className="max-w-7xl relative flex flex-col items-center justify-center mx-auto py-20 px-4 w-full left-0 top-0">
         <p className="text-center lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
-          className="uppercase lg:text-7xl text-4xl text-center w-[90%] mx-auto"
+          className="uppercase lg:text-7xl text-4xl text-center w-[95%] mx-auto"
           words={"From concept to completion, we bring your dreams to life"}
         />
       </div>

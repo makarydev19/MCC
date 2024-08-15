@@ -36,7 +36,7 @@ const ChairmanOfBoards = () => {
             />
           </div>
           <div
-            className="lg:w-[45%] lg:m-0 p-5  backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-36 z-50"
+            className="lg:w-[45%] lg:m-0 p-5 backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-36 z-50"
             data-aos="fade-up"
             data-aos-duration="800"
           >

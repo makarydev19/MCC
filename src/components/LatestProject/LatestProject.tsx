@@ -104,7 +104,7 @@ const LatestProject: FC<Props> = (props) => {
                 data-aos-offset="200"
                 data-aos-easing="ease-in-sine"
                 href="/projects"
-                className="inline-flex items-center justify-center px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
+                className="inline-flex items-center justify-center max-sm:w-full px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
                 role="button"
               >
                 {" "}
