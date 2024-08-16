@@ -91,18 +91,18 @@ export const FloatingNav = ({
               key={`link=${idx}`}
               href={navItem.link}
               className={cn(
-                `rounded-xl ${isActive(navItem.link)}  transition-all duration-200 hover:translate-y-1 px-3 py-2`
+                `rounded-md ${isActive(navItem.link)} text-zinc-500 transition-all duration-200 hover:translate-y-1 hover:dark:text-white hover:text-zinc-950 px-3 py-2`
               )}
             >
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
-              <span className="hidden sm:block text-[1rem] uppercase font-inter leading-4">
+              <span className="hidden sm:block text-[1rem] tracking-wider uppercase font-inter leading-4">
                 {navItem.name}
               </span>
             </Link>
           ))}
         </div>
         <Link href="/contactUs" className="hidden lg:block">
-          <button className="uppercase border text-[1rem] relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
+          <button className="uppercase border text-[1rem] tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
             <span>Contact Us</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
           </button>
