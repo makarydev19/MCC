@@ -65,7 +65,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex lg:max-w-[90%] max-w-[90%] fixed top-0 lg:top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.1] rounded-b-2xl dark:bg-zinc-950 bg-zinc-50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-4 items-center justify-between",
+          "flex lg:max-w-[100%] max-w-[100%] fixed top-0 lg:top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.1] shadow-md rounded-b-md dark:bg-zinc-950 bg-[#FBFCF8] z-[5000] lg:px-20 px-7 lg:py-6 py-4 items-center justify-between",
           className
         )}
       >
@@ -85,7 +85,7 @@ export const FloatingNav = ({
           <ToggleMenu />
         </div>
 
-        <div className="hidden lg:flex items-center justify-between lg:gap-x-8">
+        <div className="hidden lg:flex items-center lg:gap-x-5">
           {navItems.map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}

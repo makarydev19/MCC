@@ -30,7 +30,7 @@ const OurServices = () => {
   return (
     <section className="pb-20">
       <div className="flex flex-col overflow-hidden">
-        <div className="w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className="w-full rounded-md flex md:items-center md:justify-center antialiased dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative overflow-hidden">
           <Spotlight
             className="top-40 left-0 md:left-60 md:-top-20"
             fill="red"
