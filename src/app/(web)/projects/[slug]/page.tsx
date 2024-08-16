@@ -90,7 +90,9 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
               End Date
             </h2>
-            <h1 className="text-lg capitalize">{project.endDate}</h1>
+            <h1 className="text-lg capitalize">
+              {project.endDate ? project.endDate : "Still In Progress"}
+            </h1>
           </div>
           <div>
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
