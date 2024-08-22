@@ -55,7 +55,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           </h2>
           <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
             <h1 className="lg:text-5xl text-3xl">Construction Works</h1>
-            <h3 className="lg:text-3xl text-xl capitalize dark:text-zinc-400 text-zinc-600">
+            <h3 className="lg:text-4xl text-xl capitalize dark:text-zinc-400 text-zinc-600">
               {project.constructionWorks}
             </h3>
           </div>

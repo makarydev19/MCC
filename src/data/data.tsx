@@ -18,6 +18,10 @@ export const navItems = [
     name: "What We've Built",
     link: "/projects",
   },
+  {
+    name: "Contact Us",
+    link: "/contactUs",
+  },
 ];
 
 export const Links = [

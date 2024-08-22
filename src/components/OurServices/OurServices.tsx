@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { Spotlight } from "../ui/Spotlight";
+import WordPullUp from "../ui/word-pull-up";
 
 const OurServices = () => {
   const aos = useAOS();
@@ -44,11 +45,12 @@ const OurServices = () => {
             titleComponent={
               <>
                 <h1 className="lg:text-4xl text-xl font-semibold text-black dark:text-white">
-                  Building the future with <br />
-                  <span className="text-5xl md:text-[7rem] font-bold mt-1 leading-none">
-                    Comprehensive Construction Solutions
-                  </span>
+                  Building the future with
                 </h1>
+                <WordPullUp
+                  className="text-5xl md:text-[7rem] font-bold mt-1 leading-none"
+                  words="Comprehensive Construction Solutions"
+                />
               </>
             }
           >

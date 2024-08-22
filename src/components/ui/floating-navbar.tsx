@@ -65,7 +65,8 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex lg:max-w-[100%] max-w-[100%] fixed top-0 lg:top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.1] shadow-md rounded-b-md dark:bg-zinc-950 bg-[#FBFCF8] z-[5000] lg:px-20 px-7 lg:py-6 py-4 items-center justify-between",
+          "flex lg:max-w-[75%] w-full fixed lg:top-5 inset-x-0 mx-auto border rounded-xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5 items-center lg:justify-center justify-between space-x-9 border-white/[0.2] bg-zinc-100 dark:bg-zinc-950",
+
           className
         )}
       >
@@ -86,23 +87,21 @@ export const FloatingNav = ({
         </div>
 
         <div className="hidden lg:flex items-center lg:gap-x-5">
-          {navItems.map((navItem: any, idx: number) => (
+          {navItems.slice(0, 4).map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
               href={navItem.link}
               className={cn(
-                `rounded-md ${isActive(navItem.link)} text-zinc-500 transition-all duration-200 hover:translate-y-1 hover:dark:text-white hover:text-zinc-950 px-3 py-2`
+                `${isActive(navItem.link)} relative dark:text-neutral-50 items-center flex space-x-2 text-black dark:hover:text-neutral-300 hover:text-neutral-500`
               )}
             >
-              <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent  h-px" />
-              <span className="hidden sm:block text-[1rem] tracking-wider uppercase font-inter leading-4">
-                {navItem.name}
-              </span>
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden sm:block text-base">{navItem.name}</span>
             </Link>
           ))}
         </div>
         <Link href="/contactUs" className="hidden lg:block">
-          <button className="uppercase border text-[1rem] tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
+          <button className="uppercase border text-base tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
             <span>Contact Us</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
           </button>

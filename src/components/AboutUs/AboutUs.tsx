@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import { FlipWords } from "../ui/flip-words";
 import { AuroraBackground } from "../ui/aurora-background";
 import { motion } from "framer-motion";
 import Counts from "../Counts/Counts";
 import OurClients from "../OurClients/OurClients";
+import WordRotate from "../ui/word-rotate";
 
 const AboutUs = () => {
   const words = ["construction", "building", "architectural"];
@@ -26,11 +25,10 @@ const AboutUs = () => {
           <h1 className="lg:text-7xl text-5xl dark:text-white">
             <p className="text-2xl">About Us</p>
             We specialize in turning your <br />
-            <FlipWords
-              words={words}
+            <WordRotate
               className="text-red-700 dark:text-secondary"
-            />{" "}
-            <br />
+              words={words}
+            />
             dreams into reality
           </h1>
         </motion.div>

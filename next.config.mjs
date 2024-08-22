@@ -2,14 +2,43 @@
 const nextConfig = {
   
   images: {
-    
-    domains: [
-      "images.pexels.com",
-      "www.freepik.com",
-      "img.freepik.com",
-      "i.ibb.co",
-      "ibb.co",
-      "files.fm"
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "freepik.com",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "ibb.co",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "files.fm",
+        port: '',
+        pathname: "/**"
+      },
     ],
   },
   
@@ -17,4 +46,4 @@ const nextConfig = {
 
 
 
-export default nextConfig;
+export default nextConfig;   

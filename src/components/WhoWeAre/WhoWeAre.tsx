@@ -5,99 +5,78 @@ import useAOS from "@/hooks/useAOS"; // Replace with correct path to your useAOS
 
 import Image from "next/image";
 import Link from "next/link";
+import BlurFade from "../ui/blur-fade";
 
 const WhoWeAre = () => {
-  const aos = useAOS();
-
-  useEffect(() => {
-    aos.refresh(); // Refresh AOS on initial load
-
-    // Refresh AOS on route change in Next.js
-    const handleRouteChange = () => {
-      aos.refresh();
-    };
-
-    // Clean up event listener
-    window.addEventListener("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("routeChangeComplete", handleRouteChange);
-    };
-  }, [aos]);
-
   return (
     <section className="md:px-32 px-5 py-10">
       <div className="lg:m-0">
-        <h2
-          data-aos="fade-in"
-          data-aos-easing="linear"
-          data-aos-duration="800"
-          className="text-lg font-sans font-medium text-secondary uppercase"
-        >
-          Who We Are
-        </h2>
-        <div className="flex flex-wrap lg:w-full items-end">
+        <BlurFade delay={0.25} inView>
+          <h2 className="text-lg font-sans font-medium text-secondary uppercase">
+            Who We Are
+          </h2>
+        </BlurFade>
+        <div className="flex flex-wrap lg:w-full items-center">
           <div className="flex-grow lg:w-5/12 lg:mb-0 mb-10 ">
-            <h1
-              data-aos="fade-right"
-              data-aos-offset="200"
-              data-aos-easing="ease-in-sine"
-              className="text-4xl mt-4"
-            >
-              For over 20 years, MCC has transformed visions and ideas into
-              steel, masonry, and concrete realities.
-            </h1>
-            <p
-              data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
-              className="mt-8 text-sm rounded-2xl px-4 py-3"
-            >
-              Our clients represent a broad spectrum of industries and business
-              sectors, allowing us the opportunity to apply our extensive
-              experience, know-how, and passion for excellence to each specific
-              project in order to successfully handle every challenge and
-              special circumstance.
-            </p>
-            <p
-              data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
-              className="mt-5 text-sm rounded-2xl px-4 py-3"
-            >
-              With a well-respected track record behind us, and a solid outlook
-              ahead, we’ve learned that our collaborative experience with a
-              variety of projects creates exceptional solutions and results for
-              our clients, no matter what they are building.
-            </p>
+            <BlurFade delay={0.25 * 2} inView>
+              <h1 className="text-4xl mt-4">
+                For over 20 years, MCC has transformed visions and ideas into
+                steel, masonry, and concrete realities.
+              </h1>
+            </BlurFade>
+            <BlurFade delay={0.25 * 3} inView>
+              <p className="mt-8 text-base rounded-2xl px-4 py-3">
+                Our clients represent a broad spectrum of industries and
+                business sectors, allowing us the opportunity to apply our
+                extensive experience, know-how, and passion for excellence to
+                each specific project in order to successfully handle every
+                challenge and special circumstance.
+              </p>
+            </BlurFade>
+            <BlurFade delay={0.25 * 4} inView>
+              <p className="mt-5 text-base rounded-2xl px-4 py-3">
+                With a well-respected track record behind us, and a solid
+                outlook ahead, we’ve learned that our collaborative experience
+                with a variety of projects creates exceptional solutions and
+                results for our clients, no matter what they are building.
+              </p>
+            </BlurFade>
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
-            <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
-              <Image
-                src={`/pexels-technobulka-10816119.jpg`}
-                alt=""
-                width={300}
-                height={300}
-                className="img scale-animation"
-              />
-            </div>
-            <div className="-mt-3">
-              <div className="mb-3 shadow-2xl rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
+            <BlurFade delay={0.25} inView>
+              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
-                  src={`/pexels-matreding-11739070.jpg`}
+                  src={`/pexels-technobulka-10816119.jpg`}
                   alt=""
-                  width={150}
-                  height={150}
-                  className="scale-animation img"
-                />
-              </div>
-              <div className="shadow-2xl rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
-                <Image
-                  src={`/pexels-pixabay-209272.jpg`}
-                  alt=""
-                  width={150}
-                  height={150}
+                  width={300}
+                  height={300}
                   className="img scale-animation"
                 />
               </div>
+            </BlurFade>
+            <div className="-mt-3">
+              <BlurFade delay={0.25 * 2} inView>
+                <div className="mb-3 shadow-2xl rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
+                  <Image
+                    src={`/pexels-matreding-11739070.jpg`}
+                    alt=""
+                    width={150}
+                    height={150}
+                    className="scale-animation img"
+                  />
+                </div>
+              </BlurFade>
+              <BlurFade delay={0.25 * 3} inView>
+                <div className="shadow-2xl rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
+                  <Image
+                    src={`/pexels-pixabay-209272.jpg`}
+                    alt=""
+                    width={150}
+                    height={150}
+                    className="img scale-animation"
+                  />
+                </div>
+              </BlurFade>
               <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
             </div>
           </div>
