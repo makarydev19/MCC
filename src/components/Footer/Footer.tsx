@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section className="py-10 dark:bg-gray-950 bg-gray-950 sm:pt-16 lg:pt-10">
+    <section className="py-10 dark:bg-zinc-950 bg-gray-950 sm:pt-16 lg:pt-10">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7">
           {Links.map((link) => (
