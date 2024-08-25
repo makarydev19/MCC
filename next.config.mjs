@@ -17,6 +17,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: '',
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
         hostname: "img.freepik.com",
         port: '',
         pathname: "/**"

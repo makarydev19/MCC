@@ -111,7 +111,7 @@ const ToggleMenu = () => {
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full justify-center font-roboto items-center gap-7"
+                className="flex flex-col h-full justify-center font-roboto items-start pl-6 gap-7"
               >
                 {Links.map((links) => (
                   <motion.div key={links.id} className="overflow-hidden">
@@ -130,6 +130,9 @@ const ToggleMenu = () => {
                   </motion.div>
                 ))}
               </motion.div>
+              <p className="w-full mt-8 text-sm text-center text-gray-600 md:mt-0 md:w-auto md:order-2">
+                © Copyright 2021, All Rights Reserved by MCC
+              </p>
             </div>
           </motion.div>
         )}

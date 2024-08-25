@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-import useAOS from "@/hooks/useAOS"; // Replace with correct path to your useAOS hook
-
 import Image from "next/image";
 import Link from "next/link";
 import BlurFade from "../ui/blur-fade";
+import BoxReveal from "../ui/box-reveal";
 
 const WhoWeAre = () => {
   return (
@@ -24,7 +22,7 @@ const WhoWeAre = () => {
                 steel, masonry, and concrete realities.
               </h1>
             </BlurFade>
-            <BlurFade delay={0.25 * 3} inView>
+            <BlurFade delay={0.25 * 2} inView>
               <p className="mt-8 text-base rounded-2xl px-4 py-3">
                 Our clients represent a broad spectrum of industries and
                 business sectors, allowing us the opportunity to apply our
@@ -33,7 +31,7 @@ const WhoWeAre = () => {
                 challenge and special circumstance.
               </p>
             </BlurFade>
-            <BlurFade delay={0.25 * 4} inView>
+            <BlurFade delay={0.25 * 2} inView>
               <p className="mt-5 text-base rounded-2xl px-4 py-3">
                 With a well-respected track record behind us, and a solid
                 outlook ahead, we’ve learned that our collaborative experience
@@ -43,7 +41,7 @@ const WhoWeAre = () => {
             </BlurFade>
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
-            <BlurFade delay={0.25} inView>
+            <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
                   src={`/pexels-technobulka-10816119.jpg`}
@@ -53,9 +51,9 @@ const WhoWeAre = () => {
                   className="img scale-animation"
                 />
               </div>
-            </BlurFade>
+            </BoxReveal>
             <div className="-mt-3">
-              <BlurFade delay={0.25 * 2} inView>
+              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
                 <div className="mb-3 shadow-2xl rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
                   <Image
                     src={`/pexels-matreding-11739070.jpg`}
@@ -65,8 +63,8 @@ const WhoWeAre = () => {
                     className="scale-animation img"
                   />
                 </div>
-              </BlurFade>
-              <BlurFade delay={0.25 * 3} inView>
+              </BoxReveal>
+              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
                 <div className="shadow-2xl rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
                   <Image
                     src={`/pexels-pixabay-209272.jpg`}
@@ -76,7 +74,7 @@ const WhoWeAre = () => {
                     className="img scale-animation"
                   />
                 </div>
-              </BlurFade>
+              </BoxReveal>
               <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
             </div>
           </div>

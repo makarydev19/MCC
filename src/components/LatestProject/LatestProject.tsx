@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Project } from "@/models/project";
 import { FC } from "react";
 import BoxReveal from "../ui/box-reveal";
+import BlurFade from "../ui/blur-fade";
 
 type Props = {
   latestProject: Project;
@@ -14,15 +15,18 @@ const LatestProject: FC<Props> = (props) => {
   const { latestProject } = props;
   return (
     <section className="container mx-auto md:px-16 px-5 py-24">
-      <div className="flex flex-col gap-y-3">
-        <h1 className="font-heading text-center dark:text-[whitesmoke]">
-          Latest Project
-        </h1>
-        <p className="font-title lg:w-[35rem] w-[100%] self-center dark:text-[#f5f5f5d4]">
-          Experience the pinnacle of our construction expertise in our latest
-          creation
-        </p>
-      </div>
+      <BlurFade delay={0.25} inView>
+        <div className="flex flex-col gap-y-3">
+          <h1 className="font-heading text-center dark:text-[whitesmoke]">
+            Latest Project
+          </h1>
+
+          <p className="font-title lg:w-[35rem] w-[100%] text-center self-center dark:text-[#f5f5f5d4]">
+            Experience the pinnacle of our construction expertise in our latest
+            creation
+          </p>
+        </div>
+      </BlurFade>
 
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl lg:px-20">
@@ -55,30 +59,37 @@ const LatestProject: FC<Props> = (props) => {
 
                 <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
                   <div className="backdrop-blur-custom shadow-2xl rounded-md">
-                    <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
-                      {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
-                      <span className="block text-xl font-boldsm:text-4xl lg:text-2xl capitalize">
-                        {latestProject.projectSector}
-                      </span>
-                      <span className="block mt-2 text-sm font-medium leading-snug sm:text-base">
-                        {" "}
-                        Completed on:
-                        <br />
-                        {latestProject.endDate}{" "}
-                      </span>
-                    </div>
+                    <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                      <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
+                        {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
+
+                        <span className="block text-xl font-boldsm:text-4xl lg:text-2xl capitalize">
+                          {latestProject.projectSector}
+                        </span>
+                        <span className="block mt-2 text-sm font-medium leading-snug sm:text-base">
+                          {" "}
+                          Completed on:
+                          <br />
+                          {latestProject.endDate}{" "}
+                        </span>
+                      </div>
+                    </BoxReveal>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="md:order-1">
-              <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
-                {latestProject.projectName}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-gray-500">
-                {latestProject.client}
-              </p>
+              <BlurFade delay={0.25} inView>
+                <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
+                  {latestProject.projectName}
+                </h2>
+              </BlurFade>
+              <BlurFade delay={0.25 * 2} inView>
+                <p className="mt-4 text-base leading-relaxed text-gray-500">
+                  {latestProject.client}
+                </p>
+              </BlurFade>
 
               <a
                 href="/projects"

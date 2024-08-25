@@ -1,12 +1,12 @@
 export type CoverImage = {
   url: string;
-  file: File;
+  file: string;
 };
 
 export type Image = {
   _key: string;
   url: string;
-  file: File;
+  file: string;
 };
 
 type Slug = {

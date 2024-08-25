@@ -4,20 +4,29 @@ import Aos from "aos";
 import Image from "next/image";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-
+import useAOS from "@/hooks/useAOS";
 
 const ChairmanOfBoards = () => {
+  const aos = useAOS();
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      Aos.init({
-        duration: 1200,
-      });
-    }
-  }, []);
+    aos.refresh(); // Refresh AOS on initial load
+
+    // Refresh AOS on route change in Next.js
+    const handleRouteChange = () => {
+      aos.refresh();
+    };
+
+    // Clean up event listener
+    window.addEventListener("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("routeChangeComplete", handleRouteChange);
+    };
+  }, [aos]);
 
   return (
-    <section className="md:px-32 px-2 py-20">
+    <section className="md:px-32 px-0 py-20">
       <div className="flex flex-col justify-center items-center gap-y-3">
         <h1
           data-aos="fade-up"
@@ -29,7 +38,7 @@ const ChairmanOfBoards = () => {
         <p
           data-aos="fade-up"
           data-aos-duration="800"
-          className="font-title dark:text-[#f5f5f5b1]"
+          className="font-title dark:text-[#f5f5f5b1] px-10"
         >
           Building trust and excellence from the foundation up
         </p>

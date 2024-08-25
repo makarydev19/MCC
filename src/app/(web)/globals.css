@@ -50,7 +50,7 @@
 }
 
 .active {
-  @apply font-bold;
+  @apply border-b-[1.2px] border-spacing-12 border-black dark:border-white/[0.3] px-3;
 }
 
 .landing-bg {

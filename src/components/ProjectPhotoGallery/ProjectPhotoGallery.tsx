@@ -83,8 +83,8 @@ const ProjectPhotoGallery: FC<{
               onClick={openModal.bind(this, maximiumVisiblePhotos)}
             >
               <Image
-                width={150}
-                height={150}
+                width={2000}
+                height={2000}
                 src={photos[maximiumVisiblePhotos - 1].url}
                 alt={`Project Photo ${maximiumVisiblePhotos}`}
                 className="img"
@@ -102,8 +102,8 @@ const ProjectPhotoGallery: FC<{
               <Image
                 src={photos[currentPhotoIndex].url}
                 alt={`Room Photo ${currentPhotoIndex + 1}`}
-                width={150}
-                height={150}
+                width={2000}
+                height={2000}
                 className="img"
               />
               <div className="flex justify-between items-center py-3">
