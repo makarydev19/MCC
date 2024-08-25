@@ -11,28 +11,27 @@ const AboutUs = () => {
   const words = ["construction", "building", "architectural"];
   return (
     <section className="pb-20">
-      <AuroraBackground>
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 items-center justify-center px-4"
-        >
-          <h1 className="lg:text-7xl text-5xl dark:text-white">
-            <p className="text-2xl">About Us</p>
-            We specialize in turning your <br />
-            <WordRotate
-              className="text-red-700 dark:text-secondary"
-              words={words}
-            />
-            dreams into reality
-          </h1>
-        </motion.div>
-      </AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4 mt-40"
+      >
+        <h1 className="lg:text-7xl text-5xl dark:text-white">
+          <p className="text-2xl">About Us</p>
+          We specialize in turning your <br />
+          <WordRotate
+            className="text-red-700 dark:text-secondary"
+            words={words}
+          />
+          dreams into reality
+        </h1>
+      </motion.div>
+
       <Counts />
       <div className="lg:px-20 px-0">
         <section className="py-10 sm:py-16 lg:py-24">

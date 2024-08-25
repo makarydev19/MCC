@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { Project } from "@/models/project";
 import { FC } from "react";
+import BoxReveal from "../ui/box-reveal";
 
 type Props = {
   latestProject: Project;
@@ -14,18 +15,10 @@ const LatestProject: FC<Props> = (props) => {
   return (
     <section className="container mx-auto md:px-16 px-5 py-24">
       <div className="flex flex-col gap-y-3">
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-heading text-center dark:text-[whitesmoke]"
-        >
+        <h1 className="font-heading text-center dark:text-[whitesmoke]">
           Latest Project
         </h1>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-title lg:w-[35rem] w-[100%] self-center dark:text-[#f5f5f5d4]"
-        >
+        <p className="font-title lg:w-[35rem] w-[100%] self-center dark:text-[#f5f5f5d4]">
           Experience the pinnacle of our construction expertise in our latest
           creation
         </p>
@@ -35,32 +28,30 @@ const LatestProject: FC<Props> = (props) => {
         <div className="max-w-6xl lg:px-20">
           <div className="grid items-center md:grid-cols-2 md:gap-x-20 gap-y-10">
             <div className="relative lg:pl-16 lg:pr-10 px-10 md:pl-0 xl:pr-0 md:order-2">
-              <Image
-                data-aos="fade-in"
-                data-aos-offset="200"
-                data-aos-easing="ease-in-sine"
-                width={100}
-                height={100}
-                className="absolute top-6 -right-4 xl:-right-12"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/features/3/dots-pattern.svg"
-                alt=""
-              />
-
-              <div className="relative max-w-xs ml-auto">
-                <div
+              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                <Image
                   data-aos="fade-in"
                   data-aos-offset="200"
                   data-aos-easing="ease-in-sine"
-                  className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg"
-                >
-                  <Image
-                    alt={latestProject.projectName}
-                    src={latestProject.coverImage.url}
-                    width={2000}
-                    height={2000}
-                    className="img scale-animation"
-                  />
-                </div>
+                  width={100}
+                  height={100}
+                  className="absolute top-6 -right-4 xl:-right-12"
+                  src="https://cdn.rareblocks.xyz/collection/celebration/images/features/3/dots-pattern.svg"
+                  alt=""
+                />
+              </BoxReveal>
+              <div className="relative max-w-xs ml-auto">
+                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                  <div className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg">
+                    <Image
+                      alt={latestProject.projectName}
+                      src={latestProject.coverImage.url}
+                      width={2000}
+                      height={2000}
+                      className="img scale-animation"
+                    />
+                  </div>
+                </BoxReveal>
 
                 <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
                   <div className="backdrop-blur-custom shadow-2xl rounded-md">
@@ -82,27 +73,14 @@ const LatestProject: FC<Props> = (props) => {
             </div>
 
             <div className="md:order-1">
-              <h2
-                data-aos="fade-in"
-                data-aos-offset="200"
-                data-aos-easing="ease-in-sine"
-                className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl"
-              >
+              <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
                 {latestProject.projectName}
               </h2>
-              <p
-                data-aos="fade-in"
-                data-aos-offset="200"
-                data-aos-easing="ease-in-sine"
-                className="mt-4 text-base leading-relaxed text-gray-500"
-              >
+              <p className="mt-4 text-base leading-relaxed text-gray-500">
                 {latestProject.client}
               </p>
 
               <a
-                data-aos="fade-right"
-                data-aos-offset="200"
-                data-aos-easing="ease-in-sine"
                 href="/projects"
                 className="inline-flex items-center justify-center max-sm:w-full px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
                 role="button"

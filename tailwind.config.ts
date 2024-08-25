@@ -23,7 +23,8 @@ module.exports = {
     extend: {
       colors: {
         text: "#030303",
-        background: "#f4f4f4",
+        LightModeBG: "#FBFCF8",
+        DarkModeBG: "#09090B",
         primary: "#1c1c1c",
         secondary: "#d40000",
         accent: "#000000",

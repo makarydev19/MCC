@@ -1,6 +1,21 @@
+"use client";
+
+import Aos from "aos";
 import Image from "next/image";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
 
 const ChairmanOfBoards = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      Aos.init({
+        duration: 1200,
+      });
+    }
+  }, []);
+
   return (
     <section className="md:px-32 px-2 py-20">
       <div className="flex flex-col justify-center items-center gap-y-3">
