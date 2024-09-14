@@ -13,9 +13,10 @@ type Props = {
 
 const LatestProject: FC<Props> = (props) => {
   const { latestProject } = props;
+
   return (
     <section className="container mx-auto md:px-16 px-5 py-24">
-      <BlurFade delay={0.25} inView>
+      <BlurFade delay={0.25}>
         <div className="flex flex-col gap-y-3">
           <h1 className="font-heading text-center dark:text-[whitesmoke]">
             Latest Project

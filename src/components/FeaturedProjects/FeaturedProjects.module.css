@@ -1,0 +1,67 @@
+.sliderContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  flex: 0 0 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.navButton {
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.prevButton {
+  margin-right: 10px;
+}
+
+.nextButton {
+  margin-left: 10px;
+}
+
+.thumbnailContainer {
+  display: flex;
+  overflow-x: auto;
+  width: 100vw; /* Full viewport width */
+  white-space: nowrap;
+  padding: 10px 0;
+  position: relative; /* Ensure it is positioned correctly */
+}
+
+.thumbnail {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  margin-right: 10px; /* Space between thumbnails */
+  flex: 0 0 auto; /* Prevents thumbnails from shrinking */
+}
+
+.activeThumbnail {
+  opacity: 1;
+}

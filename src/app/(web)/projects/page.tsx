@@ -1,5 +1,7 @@
 "use client";
 
+import React, { useRef } from "react";
+
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
@@ -12,6 +14,7 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
+import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
 
 const Projects = () => {
   const [projectSectorFilter, setProjectSectorFilter] = useState("");
@@ -98,17 +101,8 @@ const Projects = () => {
 
   return (
     <section className="pb-20">
-      <div className="projects-page lg:h-[75vh] h-[45vh] rounded-b-xl">
-        <div className="w-full h-full flex gap-y-20 flex-col items-center justify-center backdrop-brightness-[.4] rounded-b-xl lg:py-20 py-10">
-          <div>
-            <TextGenerateEffect
-              className="text-gray-100 lg:text-7xl text-3xl w-[95%] mx-auto text-center"
-              words="Transforming blueprints into beautiful, functional spaces"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="w-full h-full lg:flex flex-col items-center lg:-mt-11 -mt-5 sticky z-50">
+      <FeaturedProjects />
+      <div className="w-full h-full lg:flex flex-col items-center sticky z-50 pt-20">
         <div
           data-aos="fade-up"
           data-aos-duration="900"

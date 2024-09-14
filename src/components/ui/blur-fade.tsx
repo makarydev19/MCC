@@ -1,13 +1,15 @@
 "use client";
-
 import { useRef } from "react";
 import {
   AnimatePresence,
   motion,
+  useAnimation,
   useInView,
   UseInViewOptions,
   Variants,
 } from "framer-motion";
+
+import React from "react";
 
 type MarginType = UseInViewOptions["margin"];
 
@@ -21,7 +23,6 @@ interface BlurFadeProps {
   duration?: number;
   delay?: number;
   yOffset?: number;
-  inView?: boolean;
   inViewMargin?: MarginType;
   blur?: string;
 }
@@ -33,24 +34,34 @@ export default function BlurFade({
   duration = 0.4,
   delay = 0,
   yOffset = 6,
-  inView = false,
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  const isInView = !inView || inViewResult;
+  const ref = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  const inViewResult = useInView(ref, { once: false, margin: inViewMargin });
+  const isInView = inViewResult;
+
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
+
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
   return (
     <AnimatePresence>
       <motion.div
         ref={ref}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={controls}
         exit="hidden"
         variants={combinedVariants}
         transition={{

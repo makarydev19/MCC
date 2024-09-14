@@ -37,7 +37,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             coverImage={project.coverImage}
           />
         </div>
-        <p className="text-2xl text-left lg:text-5xl lg:h-[30vh] lg:w-[55%] w-[95%] font-bold relative bg-clip-text dark:text-transparent text-black bg-gradient-to-b from-neutral-200 to-neutral-500 lg:mt-0 mt-32 px-4">
+        <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl lg:h-[30vh] lg:w-[55%] w-[95%] relative bg-clip-text dark:text-transparent text-black bg-gradient-to-b from-neutral-200 to-neutral-500 lg:mt-0 mt-32 px-4">
           {project.projectName}
         </p>
         <hr className="bg-slate-700 w-[80%] mb-10" />
@@ -54,13 +54,13 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           </h2>
           <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
             <h1 className="lg:text-5xl text-3xl">Construction Works</h1>
-            <h3 className="lg:text-4xl text-xl capitalize dark:text-zinc-400 text-zinc-600">
+            <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
               {project.constructionWorks}
-            </h3>
+            </h4>
           </div>
           <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
             <h1 className="lg:text-5xl text-3xl">Finishing Works</h1>
-            <h3 className="lg:text-3xl text-xl capitalize dark:text-zinc-400 text-zinc-600">
+            <h3 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
               {project.finishingWorks}
             </h3>
           </div>

@@ -42,7 +42,7 @@ const WhoWeAre = () => {
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
             <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl shadow-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
+              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
                   src={`/pexels-technobulka-10816119.jpg`}
                   alt=""
@@ -54,7 +54,7 @@ const WhoWeAre = () => {
             </BoxReveal>
             <div className="-mt-3">
               <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-                <div className="mb-3 shadow-2xl rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
+                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
                   <Image
                     src={`/pexels-matreding-11739070.jpg`}
                     alt=""
@@ -65,7 +65,7 @@ const WhoWeAre = () => {
                 </div>
               </BoxReveal>
               <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-                <div className="shadow-2xl rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
+                <div className="rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
                   <Image
                     src={`/pexels-pixabay-209272.jpg`}
                     alt=""

@@ -13,16 +13,17 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
+import BoxReveal from "../ui/box-reveal";
 
 const OurClients = () => {
   return (
     <section className="py-10 sm:py-16 lg:py-24">
-      <div
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
-        className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-24"
-      >
-        <div className="mx-auto text-center">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-24">
+        <div
+          className="mx-auto text-center"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-center"
+        >
           <h2 className="font-heading dark:text-[whitesmoke]">
             Trusted by world class companies, design teams & popular designers
           </h2>
@@ -43,13 +44,15 @@ const OurClients = () => {
           >
             {Clients.map((clients) => (
               <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <Image
-                  src={clients.img}
-                  alt=""
-                  width={300}
-                  height={300}
-                  className=""
-                />
+                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                  <Image
+                    src={clients.img}
+                    alt=""
+                    width={300}
+                    height={300}
+                    className=""
+                  />
+                </BoxReveal>
               </SwiperSlide>
             ))}
           </Swiper>
