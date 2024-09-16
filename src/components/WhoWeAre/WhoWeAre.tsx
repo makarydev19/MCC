@@ -31,7 +31,7 @@ const WhoWeAre = () => {
                 challenge and special circumstance.
               </p>
             </BlurFade>
-            <BlurFade delay={0.25 * 2} inView>
+            <BlurFade delay={0.25 * 2}>
               <p className="mt-5 text-base rounded-2xl px-4 py-3">
                 With a well-respected track record behind us, and a solid
                 outlook ahead, we’ve learned that our collaborative experience
