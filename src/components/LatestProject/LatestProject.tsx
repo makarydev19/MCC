@@ -81,12 +81,12 @@ const LatestProject: FC<Props> = (props) => {
             </div>
 
             <div className="md:order-1">
-              <BlurFade delay={0.25} inView>
+              <BlurFade delay={0.25}>
                 <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
                   {latestProject.projectName}
                 </h2>
               </BlurFade>
-              <BlurFade delay={0.25 * 2} inView>
+              <BlurFade delay={0.25 * 2}>
                 <p className="mt-4 text-base leading-relaxed text-gray-500">
                   {latestProject.client}
                 </p>
