@@ -44,7 +44,7 @@ export const Services = [
     title: "Concrete work of all kinds",
     discription:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ",
-
+    works1: "",
     img: "/construction-crane-concept-illustration.png",
     img2: "/pexels-technobulka-10816119.jpg",
   },

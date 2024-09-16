@@ -5,8 +5,6 @@ import { Services } from "@/data/data";
 import Image from "next/image";
 import BoxReveal from "../ui/box-reveal";
 
-// import required modules
-
 const OurFeatures = () => {
   return (
     <section className="my-20 services-bg h-full w-full">
@@ -14,12 +12,12 @@ const OurFeatures = () => {
         <div className="lg:px-10 px-5 py-10 mx-auto">
           <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
             <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-              <h1 className="md:text-5xl text-4xl md:w-[80%] text-wrap text-white mb-5 lg:text-left text-center font-roboto">
+              <h1 className="md:text-5xl text-4xl md:w-[80%] lg:mx-0 md:mx-auto text-wrap text-white mb-5 lg:text-left text-center font-roboto">
                 We Provide Strong Services For You
               </h1>
             </BoxReveal>
             <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-              <p className="md:text-lg lg:text-sm md:w-[85%] text-white mb-5 lg:text-left text-center font-roboto">
+              <p className="md:text-lg lg:text-sm md:w-[85%] lg:mx-0 md:mx-auto text-white mb-5 lg:text-left text-center font-roboto">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum eveniet explicabo quae. Quaerat a fugit est mollitia
                 quae nihil placeat eius iusto ullam aut, illo nesciunt beatae

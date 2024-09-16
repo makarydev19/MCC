@@ -26,7 +26,7 @@ const ChairmanOfBoards = () => {
   }, [aos]);
 
   return (
-    <section className="md:px-32 px-0 py-20">
+    <section className="lg:px-32 md:px-20 px-0 py-20">
       <div className="flex flex-col justify-center items-center gap-y-3">
         <h1
           data-aos="fade-up"

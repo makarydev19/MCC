@@ -21,9 +21,9 @@ const Counts = () => {
                 start={0}
                 end={counts.num}
                 duration={3}
-                className="font-bold text-5xl ml-2 font-sans"
+                className="font-bold text-4xl ml-2 font-sans"
               />
-              <span className="text-5xl font-sans font-extrabold">+</span>
+              <span className="text-3xl font-sans font-extrabold">+</span>
             </div>
             <p className="font-bold text-2xl font-mono">{counts.title}</p>
           </div>

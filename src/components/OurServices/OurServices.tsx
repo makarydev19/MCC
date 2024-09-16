@@ -69,23 +69,23 @@ const OurServices = () => {
           </ContainerScroll>
         </div>
       </div>
-      <section className="lg:px-1 px-5 lg:-mt-28 -mt-36 sticky">
+      <section className="lg:px-1 px-5 lg:-mt-28 md:-mt-[4.6rem] -mt-36 sticky">
         <section className="py-10 sm:py-16 lg:py-24">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-28">
             <div className="max-w-xl mx-auto text-center">
-              <BlurFade delay={0.25} inView>
+              <BlurFade delay={0.25}>
                 <div className="inline-flex px-4 py-1.5 mx-auto rounded-full bg-gradient-to-r from-fuchsia-600 to-red-600">
                   <p className="text-xs font-semibold tracking-widest text-white uppercase">
                     130+ Handcoded Blocks
                   </p>
                 </div>
               </BlurFade>
-              <BlurFade delay={0.25} inView>
+              <BlurFade delay={0.25}>
                 <h2 className="mt-6 text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
                   Celebration helps you build beautiful website
                 </h2>
               </BlurFade>
-              <BlurFade delay={0.25} inView>
+              <BlurFade delay={0.25}>
                 <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
                   Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                   amet sint. Velit officia consequat duis enim velit mollit.

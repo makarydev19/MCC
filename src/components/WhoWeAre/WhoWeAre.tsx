@@ -7,22 +7,22 @@ import BoxReveal from "../ui/box-reveal";
 
 const WhoWeAre = () => {
   return (
-    <section className="md:px-32 px-5 py-10">
+    <section className="lg:px-32 md:px-20 px-5 py-10">
       <div className="lg:m-0">
-        <BlurFade delay={0.25} inView>
+        <BlurFade delay={0.25}>
           <h2 className="text-lg font-sans font-medium text-secondary uppercase">
             Who We Are
           </h2>
         </BlurFade>
         <div className="flex flex-wrap lg:w-full items-center">
           <div className="flex-grow lg:w-5/12 lg:mb-0 mb-10 ">
-            <BlurFade delay={0.25 * 2} inView>
+            <BlurFade delay={0.25 * 2}>
               <h1 className="text-4xl mt-4">
                 For over 20 years, MCC has transformed visions and ideas into
                 steel, masonry, and concrete realities.
               </h1>
             </BlurFade>
-            <BlurFade delay={0.25 * 2} inView>
+            <BlurFade delay={0.25 * 2}>
               <p className="mt-8 text-base rounded-2xl px-4 py-3">
                 Our clients represent a broad spectrum of industries and
                 business sectors, allowing us the opportunity to apply our

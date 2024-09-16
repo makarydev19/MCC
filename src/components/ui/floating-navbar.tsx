@@ -84,11 +84,11 @@ export const FloatingNav = ({
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  `${isActive(navItem.link)} relative dark:text-neutral-50 items-center flex dark:hover:text-neutral-300 hover:text-neutral-500 text-neutral-800 transition-all`
+                  `${isActive(navItem.link)} relative items-center flex dark:hover:text-neutral-300 hover:text-zinc-950 text-neutral-500 transition-all`
                 )}
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="hidden sm:block text-lg font-thin tracking-wide">
+                <span className="hidden sm:block text-[1.1rem] font-thin tracking-wide uppercase">
                   {navItem.name}
                 </span>
               </Link>
@@ -96,7 +96,7 @@ export const FloatingNav = ({
           </div>
         </div>
 
-        <div className="flex items-center lg:gap-x-10">
+        <div className="flex items-center lg:gap-x-5">
           <div className="hidden lg:block">
             <ToggleTheme />
           </div>
@@ -108,7 +108,7 @@ export const FloatingNav = ({
           </div>
 
           <Link href="/contactUs" className="hidden lg:block">
-            <button className="uppercase border text-base tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-xl">
+            <button className="uppercase border text-base tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-1 rounded-xl">
               <span>Contact Us</span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
             </button>

@@ -2,12 +2,12 @@ import Form from "../Form/Form";
 
 const ContactUsForm = () => {
   return (
-    <section className="container mx-auto md:px-32 px-5 py-20">
+    <section className="container mx-auto lg:px-32 md:px-10 px-5 py-20">
       <div className="flex flex-col gap-4">
         <h1
           data-aos="fade-up"
           data-aos-duration="800"
-          className="text-center font-heading w-[80%] md:w-[100%] mx-auto dark:text-[whitesmoke]"
+          className="text-center font-heading w-[80%] md:w-[90%] mx-auto dark:text-[whitesmoke]"
         >
           What Can Us Do For You ?
         </h1>

@@ -102,7 +102,7 @@ const ContactForm: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter your full name"
+                  placeholder="Enter your email"
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                   required
                 />
@@ -124,7 +124,7 @@ const ContactForm: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Enter your full name"
+                  placeholder="Enter your number"
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                   required
                 />

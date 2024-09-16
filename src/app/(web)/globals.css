@@ -50,7 +50,7 @@
 }
 
 .active {
-  @apply border-b-[1.2px] border-spacing-12 border-black dark:border-white/[0.3];
+  @apply border-b-[1.2px] border-spacing-12 border-black dark:border-white/[0.3] dark:text-zinc-50 text-zinc-950;
 }
 
 .landing-bg {
