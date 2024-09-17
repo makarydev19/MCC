@@ -12,9 +12,9 @@ import Search from "@/components/Search/Search";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
 import Link from "next/link";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
 import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
+import { IoFilter } from "react-icons/io5";
 
 const Projects = () => {
   const [projectSectorFilter, setProjectSectorFilter] = useState("");
@@ -82,6 +82,12 @@ const Projects = () => {
     });
   };
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
   const filteredProjects = filterProjects(data || []);
 
   // Pagination state
@@ -102,12 +108,34 @@ const Projects = () => {
   return (
     <section className="pb-20">
       <FeaturedProjects />
-      <div className="w-full h-full lg:flex flex-col items-center sticky z-50 pt-20">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="900"
-          data-aos-anchor-placement="top-bottom"
-        >
+
+      {/* Drawer Toggle Button with Search Icon */}
+      <button
+        onClick={toggleDrawer}
+        className="fixed bottom-10 right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center"
+      >
+        <IoFilter className="text-3xl" />
+      </button>
+
+      {/* Drawer Component */}
+      <div
+        className={`fixed lg:bg-transparent lg:backdrop-blur-xl bg-zinc-100 z-[4000] transform transition-transform duration-500
+        ${
+          drawerOpen
+            ? "lg:translate-y-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 lg:overflow-hidden overflow-auto"
+            : "lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full"
+        }`}
+      >
+        <div className="lg:px-5 px-0 py-10 flex flex-col gap-y-4 h-full justify-start items-start lg:py-24">
+          <div className="px-5 flex items-center justify-center gap-x-12">
+            <h1 className="text-4xl pb-3">Projects Filters</h1>
+            <button
+              onClick={toggleDrawer}
+              className="text-3xl text-black font-bold"
+            >
+              &times;
+            </button>
+          </div>
           <Search
             projectSectorFilter={projectSectorFilter}
             setProjectSectorFilter={setProjectSectorFilter}
@@ -118,6 +146,7 @@ const Projects = () => {
           />
         </div>
       </div>
+
       <div className="lg:px-20 px-5">
         <div className="flex flex-col gap-y-2 lg:mt-32 mt-10">
           <h1 className="lg:text-6xl text-4xl text-center">What We've Built</h1>

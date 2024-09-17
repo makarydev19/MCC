@@ -49,18 +49,18 @@ const Search: FC<Props> = ({
   ];
 
   return (
-    <div className="lg:w-full mx-auto w-[90%] bg-white dark:bg-zinc-900 lg:px-10 px-2 py-4 rounded-md shadow-2xl">
+    <div className="lg:w-full mx-auto w-[90%] bg-zinc-100 dark:bg-zinc-900 px-2 py-4 rounded-md ">
       <div className="relative flex gap-5 items-center justify-between">
         <div className="flex flex-wrap flex-grow gap-4">
           {/* Project Sector Select with Icon */}
-          <div className="flex flex-col lg:border-0 border-l-[1.5px] border-[#00000022] dark:border-zinc-700">
+          <div className="flex flex-col border-l-[1.5px] border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
-              <FaBuilding className="text-gray-500 dark:text-gray-200" />
-              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+              <FaBuilding className="text-zinc-900 dark:text-gray-200" />
+              <h3 className="text-zinc-950 dark:text-gray-200 font-medium">
                 Project Sector
               </h3>
             </div>
-            <div className="relative lg:w-[15rem] w-[19.4rem]">
+            <div className="relative w-[19.4rem]">
               <CustomSelect
                 options={projectSectors}
                 value={projectSectorFilter}
@@ -73,12 +73,12 @@ const Search: FC<Props> = ({
           {/* End Date Select with Icon */}
           <div className="flex flex-col border-l-[1.5px]  border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
-              <FaCalendarAlt className="text-gray-500 dark:text-gray-200" />
-              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+              <FaCalendarAlt className="text-zinc-900 dark:text-gray-200" />
+              <h3 className="text-zinc-950 dark:text-gray-200 font-medium">
                 End Date
               </h3>
             </div>
-            <div className="flex flex-col relative lg:w-[15rem] w-[19.4rem]">
+            <div className="flex flex-col relative w-[19.4rem]">
               <CustomSelect
                 options={years}
                 value={endDateFilter}
@@ -91,12 +91,12 @@ const Search: FC<Props> = ({
           {/* Location Select with Icon */}
           <div className="flex flex-col border-l-[1.5px] border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex items-center gap-x-4 pb-1">
-              <FaLocationDot className="text-gray-500 dark:text-gray-200" />
-              <h3 className="text-gray-800 dark:text-gray-200 font-medium">
+              <FaLocationDot className="text-zinc-900 dark:text-gray-200" />
+              <h3 className="text-zinc-950 dark:text-gray-200 font-medium">
                 Location
               </h3>
             </div>
-            <div className="relative lg:w-[15rem] w-[19.4rem]">
+            <div className="relative w-[19.4rem]">
               <CustomSelect
                 options={locations}
                 value={locationFilter}

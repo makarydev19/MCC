@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, ChangeEvent, FC } from "react";
+import { useState, useEffect, useRef, FC } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 type CustomSelectProps = {
@@ -46,26 +46,36 @@ const CustomSelect: FC<CustomSelectProps> = ({
 
   return (
     <div className="relative" ref={selectRef}>
+      {/* Select Box */}
       <div
-        className="flex items-center justify-between w-full p-2 bg-white dark:bg-zinc-900 cursor-pointer"
+        className="flex items-center flex-wrap justify-between w-full p-2 bg-transparent dark:bg-zinc-900 cursor-pointer"
         onClick={toggleDropdown}
       >
         <span>{value || placeholder || "Select an option"}</span>
-        <FaChevronDown className="text-sm" />
+        <FaChevronDown
+          className={`text-sm transform transition-transform duration-300 ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />
       </div>
-      {isOpen && (
-        <div className="absolute z-10 w-full mt-2 overflow-y-auto bg-white dark:bg-zinc-900 shadow-lg max-h-48">
-          {options.map((option) => (
-            <div
-              key={option}
-              className="px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer dark:hover:bg-zinc-800 hover:bg-gray-100"
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
+
+      {/* Dropdown Options */}
+      <div
+        className={`z-10 w-full mt-2 bg-transparent dark:bg-zinc-900 hide-scrollbar transition-all duration-300 ${
+          isOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+        }`}
+        style={{ overflowY: isOpen ? "auto" : "hidden" }} // Ensures smooth scrolling once opened
+      >
+        {options.map((option) => (
+          <div
+            key={option}
+            className="relative px-4 py-2 text-sm text-gray-900 dark:text-white cursor-pointer dark:hover:bg-zinc-800 hover:bg-gray-100"
+            onClick={() => handleOptionClick(option)}
+          >
+            {option}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
