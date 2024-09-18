@@ -8,6 +8,7 @@ interface BoxRevealProps {
   width?: "fit-content" | "100%";
   boxColor?: string;
   duration?: number;
+  className?: string;
 }
 
 export const BoxReveal = ({
@@ -15,6 +16,7 @@ export const BoxReveal = ({
   width = "fit-content",
   boxColor,
   duration,
+  className,
 }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
