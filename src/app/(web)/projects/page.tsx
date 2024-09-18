@@ -12,7 +12,7 @@ import { Project } from "@/models/project";
 import Search from "@/components/Search/Search";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import Link from "next/link";
-import { IoFilter } from "react-icons/io5";
+import { TbFilterSearch } from "react-icons/tb";
 import BlurFade from "@/components/ui/blur-fade";
 import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
 import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
