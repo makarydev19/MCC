@@ -16,7 +16,6 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import Link from "next/link";
 import { IoFilter } from "react-icons/io5";
 import BlurFade from "@/components/ui/blur-fade";
-import { TbFilterSearch } from "react-icons/tb";
 import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
 import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
 
@@ -158,25 +157,9 @@ const Projects = () => {
 
   if (error) return <div>Error loading projects</div>;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowFilterButton(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const target = showFilterIcon.current;
-    if (target) observer.observe(target);
-
-    return () => {
-      if (target) observer.unobserve(target);
-    };
-  }, []);
-
   // Custom CSS for sliding transition
-  const filterButtonClass = `fixed bottom-10  right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
-    showFilterButton ? "translate-x-0 rotate-0" : "translate-x-20 -rotate-90"
+  const filterButtonClass = `fixed bottom-10 right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
+    showFilterButton ? "translate-x-0" : "translate-x-full"
   }`;
 
   return (
@@ -185,17 +168,17 @@ const Projects = () => {
 
       {/* Filter Button with sliding animation */}
       <button
-        title="Projects Filters"
         type="button"
+        title="Projects Filters"
         onClick={toggleDrawer}
         className={filterButtonClass}
       >
-        <TbFilterSearch className="text-3xl" />
+        <IoFilter className="text-3xl" />
       </button>
 
       {/* Drawer Content */}
       <div
-        className={`fixed lg:bg-transparent  lg:backdrop-blur-xl bg-zinc-100 z-[4000] transform transition-transform duration-500
+        className={`fixed lg:bg-transparent lg:backdrop-blur-xl bg-zinc-100 z-[4000] transform transition-transform duration-500
           ${
             drawerOpen
               ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 lg:overflow-hidden overflow-auto"
