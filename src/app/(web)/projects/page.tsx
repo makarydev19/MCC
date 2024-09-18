@@ -184,7 +184,12 @@ const Projects = () => {
       <FeaturedProjects />
 
       {/* Filter Button with sliding animation */}
-      <button onClick={toggleDrawer} className={filterButtonClass}>
+      <button
+        title="Projects Filters"
+        type="button"
+        onClick={toggleDrawer}
+        className={filterButtonClass}
+      >
         <TbFilterSearch className="text-3xl" />
       </button>
 
