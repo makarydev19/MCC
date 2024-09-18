@@ -181,7 +181,7 @@ const Projects = () => {
         className={`fixed lg:bg-transparent lg:backdrop-blur-xl bg-zinc-100 z-[4000] transform transition-transform duration-500
           ${
             drawerOpen
-              ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 lg:overflow-hidden overflow-auto"
+              ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 lg:overflow-hidden overflow-auto hide-scrollbar"
               : "lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full"
           }`}
       >
