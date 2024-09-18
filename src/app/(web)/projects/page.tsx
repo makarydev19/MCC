@@ -14,8 +14,8 @@ import { Project } from "@/models/project";
 import Search from "@/components/Search/Search";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import Link from "next/link";
-import { IoFilter } from "react-icons/io5";
 import BlurFade from "@/components/ui/blur-fade";
+import { TbFilterSearch } from "react-icons/tb";
 import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
 import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
 
@@ -157,9 +157,25 @@ const Projects = () => {
 
   if (error) return <div>Error loading projects</div>;
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowFilterButton(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    const target = showFilterIcon.current;
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []);
+
   // Custom CSS for sliding transition
-  const filterButtonClass = `fixed bottom-10 right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
-    showFilterButton ? "translate-x-0" : "translate-x-full"
+  const filterButtonClass = `fixed bottom-10  right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
+    showFilterButton ? "translate-x-0 rotate-0" : "translate-x-20 -rotate-90"
   }`;
 
   return (
@@ -173,7 +189,7 @@ const Projects = () => {
         onClick={toggleDrawer}
         className={filterButtonClass}
       >
-        <IoFilter className="text-3xl" />
+        <TbFilterSearch className="text-3xl" />
       </button>
 
       {/* Drawer Content */}
