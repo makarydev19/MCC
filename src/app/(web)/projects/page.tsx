@@ -178,10 +178,10 @@ const Projects = () => {
 
       {/* Drawer Content */}
       <div
-        className={`fixed lg:bg-transparent lg:backdrop-blur-xl bg-zinc-100 z-[4000] transform transition-transform duration-500
+        className={`fixed lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-3xl bg-zinc-100 dark:bg-zinc-900 z-[4000] transform transition-transform duration-500
           ${
             drawerOpen
-              ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 lg:overflow-hidden overflow-auto hide-scrollbar"
+              ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 overflow-auto hide-scrollbar"
               : "lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full"
           }`}
       >
@@ -190,7 +190,7 @@ const Projects = () => {
             <h1 className="text-4xl pb-3">Projects Filters</h1>
             <button
               onClick={toggleDrawer}
-              className="text-3xl text-black font-bold"
+              className="text-3xl text-black dark:text-zinc-100 font-bold"
             >
               &times;
             </button>
@@ -220,7 +220,7 @@ const Projects = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {displayedProjects.map((project, idx) => (
-              <BlurFade key={project._id} delay={0.25 + idx * 0.2}>
+              <BlurFade key={project._id} delay={0.25 + idx * 0.1}>
                 <ProjectCard project={project} />
               </BlurFade>
             ))}

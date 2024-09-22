@@ -58,7 +58,7 @@
 }
 
 .services-bg {
-  background: url(/pexels-rezwan-1145434.jpg) no-repeat center / cover;
+  background: url(/porto\ october\ 003.jpg) no-repeat center / cover;
 }
 
 .servicesbg-page {
@@ -105,7 +105,7 @@ p {
 }
 
 .btn-primary {
-  @apply py-3 md:py-4 bg-white border-[1px] border-[#efefef22] text-black rounded-xl md:rounded-2xl shadow-md shadow-black font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
+  @apply py-3 md:py-4 bg-white border-[1px] border-[#efefef22] text-black rounded-xl md:rounded-2xl shadow-md font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
 }
 
 .btn-tertiary {

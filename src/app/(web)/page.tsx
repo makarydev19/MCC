@@ -16,7 +16,9 @@ const Home = async () => {
       <WhoWeAre />
       <OurFeatures />
       <ChairmanOfBoards />
-      <OurClients />
+      <div className="lg:px-20">
+        <OurClients />
+      </div>
       <LatestProject latestProject={latestProject} />
       <ContactUsForm />
     </>

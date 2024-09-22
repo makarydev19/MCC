@@ -30,10 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`scroll-smooth bg-[#FBFCF8] ${inter.variable} dark:text-white text-black`}
-    >
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <body className={roboto.className}>
         <ThemeProvider>
           <main className="font-normal">

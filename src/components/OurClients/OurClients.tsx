@@ -28,7 +28,7 @@ const OurClients = () => {
             Trusted by world class companies, design teams & popular designers
           </h2>
         </div>
-        <div className="mt-20 lg:block hidden dark:bg-zinc-100 rounded-3xl h-24 px-10">
+        <div className="mt-20 lg:block hidden dark:bg-zinc-100 rounded-2xl h-24 px-10">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
@@ -57,7 +57,7 @@ const OurClients = () => {
             ))}
           </Swiper>
         </div>
-        <div className="mt-10 lg:hidden block">
+        <div className="mt-10 lg:hidden block dark:bg-zinc-100 rounded-2xl h-14 px-10">
           <Swiper
             slidesPerView={3}
             spaceBetween={50}
@@ -65,9 +65,9 @@ const OurClients = () => {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={{
-              clickable: true,
-            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >

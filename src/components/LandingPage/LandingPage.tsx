@@ -9,7 +9,27 @@ export const products = [
   {
     title: "Moonbeam",
     link: "/projects",
-    thumbnail: "/pexels-matreding-11739070.jpg",
+    thumbnail: "/Coral Sea 001.jpg",
+  },
+  {
+    title: "Moonbeam",
+    link: "/projects",
+    thumbnail: "/Coral Sea 009.jpg",
+  },
+  {
+    title: "Moonbeam",
+    link: "/projects",
+    thumbnail: "/porto october 001.jpg",
+  },
+  {
+    title: "Moonbeam",
+    link: "/projects",
+    thumbnail: "/Coral Sea 014.jpg",
+  },
+  {
+    title: "Moonbeam",
+    link: "/projects",
+    thumbnail: "/porto october 001.jpg",
   },
   {
     title: "Moonbeam",
@@ -19,27 +39,7 @@ export const products = [
   {
     title: "Moonbeam",
     link: "/projects",
-    thumbnail: "/pexels-pixabay-51325.jpg",
-  },
-  {
-    title: "Moonbeam",
-    link: "/projects",
-    thumbnail: "/pexels-pixabay-51325.jpg",
-  },
-  {
-    title: "Moonbeam",
-    link: "/projects",
-    thumbnail: "/pexels-pixabay-51325.jpg",
-  },
-  {
-    title: "Moonbeam",
-    link: "/projects",
-    thumbnail: "/pexels-pixabay-51325.jpg",
-  },
-  {
-    title: "Moonbeam",
-    link: "/projects",
-    thumbnail: "/pexels-pixabay-51325.jpg",
+    thumbnail: "/porto october 001.jpg",
   },
   {
     title: "Moonbeam",

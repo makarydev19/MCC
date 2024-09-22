@@ -53,7 +53,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/portrait-engineers-work-hours-job-site.jpg"}
+              src={"/IMG-20231011-WA0002.jpg"}
               width={500}
               height={500}
               className="img scale-animation"
@@ -102,7 +102,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/logo_make_11_06_2023_145.jpg"}
+              src={"/IMG_20210809_144241.jpg"}
               width={500}
               height={500}
               className="img scale-animation"
@@ -117,7 +117,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/pexels-rquiros-2219024.jpg"}
+              src={"/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg"}
               width={500}
               height={500}
               className="img scale-animation"

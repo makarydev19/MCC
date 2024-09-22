@@ -55,7 +55,7 @@ const AboutUs = () => {
                       width={900}
                       height={900}
                       className="img relative"
-                      src="/pexels-pixabay-51325.jpg"
+                      src="/porto october 001.jpg"
                       alt=""
                     />
                   </div>
@@ -130,9 +130,11 @@ const AboutUs = () => {
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
                 <div className="relative w-full max-w-xs mt-4 mb-10 ml-auto">
                   <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-                    <img
-                      className="ml-auto"
-                      src="https://cdn.rareblocks.xyz/collection/celebration/images/features/1/person.jpg"
+                    <Image
+                      width={1000}
+                      height={1000}
+                      className="ml-auto img"
+                      src="/IMG-20211024-WA0014.jpg"
                       alt=""
                     />
                   </BoxReveal>

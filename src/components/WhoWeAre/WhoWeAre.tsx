@@ -44,10 +44,10 @@ const WhoWeAre = () => {
             <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
-                  src={`/pexels-technobulka-10816119.jpg`}
+                  src={`/porto october 002.jpg`}
                   alt=""
-                  width={300}
-                  height={300}
+                  width={3000}
+                  height={3000}
                   className="img scale-animation"
                 />
               </div>
@@ -56,10 +56,10 @@ const WhoWeAre = () => {
               <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
                 <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
                   <Image
-                    src={`/pexels-matreding-11739070.jpg`}
+                    src={`/Coral Sea 001.jpg`}
                     alt=""
-                    width={150}
-                    height={150}
+                    width={1500}
+                    height={1500}
                     className="scale-animation img"
                   />
                 </div>
@@ -67,10 +67,10 @@ const WhoWeAre = () => {
               <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
                 <div className="rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
                   <Image
-                    src={`/pexels-pixabay-209272.jpg`}
+                    src={`/Coral Sea 009.jpg`}
                     alt=""
-                    width={150}
-                    height={150}
+                    width={1500}
+                    height={1500}
                     className="img scale-animation"
                   />
                 </div>

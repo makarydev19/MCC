@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section className="py-10 dark:bg-zinc-950 bg-gray-950 sm:pt-16 lg:pt-10">
+    <section className="py-10 dark:bg-zinc-950 bg-[#fdfdfd] sm:pt-16 lg:pt-10">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7">
           {Links.map((link) => (
             <ul key={link.id}>
               <Link href={link.href}>
-                <li className="text-[whitesmoke] text-balance tracking-wider uppercase">
+                <li className="dark:text-[whitesmoke] text-balance tracking-wider uppercase">
                   {link.title}
                 </li>
               </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <hr className="my-10 border-gray-800" />
+        <hr className="my-10 dark:border-gray-800" />
 
         <div className="flex flex-wrap items-center justify-around">
           <div className="lg:w-20 flex items-center justify-center">
@@ -35,7 +35,7 @@ const Footer = () => {
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
               >
                 <svg
                   className="w-4 h-4"
@@ -54,7 +54,7 @@ const Footer = () => {
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
               >
                 <svg
                   className="w-4 h-4"
@@ -72,7 +72,7 @@ const Footer = () => {
             </li>
           </ul>
 
-          <p className="w-full mt-8 text-sm text-center text-gray-100 md:mt-0 md:w-auto md:order-2">
+          <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto md:order-2">
             © Copyright 2021, All Rights Reserved by MCC
           </p>
         </div>
