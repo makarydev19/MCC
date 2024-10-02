@@ -13,10 +13,6 @@ const LandingPage = () => {
     <section className="h-[100vh] relative">
       {/* Swiper for background images */}
       <Swiper
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
         speed={600}
         parallax={true}
         autoplay={{
