@@ -1,34 +1,8 @@
-import { FaHome } from "react-icons/fa";
-
-export const navItems = [
-  {
-    name: "Home",
-    link: "/",
-    icon: <FaHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
-    name: "Who We Are",
-    link: "/aboutUs",
-  },
-  {
-    name: "What We Do",
-    link: "/services",
-  },
-  {
-    name: "What We've Built",
-    link: "/projects",
-  },
-  {
-    name: "Contact Us",
-    link: "/contactUs",
-  },
-];
-
 export const Links = [
   { id: 1, title: "Home", href: "/" },
-  { id: 2, title: "Who We Are", href: "/aboutUs" },
-  { id: 3, title: "What We Do", href: "/services" },
-  { id: 4, title: "What We've Built", href: "/projects" },
+  { id: 2, title: "About Us", href: "/aboutUs" },
+  { id: 3, title: "Services", href: "/services" },
+  { id: 4, title: "Projects", href: "/projects" },
   { id: 5, title: "Contact Us", href: "/contactUs" },
 ];
 
@@ -139,6 +113,25 @@ export const CountsBox = [
     id: 4,
     num: 10,
     title: "Cities",
+  },
+];
+
+export const LandingPageBackgrounds = [
+  {
+    id: 1,
+    image: "/porto october 001.jpg",
+  },
+  {
+    id: 2,
+    image: "/porto october 002.jpg",
+  },
+  {
+    id: 3,
+    image: "/porto october 003.jpg",
+  },
+  {
+    id: 4,
+    image: "/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg",
   },
 ];
 

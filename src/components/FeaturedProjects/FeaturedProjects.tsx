@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs, Pagination } from "swiper/modules";
+import {
+  FreeMode,
+  Navigation,
+  Thumbs,
+  Pagination,
+  Autoplay,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -30,10 +36,14 @@ const FeaturedProjects: React.FC = () => {
         loop={true}
         onSlideChange={handleProgressUpdate}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs, Pagination]}
+        modules={[FreeMode, Navigation, Thumbs, Pagination, Autoplay]}
         navigation={{
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
         className={styles.customSwiper}
       >

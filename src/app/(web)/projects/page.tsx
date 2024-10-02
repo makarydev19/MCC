@@ -158,7 +158,7 @@ const Projects = () => {
   if (error) return <div>Error loading projects</div>;
 
   // Custom CSS for sliding transition
-  const filterButtonClass = `fixed bottom-10  right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
+  const filterButtonClass = `fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
     showFilterButton ? "translate-x-0 rotate-0" : "translate-x-20 -rotate-90"
   }`;
 
