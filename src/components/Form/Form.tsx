@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { useToast } from "@/hooks/use-toast"; // Make sure to import from your custom hook
 
 interface FormData {
   name: string;
@@ -12,6 +13,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+  const { toast } = useToast(); // Initialize the toast hook from shadcn/ui
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -19,8 +21,6 @@ const ContactForm: React.FC = () => {
     reason: "",
     message: "",
   });
-
-  const [sent, setSent] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,13 +44,25 @@ const ContactForm: React.FC = () => {
       .then(
         (result: { text: any }) => {
           console.log(result.text);
-          setSent(true);
+          // Trigger the toast on successful form submission
+          toast({
+            title: "Success",
+            description: "Your message has been sent successfully.",
+            variant: "default", // You can customize the variant for styling
+          });
         },
         (error: { text: any }) => {
           console.log(error.text);
+          // Trigger toast on error
+          toast({
+            title: "Error",
+            description: "There was an error sending your message.",
+            variant: "default", // Use a different style for errors
+          });
         }
       );
   };
+
   return (
     <div
       data-aos="fade-in"
@@ -67,11 +79,10 @@ const ContactForm: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
             <div>
               <label
-                htmlFor=""
+                htmlFor="name"
                 className="text-base font-medium text-gray-900 dark:text-gray-100"
               >
-                {" "}
-                Your name{" "}
+                Your name
               </label>
               <div className="mt-2.5 relative">
                 <input
@@ -89,11 +100,10 @@ const ContactForm: React.FC = () => {
 
             <div>
               <label
-                htmlFor=""
+                htmlFor="email"
                 className="text-base font-medium text-gray-900 dark:text-gray-100"
               >
-                {" "}
-                Email address{" "}
+                Email address
               </label>
               <div className="mt-2.5 relative">
                 <input
@@ -111,11 +121,10 @@ const ContactForm: React.FC = () => {
 
             <div>
               <label
-                htmlFor=""
+                htmlFor="phone"
                 className="text-base font-medium text-gray-900 dark:text-gray-100"
               >
-                {" "}
-                Phone number{" "}
+                Phone number
               </label>
               <div className="mt-2.5 relative">
                 <input
@@ -154,11 +163,10 @@ const ContactForm: React.FC = () => {
 
             <div className="sm:col-span-2">
               <label
-                htmlFor=""
+                htmlFor="message"
                 className="text-base font-medium text-gray-900 dark:text-gray-100"
               >
-                {" "}
-                Message{" "}
+                Message
               </label>
               <div className="mt-2.5 relative">
                 <textarea
@@ -182,11 +190,6 @@ const ContactForm: React.FC = () => {
               </button>
             </div>
           </div>
-          {sent && (
-            <p className="text-red-700 text-2xl text-center mt-5">
-              Message sent successfully!
-            </p>
-          )}
         </form>
       </div>
     </div>

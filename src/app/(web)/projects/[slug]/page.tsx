@@ -4,6 +4,7 @@ import { getProject } from "@/libs/apis";
 import LoadingSpinner from "../../loading";
 import useSWR from "swr";
 import ProjectPhotoGallery from "@/components/ProjectPhotoGallery/ProjectPhotoGallery";
+import FindConstructionTeam from "@/components/FindConstructionTeam/FindConstructionTeam";
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
   const {
@@ -26,9 +27,9 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
 
   return (
     <section>
-      <div className="h-full w-full dark:bg-black bg-[#FBFCF8] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-20 px-1">
+      <div className="h-full w-full dark:bg-DarkModeBG bg-LightModeBG dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-20 px-1">
         {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-DarkModeBG bg-LightModeBG [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         {/* <Spotlight fill="red" className="top-[40%]" /> */}
         <div className="py-8 lg:pt-24 pt-20 z-10">
@@ -130,6 +131,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           />
         </div> */}
       </div>
+      <FindConstructionTeam />
     </section>
   );
 };

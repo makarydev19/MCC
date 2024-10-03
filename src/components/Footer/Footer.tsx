@@ -6,22 +6,8 @@ const Footer = () => {
   return (
     <section className="py-10 dark:bg-zinc-950 bg-[#fdfdfd] sm:pt-16 lg:pt-10">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7">
-          {Links.map((link) => (
-            <ul key={link.id}>
-              <Link href={link.href}>
-                <li className="dark:text-[whitesmoke] text-balance tracking-wider uppercase">
-                  {link.title}
-                </li>
-              </Link>
-            </ul>
-          ))}
-        </div>
-
-        <hr className="my-10 dark:border-gray-800" />
-
-        <div className="flex flex-wrap items-center justify-around">
-          <div className="lg:w-20 flex items-center justify-center">
+        <div className="flex flex-wrap items-center justify-around gap-7">
+          <div className="w-16 flex items-center justify-center">
             <Image
               src={`/MCC_Logo-removebg-preview.png`}
               alt=""
@@ -29,6 +15,17 @@ const Footer = () => {
               height={100}
               className=""
             />
+          </div>
+          <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7 lg:px-0 px-28">
+            {Links.slice(1).map((link) => (
+              <ul key={link.id}>
+                <Link href={link.href}>
+                  <li className="dark:text-[whitesmoke] text-balance tracking-wider uppercase text-base">
+                    {link.title}
+                  </li>
+                </Link>
+              </ul>
+            ))}
           </div>
           <ul className="flex items-center space-x-3 md:order-3">
             <li>
@@ -71,11 +68,15 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-
-          <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto md:order-2">
-            © Copyright 2021, All Rights Reserved by MCC
-          </p>
         </div>
+        <hr className="my-10 dark:border-gray-800" />
+        <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto md:order-2">
+          © Copyright 2024, All Rights Reserved by{" "}
+          <span className="font-semibold font-inter">
+            {" "}
+            Modern Construction Company
+          </span>
+        </p>
       </div>
     </section>
   );

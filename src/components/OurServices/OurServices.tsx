@@ -34,7 +34,7 @@ const OurServices = () => {
     <section className="pb-20">
       <div className="flex flex-col overflow-hidden">
         <div className="w-full rounded-md flex md:items-center md:justify-center antialiased dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative overflow-hidden">
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-DarkModeBG bg-LightModeBG [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
           <Spotlight
             className="top-40 left-0 md:left-60 md:-top-20"
             fill="red"
@@ -235,7 +235,7 @@ const OurServices = () => {
                     className={`flex flex-col font-inter ${index === 1 ? "gap-y-10" : ""}`}
                   >
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works1}
                       </h3>
                       <p className="text-lg mt-2 dark:text-gray-300">
@@ -244,7 +244,7 @@ const OurServices = () => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works2}
                       </h3>
                       <p className="text-lg mt-2 dark:text-gray-300">
@@ -253,7 +253,7 @@ const OurServices = () => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works3}
                       </h3>
                       <p className="text-lg mt-2 dark:text-gray-300">
@@ -262,7 +262,7 @@ const OurServices = () => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works4}
                       </h3>
                       <p className="text-lg mt-2 dark:text-gray-300">
@@ -271,7 +271,7 @@ const OurServices = () => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works5}
                       </h3>
                       <p className="text-lg mt-2 dark:text-gray-300">
@@ -280,7 +280,7 @@ const OurServices = () => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="800">
-                      <h3 className="text-2xl tracking-wider leading-9 dark:text-gray-100">
+                      <h3 className="text-2xl leading-9 dark:text-gray-100">
                         {services.works6}
                       </h3>
                     </div>
@@ -289,7 +289,7 @@ const OurServices = () => {
                 <div
                   data-aos="fade-right"
                   data-aos-duration="800"
-                  className="lg:w-[40%] w-[100%] h-[70vh] top-10 sticky"
+                  className="lg:w-[40%] w-[100%] h-[70vh] top-28 sticky"
                 >
                   <Image
                     src={services.img2}

@@ -71,7 +71,14 @@ const LatestProject: FC<Props> = (props) => {
                           {" "}
                           Completed on:
                           <br />
-                          {latestProject.endDate}{" "}
+                          {latestProject.endDate
+                            ? new Date(
+                                latestProject.endDate
+                              ).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                              })
+                            : "Still In Progress"}
                         </span>
                       </div>
                     </BoxReveal>

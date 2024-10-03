@@ -13,6 +13,7 @@ const LandingPage = () => {
     <section className="h-[100vh] relative">
       {/* Swiper for background images */}
       <Swiper
+        loop={true}
         speed={600}
         parallax={true}
         autoplay={{
@@ -34,14 +35,14 @@ const LandingPage = () => {
                 className="img"
               />
               {/* Bottom-to-top gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Text Content - Outside the Swiper for stability */}
-      <div className="absolute lg:w-[80%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-10 px-5 lg:py-20 py-16">
+      <div className="absolute lg:w-[80%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-10 px-5 lg:py-20 py-24">
         <p className="lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
           className="uppercase lg:text-6xl text-4xl text-left"
