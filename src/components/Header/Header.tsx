@@ -1,41 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { Links } from "@/data/data";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import ToggleMenu from "../ToggleMenu/ToggleMenu";
-import ToggleTheme from "../ToggleTheme/ToggleTheme";
+import { Links } from '@/data/data';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import ToggleMenu from '../ToggleMenu/ToggleMenu';
+import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 const Header = () => {
-  const [isTop, setIsTop] = useState(true); // Tracks whether the page is scrolled to the top
   const pathname = usePathname();
 
-  const isActive = (href: string) => (pathname === href ? "active" : "");
-
-  // Function to detect scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsTop(false);
-      } else {
-        setIsTop(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isActive = (href: string) => (pathname === href ? 'active' : '');
 
   return (
     <header>
-      <nav
-        className={`flex lg:max-w-[65%] w-full fixed lg:top-3 inset-x-0 mx-auto border lg:rounded-2xl rounded-b-xl z-[5000] px-10 lg:py-3 py-4 items-center lg:justify-around justify-between space-x-9 border-white/[0.2] transition-all duration-300 
-          ${isTop ? "bg-transparent backdrop-blur-md" : "bg-LightModeBG dark:bg-DarkModeBG shadow-md"}
-          ${isTop ? "text-black dark:text-white" : "text-black dark:text-white"}
-        `}
-      >
+      <nav className="bg-LightModeBG dark:bg-DarkModeBG shadow-md flex lg:max-w-[65%] w-full fixed lg:top-3 inset-x-0 mx-auto border lg:rounded-2xl rounded-b-xl z-[5000] px-10 lg:py-3 py-4 items-center lg:justify-around justify-between space-x-9 dark:border-zinc-100/20  transition-all duration-300">
         <Link href="/" className="lg:w-[3.4rem] w-12">
           <Image
             src="/MCC_Logo-removebg-preview.png"

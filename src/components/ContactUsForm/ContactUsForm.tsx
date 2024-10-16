@@ -1,4 +1,4 @@
-import Form from "../Form/Form";
+import Form from '../Form/Form';
 
 const ContactUsForm = () => {
   return (
@@ -115,7 +115,7 @@ const ContactUsForm = () => {
                   Location
                 </p>
                 <p className="mt-4 text-xl font-medium leading-relaxed text-gray-900 dark:text-gray-100">
-                  8502 Preston Rd. Inglewood, Maine 98380, USA
+                  52 El-Ansar, Ad Doqi, Dokki, Giza Governorate 3751060
                 </p>
               </div>
             </div>
