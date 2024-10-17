@@ -15,7 +15,7 @@ const ContactUs = () => {
         </div>
 
         <div className="max-w-5xl mx-auto mt-12 sm:mt-16 flex flex-col gap-y-5">
-          <div className="grid grid-cols-1 gap-6 px-8 text-center md:px-0 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 text-center md:px-0 md:grid-cols-3">
             <div className="overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl">
               <div className="p-6">
                 <svg

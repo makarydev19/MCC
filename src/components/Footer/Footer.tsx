@@ -1,10 +1,16 @@
-import { Links } from "@/data/data";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+
+import { Links } from '@/data/data';
+import Link from 'next/link';
+import Image from 'next/image';
+import ThemeContext from '@/Context/themeContext';
+import { useContext } from 'react';
 
 const Footer = () => {
+  const { darkTheme } = useContext(ThemeContext);
+
   return (
-    <section className="py-10 dark:bg-zinc-950 bg-[#fdfdfd] sm:pt-16 lg:pt-10">
+    <section className="py-3 dark:bg-zinc-950 bg-[#fdfdfd] sm:pt-16 lg:pt-10">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-wrap items-center justify-around gap-7">
           <div className="w-16 flex items-center justify-center">
@@ -70,13 +76,39 @@ const Footer = () => {
           </ul>
         </div>
         <hr className="my-10 dark:border-gray-800" />
-        <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto md:order-2">
-          © Copyright 2024, All Rights Reserved by{" "}
-          <span className="font-semibold font-inter">
-            {" "}
-            Modern Construction Company
-          </span>
-        </p>
+        <div className="flex flex-col w-full justify-center items-center ">
+          <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
+            © Copyright 2024, All Rights Reserved by{' '}
+            <span className="font-semibold font-inter">
+              {' '}
+              Modern Construction Company
+            </span>
+          </p>
+          <div className="flex items-center justify-center">
+            <p className="dark:text-gray-100 text-sm">SITE BY</p>
+            <div className="w-16">
+              <Link href={'https://makend.vercel.app/'}>
+                {darkTheme ? (
+                  <Image
+                    src={`/batch-5---design-6-1__2_-removebg-preview.png`}
+                    alt="logo"
+                    width={100}
+                    height={100}
+                    className="img"
+                  />
+                ) : (
+                  <Image
+                    src={`/myLogo.png`}
+                    alt="logo"
+                    width={100}
+                    height={100}
+                    className="img"
+                  />
+                )}
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

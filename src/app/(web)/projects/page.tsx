@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, {
   useRef,
@@ -6,24 +6,25 @@ import React, {
   useState,
   useCallback,
   useMemo,
-} from "react";
-import { useSearchParams } from "next/navigation";
-import useSWR from "swr";
-import { getProjects } from "@/libs/apis";
-import { Project } from "@/models/project";
-import Search from "@/components/Search/Search";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import Link from "next/link";
-import { TbFilterSearch } from "react-icons/tb";
-import BlurFade from "@/components/ui/blur-fade";
-import { LayoutGridDemo } from "@/components/ProjectsLayoutGrid/ProjectsGrid";
-import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
-import FindConstructionTeam from "@/components/FindConstructionTeam/FindConstructionTeam";
+} from 'react';
+import { useSearchParams } from 'next/navigation';
+import useSWR from 'swr';
+import { getProjects } from '@/libs/apis';
+import { Project } from '@/models/project';
+import Search from '@/components/Search/Search';
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
+import Link from 'next/link';
+import { TbFilterSearch } from 'react-icons/tb';
+import BlurFade from '@/components/ui/blur-fade';
+import { LayoutGridDemo } from '@/components/ProjectsLayoutGrid/ProjectsGrid';
+import FeaturedProjects from '@/components/FeaturedProjects/FeaturedProjects';
+import FindConstructionTeam from '@/components/FindConstructionTeam/FindConstructionTeam';
+import Error from '../error';
 
 const Projects = () => {
-  const [projectSectorFilter, setProjectSectorFilter] = useState("");
-  const [endDateFilter, setEndDateFilter] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
+  const [projectSectorFilter, setProjectSectorFilter] = useState('');
+  const [endDateFilter, setEndDateFilter] = useState('');
+  const [locationFilter, setLocationFilter] = useState('');
 
   const searchParams = useSearchParams();
   const showFilterIcon = useRef<HTMLHeadingElement | null>(null);
@@ -32,13 +33,13 @@ const Projects = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to "What We've Built" section
 
   useEffect(() => {
-    const projectType = searchParams.get("projectType");
+    const projectType = searchParams.get('projectType');
     if (projectType) setProjectSectorFilter(projectType);
   }, [searchParams]);
 
   const fetchData = useCallback(async () => getProjects(), []);
 
-  const { data, error, isLoading } = useSWR("get/projectSectors", fetchData, {
+  const { data, error, isLoading } = useSWR('get/projectSectors', fetchData, {
     revalidateOnFocus: false,
     dedupingInterval: 60000,
   });
@@ -47,7 +48,7 @@ const Projects = () => {
     return (data || []).filter((project: Project) => {
       if (
         projectSectorFilter &&
-        projectSectorFilter.toLowerCase() !== "all" &&
+        projectSectorFilter.toLowerCase() !== 'all' &&
         project.projectSector.toLowerCase() !==
           projectSectorFilter.toLowerCase()
       ) {
@@ -56,21 +57,21 @@ const Projects = () => {
 
       if (
         locationFilter &&
-        locationFilter.toLowerCase() !== "all" &&
+        locationFilter.toLowerCase() !== 'all' &&
         project.location.toLowerCase() !== locationFilter.toLowerCase()
       ) {
         return false;
       }
 
-      if (endDateFilter && endDateFilter.toLowerCase() !== "all") {
+      if (endDateFilter && endDateFilter.toLowerCase() !== 'all') {
         if (
-          endDateFilter.toLowerCase() === "still in progress" &&
+          endDateFilter.toLowerCase() === 'still in progress' &&
           !project.stillInProgress
         ) {
           return false;
         }
         if (
-          endDateFilter.toLowerCase() !== "still in progress" &&
+          endDateFilter.toLowerCase() !== 'still in progress' &&
           project.endDate &&
           new Date(project.endDate).getFullYear().toString() !==
             endDateFilter.toLowerCase()
@@ -99,7 +100,7 @@ const Projects = () => {
   }, [filteredProjects, currentPage]);
 
   const scrollToTop = useCallback(() => {
-    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const goToNextPage = useCallback(() => {
@@ -152,15 +153,20 @@ const Projects = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (error) return <div>Error loading projects</div>;
+  if (error)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Error loading projects
+      </div>
+    );
 
   // Custom CSS for sliding transition
-  const filterButtonClass = `fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-primary text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
-    showFilterButton ? "translate-x-0 rotate-0" : "translate-x-20 -rotate-90"
+  const filterButtonClass = `fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-DarkModeBG dark:bg-LightModeBG text-white dark:text-black  p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
+    showFilterButton ? 'translate-x-0 rotate-0' : 'translate-x-20 -rotate-90'
   }`;
 
   return (
@@ -182,8 +188,8 @@ const Projects = () => {
         className={`fixed lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-3xl bg-zinc-100 dark:bg-zinc-900 z-[4000] transform transition-transform duration-500
           ${
             drawerOpen
-              ? "lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 overflow-auto hide-scrollbar"
-              : "lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full"
+              ? 'lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 overflow-auto hide-scrollbar'
+              : 'lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full'
           }`}
       >
         <div className="lg:px-5 px-0 py-10 flex flex-col gap-y-4 h-full justify-start items-start lg:py-24">
@@ -240,7 +246,7 @@ const Projects = () => {
               <button
                 key={idx}
                 onClick={() => handlePageClick(idx + 1)}
-                className={`py-2 px-4 rounded ${currentPage === idx + 1 ? "bg-primary text-white" : "bg-gray-300"}`}
+                className={`py-2 px-4 rounded ${currentPage === idx + 1 ? 'bg-primary text-white' : 'bg-gray-300'}`}
               >
                 {idx + 1}
               </button>
