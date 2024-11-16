@@ -111,13 +111,15 @@ const Projects = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setShowFilterButton(entry.isIntersecting),
+      ([entry]) => {
+        setShowFilterButton(entry.isIntersecting);
+      },
       { threshold: 0.1 }
     );
+
     const target = showFilterIcon.current;
     if (target) observer.observe(target);
 
-    // Return a cleanup function
     return () => {
       if (target) observer.unobserve(target);
     };
@@ -127,7 +129,10 @@ const Projects = () => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
       const documentHeight = document.body.offsetHeight;
-      setShowFilterButton(scrollPosition < documentHeight);
+
+      if (scrollPosition >= documentHeight) {
+        setShowFilterButton(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
