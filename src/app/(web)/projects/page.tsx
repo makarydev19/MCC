@@ -116,7 +116,11 @@ const Projects = () => {
     );
     const target = showFilterIcon.current;
     if (target) observer.observe(target);
-    return () => target && observer.unobserve(target);
+
+    // Return a cleanup function
+    return () => {
+      if (target) observer.unobserve(target);
+    };
   }, []);
 
   useEffect(() => {
