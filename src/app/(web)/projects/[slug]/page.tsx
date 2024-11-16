@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { getProject } from "@/libs/apis";
-import LoadingSpinner from "../../loading";
-import useSWR from "swr";
-import ProjectPhotoGallery from "@/components/ProjectPhotoGallery/ProjectPhotoGallery";
-import FindConstructionTeam from "@/components/FindConstructionTeam/FindConstructionTeam";
+import { getProject } from '@/libs/apis';
+import LoadingSpinner from '../../loading';
+import useSWR from 'swr';
+import ProjectPhotoGallery from '@/components/ProjectPhotoGallery/ProjectPhotoGallery';
+import FindConstructionTeam from '@/components/FindConstructionTeam/FindConstructionTeam';
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
   const {
@@ -17,11 +17,11 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
     data: project,
     error,
     isLoading,
-  } = useSWR("/api/project", fetchProject);
+  } = useSWR('/api/project', fetchProject);
 
-  if (error) throw new Error("Cannot fetch data");
-  if (typeof project === "undefined" && !isLoading)
-    throw new Error("Cannot fetch data");
+  if (error) throw new Error('Cannot fetch data');
+  if (typeof project === 'undefined' && !isLoading)
+    throw new Error('Cannot fetch data');
 
   if (!project) return <LoadingSpinner />;
 
@@ -65,6 +65,24 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               {project.finishingWorks}
             </h3>
           </div>
+          {project.complementaryWorks && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
+              <h1 className="lg:text-5xl text-3xl">Complementary Works</h1>
+              <h3 className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.complementaryWorks}
+              </h3>
+            </div>
+          )}
+          {project.restaurantFinishingWorks && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
+              <h1 className="lg:text-5xl text-3xl">
+                Restaurant Finishing Works
+              </h1>
+              <h3 className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.restaurantFinishingWorks}
+              </h3>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-row flex-wrap gap-x-8 w-[95%] justify-between lg:sticky lg:top-28 lg:pr-0 pr-14 gap-y-6 lg:w-[30%]">
@@ -85,9 +103,9 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               Start Date
             </h2>
             <h1 className="text-lg capitalize">
-              {new Date(project.startDate).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
+              {new Date(project.startDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
               })}
             </h1>
           </div>
@@ -97,11 +115,11 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             </h2>
             <h1 className="text-lg capitalize">
               {project.endDate
-                ? new Date(project.endDate).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
+                ? new Date(project.endDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
                   })
-                : "Still In Progress"}
+                : 'Still In Progress'}
             </h1>
           </div>
           <div>

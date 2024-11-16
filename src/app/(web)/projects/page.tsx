@@ -7,37 +7,33 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
 import { getProjects } from '@/libs/apis';
 import { Project } from '@/models/project';
 import Search from '@/components/Search/Search';
 import ProjectCard from '@/components/ProjectCard/ProjectCard';
-import Link from 'next/link';
 import { TbFilterSearch } from 'react-icons/tb';
 import BlurFade from '@/components/ui/blur-fade';
-import { LayoutGridDemo } from '@/components/ProjectsLayoutGrid/ProjectsGrid';
 import FeaturedProjects from '@/components/FeaturedProjects/FeaturedProjects';
 import FindConstructionTeam from '@/components/FindConstructionTeam/FindConstructionTeam';
-import Error from '../error';
 
 const Projects = () => {
   const [projectSectorFilter, setProjectSectorFilter] = useState('');
   const [endDateFilter, setEndDateFilter] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
+  // const searchParams = useSearchParams();
 
-  const searchParams = useSearchParams();
   const showFilterIcon = useRef<HTMLHeadingElement | null>(null);
   const [showFilterButton, setShowFilterButton] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to "What We've Built" section
+  // useEffect(() => {
+  //   const projectType = searchParams.get('projectType');
+  //   if (projectType) setProjectSectorFilter(projectType);
+  // }, [searchParams]);
 
-  useEffect(() => {
-    const projectType = searchParams.get('projectType');
-    if (projectType) setProjectSectorFilter(projectType);
-  }, [searchParams]);
-
-  const fetchData = useCallback(async () => getProjects(), []);
+  const fetchData = useCallback(() => getProjects(), []);
 
   const { data, error, isLoading } = useSWR('get/projectSectors', fetchData, {
     revalidateOnFocus: false,
@@ -46,40 +42,27 @@ const Projects = () => {
 
   const filteredProjects = useMemo(() => {
     return (data || []).filter((project: Project) => {
-      if (
-        projectSectorFilter &&
-        projectSectorFilter.toLowerCase() !== 'all' &&
-        project.projectSector.toLowerCase() !==
-          projectSectorFilter.toLowerCase()
-      ) {
-        return false;
-      }
+      const matchSector =
+        !projectSectorFilter ||
+        projectSectorFilter.toLowerCase() === 'all' ||
+        project.projectSector.toLowerCase() ===
+          projectSectorFilter.toLowerCase();
 
-      if (
-        locationFilter &&
-        locationFilter.toLowerCase() !== 'all' &&
-        project.location.toLowerCase() !== locationFilter.toLowerCase()
-      ) {
-        return false;
-      }
+      const matchLocation =
+        !locationFilter ||
+        locationFilter.toLowerCase() === 'all' ||
+        project.location.toLowerCase() === locationFilter.toLowerCase();
 
-      if (endDateFilter && endDateFilter.toLowerCase() !== 'all') {
-        if (
-          endDateFilter.toLowerCase() === 'still in progress' &&
-          !project.stillInProgress
-        ) {
-          return false;
-        }
-        if (
-          endDateFilter.toLowerCase() !== 'still in progress' &&
-          project.endDate &&
-          new Date(project.endDate).getFullYear().toString() !==
-            endDateFilter.toLowerCase()
-        ) {
-          return false;
-        }
-      }
-      return true;
+      const matchEndDate =
+        !endDateFilter ||
+        endDateFilter.toLowerCase() === 'all' ||
+        (endDateFilter.toLowerCase() === 'still in progress'
+          ? project.stillInProgress
+          : project.endDate &&
+            new Date(project.endDate).getFullYear().toString() ===
+              endDateFilter);
+
+      return matchSector && matchLocation && matchEndDate;
     });
   }, [data, projectSectorFilter, locationFilter, endDateFilter]);
 
@@ -89,7 +72,6 @@ const Projects = () => {
   // Pagination logic
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
-
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
   const displayedProjects = useMemo(() => {
@@ -129,45 +111,40 @@ const Projects = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowFilterButton(entry.isIntersecting);
-      },
+      ([entry]) => setShowFilterButton(entry.isIntersecting),
       { threshold: 0.1 }
     );
-
     const target = showFilterIcon.current;
     if (target) observer.observe(target);
-
-    return () => {
-      if (target) observer.unobserve(target);
-    };
+    return () => target && observer.unobserve(target);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.scrollY;
       const documentHeight = document.body.offsetHeight;
-
-      if (scrollPosition >= documentHeight) {
-        setShowFilterButton(false);
-      }
+      setShowFilterButton(scrollPosition < documentHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (error)
+  if (error) {
     return (
       <div className="flex justify-center items-center h-screen">
         Error loading projects
       </div>
     );
+  }
 
   // Custom CSS for sliding transition
-  const filterButtonClass = `fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-DarkModeBG dark:bg-LightModeBG text-white dark:text-black  p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
-    showFilterButton ? 'translate-x-0 rotate-0' : 'translate-x-20 -rotate-90'
-  }`;
+  const filterButtonClass = `
+    fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-DarkModeBG dark:bg-LightModeBG 
+    text-white dark:text-black p-3 rounded-full shadow-2xl flex items-center 
+    justify-center transition-transform duration-500 
+    ${showFilterButton ? 'translate-x-0 rotate-0' : 'translate-x-20 -rotate-90'}
+  `;
 
   return (
     <section className="pb-20">
@@ -237,7 +214,7 @@ const Projects = () => {
             <button
               onClick={goToPreviousPage}
               disabled={currentPage === 1}
-              className="bg-primary text-white py-2 px-4 rounded"
+              className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded"
             >
               Previous
             </button>
@@ -246,7 +223,11 @@ const Projects = () => {
               <button
                 key={idx}
                 onClick={() => handlePageClick(idx + 1)}
-                className={`py-2 px-4 rounded ${currentPage === idx + 1 ? 'bg-primary text-white' : 'bg-gray-300'}`}
+                className={`py-2 px-4 rounded ${
+                  currentPage === idx + 1
+                    ? 'bg-primary dark:bg-zinc-800 text-white'
+                    : 'bg-gray-300 dark:bg-slate-50 dark:text-black'
+                }`}
               >
                 {idx + 1}
               </button>
@@ -255,7 +236,7 @@ const Projects = () => {
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className="bg-primary text-white py-2 px-4 rounded"
+              className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded"
             >
               Next
             </button>
@@ -264,16 +245,6 @@ const Projects = () => {
       </div>
 
       <FindConstructionTeam />
-
-      {/* <section>
-        <div className="flex flex-col gap-y-10 lg:w-[60%] w-[90%] mx-auto">
-          <h1 className="lg:text-6xl text-4xl text-center">Projects by Area</h1>
-          <p className="text-center lg:text-xl text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam
-            animi harum
-          </p>
-        </div>
-      </section> */}
     </section>
   );
 };

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Image as ImageType } from "@/models/project";
-import { CoverImage } from "@/models/project";
+import { Image as ImageType } from '@/models/project';
+import { CoverImage } from '@/models/project';
 
-import { FC, useState } from "react";
-import Image from "next/image";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { MdCancel } from "react-icons/md";
+import { FC, useState } from 'react';
+import Image from 'next/image';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { MdCancel } from 'react-icons/md';
 
 const ProjectPhotoGallery: FC<{
   photos: ImageType[];
@@ -76,7 +76,7 @@ const ProjectPhotoGallery: FC<{
             {currentPhotoIndex + 1} / {photos.length}
           </span> */}
         </div>
-        <div className="absolute lg:left-[65%] lg:top-[90%] top-[90%]">
+        <div className="absolute lg:left-[68%] lg:top-[90%] top-[90%]">
           {remainingPhotosCount > 0 && (
             <div
               className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-2xl"
@@ -97,7 +97,7 @@ const ProjectPhotoGallery: FC<{
         </div>
 
         {showModal && (
-          <div className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]">
+          <div className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[500000]">
             <div className="h-fit lg:h-[80vh] w-[320px] md:w-[1000px] relative">
               <Image
                 src={photos[currentPhotoIndex].url}

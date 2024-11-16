@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { Services } from "@/data/data";
-import ServicesCard from "../ServicesCard/ServicesCard";
-import Image from "next/image";
-import useAOS from "@/hooks/useAOS";
-import { useEffect } from "react";
-import { ContainerScroll } from "../ui/container-scroll-animation";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import { Spotlight } from "../ui/Spotlight";
-import WordPullUp from "../ui/word-pull-up";
-import BlurFade from "../ui/blur-fade";
-import BoxReveal from "../ui/box-reveal";
+import { Services } from '@/data/data';
+import ServicesCard from '../ServicesCard/ServicesCard';
+import Image from 'next/image';
+import useAOS from '@/hooks/useAOS';
+import { useEffect } from 'react';
+import { ContainerScroll } from '../ui/container-scroll-animation';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
+import { Spotlight } from '../ui/Spotlight';
+import WordPullUp from '../ui/word-pull-up';
+import BlurFade from '../ui/blur-fade';
+import BoxReveal from '../ui/box-reveal';
 
 const OurServices = () => {
   const aos = useAOS();
@@ -24,10 +24,10 @@ const OurServices = () => {
     };
 
     // Clean up event listener
-    window.addEventListener("routeChangeComplete", handleRouteChange);
+    window.addEventListener('routeChangeComplete', handleRouteChange);
 
     return () => {
-      window.removeEventListener("routeChangeComplete", handleRouteChange);
+      window.removeEventListener('routeChangeComplete', handleRouteChange);
     };
   }, [aos]);
   return (
@@ -61,8 +61,8 @@ const OurServices = () => {
               <Image
                 width={2000}
                 height={2000}
-                src={"/IMG-20211024-WA0014.jpg"}
-                alt={"img"}
+                src={'/IMG-20211024-WA0014.jpg'}
+                alt={'img'}
                 className="img"
               />
             </div>
@@ -94,7 +94,7 @@ const OurServices = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 mt-12 sm:grid-cols-3 lg:mt-20 lg:gap-x-12">
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
                   <div className="py-10 px-9">
                     <svg
@@ -123,7 +123,7 @@ const OurServices = () => {
                 </div>
               </BoxReveal>
 
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
                   <div className="py-10 px-9">
                     <svg
@@ -151,7 +151,7 @@ const OurServices = () => {
                   </div>
                 </div>
               </BoxReveal>
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
                   <div className="py-10 px-9">
                     <svg
@@ -212,9 +212,9 @@ const OurServices = () => {
                 key={services.id}
                 className={`flex flex-col lg:flex-row ${
                   index === Services.length - 1
-                    ? "lg:flex-row-reverse gap-x-20"
-                    : ""
-                } ${index === 1 ? "gap-x-20 gap-y-10 items-start lg:flex-row-reverse" : ""}`}
+                    ? 'lg:flex-row-reverse gap-x-20'
+                    : ''
+                } ${index === 1 ? 'gap-x-20 gap-y-10 items-start lg:flex-row-reverse' : ''}`}
               >
                 <div className="self-center lg:w-[60%]">
                   <span
@@ -232,7 +232,7 @@ const OurServices = () => {
                     <h1 className="text-6xl">{services.title}</h1>
                   </div>
                   <div
-                    className={`flex flex-col font-inter ${index === 1 ? "gap-y-10" : ""}`}
+                    className={`flex flex-col font-inter ${index === 1 ? 'gap-y-10' : ''}`}
                   >
                     <div data-aos="fade-up" data-aos-duration="800">
                       <h3 className="text-2xl leading-9 dark:text-gray-100">

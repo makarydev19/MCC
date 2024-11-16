@@ -1,10 +1,10 @@
-import { Project } from "@/models/project";
+import { Project } from '@/models/project';
 
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
-import BoxReveal from "../ui/box-reveal";
-import BlurFade from "../ui/blur-fade";
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
+import BoxReveal from '../ui/box-reveal';
+import BlurFade from '../ui/blur-fade';
 
 type Props = {
   project: Project;
@@ -18,7 +18,7 @@ const ProjectCard: FC<Props> = (props) => {
   return (
     <div className="relative hover:-translate-y-3 transition-all duration-200">
       <BlurFade delay={0.25}>
-        <div className="overflow-hidden rounded-lg">
+        <div className="overflow-hidden rounded-lg h-64">
           <Image
             src={coverImage.url}
             alt={projectName}

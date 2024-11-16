@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Project } from "@/models/project";
-import { FC } from "react";
-import BoxReveal from "../ui/box-reveal";
-import BlurFade from "../ui/blur-fade";
+import { Project } from '@/models/project';
+import { FC } from 'react';
+import BoxReveal from '../ui/box-reveal';
+import BlurFade from '../ui/blur-fade';
 
 type Props = {
   latestProject: Project;
@@ -33,7 +33,7 @@ const LatestProject: FC<Props> = (props) => {
         <div className="max-w-6xl lg:px-20">
           <div className="grid items-center md:grid-cols-2 md:gap-x-20 gap-y-10">
             <div className="relative lg:pl-16 lg:pr-10 px-10 md:pl-0 xl:pr-0 md:order-2">
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <Image
                   data-aos="fade-in"
                   data-aos-offset="200"
@@ -46,7 +46,7 @@ const LatestProject: FC<Props> = (props) => {
                 />
               </BoxReveal>
               <div className="relative max-w-xs ml-auto">
-                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                   <div className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg">
                     <Image
                       alt={latestProject.projectName}
@@ -60,7 +60,7 @@ const LatestProject: FC<Props> = (props) => {
 
                 <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
                   <div className="backdrop-blur-custom shadow-2xl rounded-md">
-                    <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                       <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
                         {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
 
@@ -68,17 +68,17 @@ const LatestProject: FC<Props> = (props) => {
                           {latestProject.projectSector}
                         </span>
                         <span className="block mt-2 text-sm font-medium leading-snug sm:text-base">
-                          {" "}
+                          {' '}
                           Completed on:
                           <br />
                           {latestProject.endDate
                             ? new Date(
                                 latestProject.endDate
-                              ).toLocaleDateString("en-US", {
-                                year: "numeric",
-                                month: "long",
+                              ).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
                               })
-                            : "Still In Progress"}
+                            : 'Still In Progress'}
                         </span>
                       </div>
                     </BoxReveal>
@@ -104,8 +104,8 @@ const LatestProject: FC<Props> = (props) => {
                 className="inline-flex items-center justify-center max-sm:w-full px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
                 role="button"
               >
-                {" "}
-                Start exploring{" "}
+                {' '}
+                Start exploring{' '}
               </a>
             </div>
           </div>

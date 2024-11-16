@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Search from "../Search/Search";
+import { useState } from 'react';
+import Search from '../Search/Search';
 
 const PageSearch = () => {
-  const [projectSectorFilter, setProjectSectorFilter] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
-  const [endDateFilter, setEndDateFilter] = useState(""); // New state for end date filter
+  const [projectSectorFilter, setProjectSectorFilter] = useState('');
+  const [locationFilter, setLocationFilter] = useState('');
+  const [endDateFilter, setEndDateFilter] = useState(''); // New state for end date filter
 
   return (
     <Search

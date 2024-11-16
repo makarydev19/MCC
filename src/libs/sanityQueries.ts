@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { groq } from 'next-sanity';
 
 export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject == true][0] {
     _id,
@@ -48,6 +48,8 @@ export const getProject = groq`*[_type == "projects" && slug.current == $slug][0
      _id,
     constructionWorks,
     finishingWorks,
+    complementaryWorks,
+    restaurantFinishingWorks,
     images,
     latestProject,
     projectName,

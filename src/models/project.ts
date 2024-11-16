@@ -21,6 +21,8 @@ export type Project = {
   slug: Slug;
   constructionWorks: string;
   finishingWorks: string;
+  complementaryWorks: string;
+  restaurantFinishingWorks: string;
   client: string;
   startDate: string;
   endDate: string;
