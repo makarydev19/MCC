@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import BlurFade from "../ui/blur-fade";
-import BoxReveal from "../ui/box-reveal";
+import Image from 'next/image';
+import Link from 'next/link';
+import BlurFade from '../ui/blur-fade';
+import BoxReveal from '../ui/box-reveal';
 
 const WhoWeAre = () => {
   return (
@@ -41,7 +41,7 @@ const WhoWeAre = () => {
             </BlurFade>
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
-            <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+            <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
                   src={`/porto october 002.jpg`}
@@ -53,8 +53,8 @@ const WhoWeAre = () => {
               </div>
             </BoxReveal>
             <div className="-mt-3">
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
-                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 md:size-60 size-40">
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 md:size-60 max-sm:size-40">
                   <Image
                     src={`/Coral Sea 001.jpg`}
                     alt=""
@@ -64,7 +64,7 @@ const WhoWeAre = () => {
                   />
                 </div>
               </BoxReveal>
-              <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <div className="rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
                   <Image
                     src={`/Coral Sea 009.jpg`}
