@@ -54,7 +54,7 @@ const WhoWeAre = () => {
             </BoxReveal>
             <div className="-mt-3">
               <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
-                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 md:size-60 max-sm:size-40">
+                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 size-40">
                   <Image
                     src={`/Coral Sea 001.jpg`}
                     alt=""
