@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="bg-LightModeBG dark:bg-DarkModeBG shadow-md flex lg:max-w-[65%] w-full fixed lg:top-3 inset-x-0 mx-auto border lg:rounded-2xl rounded-b-xl z-[5000] px-10 lg:py-3 py-4 items-center lg:justify-around justify-between space-x-9 dark:border-zinc-100/20  transition-all duration-300">
+      <nav className="bg-[snow] dark:bg-DarkModeBG shadow-xl flex lg:max-w-[85%] w-full fixed inset-x-0 mx-auto border lg:rounded-b-3xl rounded-b-xl z-[5000] lg:px-12 px-8 py-3 items-center justify-between dark:border-zinc-100/10 dark:shadow-black transition-all duration-300">
         <Link href="/" className="lg:w-[3.4rem] w-12">
           <Image
-            src="/MCC_Logo-removebg-preview.png"
+            src="/MCC-LOGO.png"
             alt="Modern Construction Company"
             width={70}
             height={70}
@@ -25,14 +25,14 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center lg:gap-x-10">
-          <div className="hidden lg:flex items-center lg:gap-x-10">
+          <div className="hidden lg:flex items-center lg:gap-x-20">
             {Links.slice(1, 4).map((navItem, idx: number) => (
               <Link
                 key={`link-${idx}`}
                 href={navItem.href}
                 className={`${isActive(navItem.href)} relative items-center flex hover:text-neutral-300 transition-all`}
               >
-                <span className="hidden sm:block text-[1rem] font-thin tracking-wide uppercase">
+                <span className="hidden sm:block text-[1.1rem] font-inter tracking-wider uppercase">
                   {navItem.title}
                 </span>
               </Link>
@@ -52,7 +52,7 @@ const Header = () => {
           </div>
 
           <Link href="/contactUs" className="hidden lg:block">
-            <button className="uppercase border text-base tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-1 rounded-xl">
+            <button className="uppercase border text-[1.1rem] font-inter tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-3 rounded-xl">
               <span>Contact Us</span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
             </button>

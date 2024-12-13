@@ -149,7 +149,7 @@ const Projects = () => {
 
   // Custom CSS for sliding transition
   const filterButtonClass = `
-    fixed lg:bottom-[50%] bottom-[53%] right-5 z-50 bg-DarkModeBG dark:bg-LightModeBG 
+    fixed bottom-[7%] right-5 z-50 bg-zinc-900 dark:bg-LightModeBG 
     text-white dark:text-black p-3 rounded-full shadow-2xl flex items-center 
     justify-center transition-transform duration-500 
     ${showFilterButton ? 'translate-x-0 rotate-0' : 'translate-x-20 -rotate-90'}
@@ -171,11 +171,11 @@ const Projects = () => {
 
       {/* Drawer Content */}
       <div
-        className={`fixed lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-3xl bg-zinc-100 dark:bg-zinc-900 z-[4000] transform transition-transform duration-500
+        className={`fixed rounded-xl shadow-2xl bg-zinc-50 dark:bg-zinc-900 z-[6000] transform transition-transform duration-500
           ${
             drawerOpen
-              ? 'lg:translate-x-0 lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 overflow-auto hide-scrollbar'
-              : 'lg:-translate-x-full lg:left-0 lg:top-0 lg:w-96 lg:h-full bottom-0 w-full h-96 translate-y-full'
+              ? 'lg:-translate-x-0 lg:left-0 lg:top-20 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 overflow-auto hide-scrollbar'
+              : 'lg:-translate-y-full lg:left-0 lg:top-0 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 translate-y-full'
           }`}
       >
         <div className="lg:px-5 px-0 py-10 flex flex-col gap-y-4 h-full justify-start items-start lg:py-24">

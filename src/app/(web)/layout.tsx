@@ -33,11 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
-        <link
-          rel="shortcut icon"
-          href="/MCC_Logo-removebg-preview.png"
-          type="image/png"
-        />
+        <link rel="shortcut icon" href="/MCC-LOGO.png" type="image/png" />
       </head>
       <body className={roboto.className}>
         <ThemeProvider>

@@ -54,24 +54,13 @@ const WhoWeAre = () => {
             </BoxReveal>
             <div className="-mt-3">
               <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
-                <div className="mb-3 rounded-2xl overflow-hidden lg:size-52 size-40">
+                <div className="mb-3 rounded-2xl overflow-hidden lg:min-h-[60vh] lg:w-[20vw] w-[45vw] h-[40vh]">
                   <Image
                     src={`/Coral Sea 001.jpg`}
                     alt=""
                     width={1500}
                     height={1500}
                     className="scale-animation img"
-                  />
-                </div>
-              </BoxReveal>
-              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
-                <div className="rounded-2xl overflow-hidden lg:max-h-32 md:h-48 h-32">
-                  <Image
-                    src={`/Coral Sea 009.jpg`}
-                    alt=""
-                    width={1500}
-                    height={1500}
-                    className="img scale-animation"
                   />
                 </div>
               </BoxReveal>

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { FC } from "react";
-import { FaBuilding, FaCalendarAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import CustomSelect from "@/components/CustomSelect/CustomSelect";
+import { FC } from 'react';
+import { FaBuilding, FaCalendarAlt } from 'react-icons/fa';
+import { FaLocationDot } from 'react-icons/fa6';
+import CustomSelect from '@/components/CustomSelect/CustomSelect';
 
 type Props = {
   projectSectorFilter: string;
@@ -23,26 +23,26 @@ const Search: FC<Props> = ({
   setEndDateFilter,
 }) => {
   const projectSectors = [
-    "All",
-    "Administrative",
-    "Commercial",
-    "Residential",
-    "Service",
-    "Touristic",
+    'All',
+    'Administrative',
+    'Commercial',
+    'Residential',
+    'Service',
+    'Touristic',
   ];
   const locations = [
-    "All",
-    "El-Obour City",
-    "Giza",
-    "North Coast",
-    "Octobor",
-    "Port-Said",
-    "Sharm El-Sheikh",
-    "The New Administrative Capital",
+    'All',
+    'El-Obour City',
+    'Giza',
+    'North Coast',
+    'Octobor',
+    'Port-Said',
+    'Sharm El-Sheikh',
+    'The New Administrative Capital',
   ];
   const years = [
-    "All",
-    "Still In Progress",
+    'All',
+    'Still In Progress',
     ...Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) =>
       (2000 + i).toString()
     ),

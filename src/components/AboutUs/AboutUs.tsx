@@ -6,7 +6,7 @@ import Counts from "../Counts/Counts";
 import OurClients from "../OurClients/OurClients";
 import WordRotate from "../ui/word-rotate";
 import BoxReveal from "../ui/box-reveal";
-import BlurFade from "../ui/blur-fade";
+import BlurFade from "../ui/blur-fade"; 
 
 const AboutUs = () => {
   const words = ["construction", "building", "architectural"];

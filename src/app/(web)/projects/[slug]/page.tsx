@@ -59,12 +59,14 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               {project.constructionWorks}
             </h4>
           </div>
-          <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-            <h1 className="lg:text-5xl text-3xl">Finishing Works</h1>
-            <h3 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
-              {project.finishingWorks}
-            </h3>
-          </div>
+          {project.finishingWorks && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
+              <h1 className="lg:text-5xl text-3xl">Finishing Works</h1>
+              <h3 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.finishingWorks}
+              </h3>
+            </div>
+          )}
           {project.complementaryWorks && (
             <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
               <h1 className="lg:text-5xl text-3xl">Complementary Works</h1>

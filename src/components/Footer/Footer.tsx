@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-wrap items-center justify-around gap-7">
           <div className="w-16 flex items-center justify-center">
             <Image
-              src={`/MCC_Logo-removebg-preview.png`}
+              src={`/MCC-LOGO.png`}
               alt=""
               width={100}
               height={100}

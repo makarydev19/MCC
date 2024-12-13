@@ -105,8 +105,6 @@ const projects = {
           ],
         },
       ],
-      validation: (Rule) =>
-        Rule.required().min(3).error('Minimum of 3 images required'),
     }),
     defineField({
       name: 'coverImage',
@@ -116,7 +114,6 @@ const projects = {
         { name: 'url', type: 'url', title: 'URL' },
         { name: 'file', type: 'file', title: 'FILE' },
       ],
-      validation: (Rule) => Rule.required().error('Cover Image is required'),
     }),
     defineField({
       name: 'projectSector',
