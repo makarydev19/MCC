@@ -1,9 +1,9 @@
-import { Links } from "@/data/data";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
-import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
-import Image from "next/image";
+import { Links } from '@/data/data';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useState } from 'react';
+import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
+import Image from 'next/image';
 
 const ToggleMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -50,7 +50,7 @@ const ToggleMenu = () => {
 
   const mobileLinkVars = {
     initial: {
-      y: "30vh",
+      y: '30vh',
       transition: {
         duration: 0.5,
         ease: [0.37, 0, 0.63, 1],
@@ -90,7 +90,7 @@ const ToggleMenu = () => {
                   className="flex gap-x-2 items-center"
                 >
                   <Image
-                    src={`/MCC_Logo-removebg-preview.png`}
+                    src={`/MCC-LOGO.png`}
                     alt="Modern Construction Company"
                     width={70}
                     height={70}
