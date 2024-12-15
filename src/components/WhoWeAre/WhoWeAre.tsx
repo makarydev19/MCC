@@ -44,7 +44,7 @@ const WhoWeAre = () => {
             <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
-                  src={`/Porto-October/SA832.jpg`}
+                  src={`/Porto-October/IMG_0044.JPG`}
                   alt=""
                   width={3000}
                   height={3000}
@@ -56,7 +56,7 @@ const WhoWeAre = () => {
               <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                 <div className="mb-3 rounded-2xl overflow-hidden lg:min-h-[60vh] lg:w-[20vw] w-[45vw] h-[40vh]">
                   <Image
-                    src={`/Coral Sea 001.jpg`}
+                    src={`/Porto-October/IMG_20181016_161451.jpg`}
                     alt=""
                     width={1500}
                     height={1500}

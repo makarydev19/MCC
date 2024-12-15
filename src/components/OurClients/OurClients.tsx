@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Clients } from "@/data/data";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Clients } from '@/data/data';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination, Autoplay } from "swiper/modules";
-import BoxReveal from "../ui/box-reveal";
+import { Pagination, Autoplay } from 'swiper/modules';
+import BoxReveal from '../ui/box-reveal';
 
 const OurClients = () => {
   return (
@@ -28,7 +28,7 @@ const OurClients = () => {
             Trusted by world class companies, design teams & popular designers
           </h2>
         </div>
-        <div className="mt-20 lg:block hidden dark:bg-zinc-100 rounded-2xl h-24 px-10">
+        <div className="mt-20 lg:block hidden rounded-full h-24 px-16">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
@@ -44,22 +44,22 @@ const OurClients = () => {
           >
             {Clients.map((clients) => (
               <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                   <Image
                     src={clients.img}
                     alt=""
-                    width={300}
-                    height={300}
-                    className=""
+                    width={400}
+                    height={400}
+                    className="dark:bg-white rounded-full p-1"
                   />
                 </BoxReveal>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <div className="mt-10 lg:hidden block dark:bg-zinc-100 rounded-2xl h-14 px-10">
+        <div className="mt-10 lg:hidden block rounded-2xl h-16 px-3">
           <Swiper
-            slidesPerView={3}
+            slidesPerView={4}
             spaceBetween={50}
             autoplay={{
               delay: 2500,
@@ -73,13 +73,13 @@ const OurClients = () => {
           >
             {Clients.map((clients) => (
               <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                   <Image
                     src={clients.img}
                     alt=""
-                    width={300}
-                    height={300}
-                    className=""
+                    width={400}
+                    height={400}
+                    className="dark:bg-white rounded-full"
                   />
                 </BoxReveal>
               </SwiperSlide>

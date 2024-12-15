@@ -20,7 +20,7 @@ export const Services = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
     works1: '',
     img: '/construction-crane-concept-illustration.png',
-    img2: '/pexels-technobulka-10816119.jpg',
+    img2: '/Porto-Said/IMG_0489.JPG',
   },
 
   {
@@ -31,7 +31,7 @@ export const Services = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
     img: '/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview.png',
-    img2: '/tiler-working-renovation-apartment (1).jpg',
+    img2: '/Porto-October/SA832.jpg',
     works1:
       'Building Work, Plastering Works, Insulation works of all kinds, hanging ceiling works, G.R.C facedas ornaments and cornices works, Geotextiles Works',
     kindOfWorks1:
@@ -65,7 +65,7 @@ export const Services = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
     img: '/aae4de92-663c-4cc8-b391-4ffa06c932b1-removebg-preview.png',
-    img2: '/pexels-ono-kosuki-5974048 (1).jpg',
+    img2: '/SwimmingPool2.jpg',
     works1:
       'Swimming pool works, Sanitary drainage works, Irrigation tanks works, Treatment plant works',
   },
@@ -78,7 +78,7 @@ export const Services = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
     img: '/engineer-7689854_1280-removebg-preview (1).png',
-    img2: '/heavy-excavator-digging-day-light.jpg',
+    img2: '/Porto-October/IMG_0040.JPG',
     works1:
       'Curbstone works, Interlock works, Formed concrete works, Soft concrete works, Basalt floors and walls work, Gravel works',
   },
