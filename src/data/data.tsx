@@ -123,7 +123,7 @@ export const LandingPageBackgrounds = [
   },
   {
     id: 2,
-    image: '/Porto-October/IMG_2372e.JPG',
+    image: '/Porto-October/IMG-1.JPG',
   },
   {
     id: 3,
