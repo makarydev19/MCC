@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Parallax, Autoplay } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
-import { Swiper } from "swiper/react";
-import { LandingPageBackgrounds } from "@/data/data";
-import Image from "next/image";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import Counts from "../Counts/Counts";
+import { Parallax, Autoplay } from 'swiper/modules';
+import { SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
+import { LandingPageBackgrounds } from '@/data/data';
+import Image from 'next/image';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
+import Counts from '../Counts/Counts';
 
 const LandingPage = () => {
   return (
@@ -46,7 +46,7 @@ const LandingPage = () => {
         <p className="lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
           className="uppercase lg:text-6xl text-4xl text-left"
-          words={"From concept to completion, we bring your dreams to life"}
+          words={'From concept to completion, we bring your dreams to life'}
         />
       </div>
 

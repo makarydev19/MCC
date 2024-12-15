@@ -44,7 +44,7 @@ const WhoWeAre = () => {
             <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
                 <Image
-                  src={`/porto october 002.jpg`}
+                  src={`/Porto-October/SA832.jpg`}
                   alt=""
                   width={3000}
                   height={3000}

@@ -25,14 +25,14 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center lg:gap-x-10">
-          <div className="hidden lg:flex items-center lg:gap-x-20">
-            {Links.slice(1, 4).map((navItem, idx: number) => (
+          <div className="hidden lg:flex items-center lg:gap-x-16">
+            {Links.slice(0, 4).map((navItem, idx: number) => (
               <Link
                 key={`link-${idx}`}
                 href={navItem.href}
                 className={`${isActive(navItem.href)} relative items-center flex hover:text-neutral-300 transition-all`}
               >
-                <span className="hidden sm:block text-[1.1rem] font-inter tracking-wider uppercase">
+                <span className="hidden sm:block text-[1rem] font-inter tracking-wider uppercase">
                   {navItem.title}
                 </span>
               </Link>

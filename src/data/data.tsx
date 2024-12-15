@@ -1,86 +1,86 @@
 export const Links = [
-  { id: 1, title: "Home", href: "/" },
-  { id: 2, title: "About Us", href: "/aboutUs" },
-  { id: 3, title: "Services", href: "/services" },
-  { id: 4, title: "Projects", href: "/projects" },
-  { id: 5, title: "Contact Us", href: "/contactUs" },
+  { id: 1, title: 'Home', href: '/' },
+  { id: 2, title: 'About Us', href: '/aboutUs' },
+  { id: 3, title: 'Services', href: '/services' },
+  { id: 4, title: 'Projects', href: '/projects' },
+  { id: 5, title: 'Contact Us', href: '/contactUs' },
 ];
 
 export const ArchitecturalWorks6 = [
-  { id: 1, kindOfWork: "Firefighting alarm works" },
-  { id: 2, kindOfWork: "Air Conditioning works" },
+  { id: 1, kindOfWork: 'Firefighting alarm works' },
+  { id: 2, kindOfWork: 'Air Conditioning works' },
 ];
 
 export const Services = [
   {
     id: 1,
-    num: "01",
-    title: "Concrete work of all kinds",
+    num: '01',
+    title: 'Concrete work of all kinds',
     discription:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ",
-    works1: "",
-    img: "/construction-crane-concept-illustration.png",
-    img2: "/pexels-technobulka-10816119.jpg",
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
+    works1: '',
+    img: '/construction-crane-concept-illustration.png',
+    img2: '/pexels-technobulka-10816119.jpg',
   },
 
   {
     id: 2,
-    num: "02",
-    title: "Architectural Finishing Works",
+    num: '02',
+    title: 'Architectural Finishing Works',
     discription:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ",
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
-    img: "/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview.png",
-    img2: "/tiler-working-renovation-apartment (1).jpg",
+    img: '/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview.png',
+    img2: '/tiler-working-renovation-apartment (1).jpg',
     works1:
-      "Building Work, Plastering Works, Insulation works of all kinds, hanging ceiling works, G.R.C facedas ornaments and cornices works, Geotextiles Works",
+      'Building Work, Plastering Works, Insulation works of all kinds, hanging ceiling works, G.R.C facedas ornaments and cornices works, Geotextiles Works',
     kindOfWorks1:
-      "( Ceramic - Porcelain - Parquet - Marble - Vinyl - Interlock Soft Concrete - Formed Concrete - Basalt - Refractory Stone - Rubble Mound )",
+      '( Ceramic - Porcelain - Parquet - Marble - Vinyl - Interlock Soft Concrete - Formed Concrete - Basalt - Refractory Stone - Rubble Mound )',
 
-    works2: "Walls coating works",
+    works2: 'Walls coating works',
     kindOfWorks2:
-      "( Ceramic - Porcelain - Marble - Basalt - Refractory Stone - Rubble Mound - All kind of Natural and Artificial stones )",
+      '( Ceramic - Porcelain - Marble - Basalt - Refractory Stone - Rubble Mound - All kind of Natural and Artificial stones )',
 
-    works3: "Tile cladding works, Aluminum works, Metal works, Carpentry works",
+    works3: 'Tile cladding works, Aluminum works, Metal works, Carpentry works',
     kindOfWorks3:
-      "( Wooden doors - Pergolas - Establishing and cladding ceiling and walls )",
+      '( Wooden doors - Pergolas - Establishing and cladding ceiling and walls )',
 
-    works4: "Interior paints work, Sanitations works",
+    works4: 'Interior paints work, Sanitations works',
 
     kindOfWorks4:
-      "( Inner feeding and drainage grids - Public feeding and drainage grids )",
+      '( Inner feeding and drainage grids - Public feeding and drainage grids )',
 
-    works5: "Electric works",
+    works5: 'Electric works',
     kindOfWorks5:
-      "( Install all electrical outlets - Break Public Panels Major electrical transformers work )",
+      '( Install all electrical outlets - Break Public Panels Major electrical transformers work )',
 
-    works6: "Firefighting, alarm works, Air Conditioning works",
+    works6: 'Firefighting, alarm works, Air Conditioning works',
   },
 
   {
     id: 3,
-    num: "03",
-    title: "Electro-Mechanic Works",
+    num: '03',
+    title: 'Electro-Mechanic Works',
     discription:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ",
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
-    img: "/aae4de92-663c-4cc8-b391-4ffa06c932b1-removebg-preview.png",
-    img2: "/pexels-ono-kosuki-5974048 (1).jpg",
+    img: '/aae4de92-663c-4cc8-b391-4ffa06c932b1-removebg-preview.png',
+    img2: '/pexels-ono-kosuki-5974048 (1).jpg',
     works1:
-      "Swimming pool works, Sanitary drainage works, Irrigation tanks works, Treatment plant works",
+      'Swimming pool works, Sanitary drainage works, Irrigation tanks works, Treatment plant works',
   },
 
   {
     id: 4,
-    num: "04",
-    title: "Roads and Landscape Works",
+    num: '04',
+    title: 'Roads and Landscape Works',
     discription:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ",
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus voluptatum a vitae. Numquam, possimus assumenda vero enim ut explicabo tenetur magnam. ',
 
-    img: "/engineer-7689854_1280-removebg-preview (1).png",
-    img2: "/heavy-excavator-digging-day-light.jpg",
+    img: '/engineer-7689854_1280-removebg-preview (1).png',
+    img2: '/heavy-excavator-digging-day-light.jpg',
     works1:
-      "Curbstone works, Interlock works, Formed concrete works, Soft concrete works, Basalt floors and walls work, Gravel works",
+      'Curbstone works, Interlock works, Formed concrete works, Soft concrete works, Basalt floors and walls work, Gravel works',
   },
 ];
 
@@ -97,41 +97,49 @@ export const CountsBox = [
   {
     id: 1,
     num: 20,
-    title: "Projects",
+    title: 'Projects',
   },
   {
     id: 2,
     num: 15,
-    title: "Clients",
+    title: 'Clients',
   },
   {
     id: 3,
     num: 100,
-    title: "Employees",
+    title: 'Employees',
   },
   {
     id: 4,
     num: 10,
-    title: "Cities",
+    title: 'Cities',
   },
 ];
 
 export const LandingPageBackgrounds = [
   {
     id: 1,
-    image: "/porto october 001.jpg",
+    image: '/Porto-October/IMG_0045.JPG',
   },
   {
     id: 2,
-    image: "/porto october 002.jpg",
+    image: '/Porto-October/IMG_2372e.JPG',
   },
   {
     id: 3,
-    image: "/porto october 003.jpg",
+    image: '/Porto-Said/IMG-20200815-WA0058.jpg',
   },
   {
     id: 4,
-    image: "/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg",
+    image: '/Oriental-Wavers/DSC00999.png',
+  },
+  {
+    id: 5,
+    image: '/Porto-Sharm/IMG_20180422_112345.png',
+  },
+  {
+    id: 6,
+    image: '/Porto-October/252.jpg',
   },
 ];
 
@@ -198,56 +206,56 @@ export const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2",
-    thumbnail: "/pexels-sevenstormphotography-439416.jpg",
+    className: 'md:col-span-2',
+    thumbnail: '/pexels-sevenstormphotography-439416.jpg',
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1",
+    className: 'col-span-1',
     thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1",
+    className: 'col-span-1',
     thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2",
+    className: 'md:col-span-2',
     thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 
 export const FeaturedProject = [
   {
     id: 1,
-    coverImg: "/pexels-rquiros-2219024.jpg",
-    title: "Porto Sharm",
+    coverImg: '/pexels-rquiros-2219024.jpg',
+    title: 'Porto Sharm',
   },
   {
     id: 2,
-    coverImg: "/pexels-sevenstormphotography-439416.jpg",
-    title: "Porto Sharm",
+    coverImg: '/pexels-sevenstormphotography-439416.jpg',
+    title: 'Porto Sharm',
   },
   {
     id: 3,
-    coverImg: "/pexels-rquiros-2219024.jpg",
-    title: "Porto Sharm",
+    coverImg: '/pexels-rquiros-2219024.jpg',
+    title: 'Porto Sharm',
   },
   {
     id: 4,
-    coverImg: "/pexels-rquiros-2219024.jpg",
-    title: "Porto Sharm",
+    coverImg: '/pexels-rquiros-2219024.jpg',
+    title: 'Porto Sharm',
   },
   {
     id: 5,
-    coverImg: "/pexels-rquiros-2219024.jpg",
-    title: "Porto Sharm",
+    coverImg: '/pexels-rquiros-2219024.jpg',
+    title: 'Porto Sharm',
   },
 ];

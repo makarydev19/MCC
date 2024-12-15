@@ -59,9 +59,9 @@ const OurServices = () => {
           >
             <div className="overflow-hidden">
               <Image
-                width={2000}
-                height={2000}
-                src={'/IMG-20211024-WA0014.jpg'}
+                width={4000}
+                height={4000}
+                src={'/Porto-October/G6832.jpg'}
                 alt={'img'}
                 className="img"
               />
