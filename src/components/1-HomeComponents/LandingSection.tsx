@@ -6,9 +6,9 @@ import { Swiper } from 'swiper/react';
 import { LandingPageBackgrounds } from '@/data/data';
 import Image from 'next/image';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-import Counts from '../Counts/Counts';
+import Counts from './CountsSection';
 
-const LandingPage = () => {
+const LandingSection = () => {
   return (
     <section className="h-[100vh] relative">
       {/* Swiper for background images */}
@@ -57,4 +57,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default LandingSection;

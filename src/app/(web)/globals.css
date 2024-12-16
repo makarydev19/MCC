@@ -121,7 +121,7 @@ p {
 }
 
 .font-heading {
-  @apply md:text-6xl text-3xl font-roboto text-gray-800 font-bold;
+  @apply md:text-6xl text-4xl font-roboto text-gray-800 font-bold;
 }
 
 .font-title {

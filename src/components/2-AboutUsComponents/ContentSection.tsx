@@ -1,42 +1,11 @@
-"use client";
+import React from 'react';
+import BoxReveal from '../ui/box-reveal';
+import BlurFade from '../ui/blur-fade';
+import Image from 'next/image';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Counts from "../Counts/Counts";
-import OurClients from "../OurClients/OurClients";
-import WordRotate from "../ui/word-rotate";
-import BoxReveal from "../ui/box-reveal";
-import BlurFade from "../ui/blur-fade"; 
-
-const AboutUs = () => {
-  const words = ["construction", "building", "architectural"];
+const ContentSection = () => {
   return (
-    <section className="pb-20">
-      <main className="relative flex flex-col h-[100vh] items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 items-center justify-center px-4"
-        >
-          <h1 className="lg:text-7xl text-5xl dark:text-white">
-            <p className="text-2xl">About Us</p>
-            We specialize in turning your <br />
-            <WordRotate
-              className="text-red-700 dark:text-secondary"
-              words={words}
-            />
-            dreams into reality
-          </h1>
-        </motion.div>
-      </main>
-
-      <Counts />
-
+    <>
       <div className="lg:px-20 px-0 py-20">
         <section className="py-10 sm:py-16 lg:py-24">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -49,7 +18,7 @@ const AboutUs = () => {
                   src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
                   alt=""
                 />
-                <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                   <div className="pl-12 pr-6 h-[70vh] w-full">
                     <Image
                       width={900}
@@ -62,7 +31,7 @@ const AboutUs = () => {
                 </BoxReveal>
                 <div className="absolute left-0 pr-12 bottom-8 xl:bottom-20">
                   <div className="max-w-xs backdrop-blur-3xl rounded-lg sm:max-w-md xl:max-w-md">
-                    <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                       <div className="px-3 py-4 sm:px-5 sm:py-8">
                         <div className="flex items-start">
                           <p className="text-3xl sm:text-4xl">👋</p>
@@ -129,7 +98,7 @@ const AboutUs = () => {
 
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
                 <div className="relative w-full max-w-xs mt-4 mb-10 ml-auto">
-                  <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                  <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                     <Image
                       width={1000}
                       height={1000}
@@ -139,18 +108,18 @@ const AboutUs = () => {
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
-                    <BoxReveal boxColor={"whitesmoke"} duration={0.5}>
+                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
                       <div className="bg-red-300">
                         <div className="px-8 py-10">
                           <span className="block text-4xl font-bold text-black lg:text-5xl">
-                            {" "}
-                            53%{" "}
+                            {' '}
+                            53%{' '}
                           </span>
                           <span className="block mt-2 text-base leading-tight text-black">
-                            {" "}
+                            {' '}
                             High Conversions
                             <br />
-                            Everything{" "}
+                            Everything{' '}
                           </span>
                         </div>
                       </div>
@@ -161,10 +130,9 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <OurClients />
       </div>
-    </section>
+    </>
   );
 };
 
-export default AboutUs;
+export default ContentSection;

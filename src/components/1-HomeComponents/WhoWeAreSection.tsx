@@ -1,11 +1,9 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import BlurFade from '../ui/blur-fade';
 import BoxReveal from '../ui/box-reveal';
 
-const WhoWeAre = () => {
+const WhoWeAreSection = () => {
   return (
     <section className="lg:px-32 md:px-20 px-5 py-10 pt-72 lg:py-10 lg:pt-48">
       <div className="lg:m-0">
@@ -79,4 +77,4 @@ const WhoWeAre = () => {
   );
 };
 
-export default WhoWeAre;
+export default WhoWeAreSection;

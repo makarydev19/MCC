@@ -1,11 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import { Services } from '@/data/data';
 import Image from 'next/image';
 import BoxReveal from '../ui/box-reveal';
 
-const OurFeatures = () => {
+const ServicesSection = () => {
   return (
     <section className="my-20 services-bg h-full w-full">
       <div className="w-full h-full lg:flex gap-20 items-center justify-center backdrop-brightness-[.3]">
@@ -99,10 +97,6 @@ const OurFeatures = () => {
                   </div>
                 ))}
               </div>
-              {/* <div className="flex items-center justify-end mt-2 space-x-5">
-              <div className="w-16 h-[3px] rounded-full bg-gray-900"></div>
-              <div className="w-16 h-[3px] rounded-full bg-gray-300"></div>
-            </div> */}
             </div>
           </div>
         </div>
@@ -111,4 +105,4 @@ const OurFeatures = () => {
   );
 };
 
-export default OurFeatures;
+export default ServicesSection;

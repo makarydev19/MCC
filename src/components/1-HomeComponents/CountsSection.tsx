@@ -1,28 +1,9 @@
-"use client";
+'use client';
 
-import { CountsBox } from "@/data/data";
-import useAOS from "@/hooks/useAOS";
-import { useEffect } from "react";
-import CountUp from "react-countup";
+import { CountsBox } from '@/data/data';
+import CountUp from 'react-countup';
 
-const Counts = () => {
-  const aos = useAOS();
-
-  useEffect(() => {
-    aos.refresh(); // Refresh AOS on initial load
-
-    // Refresh AOS on route change in Next.js
-    const handleRouteChange = () => {
-      aos.refresh();
-    };
-
-    // Clean up event listener
-    window.addEventListener("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("routeChangeComplete", handleRouteChange);
-    };
-  }, [aos]);
+const CountsSection = () => {
   return (
     <div
       data-aos="fade-up"
@@ -52,4 +33,4 @@ const Counts = () => {
   );
 };
 
-export default Counts;
+export default CountsSection;

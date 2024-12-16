@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import { useToast } from "@/hooks/use-toast"; // Make sure to import from your custom hook
+import { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { useToast } from '@/hooks/use-toast'; // Make sure to import from your custom hook
 
 interface FormData {
   name: string;
@@ -15,11 +15,11 @@ interface FormData {
 const ContactForm: React.FC = () => {
   const { toast } = useToast(); // Initialize the toast hook from shadcn/ui
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    reason: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    reason: '',
+    message: '',
   });
 
   const handleChange = (
@@ -36,28 +36,28 @@ const ContactForm: React.FC = () => {
 
     emailjs
       .sendForm(
-        "mcc_service_8cqyuxo",
-        "template_11hycd7",
+        'mcc_service_8cqyuxo',
+        'template_11hycd7',
         e.target as HTMLFormElement,
-        "G5i2ybEI37ORqpQQE"
+        'G5i2ybEI37ORqpQQE'
       )
       .then(
         (result: { text: any }) => {
           console.log(result.text);
           // Trigger the toast on successful form submission
           toast({
-            title: "Success",
-            description: "Your message has been sent successfully.",
-            variant: "default", // You can customize the variant for styling
+            title: 'Success',
+            description: 'Your message has been sent successfully.',
+            variant: 'default', // You can customize the variant for styling
           });
         },
         (error: { text: any }) => {
           console.log(error.text);
           // Trigger toast on error
           toast({
-            title: "Error",
-            description: "There was an error sending your message.",
-            variant: "default", // Use a different style for errors
+            title: 'Error',
+            description: 'There was an error sending your message.',
+            variant: 'default', // Use a different style for errors
           });
         }
       );
@@ -68,11 +68,11 @@ const ContactForm: React.FC = () => {
       data-aos="fade-in"
       data-aos-offset="200"
       data-aos-easing="ease-in-sine"
-      className="mt-6 overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl"
+      className="my-6 overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl"
     >
       <div className="px-6 py-12 sm:p-12">
         <h3 className="text-3xl font-semibold text-center text-gray-900 dark:text-[whitesmoke]">
-          Send us a message
+          Send Us A Message
         </h3>
 
         <form onSubmit={handleSubmit} className="mt-14">

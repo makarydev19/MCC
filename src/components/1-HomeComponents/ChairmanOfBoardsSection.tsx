@@ -1,30 +1,6 @@
-"use client";
+import Image from 'next/image';
 
-import Aos from "aos";
-import Image from "next/image";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
-import useAOS from "@/hooks/useAOS";
-
-const ChairmanOfBoards = () => {
-  const aos = useAOS();
-
-  useEffect(() => {
-    aos.refresh(); // Refresh AOS on initial load
-
-    // Refresh AOS on route change in Next.js
-    const handleRouteChange = () => {
-      aos.refresh();
-    };
-
-    // Clean up event listener
-    window.addEventListener("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("routeChangeComplete", handleRouteChange);
-    };
-  }, [aos]);
-
+const ChairmanOfBoardsSection = () => {
   return (
     <section className="lg:px-32 md:px-20 px-0 py-20">
       <div className="flex flex-col justify-center items-center gap-y-3">
@@ -53,7 +29,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/IMG-20231011-WA0002.jpg"}
+              src={'/IMG-20231011-WA0002.jpg'}
               width={500}
               height={500}
               className="img scale-animation"
@@ -102,7 +78,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/IMG_20210809_144241.jpg"}
+              src={'/IMG_20210809_144241.jpg'}
               width={500}
               height={500}
               className="img scale-animation"
@@ -117,7 +93,7 @@ const ChairmanOfBoards = () => {
           >
             <Image
               alt=""
-              src={"/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg"}
+              src={'/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg'}
               width={500}
               height={500}
               className="img scale-animation"
@@ -144,4 +120,4 @@ const ChairmanOfBoards = () => {
   );
 };
 
-export default ChairmanOfBoards;
+export default ChairmanOfBoardsSection;

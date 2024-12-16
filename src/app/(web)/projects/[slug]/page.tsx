@@ -4,7 +4,7 @@ import { getProject } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
 import useSWR from 'swr';
 import ProjectPhotoGallery from '@/components/ProjectPhotoGallery/ProjectPhotoGallery';
-import FindConstructionTeam from '@/components/FindConstructionTeam/FindConstructionTeam';
+import FindConstructionTeam from '@/components/4-ProjectsComponents/FindConstructionTeam';
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
   const {

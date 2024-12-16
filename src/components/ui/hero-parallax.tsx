@@ -1,16 +1,16 @@
-"use client";
-import React, { useRef, useMemo } from "react";
+'use client';
+import React, { useRef, useMemo } from 'react';
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
   MotionValue,
-} from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { TextGenerateEffect } from "./text-generate-effect";
-import Counts from "../Counts/Counts";
+} from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { TextGenerateEffect } from './text-generate-effect';
+import Counts from '../1-HomeComponents/CountsSection';
 
 export const HeroParallax = ({
   products,
@@ -27,7 +27,7 @@ export const HeroParallax = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ['start start', 'end start'],
   });
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
@@ -111,7 +111,7 @@ export const Header = () => {
         <p className="text-center lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
           className="uppercase lg:text-7xl text-4xl text-center w-[95%] mx-auto"
-          words={"From concept to completion, we bring your dreams to life"}
+          words={'From concept to completion, we bring your dreams to life'}
         />
       </div>
       <div className="absolute w-full md:top-[40%] top-[35%]">

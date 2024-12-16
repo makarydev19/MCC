@@ -3,8 +3,9 @@ import { Roboto, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import ThemeProvider from '@/components/ThemeProvider/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
+import AOSProvider from '@/components/Providers/AOSProvider';
+import ThemeProvider from '@/components/Providers/theme-provider';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -37,12 +38,14 @@ export default function RootLayout({
       </head>
       <body className={roboto.className}>
         <ThemeProvider>
-          <main className="font-normal">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-          <Toaster />
+          <AOSProvider>
+            <main className="font-normal">
+              <Header />
+              {children}
+              <Footer />
+            </main>
+            <Toaster />
+          </AOSProvider>
         </ThemeProvider>
       </body>
     </html>
