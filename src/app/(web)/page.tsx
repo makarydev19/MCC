@@ -1,6 +1,7 @@
 import {
   ChairmanOfBoardsSection,
   ContactUsSection,
+  CountsSection,
   LandingSection,
   LatestProjectSection,
   OurClientsSection,
@@ -14,6 +15,9 @@ const Home = async () => {
   return (
     <>
       <LandingSection />
+      <div className="absolute w-full md:top-[95%] top-[95%] z-50">
+        <CountsSection />
+      </div>
       <WhoWeAreSection />
       <ServicesSection />
       <ChairmanOfBoardsSection />

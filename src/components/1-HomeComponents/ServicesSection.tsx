@@ -9,12 +9,12 @@ const ServicesSection = () => {
       <div className="w-full h-full lg:flex gap-20 items-center justify-center backdrop-brightness-[.3]">
         <div className="lg:px-10 px-5 py-10 mx-auto">
           <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
-            <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+            <BoxReveal duration={0.5}>
               <h1 className="md:text-5xl text-4xl md:w-[80%] lg:mx-0 md:mx-auto text-wrap text-white mb-5 lg:text-left text-center font-roboto">
                 We Provide Strong Services For You
               </h1>
             </BoxReveal>
-            <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+            <BoxReveal duration={0.5}>
               <p className="md:text-lg lg:text-sm md:w-[85%] lg:mx-0 md:mx-auto text-white mb-5 lg:text-left text-center font-roboto">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptatum eveniet explicabo quae. Quaerat a fugit est mollitia
@@ -22,7 +22,7 @@ const ServicesSection = () => {
                 unde vel recusandae!
               </p>
             </BoxReveal>
-            <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+            <BoxReveal duration={0.5}>
               <Link href="/services" className="relative z-50">
                 <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
                   Explore All Services
@@ -39,7 +39,7 @@ const ServicesSection = () => {
                     key={services.id}
                     className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
                   >
-                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                    <BoxReveal duration={0.5}>
                       <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-white dark:bg-zinc-900 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1">
                         <Link href="/services" className="w-full lg:h-72 h-48">
                           <Image

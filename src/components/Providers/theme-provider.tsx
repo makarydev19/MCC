@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import ThemeContext from "@/Context/themeContext";
+import ThemeContext from '@/Context/themeContext';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const themeFromStorage: boolean =
-    typeof localStorage !== "undefined" && localStorage.getItem("mcc-theme")
-      ? JSON.parse(localStorage.getItem("mcc-theme")!)
+    typeof localStorage !== 'undefined' && localStorage.getItem('mcc-theme')
+      ? JSON.parse(localStorage.getItem('mcc-theme')!)
       : false;
 
   const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
@@ -21,7 +21,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
-      <div className={`${darkTheme ? "dark" : ""} min-h-screen`}>
+      <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
         <div className="dark:text-white bg-LightModeBG dark:bg-DarkModeBG bg-z text-[#1E1E1E] transition-all duration-200 ">
           {children}
         </div>

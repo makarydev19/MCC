@@ -1,7 +1,7 @@
 import React from 'react';
 import BoxReveal from '../ui/box-reveal';
-import BlurFade from '../ui/blur-fade';
 import Image from 'next/image';
+import { BlurFade } from '../ui/blur-fade';
 
 const ContentSection = () => {
   return (
@@ -49,17 +49,17 @@ const ContentSection = () => {
               </div>
 
               <div className="2xl:pl-16">
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
                     Our Vision
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl lg:leading-tight">
                     To be the preferred contractor of choice.
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <p className="mt-4 text-xl leading-relaxed text-gray-900 dark:text-gray-400">
                     A company that our customers want to work with and our
                     employees are proud to work for.
@@ -73,17 +73,17 @@ const ContentSection = () => {
           <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
               <div>
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
                     Our Mission
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
                     To provide quality workmanship,
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25}>
+                <BlurFade delay={0.25} inView>
                   <p className="mt-4 text-xl leading-relaxed text-gray-600 dark:text-gray-400">
                     customer service and maintain the highest level of
                     professionalism, honesty and fairness in our relationships

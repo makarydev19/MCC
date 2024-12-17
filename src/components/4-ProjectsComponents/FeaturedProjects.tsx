@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   FreeMode,
   Navigation,
   Thumbs,
   Pagination,
   Autoplay,
-} from "swiper/modules";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-import "swiper/css/pagination";
-import Image from "next/image";
-import { FeaturedProject } from "@/data/data"; // Adjust the import according to your actual data location
-import BlurFade from "../ui/blur-fade";
-import styles from "./FeaturedProjects.module.css";
+} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import 'swiper/css/pagination';
+import Image from 'next/image';
+import { FeaturedProject } from '@/data/data'; // Adjust the import according to your actual data location
+import styles from './FeaturedProjects.module.css';
+import { BlurFade } from '../ui/blur-fade';
 
 const FeaturedProjects: React.FC = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -32,14 +32,19 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <div className="relative h-[100vh]">
+      <div className="absolute bottom-60 left-28 right-0 z-50">
+        <BlurFade delay={0.25}>
+          <h2 className="text-white text-6xl font-bold">Our Projects</h2>
+        </BlurFade>
+      </div>
       <Swiper
         loop={true}
         onSlideChange={handleProgressUpdate}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs, Pagination, Autoplay]}
         navigation={{
-          nextEl: ".swiper-button-next-custom",
-          prevEl: ".swiper-button-prev-custom",
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom',
         }}
         autoplay={{
           delay: 2500,
@@ -56,17 +61,11 @@ const FeaturedProjects: React.FC = () => {
               width={1000}
               height={1000}
               src={project.coverImg}
-              alt={project.title}
+              alt="projectImage"
               className="object-cover w-full h-full"
             />
             <div className="absolute bottom-0 left-0 right-0">
-              <div className="bg-gradient-to-t from-zinc-950 to-transparent py-72 lg:px-32 px-8 flex items-start justify-start">
-                <BlurFade delay={0.25}>
-                  <h2 className="text-white text-5xl font-bold">
-                    {project.title}
-                  </h2>
-                </BlurFade>
-              </div>
+              <div className="bg-gradient-to-t from-zinc-950 to-transparent py-72 lg:px-32 px-8 flex items-start justify-start" />
             </div>
           </SwiperSlide>
         ))}
@@ -82,8 +81,8 @@ const FeaturedProjects: React.FC = () => {
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
           navigation={{
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
           }}
         >
           {FeaturedProject.map((project) => (
@@ -92,7 +91,7 @@ const FeaturedProjects: React.FC = () => {
                 width={1000}
                 height={1000}
                 src={project.coverImg}
-                alt={project.title}
+                alt="projectImage"
                 className="img rounded-xl"
               />
             </SwiperSlide>

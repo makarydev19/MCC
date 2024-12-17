@@ -13,7 +13,9 @@ const page = () => {
       <LandingSection />
       <CountsSection />
       <ContentSection />
-      <OurClientsSection />
+      <div className="px-20">
+        <OurClientsSection />
+      </div>
     </section>
   );
 };

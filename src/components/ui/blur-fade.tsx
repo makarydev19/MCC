@@ -1,17 +1,15 @@
-"use client";
-import { useRef } from "react";
+'use client';
+
+import { useRef } from 'react';
 import {
   AnimatePresence,
   motion,
-  useAnimation,
   useInView,
   UseInViewOptions,
   Variants,
-} from "framer-motion";
+} from 'framer-motion';
 
-import React from "react";
-
-type MarginType = UseInViewOptions["margin"];
+type MarginType = UseInViewOptions['margin'];
 
 interface BlurFadeProps {
   children: React.ReactNode;
@@ -23,51 +21,42 @@ interface BlurFadeProps {
   duration?: number;
   delay?: number;
   yOffset?: number;
+  inView?: boolean;
   inViewMargin?: MarginType;
   blur?: string;
 }
 
-export default function BlurFade({
+export function BlurFade({
   children,
   className,
   variant,
   duration = 0.4,
   delay = 0,
   yOffset = 6,
-  inViewMargin = "-50px",
-  blur = "6px",
+  inView = false,
+  inViewMargin = '-50px',
+  blur = '6px',
 }: BlurFadeProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const controls = useAnimation();
-  const inViewResult = useInView(ref, { once: false, margin: inViewMargin });
-  const isInView = inViewResult;
-
+  const ref = useRef(null);
+  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+  const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
-
-  React.useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [isInView, controls]);
-
   return (
     <AnimatePresence>
       <motion.div
         ref={ref}
         initial="hidden"
-        animate={controls}
+        animate={isInView ? 'visible' : 'hidden'}
         exit="hidden"
         variants={combinedVariants}
         transition={{
           delay: 0.04 + delay,
           duration,
-          ease: "easeOut",
+          ease: 'easeOut',
         }}
         className={className}
       >

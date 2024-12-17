@@ -49,7 +49,7 @@ const Search: FC<Props> = ({
   ];
 
   return (
-    <div className="lg:w-full mx-auto w-[90%] lg:bg-transparent lg:dark:bg-transparent bg-zinc-100 dark:bg-zinc-900 px-2 py-4 rounded-md ">
+    <div className="lg:w-full mx-auto w-[90%] lg:bg-transparent lg:dark:bg-transparent dark:bg-zinc-900 px-2 py-4 rounded-md ">
       <div className="relative flex gap-5 items-center justify-between">
         <div className="flex flex-wrap flex-grow gap-4">
           {/* Project Sector Select with Icon */}

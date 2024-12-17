@@ -39,7 +39,7 @@ const ContactForm: React.FC = () => {
         'mcc_service_8cqyuxo',
         'template_11hycd7',
         e.target as HTMLFormElement,
-        'G5i2ybEI37ORqpQQE'
+        'R05ToktzesKHJFXbH'
       )
       .then(
         (result: { text: any }) => {

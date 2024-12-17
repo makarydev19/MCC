@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Project } from '@/models/project';
 import { FC } from 'react';
 import BoxReveal from '../ui/box-reveal';
-import BlurFade from '../ui/blur-fade';
+import { BlurFade } from '../ui/blur-fade';
 
 type Props = {
   latestProject: Project;
@@ -16,7 +16,7 @@ const LatestProject: FC<Props> = (props) => {
 
   return (
     <section className="container mx-auto md:px-16 px-5 py-24">
-      <BlurFade delay={0.25}>
+      <BlurFade delay={0.25} inView>
         <div className="flex flex-col gap-y-3">
           <h1 className="font-heading text-center dark:text-[whitesmoke]">
             Latest Project
