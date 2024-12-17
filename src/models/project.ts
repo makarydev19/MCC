@@ -32,4 +32,5 @@ export type Project = {
   location: string;
   latestProject: boolean;
   projectSector: string;
+  isHidden: boolean;
 };

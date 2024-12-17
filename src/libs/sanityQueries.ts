@@ -13,6 +13,7 @@ export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject
     endDate,
     location,
     projectSector,
+    isHidden
 }`;
 
 // export const getFeaturedProjectsQuery = groq`*[_type == "projects" && featuredProject == true][0] {
@@ -41,7 +42,8 @@ export const getProjectsQuery = groq`*[_type == "projects"] {
     endDate,
     location,
     stillInProgress,
-    projectSector
+    projectSector,
+    isHidden
 }`;
 
 export const getProject = groq`*[_type == "projects" && slug.current == $slug][0] {
@@ -60,5 +62,6 @@ export const getProject = groq`*[_type == "projects" && slug.current == $slug][0
     endDate,
     location,
     stillInProgress,
-    projectSector
+    projectSector,
+    isHidden
 }`;

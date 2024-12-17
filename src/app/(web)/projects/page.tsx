@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
 import useSWR from 'swr';
-import { getProjects } from '@/libs/apis';
+import { getProjects } from '@/libs/apis'; // Make sure getProjects handles the "isHidden" field
 import { Project } from '@/models/project';
 import {
   FilterButton,
@@ -25,30 +25,33 @@ const Projects = () => {
     dedupingInterval: 60000,
   });
 
+  // Filter the projects to include only those that are not hidden
   const filteredProjects = useMemo(() => {
-    return (data || []).filter((project: Project) => {
-      const matchSector =
-        !projectSectorFilter ||
-        projectSectorFilter.toLowerCase() === 'all' ||
-        project.projectSector.toLowerCase() ===
-          projectSectorFilter.toLowerCase();
+    return (data || [])
+      .filter((project: Project) => !project.isHidden) // Exclude hidden projects
+      .filter((project: Project) => {
+        const matchSector =
+          !projectSectorFilter ||
+          projectSectorFilter.toLowerCase() === 'all' ||
+          project.projectSector.toLowerCase() ===
+            projectSectorFilter.toLowerCase();
 
-      const matchLocation =
-        !locationFilter ||
-        locationFilter.toLowerCase() === 'all' ||
-        project.location.toLowerCase() === locationFilter.toLowerCase();
+        const matchLocation =
+          !locationFilter ||
+          locationFilter.toLowerCase() === 'all' ||
+          project.location.toLowerCase() === locationFilter.toLowerCase();
 
-      const matchEndDate =
-        !endDateFilter ||
-        endDateFilter.toLowerCase() === 'all' ||
-        (endDateFilter.toLowerCase() === 'still in progress'
-          ? project.stillInProgress
-          : project.endDate &&
-            new Date(project.endDate).getFullYear().toString() ===
-              endDateFilter);
+        const matchEndDate =
+          !endDateFilter ||
+          endDateFilter.toLowerCase() === 'all' ||
+          (endDateFilter.toLowerCase() === 'still in progress'
+            ? project.stillInProgress
+            : project.endDate &&
+              new Date(project.endDate).getFullYear().toString() ===
+                endDateFilter);
 
-      return matchSector && matchLocation && matchEndDate;
-    });
+        return matchSector && matchLocation && matchEndDate;
+      });
   }, [data, projectSectorFilter, locationFilter, endDateFilter]);
 
   // Pagination logic

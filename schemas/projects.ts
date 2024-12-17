@@ -45,7 +45,6 @@ const projects = {
       name: 'complementaryWorks',
       title: 'Complementary works',
       type: 'text',
-      // validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'restaurantFinishingWorks',
@@ -137,12 +136,14 @@ const projects = {
       type: 'boolean',
       initialValue: false,
     }),
-    // defineField({
-    //   name: "featuredProject",
-    //   title: "Featured Project",
-    //   type: "boolean",
-    //   initialValue: false,
-    // }),
+    // Add the 'isHidden' field to control whether a project is hidden
+    defineField({
+      name: 'isHidden',
+      title: 'Hide this project',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Check this box to hide the project from the frontend.',
+    }),
   ],
 };
 
