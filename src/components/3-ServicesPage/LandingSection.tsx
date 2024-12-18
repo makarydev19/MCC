@@ -29,7 +29,7 @@ const LandingSection = () => {
             <Image
               width={4000}
               height={4000}
-              src={'/Porto-October/G6832.jpg'}
+              src={'/Porto-October/IMG_00449.JPG'}
               alt={'img'}
               className="img"
             />

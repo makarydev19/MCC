@@ -44,7 +44,7 @@ const OurClientsSection = () => {
           >
             {Clients.map((clients) => (
               <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                <BoxReveal duration={0.5}>
                   <Image
                     src={clients.img}
                     alt=""
@@ -73,7 +73,7 @@ const OurClientsSection = () => {
           >
             {Clients.map((clients) => (
               <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                <BoxReveal duration={0.5}>
                   <Image
                     src={clients.img}
                     alt=""

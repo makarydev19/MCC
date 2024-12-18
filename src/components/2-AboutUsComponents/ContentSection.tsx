@@ -18,7 +18,7 @@ const ContentSection = () => {
                   src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
                   alt=""
                 />
-                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                <BoxReveal duration={0.5}>
                   <div className="pl-12 pr-6 h-[70vh] w-full">
                     <Image
                       width={900}
@@ -31,7 +31,7 @@ const ContentSection = () => {
                 </BoxReveal>
                 <div className="absolute left-0 pr-12 bottom-8 xl:bottom-20">
                   <div className="max-w-xs backdrop-blur-3xl rounded-lg sm:max-w-md xl:max-w-md">
-                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                    <BoxReveal duration={0.5}>
                       <div className="px-3 py-4 sm:px-5 sm:py-8">
                         <div className="flex items-start">
                           <p className="text-3xl sm:text-4xl">👋</p>
@@ -98,7 +98,7 @@ const ContentSection = () => {
 
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
                 <div className="relative w-full max-w-xs mt-4 mb-10 ml-auto">
-                  <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                  <BoxReveal duration={0.5}>
                     <Image
                       width={1000}
                       height={1000}
@@ -108,7 +108,7 @@ const ContentSection = () => {
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
-                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                    <BoxReveal duration={0.5}>
                       <div className="bg-red-300">
                         <div className="px-8 py-10">
                           <span className="block text-4xl font-bold text-black lg:text-5xl">

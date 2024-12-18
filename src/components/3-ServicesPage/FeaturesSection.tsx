@@ -28,7 +28,7 @@ const FeaturesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-5 mt-12 sm:grid-cols-3 lg:mt-20 lg:gap-x-12">
-          <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+          <BoxReveal duration={0.5}>
             <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
               <div className="py-10 px-9">
                 <svg
@@ -56,7 +56,7 @@ const FeaturesSection = () => {
             </div>
           </BoxReveal>
 
-          <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+          <BoxReveal duration={0.5}>
             <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
               <div className="py-10 px-9">
                 <svg
@@ -83,7 +83,7 @@ const FeaturesSection = () => {
               </div>
             </div>
           </BoxReveal>
-          <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+          <BoxReveal duration={0.5}>
             <div className="transition-all duration-200 bg-white dark:bg-zinc-900 hover:shadow-xl rounded-xl">
               <div className="py-10 px-9">
                 <svg

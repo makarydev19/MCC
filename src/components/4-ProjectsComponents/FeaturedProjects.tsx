@@ -32,9 +32,11 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <div className="relative h-[100vh]">
-      <div className="absolute bottom-60 left-28 right-0 z-50">
-        <BlurFade delay={0.25}>
-          <h2 className="text-white text-6xl font-bold">Our Projects</h2>
+      <div className="absolute lg:bottom-56 bottom-40 lg:w-[50%] w-[20%] lg:left-28 left-6 right-0 z-50">
+        <BlurFade delay={0.8} inView>
+          <h2 className="text-white lg:text-7xl tracking-wide text-5xl font-bold">
+            Our Projects
+          </h2>
         </BlurFade>
       </div>
       <Swiper

@@ -79,6 +79,7 @@ const Footer = () => {
         <div className="flex flex-col w-full justify-center items-center ">
           <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
             © Copyright 2024, All Rights Reserved by{' '}
+            <br className="block lg:hidden" />
             <span className="font-semibold font-inter">
               {' '}
               Modern Construction Company

@@ -21,10 +21,10 @@ const MccInfo = () => {
               />
             </svg>
             <p className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
-              +1-316-555-0116
+              + 0233373078
             </p>
             <p className="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-              +1-446-526-0117
+              01227422587
             </p>
           </div>
         </div>
@@ -46,10 +46,7 @@ const MccInfo = () => {
               />
             </svg>
             <p className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
-              contact@example.com
-            </p>
-            <p className="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-              hr@example.com
+              info@mcc-egy.com
             </p>
           </div>
         </div>

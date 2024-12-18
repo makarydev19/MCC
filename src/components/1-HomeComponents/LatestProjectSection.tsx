@@ -33,7 +33,7 @@ const LatestProject: FC<Props> = (props) => {
         <div className="max-w-6xl lg:px-20">
           <div className="grid items-center md:grid-cols-2 md:gap-x-20 gap-y-10">
             <div className="relative lg:pl-16 lg:pr-10 px-10 md:pl-0 xl:pr-0 md:order-2">
-              <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+              <BoxReveal duration={0.5}>
                 <Image
                   data-aos="fade-in"
                   data-aos-offset="200"
@@ -46,7 +46,7 @@ const LatestProject: FC<Props> = (props) => {
                 />
               </BoxReveal>
               <div className="relative max-w-xs ml-auto">
-                <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                <BoxReveal duration={0.5}>
                   <div className="overflow-hidden lg:h-[65vh] md:h-[30vh] lg:w-[25vw] h-[35vh] w-[100%] rounded-lg">
                     <Image
                       alt={latestProject.projectName}
@@ -60,7 +60,7 @@ const LatestProject: FC<Props> = (props) => {
 
                 <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
                   <div className="backdrop-blur-custom shadow-2xl rounded-md">
-                    <BoxReveal boxColor={'whitesmoke'} duration={0.5}>
+                    <BoxReveal duration={0.5}>
                       <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
                         {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
 

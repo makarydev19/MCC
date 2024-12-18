@@ -13,7 +13,7 @@ const page = () => {
       <LandingSection />
       <CountsSection />
       <ContentSection />
-      <div className="px-20">
+      <div className="lg:px-20 px-0">
         <OurClientsSection />
       </div>
     </section>
