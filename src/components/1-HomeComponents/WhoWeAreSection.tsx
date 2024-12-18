@@ -40,7 +40,7 @@ const WhoWeAreSection = () => {
           </div>
           <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
             <BoxReveal duration={0.5}>
-              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh]">
+              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh] shadow-xl shadow-black">
                 <Image
                   src={`/Porto-October/IMG_0044.JPG`}
                   alt=""
@@ -52,7 +52,7 @@ const WhoWeAreSection = () => {
             </BoxReveal>
             <div className="-mt-3">
               <BoxReveal duration={0.5}>
-                <div className="mb-3 rounded-2xl overflow-hidden lg:min-h-[60vh] lg:w-[20vw] w-[45vw] h-[40vh]">
+                <div className="mb-3 rounded-2xl overflow-hidden lg:min-h-[60vh] lg:w-[20vw] w-[45vw] h-[40vh] shadow-xl shadow-black">
                   <Image
                     src={`/Porto-October/IMG_20181016_161451.jpg`}
                     alt=""
@@ -66,7 +66,7 @@ const WhoWeAreSection = () => {
             </div>
           </div>
           <Link href="/aboutUs" className="relative mx-auto mt-10">
-            <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
+            <button className="btn-primary px-12 md:px-[30px] lg:px-[35px]">
               Explore more
             </button>
           </Link>

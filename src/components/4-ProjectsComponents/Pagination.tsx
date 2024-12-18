@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({
     <button
       onClick={goToPreviousPage}
       disabled={currentPage === 1}
-      className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded"
+      className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded-xl shadow-lg shadow-black hover:translate-y-1 transition-transform"
     >
       Previous
     </button>
@@ -28,10 +28,10 @@ const Pagination: React.FC<PaginationProps> = ({
       <button
         key={idx}
         onClick={() => handlePageClick(idx + 1)}
-        className={`py-2 px-4 rounded ${
+        className={`py-2 px-4 rounded-xl hover:translate-y-1 transition-transform ${
           currentPage === idx + 1
-            ? 'bg-primary dark:bg-zinc-800 text-white'
-            : 'bg-gray-300 dark:bg-slate-50 dark:text-black'
+            ? 'bg-gray-300 dark:bg-slate-50 dark:text-black shadow-lg shadow-black translate-y-1'
+            : 'bg-primary dark:bg-zinc-800 text-white'
         }`}
       >
         {idx + 1}
@@ -40,7 +40,7 @@ const Pagination: React.FC<PaginationProps> = ({
     <button
       onClick={goToNextPage}
       disabled={currentPage === totalPages}
-      className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded"
+      className="bg-primary dark:bg-zinc-800 text-white py-2 px-4 rounded-xl shadow-lg shadow-black hover:translate-y-1 transition-transform"
     >
       Next
     </button>

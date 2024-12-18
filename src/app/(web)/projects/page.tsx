@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
 import useSWR from 'swr';
-import { getProjects } from '@/libs/apis'; // Make sure getProjects handles the "isHidden" field
+import { getProjects } from '@/libs/apis';
 import { Project } from '@/models/project';
 import {
   FilterButton,

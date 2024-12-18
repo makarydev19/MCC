@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { TbFilterSearch } from 'react-icons/tb';
-import Search from '@/components/Search/Search';
+import Search from '@/components/SearchComponent/Search';
 
 interface FiltersProps {
   projectSectorFilter: string;
@@ -56,13 +56,13 @@ const Filters: React.FC<FiltersProps> = ({
         type="button"
         title="Projects Filters"
         onClick={toggleDrawer}
-        className={`fixed bottom-[7%] right-5 z-50 bg-zinc-900 dark:bg-LightModeBG text-white dark:text-black p-3 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-500 ${
+        className={`fixed bottom-[7%] right-10 z-50 bg-secondary shadow-black dark:bg-LightModeBG text-white dark:text-black p-3 rounded-full shadow-2xl dark:shadow-white flex items-center justify-center transition-transform duration-500 ${
           showFilterButton
             ? 'translate-x-0 rotate-0'
-            : 'translate-x-20 -rotate-90'
+            : 'translate-x-32 -rotate-90'
         }`}
       >
-        <TbFilterSearch className="text-3xl" />
+        <TbFilterSearch className="text-4xl" />
       </button>
 
       {/* Drawer Filter */}

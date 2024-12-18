@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { FaBuilding, FaCalendarAlt } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
-import CustomSelect from '@/components/CustomSelect/CustomSelect';
+import CustomSelect from '@/components/SearchComponent/CustomSelect';
 
 type Props = {
   projectSectorFilter: string;

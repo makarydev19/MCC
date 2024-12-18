@@ -39,7 +39,7 @@ export const BoxReveal = ({
   const dynamicBoxColor = boxColor || (darkTheme ? 'black' : 'white');
 
   return (
-    <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
+    <div ref={ref} style={{ position: 'relative', width, zIndex: '1' }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

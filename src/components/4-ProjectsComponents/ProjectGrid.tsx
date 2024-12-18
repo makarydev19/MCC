@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ProjectCard from '@/components/ProjectCard/ProjectCard';
+import ProjectCard from '@/components/CardsComponents/ProjectCard';
 import { Project } from '@/models/project';
 import { BlurFade } from '../ui/blur-fade';
 
@@ -17,7 +17,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => (
         life
       </p>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-16 pt-16">
       {projects.map((project, idx) => (
         <BlurFade key={project._id} delay={0.25 + idx * 0.1} inView>
           <ProjectCard project={project} />

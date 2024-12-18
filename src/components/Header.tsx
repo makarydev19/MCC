@@ -4,8 +4,7 @@ import { Links } from '@/data/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ToggleMenu from '../ToggleMenu/ToggleMenu';
-import ToggleTheme from '../ToggleTheme/ToggleTheme';
+import { ToggleTheme, ToggleMenu } from './ToggleComponents';
 
 const Header = () => {
   const pathname = usePathname();
@@ -52,7 +51,7 @@ const Header = () => {
           </div>
 
           <Link href="/contactUs" className="hidden lg:block">
-            <button className="uppercase border text-[1.1rem] font-inter tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-3 rounded-xl">
+            <button className="uppercase border text-[1rem] font-inter tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-3 rounded-xl">
               <span>Contact Us</span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
             </button>

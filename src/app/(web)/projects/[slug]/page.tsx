@@ -3,7 +3,7 @@
 import { getProject } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
 import useSWR from 'swr';
-import ProjectPhotoGallery from '@/components/ProjectPhotoGallery/ProjectPhotoGallery';
+import ProjectPhotoGallery from '@/components/SingleProjectPage/ProjectPhotoGallery';
 import FindConstructionTeam from '@/components/4-ProjectsComponents/FindConstructionTeam';
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
@@ -131,25 +131,6 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             <h1 className="text-lg capitalize">{project.location}</h1>
           </div>
         </div>
-      </div>
-      <div>
-        {/* <div className="w-96 h-52">
-          <Image
-            src={project.coverImage.url}
-            alt={project.projectName}
-            width={1000}
-            height={1000}
-            className="img"
-          />
-        </div>
-        <div className="w-96 h-52">
-          <Image
-            src={project.images}
-            alt={project.projectName}
-            width={1000}
-            height={1000}
-          />
-        </div> */}
       </div>
       <FindConstructionTeam />
     </section>

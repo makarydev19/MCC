@@ -38,7 +38,6 @@ const ProjectPhotoGallery: FC<{
 
   const maximiumVisiblePhotos = 1;
   const totalPhotos = photos.length;
-  const displayPhotos = photos.slice(1, maximiumVisiblePhotos - 1);
   const remainingPhotosCount = totalPhotos - maximiumVisiblePhotos;
 
   return (
@@ -55,26 +54,6 @@ const ProjectPhotoGallery: FC<{
               onClick={openModal.bind(this, 0)}
             />
           </div>
-
-          {/* <div className="md:hidden flex justify-center items-center w-full h-full">
-            <Image
-              src={photos[currentPhotoIndex].url}
-              alt={`Room Photo ${currentPhotoIndex + 1}`}
-              className="img"
-              width={1000}
-              height={1000}
-              onClick={openModal.bind(this, 0)}
-            />
-          </div>
-        </div>
-        <div className="md:hidden flex justify-between items-center">
-          <div className="flex space-x-2">
-            <FaArrowLeft className="cursor-pointer" onClick={handlePrevious} />
-            <FaArrowRight className="cursor-pointer" onClick={handleNext} />
-          </div>
-          <span>
-            {currentPhotoIndex + 1} / {photos.length}
-          </span> */}
         </div>
         <div className="absolute lg:left-[68%] lg:top-[90%] top-[90%]">
           {remainingPhotosCount > 0 && (

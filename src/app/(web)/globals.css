@@ -53,26 +53,17 @@
   @apply border-b-[1.2px] border-spacing-12 border-black dark:border-white/[0.3] dark:text-zinc-50 text-zinc-950;
 }
 
-.landing-bg {
-  background: url(/bg-mcc.png) no-repeat center / cover;
-}
-
 .services-bg {
   background: url(/Porto-October/252.jpg) no-repeat center / cover;
+}
+
+.findConstructionTeam-bg {
+  background: url(/IMG_20210809_144241.jpg) no-repeat center / cover;
 }
 
 .servicesbg-page {
   background: url(/pexels-yury-kim-181374-585418\ \(1\).jpg) no-repeat center /
     cover;
-}
-
-.projects-page {
-  background: url(/monochrome-scene-depicting-life-workers-construction-industry-site.jpg)
-    no-repeat center / cover;
-}
-
-.aboutUs-page {
-  background: url(/pexels-wdnet-224924\ \(1\).jpg) no-repeat center / cover;
 }
 
 hr {
@@ -105,7 +96,7 @@ p {
 }
 
 .btn-primary {
-  @apply py-3 md:py-4 bg-white border-[1px] border-[#efefef22] text-black rounded-xl md:rounded-2xl shadow-md font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
+  @apply py-3 md:py-4 bg-secondary dark:bg-zinc-900 dark:text-white border-[1px] border-[#efefef22] text-white rounded-xl md:rounded-2xl shadow-lg shadow-black font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
 }
 
 .btn-tertiary {

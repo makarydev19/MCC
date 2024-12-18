@@ -23,7 +23,7 @@ const ServicesSection = () => {
               </p>
             </BoxReveal>
             <BoxReveal duration={0.5}>
-              <Link href="/services" className="relative z-50">
+              <Link href="/services" className="relative z-10">
                 <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
                   Explore All Services
                 </button>
@@ -40,7 +40,7 @@ const ServicesSection = () => {
                     className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
                   >
                     <BoxReveal duration={0.5}>
-                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-white dark:bg-zinc-900 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1">
+                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-white dark:bg-zinc-900 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
                         <Link href="/services" className="w-full lg:h-72 h-48">
                           <Image
                             width={1000}

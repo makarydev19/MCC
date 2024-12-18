@@ -176,7 +176,7 @@ const ContactForm: React.FC = () => {
                   onChange={handleChange}
                   placeholder="Your Message"
                   required
-                  className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 border border-gray-200 rounded-md resize-y focus:outline-none focus:border-blue-600 caret-blue-600"
+                  className="block w-full px-4 py-4 text-black dark:text-white placeholder-gray-500 transition-all duration-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 border border-gray-200 rounded-md resize-y focus:outline-none focus:border-blue-600 caret-blue-600"
                 ></textarea>
               </div>
             </div>

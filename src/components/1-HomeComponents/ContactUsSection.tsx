@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from '../Form/Form';
-import MccInfo from '../MccInfo';
+import { ContactUsForm, MCCInformation } from '../5-ContactUsComponents';
 
 const ContactUsSection = () => {
   return (
@@ -26,8 +25,8 @@ const ContactUsSection = () => {
           </p>
         </div>
       </div>
-      <Form />
-      <MccInfo />
+      <ContactUsForm />
+      <MCCInformation />
     </section>
   );
 };

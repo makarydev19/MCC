@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const FindConstructionTeam = () => {
   return (
-    <section className="h-[60vh] my-20 services-bg">
+    <section className="h-[60vh] my-20 findConstructionTeam-bg">
       <div className="w-full h-full flex flex-col gap-y-7 items-center justify-center backdrop-brightness-[.3]">
         <div className="flex flex-col gap-y-5 items-center justify-center">
           <h1 className="text-white lg:text-5xl text-3xl text-center">
@@ -13,8 +13,8 @@ const FindConstructionTeam = () => {
             sequi quod tempore totam magni ex consequatur ad ipsam.
           </p>
         </div>
-        <Link href={"/contactUs"}>
-          <button className="hover:bg-primary bg-transparent border-[1.7px] border-[#f2f2f23a] text-gray-100 self-baseline rounded p-2 px-6">
+        <Link href={'/contactUs'}>
+          <button className="btn-primary px-12 md:px-[30px] lg:px-[35px]">
             Contact Us
           </button>
         </Link>

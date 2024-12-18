@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Roboto, Inter } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import AOSProvider from '@/components/Providers/AOSProvider';
 import ThemeProvider from '@/components/Providers/theme-provider';

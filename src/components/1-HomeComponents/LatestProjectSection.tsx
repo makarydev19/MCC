@@ -6,6 +6,7 @@ import { Project } from '@/models/project';
 import { FC } from 'react';
 import BoxReveal from '../ui/box-reveal';
 import { BlurFade } from '../ui/blur-fade';
+import Link from 'next/link';
 
 type Props = {
   latestProject: Project;
@@ -99,14 +100,14 @@ const LatestProject: FC<Props> = (props) => {
                 </p>
               </BlurFade>
 
-              <a
+              <Link
                 href="/projects"
-                className="inline-flex items-center justify-center max-sm:w-full px-8 py-3 mt-8 text-base font-semibold text-white transition-all duration-200 bg-secondary rounded-md hover:bg-primary focus:bg-primary"
-                role="button"
+                className="relative mx-auto mt-10 inline-flex items-center justify-center"
               >
-                {' '}
-                Start exploring{' '}
-              </a>
+                <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
+                  Explore more
+                </button>
+              </Link>
             </div>
           </div>
         </div>
