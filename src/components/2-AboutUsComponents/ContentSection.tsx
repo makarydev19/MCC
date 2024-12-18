@@ -24,7 +24,7 @@ const ContentSection = () => {
                       width={900}
                       height={900}
                       className="img relative"
-                      src="/porto october 001.jpg"
+                      src="/Porto-October/20180203_132117.jpg"
                       alt=""
                     />
                   </div>
@@ -34,7 +34,6 @@ const ContentSection = () => {
                     <BoxReveal duration={0.5}>
                       <div className="px-3 py-4 sm:px-5 sm:py-8">
                         <div className="flex items-start">
-                          <p className="text-3xl sm:text-4xl">👋</p>
                           <blockquote className="ml-5">
                             <p className="text-sm font-medium text-white sm:text-lg">
                               “You made it so simple. My new site is so much
