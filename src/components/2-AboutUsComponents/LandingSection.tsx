@@ -29,7 +29,7 @@ const LandingSection = () => {
           </h1>
         </motion.div>
       </main>
-      <div className="text-center mx-auto -mt-7 z-10 py-4 relative w-[70%] lg:w-[25%] rounded-3xl bg-LightModeBG">
+      <div className="text-center mx-auto -mt-7 z-10 py-4 relative w-[70%] lg:w-[25%] rounded-3xl bg-LightModeBG dark:bg-DarkModeBG dark:text-white">
         <p className="lg:text-4xl text-3xl uppercase">Who We Are</p>
       </div>
     </section>
