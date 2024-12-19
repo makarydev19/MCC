@@ -35,8 +35,8 @@ const ContentSection = () => {
                 </BlurFade>
               </div>
 
-              <div>
-                <div className="relative justify-self-end">
+              <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
+                <div className="relative w-full max-w-xs mt-4 mb-10 ml-auto">
                   <BoxReveal duration={0.5}>
                     <Image
                       width={250}
@@ -46,7 +46,7 @@ const ContentSection = () => {
                       alt="Eng.Magdy"
                     />
                   </BoxReveal>
-                  <div className="absolute -bottom-10 -left-24">
+                  <div className="absolute -bottom-10 -left-16">
                     <BoxReveal duration={0.5}>
                       <div className="bg-red-300 rounded-2xl">
                         <div className="px-8 py-10">
