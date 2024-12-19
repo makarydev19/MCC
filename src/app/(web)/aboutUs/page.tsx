@@ -11,7 +11,7 @@ const page = () => {
   return (
     <section className="pb-20">
       <LandingSection />
-      <CountsSection />
+      {/* <CountsSection /> */}
       <ContentSection />
       <div className="lg:px-20 px-0">
         <OurClientsSection />

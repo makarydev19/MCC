@@ -7,8 +7,67 @@ const ContentSection = () => {
   return (
     <>
       <div className="lg:px-20 px-0 py-20">
+        <section className="pb-24 sm:pb-16 lg:pb-24">
+          <div className="w-full px-4 mx-auto sm:px-6 lg:px-8">
+            <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
+              <div>
+                <BlurFade delay={0.25} inView>
+                  <h2 className="text-lg font-sans font-medium text-secondary uppercase">
+                    Chairman Of Boards
+                  </h2>
+                </BlurFade>
+                <BlurFade delay={0.25} inView>
+                  <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
+                    Key to our success,
+                  </h2>
+                </BlurFade>
+                <BlurFade delay={0.25} inView>
+                  <p className="mt-4 lg:text-xl text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                    is building long term relationships. Our aim is to achieve
+                    this with our clients’ by consistently delivering
+                    exceptional results that are on time and within budget
+                    reflecting the needs of our clients and end users.This
+                    achievement to date is the result of our highly dedicated
+                    and experienced project team. our approach allows for the
+                    project team you start with to be the team that celebrates
+                    with you the successful completion of the project.
+                  </p>
+                </BlurFade>
+              </div>
+
+              <div>
+                <div className="relative justify-self-end">
+                  <BoxReveal duration={0.5}>
+                    <Image
+                      width={250}
+                      height={250}
+                      className="rounded-2xl"
+                      src="/Eng-Magdy.png"
+                      alt="Eng.Magdy"
+                    />
+                  </BoxReveal>
+                  <div className="absolute -bottom-10 -left-24">
+                    <BoxReveal duration={0.5}>
+                      <div className="bg-red-300 rounded-2xl">
+                        <div className="px-8 py-10">
+                          <span className="block text-xl font-bold text-black lg:text-2xl">
+                            General Director
+                          </span>
+                          <span className="block mt-2 text-lg leading-snug text-black">
+                            {' '}
+                            Magdy Shaker Gabra
+                          </span>
+                        </div>
+                      </div>
+                    </BoxReveal>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="py-10 sm:py-16 lg:py-24">
-          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="px-4 mx-auto max-w-full">
             <div className="lg:grid flex flex-wrap-reverse items-center grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-12">
               <div className="relative lg:mb-12">
                 <Image
@@ -19,11 +78,11 @@ const ContentSection = () => {
                   alt=""
                 />
                 <BoxReveal duration={0.5}>
-                  <div className="pl-12 pr-6 h-[70vh] w-full">
+                  <div>
                     <Image
                       width={900}
                       height={900}
-                      className="img relative"
+                      className="img relative rounded-2xl"
                       src="/Porto-October/20180203_132117.jpg"
                       alt=""
                     />
@@ -69,7 +128,7 @@ const ContentSection = () => {
           </div>
         </section>
         <section className="py-10 sm:py-16 lg:py-24">
-          <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="max-w-full px-4 mx-auto sm:px-6 lg:px-8">
             <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
               <div>
                 <BlurFade delay={0.25} inView>
@@ -96,19 +155,19 @@ const ContentSection = () => {
               </div>
 
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
-                <div className="relative w-full max-w-xs mt-4 mb-10 ml-auto">
+                <div className="relative justify-self-end">
                   <BoxReveal duration={0.5}>
                     <Image
-                      width={1000}
-                      height={1000}
-                      className="ml-auto img"
+                      width={310}
+                      height={310}
+                      className="ml-auto img rounded-2xl"
                       src="/IMG-20211024-WA0014.jpg"
                       alt=""
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
                     <BoxReveal duration={0.5}>
-                      <div className="bg-red-300">
+                      <div className="bg-red-300 rounded-2xl">
                         <div className="px-8 py-10">
                           <span className="block text-4xl font-bold text-black lg:text-5xl">
                             {' '}
