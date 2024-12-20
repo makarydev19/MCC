@@ -32,78 +32,67 @@ const projects = {
       name: 'projectContent1',
       title: 'Project Content 1',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'details1',
       title: 'Details 1',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'projectContent2',
       title: 'Project Content 2',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'details2',
       title: 'Details 2',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'projectContent3',
       title: 'Project Content 3',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'details3',
       title: 'Details 3',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'projectContent4',
       title: 'Project Content 4',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'details4',
       title: 'Details 4',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'projectContent5',
       title: 'Project Content 5',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'details5',
       title: 'Details 5',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'constructionWorks',
       title: 'Construction Works',
       type: 'text',
-      validation: (Rule) =>
-        Rule.required().max(500).error('Minimum 500 Characters'),
+      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
     }),
     defineField({
       name: 'finishingWorks',
