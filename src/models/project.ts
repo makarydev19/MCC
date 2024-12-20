@@ -23,10 +23,12 @@ export type Project = {
   projectContent2: string;
   projectContent3: string;
   projectContent4: string;
+  projectContent5: string;
   details1: string;
   details2: string;
   details3: string;
   details4: string;
+  details5: string;
   constructionWorks: string;
   finishingWorks: string;
   complementaryWorks: string;
