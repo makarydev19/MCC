@@ -19,6 +19,7 @@ export type Project = {
   _id: string;
   projectName: string;
   slug: Slug;
+  projectContent: string;
   constructionWorks: string;
   finishingWorks: string;
   complementaryWorks: string;

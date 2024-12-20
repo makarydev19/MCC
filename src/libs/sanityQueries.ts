@@ -2,6 +2,7 @@ import { groq } from 'next-sanity';
 
 export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject == true][0] {
     _id,
+    projectContent,
     constructionWorks,
     finishingWorks,
     images,

@@ -29,6 +29,13 @@ const projects = {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'projectContent',
+      title: 'Project Content',
+      type: 'text',
+      validation: (Rule) =>
+        Rule.required().max(500).error('Minimum 500 Characters'),
+    }),
+    defineField({
       name: 'constructionWorks',
       title: 'Construction Works',
       type: 'text',
