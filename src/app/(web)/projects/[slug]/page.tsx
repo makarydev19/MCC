@@ -53,12 +53,44 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           >
             Project Details
           </h2>
-          {project.projectContent && (
+          {project.projectContent1 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">{project.projectContent}</h1>
-              {/* <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
-                {project.constructionWorks}
-              </h4> */}
+              <h1 className="lg:text-5xl text-3xl">
+                {project.projectContent1}
+              </h1>
+              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.details1}
+              </h4>
+            </div>
+          )}
+          {project.projectContent2 && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
+              <h1 className="lg:text-5xl text-3xl">
+                {project.projectContent2}
+              </h1>
+              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.details2}
+              </h4>
+            </div>
+          )}
+          {project.projectContent3 && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
+              <h1 className="lg:text-5xl text-3xl">
+                {project.projectContent3}
+              </h1>
+              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.details3}
+              </h4>
+            </div>
+          )}
+          {project.projectContent4 && (
+            <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
+              <h1 className="lg:text-5xl text-3xl">
+                {project.projectContent4}
+              </h1>
+              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+                {project.details4}
+              </h4>
             </div>
           )}
           {project.constructionWorks && (

@@ -19,7 +19,14 @@ export type Project = {
   _id: string;
   projectName: string;
   slug: Slug;
-  projectContent: string;
+  projectContent1: string;
+  projectContent2: string;
+  projectContent3: string;
+  projectContent4: string;
+  details1: string;
+  details2: string;
+  details3: string;
+  details4: string;
   constructionWorks: string;
   finishingWorks: string;
   complementaryWorks: string;
