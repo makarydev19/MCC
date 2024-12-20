@@ -55,7 +55,7 @@ const ProjectPhotoGallery: FC<{
             />
           </div>
         </div>
-        <div className="absolute lg:left-[68%] lg:top-[90%] top-[90%]">
+        <div className="absolute lg:left-[66%] lg:top-[90%] top-[90%]">
           {remainingPhotosCount > 0 && (
             <div
               className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-xl shadow-black"

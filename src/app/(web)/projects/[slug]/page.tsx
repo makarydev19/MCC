@@ -140,17 +140,19 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
         </div>
 
         <div className="flex flex-row flex-wrap gap-x-8 w-[95%] justify-between lg:sticky lg:top-28 lg:pr-0 pr-14 gap-y-6 lg:w-[30%]">
-          <div>
-            <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-              Sector
-            </h2>
-            <h1 className="text-lg capitalize">{project.projectSector}</h1>
-          </div>
-          <div>
-            <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-              Client
-            </h2>
-            <h1 className="text-lg capitalize">{project.client}</h1>
+          <div className="flex flex-wrap gap-y-6 justify-between lg:w-[91%] w-[100%]">
+            <div>
+              <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
+                Sector
+              </h2>
+              <h1 className="text-lg capitalize">{project.projectSector}</h1>
+            </div>
+            <div>
+              <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
+                Client
+              </h2>
+              <h1 className="text-lg capitalize">{project.client}</h1>
+            </div>
           </div>
           <div>
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
