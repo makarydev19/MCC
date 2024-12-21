@@ -27,12 +27,12 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
 
   return (
     <section>
-      <div className="h-full w-full dark:bg-DarkModeBG bg-LightModeBG dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-20 px-1">
+      <div className="h-full w-full dark:bg-DarkModeBG bg-LightModeBG dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-28">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-DarkModeBG bg-LightModeBG [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         {/* <Spotlight fill="red" className="top-[40%]" /> */}
-        <div className="py-8 lg:pt-24 pt-20 z-10">
+        <div className="py-8 lg:pt-24 z-10">
           <ProjectPhotoGallery
             photos={project.images}
             coverImage={project.coverImage}
@@ -43,7 +43,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
         </p>
         <hr className="bg-slate-700 w-[80%] mb-10" />
       </div>
-      <div className="lg:mt-10 w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-10 pt-4 pb-32">
+      <div className="lg:mt-10 w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-10 pt-4 lg:pb-32 pb-20">
         <div className="lg:w-[80%] flex flex-col lg:gap-y-10 gap-y-5">
           <h2
             //   data-aos="fade-in"
@@ -139,8 +139,8 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           )}
         </div>
 
-        <div className="flex flex-row flex-wrap gap-x-8 w-[95%] justify-between lg:sticky lg:top-28 lg:pr-0 pr-14 gap-y-6 lg:w-[30%]">
-          <div className="flex flex-wrap gap-y-6 justify-between lg:w-[91%] w-[100%]">
+        <div className="flex flex-wrap gap-x-10 lg:w-[30%] w-[90%] sticky top-28 lg:border-0 dark:border-white/5 border-t-2 lg:pt-0 pt-10">
+          <div className="space-y-5">
             <div>
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
                 Sector
@@ -149,40 +149,44 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             </div>
             <div>
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-                Client
+                Location
               </h2>
-              <h1 className="text-lg capitalize">{project.client}</h1>
+              <h1 className="text-lg text-wrap min-w-28 capitalize">
+                {project.location}
+              </h1>
             </div>
           </div>
-          <div>
-            <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-              Start Date
-            </h2>
-            <h1 className="text-lg capitalize">
-              {new Date(project.startDate).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-              })}
-            </h1>
+          <div className="space-y-5">
+            <div>
+              <h2 className="font-thin text-nowrap text-lg uppercase tracking-widest text-zinc-400">
+                Start Date
+              </h2>
+              <h1 className="text-lg capitalize">
+                {new Date(project.startDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                })}
+              </h1>
+            </div>
+            <div>
+              <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
+                End Date
+              </h2>
+              <h1 className="text-lg capitalize text-nowrap">
+                {project.endDate
+                  ? new Date(project.endDate).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                    })
+                  : 'Still In Progress'}
+              </h1>
+            </div>
           </div>
-          <div>
+          <div className="pt-5">
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-              End Date
+              Client
             </h2>
-            <h1 className="text-lg capitalize">
-              {project.endDate
-                ? new Date(project.endDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                  })
-                : 'Still In Progress'}
-            </h1>
-          </div>
-          <div>
-            <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
-              Location
-            </h2>
-            <h1 className="text-lg capitalize">{project.location}</h1>
+            <h1 className="text-lg capitalize">{project.client}</h1>
           </div>
         </div>
       </div>
