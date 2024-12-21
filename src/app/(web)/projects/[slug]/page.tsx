@@ -145,13 +145,13 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
                 Sector
               </h2>
-              <h1 className="text-lg capitalize">{project.projectSector}</h1>
+              <h1 className="text-base capitalize">{project.projectSector}</h1>
             </div>
             <div>
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
                 Location
               </h2>
-              <h1 className="text-lg text-wrap min-w-28 capitalize">
+              <h1 className="text-base lg:w-32 capitalize">
                 {project.location}
               </h1>
             </div>
@@ -161,7 +161,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               <h2 className="font-thin text-nowrap text-lg uppercase tracking-widest text-zinc-400">
                 Start Date
               </h2>
-              <h1 className="text-lg capitalize">
+              <h1 className="text-base capitalize">
                 {new Date(project.startDate).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -172,7 +172,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
                 End Date
               </h2>
-              <h1 className="text-lg capitalize text-nowrap">
+              <h1 className="text-base capitalize text-nowrap">
                 {project.endDate
                   ? new Date(project.endDate).toLocaleDateString('en-US', {
                       year: 'numeric',
@@ -186,7 +186,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
               Client
             </h2>
-            <h1 className="text-lg capitalize">{project.client}</h1>
+            <h1 className="text-base capitalize">{project.client}</h1>
           </div>
         </div>
       </div>
