@@ -14,19 +14,18 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
 import BoxReveal from '../ui/box-reveal';
+import { BlurFade } from '../ui/blur-fade';
 
 const OurClientsSection = () => {
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-20">
-        <div
-          className="mx-auto text-center"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-center"
-        >
-          <h2 className="font-heading dark:text-[whitesmoke]">
-            Trusted by world class companies, design teams & popular designers
-          </h2>
+        <div className="mx-auto text-center">
+          <BlurFade delay={0.25} inView>
+            <h2 className="font-heading dark:text-[whitesmoke]">
+              Trusted by world class companies, design teams & popular designers
+            </h2>
+          </BlurFade>
         </div>
         <div className="mt-20 lg:block hidden rounded-full h-24 px-16">
           <Swiper

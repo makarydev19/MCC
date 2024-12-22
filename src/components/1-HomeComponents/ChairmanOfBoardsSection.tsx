@@ -1,31 +1,27 @@
 import Image from 'next/image';
+import { BlurFade } from '../ui/blur-fade';
 
 const ChairmanOfBoardsSection = () => {
   return (
-    <section className="lg:px-32 md:px-20 px-0 py-20">
+    <section className="lg:px-32 md:px-20 px-0 py-32">
       <div className="flex flex-col justify-center items-center gap-y-3">
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="text-center font-heading dark:text-[whitesmoke]"
-        >
-          Chairman Of Boards
-        </h1>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-title dark:text-[#f5f5f5b1] px-10"
-        >
-          Building trust and excellence from the foundation up
-        </p>
-        {/* <hr className="underline w-[50%] absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 bg-[#1a1a1a70] " /> */}
+        <BlurFade delay={0.25} inView>
+          <h1 className="text-center font-heading dark:text-[whitesmoke]">
+            Chairman Of Boards
+          </h1>
+        </BlurFade>
+        <BlurFade delay={0.25 * 2} inView>
+          <p className="font-title dark:text-[#f5f5f5b1] px-10">
+            Building trust and excellence from the foundation up
+          </p>
+        </BlurFade>
       </div>
-      <div className="flex flex-col lg:gap-y-32 gap-y-12">
+      <div className="flex flex-col lg:gap-y-40 gap-y-12">
         <div className="flex lg:flex-nowrap flex-wrap px-2 mt-20 lg:gap-y-0 gap-y-8 w-full h-full items-center">
           <div
-            className="lg:w-[55%] mx-4 w-full lg:h-96 h-60 overflow-hidden shadow-2xl shadow-black rounded-xl dark:block z-10"
-            // data-aos="fade-down"
-            // data-aos-duration="800"
+            className="lg:w-[55%] mx-4 w-full lg:h-96 h-60 shadow-xl overflow-hidden rounded-2xl dark:block z-10"
+            data-aos="fade-right"
+            data-aos-duration="800"
           >
             <Image
               alt=""
@@ -36,9 +32,9 @@ const ChairmanOfBoardsSection = () => {
             />
           </div>
           <div
-            className="lg:w-[45%] lg:m-0 p-5 backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-36 z-50"
-            // data-aos="fade-up"
-            // data-aos-duration="800"
+            className="lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-36 z-50"
+            data-aos="fade-left"
+            data-aos-duration="800"
           >
             <ul>
               <li className="font-normal tracking-widest first-line:text-3xl first-letter:text-5xl first-line:font-medium">
@@ -56,9 +52,9 @@ const ChairmanOfBoardsSection = () => {
         </div>
         <div className="flex flex-wrap-reverse lg:flex-nowrap px-2 lg:gap-y-0 gap-y-8 w-full h-full items-center">
           <div
-            className="lg:w-[55%] lg:m-0 p-5 backdrop-blur-custom2 shadow-2xl rounded-lg z-50 -mt-28"
-            // data-aos="fade-down"
-            // data-aos-duration="800"
+            className="lg:w-[55%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl z-50 -mt-28"
+            data-aos="fade-right"
+            data-aos-duration="800"
           >
             <ul>
               <li className="font-normal tracking-widest lg:first-line:text-3xl first-letter:text-5xl first-line:text-xl first-line:font-medium">
@@ -72,9 +68,9 @@ const ChairmanOfBoardsSection = () => {
             </ul>
           </div>
           <div
-            className="lg:w-[45%] w-full mx-4 lg:h-72 h-52 overflow-hidden shadow-2xl shadow-black rounded-xl lg:absolute lg:left-[40%] z-10"
-            // data-aos="fade-up"
-            // data-aos-duration="800"
+            className="lg:w-[45%] w-full mx-4 lg:h-72 h-52 overflow-hidden shadow-xl rounded-2xl lg:absolute lg:left-[40%] z-10"
+            data-aos="fade-left"
+            data-aos-duration="800"
           >
             <Image
               alt=""
@@ -87,22 +83,22 @@ const ChairmanOfBoardsSection = () => {
         </div>
         <div className="flex lg:flex-nowrap flex-wrap px-2 lg:gap-y-0 gap-y-8 w-full h-full items-center">
           <div
-            className="lg:w-[55%] mx-4 w-full lg:h-60 h-40 overflow-hidden shadow-2xl shadow-black rounded-xl z-10"
-            // data-aos="fade-down"
-            // data-aos-duration="800"
+            className="lg:w-[55%] mx-4 w-full lg:h-60 h-40 overflow-hidden shadow-xl rounded-2xl z-10"
+            data-aos="fade-right"
+            data-aos-duration="800"
           >
             <Image
               alt=""
-              src={'/صورة واتساب بتاريخ 1445-03-18 في 17.46.56_13ccfe43.jpg'}
+              src={'/administrative-building.jpg'}
               width={500}
               height={500}
               className="img scale-animation"
             />
           </div>
           <div
-            className="lg:w-[45%] lg:m-0 p-5  backdrop-blur-custom2 shadow-2xl rounded-lg lg:absolute lg:left-[40%] -mt-24 z-50"
-            // data-aos="fade-up"
-            // data-aos-duration="800"
+            className="lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-24 z-50"
+            data-aos="fade-left"
+            data-aos-duration="800"
           >
             <ul>
               <li className="font-normal tracking-widest first-line:text-3xl first-letter:text-5xl first-line:font-medium">

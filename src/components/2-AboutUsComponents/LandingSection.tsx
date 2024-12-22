@@ -7,7 +7,7 @@ const LandingSection = () => {
   const words = ['construction', 'building', 'architectural'];
   return (
     <section>
-      <main className="relative flex flex-col services-page-bg lg:h-[80vh] h-[85vh] rounded-b-3xl justify-end pb-20 lg:px-20 px-5">
+      <main className="relative flex flex-col services-page-bg lg:h-[90vh] h-[85vh] rounded-b-3xl justify-end items-center text-center pb-20 lg:px-20 px-5">
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}

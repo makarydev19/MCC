@@ -17,18 +17,19 @@ const LatestProject: FC<Props> = (props) => {
 
   return (
     <section className="container mx-auto md:px-16 px-5 py-24">
-      <BlurFade delay={0.25} inView>
-        <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-3">
+        <BlurFade delay={0.25} inView>
           <h1 className="font-heading text-center dark:text-[whitesmoke]">
             Latest Project
           </h1>
-
-          <p className="font-title lg:w-[35rem] w-[100%] text-center self-center dark:text-[#f5f5f5d4]">
+        </BlurFade>
+        <BlurFade delay={0.25 * 2} inView>
+          <p className="font-title lg:w-[35rem] mx-auto w-[100%]  dark:text-[#f5f5f5d4]">
             Experience the pinnacle of our construction expertise in our latest
             creation
           </p>
-        </div>
-      </BlurFade>
+        </BlurFade>
+      </div>
 
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl lg:px-20">
@@ -89,25 +90,27 @@ const LatestProject: FC<Props> = (props) => {
             </div>
 
             <div className="md:order-1">
-              <BlurFade delay={0.25}>
+              <BlurFade delay={0.25} inView>
                 <h2 className="text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl">
                   {latestProject.projectName}
                 </h2>
               </BlurFade>
-              <BlurFade delay={0.25 * 2}>
+              <BlurFade delay={0.25 * 2} inView>
                 <p className="mt-4 text-base leading-relaxed text-gray-500">
                   {latestProject.client}
                 </p>
               </BlurFade>
 
-              <Link
-                href="/projects"
-                className="relative mx-auto mt-10 inline-flex items-center justify-center"
-              >
-                <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
-                  Explore more
-                </button>
-              </Link>
+              <BlurFade delay={0.25 * 3} inView>
+                <Link
+                  href="/projects"
+                  className="relative mx-auto mt-10 inline-flex items-center justify-center"
+                >
+                  <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
+                    Explore more
+                  </button>
+                </Link>
+              </BlurFade>
             </div>
           </div>
         </div>
