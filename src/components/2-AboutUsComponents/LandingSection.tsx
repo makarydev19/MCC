@@ -19,7 +19,7 @@ const LandingSection = () => {
           }}
           className="relative flex flex-col gap-4 lg:px-4"
         >
-          <h1 className="lg:text-7xl text-5xl text-white">
+          <h1 className="lg:text-7xl text-4xl text-white">
             We specialize in turning your <br />
             <WordRotate
               className="text-red-700 dark:text-secondary"

@@ -24,7 +24,7 @@ const LatestProject: FC<Props> = (props) => {
           </h1>
         </BlurFade>
         <BlurFade delay={0.25 * 2} inView>
-          <p className="font-title lg:w-[35rem] mx-auto w-[100%]  dark:text-[#f5f5f5d4]">
+          <p className="font-title lg:w-[35rem] mx-auto w-[100%] dark:text-[#f5f5f5d4]">
             Experience the pinnacle of our construction expertise in our latest
             creation
           </p>
@@ -104,9 +104,9 @@ const LatestProject: FC<Props> = (props) => {
               <BlurFade delay={0.25 * 3} inView>
                 <Link
                   href="/projects"
-                  className="relative mx-auto mt-10 inline-flex items-center justify-center"
+                  className="relative mx-auto mt-10 inline-flex items-center lg:justify-start justify-center w-full"
                 >
-                  <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
+                  <button className="btn-primary lg:w-[20vw] w-[80vw] dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
                     Explore more
                   </button>
                 </Link>

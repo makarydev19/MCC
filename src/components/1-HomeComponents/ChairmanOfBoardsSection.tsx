@@ -33,7 +33,7 @@ const ChairmanOfBoardsSection = () => {
           </div>
           <div
             className="lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-36 z-50"
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="800"
           >
             <ul>
@@ -69,7 +69,7 @@ const ChairmanOfBoardsSection = () => {
           </div>
           <div
             className="lg:w-[45%] w-full mx-4 lg:h-72 h-52 overflow-hidden shadow-xl rounded-2xl lg:absolute lg:left-[40%] z-10"
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="800"
           >
             <Image
@@ -97,7 +97,7 @@ const ChairmanOfBoardsSection = () => {
           </div>
           <div
             className="lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-24 z-50"
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-duration="800"
           >
             <ul>
