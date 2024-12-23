@@ -58,7 +58,7 @@ const ProjectPhotoGallery: FC<{
         <div className="absolute lg:left-[59%] lg:top-[90%] top-[90%]">
           {remainingPhotosCount > 0 && (
             <div
-              className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-xl shadow-black"
+              className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-xl shadow-black dark:shadow-white/5"
               onClick={openModal.bind(this, maximiumVisiblePhotos)}
             >
               <Image
@@ -77,7 +77,7 @@ const ProjectPhotoGallery: FC<{
 
         {showModal && (
           <div className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 ">
-            <div className="h-fit lg:h-[80vh] w-[320px] md:w-[1000px] relative mt-10 shadow-xl shadow-black">
+            <div className="h-fit lg:h-[80vh] w-[320px] md:w-[1000px] relative mt-10 ">
               <Image
                 src={photos[currentPhotoIndex].url}
                 alt={`Room Photo ${currentPhotoIndex + 1}`}
