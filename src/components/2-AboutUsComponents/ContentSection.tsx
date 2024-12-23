@@ -47,8 +47,8 @@ const ContentSection = () => {
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
-                    <BoxReveal duration={0.5}>
-                      <div className="bg-red-300 rounded-2xl">
+                    <div className="backdrop-blur-custom rounded-2xl">
+                      <BoxReveal duration={0.5}>
                         <div className="px-8 py-10">
                           <span className="block text-xl font-bold text-black lg:text-2xl">
                             General Director
@@ -58,8 +58,8 @@ const ContentSection = () => {
                             Magdy Shaker Gabra
                           </span>
                         </div>
-                      </div>
-                    </BoxReveal>
+                      </BoxReveal>
+                    </div>
                   </div>
                 </div>
               </div>

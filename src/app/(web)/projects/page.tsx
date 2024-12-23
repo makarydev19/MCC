@@ -75,7 +75,7 @@ const Projects = () => {
   }
 
   return (
-    <section className="pb-20">
+    <section>
       <LandingSection />
 
       <FilterButton

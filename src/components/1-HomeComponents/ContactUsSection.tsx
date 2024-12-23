@@ -13,11 +13,8 @@ const ContactUsSection = () => {
         </BlurFade>
         <div>
           <BlurFade delay={0.25 * 2} inView>
-            <p className="text-center font-sans w-[90%] md:w-[90%] mx-auto tracking-wide lg:text-2xl text-md dark:text-gray-400">
-              We are ready to work on <br className="block lg:hidden" /> a
-              project of any complexity
-              <br className="hidden lg:block" /> whether its commercial or
-              residential.
+            <p className="text-center font-sans w-full md:w-[90%] mx-auto tracking-wide lg:text-2xl text-base dark:text-gray-400">
+              Contact the Experts – Let’s Build Your Future
             </p>
           </BlurFade>
         </div>

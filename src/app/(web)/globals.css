@@ -66,6 +66,10 @@
     cover;
 }
 
+.contactUs-page-bg {
+  background: url(/Porto-October/SAM_HGFHHF32.jpg) no-repeat center / cover;
+}
+
 hr {
   height: 1.4px;
   margin: 0 auto;

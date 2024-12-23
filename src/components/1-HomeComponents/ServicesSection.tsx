@@ -40,7 +40,7 @@ const ServicesSection = () => {
                     className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
                   >
                     <BoxReveal duration={0.5}>
-                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-white dark:bg-zinc-900 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
+                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
                         <Link href="/services" className="w-full lg:h-72 h-48">
                           <Image
                             width={1000}

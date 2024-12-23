@@ -151,7 +151,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
               <h2 className="font-thin text-lg uppercase tracking-widest text-zinc-400">
                 Location
               </h2>
-              <h1 className="text-base lg:w-32 capitalize">
+              <h1 className="text-base text-wrap w-32 capitalize">
                 {project.location}
               </h1>
             </div>
