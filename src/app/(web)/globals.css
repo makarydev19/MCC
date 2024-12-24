@@ -64,12 +64,10 @@
 .aboutUs-page-bg {
   background: url(/Porto-October/IMG_20171019_160406.jpg) no-repeat center /
     cover;
-  background-attachment: fixed;
 }
 
 .contactUs-page-bg {
   background: url(/Porto-October/IMG_0053.JPG) no-repeat center / cover;
-  background-attachment: fixed;
 }
 
 hr {
