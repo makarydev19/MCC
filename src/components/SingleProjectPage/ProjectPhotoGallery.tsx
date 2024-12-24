@@ -77,7 +77,7 @@ const ProjectPhotoGallery: FC<{
         </div>
 
         {showModal && (
-          <div className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 ">
+          <div className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[100000000]">
             <div className="h-fit lg:h-[80vh] w-[320px] md:w-[1000px] relative mt-10 ">
               <Image
                 src={photos[currentPhotoIndex].url}

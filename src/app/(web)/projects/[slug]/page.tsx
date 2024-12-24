@@ -35,7 +35,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             coverImage={project.coverImage}
           />
         </div>
-        <p className="absolute lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4">
+        <p className="absolute z-10 lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4">
           {project.projectName}
         </p>
         {/* <hr className="bg-slate-700 w-[80%] mb-10" /> */}
