@@ -43,8 +43,8 @@ const ProjectPhotoGallery: FC<{
   return (
     <div className="container mx-auto">
       <div className="relative flex items-center justify-center">
-        <div className="relative lg:rounded-2xl rounded-t-2xl overflow-hidden">
-          <div className="lg:w-[60rem] lg:h-96 w-[30rem] mx-auto h-60 shadow-xl">
+        <div className="relative lg:rounded-b-2xl rounded-b-2xl overflow-hidden">
+          <div className="lg:w-screen lg:h-[70vh] w-[30rem] mx-auto h-[70vh] shadow-xl">
             <Image
               src={coverImage.url}
               alt={`Project Photo ${currentPhotoIndex + 1}`}
@@ -53,9 +53,10 @@ const ProjectPhotoGallery: FC<{
               height={2000}
               onClick={openModal.bind(this, 0)}
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent" />
           </div>
         </div>
-        <div className="absolute lg:left-[59%] lg:top-[90%] top-[90%]">
+        <div className="absolute lg:left-[59%] lg:top-[70%] top-[90%]">
           {remainingPhotosCount > 0 && (
             <div
               className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-xl shadow-black dark:shadow-white/5"

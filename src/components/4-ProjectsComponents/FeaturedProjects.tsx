@@ -117,9 +117,6 @@ const FeaturedProjects: React.FC = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          {/* <div className="ml-4 text-white">
-            {currentSlide}/{FeaturedProject.length}
-          </div> */}
         </div>
       </div>
     </div>

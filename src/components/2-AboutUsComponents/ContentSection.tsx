@@ -6,7 +6,7 @@ import { BlurFade } from '../ui/blur-fade';
 const ContentSection = () => {
   return (
     <>
-      <div className="lg:px-20 px-0 py-20">
+      <section className="lg:px-20 px-0 py-10">
         <section className="pb-24 sm:pb-16 lg:pb-24">
           <div className="w-full px-4 mx-auto sm:px-6 lg:px-8">
             <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
@@ -188,7 +188,7 @@ const ContentSection = () => {
             </div>
           </div>
         </section>
-      </div>
+      </section>
     </>
   );
 };

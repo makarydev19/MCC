@@ -27,28 +27,25 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
 
   return (
     <section>
-      <div className="h-full w-full dark:bg-DarkModeBG bg-LightModeBG dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col lg:items-start relative lg:px-28">
-        {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-DarkModeBG bg-LightModeBG [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
-        {/* <Spotlight fill="red" className="top-[40%]" /> */}
-        <div className="py-8 lg:pt-24 z-10">
+      <div className="dark:bg-DarkModeBG bg-LightModeBG dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex flex-col relative">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-DarkModeBG bg-LightModeBG [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+        <div className="pb-8">
           <ProjectPhotoGallery
             photos={project.images}
             coverImage={project.coverImage}
           />
         </div>
-        <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl lg:h-[30vh] lg:w-[55%] w-[95%] relative bg-clip-text dark:text-transparent text-black bg-gradient-to-b from-neutral-200 to-neutral-500 lg:mt-0 mt-32 px-4">
+        <p className="absolute lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4">
           {project.projectName}
         </p>
-        <hr className="bg-slate-700 w-[80%] mb-10" />
+        {/* <hr className="bg-slate-700 w-[80%] mb-10" /> */}
       </div>
-      <div className="lg:mt-10 w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-10 pt-4 lg:pb-32 pb-20">
+      <div className="w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-56 pt-32 lg:pb-32 pb-20">
         <div className="lg:w-[80%] flex flex-col lg:gap-y-10 gap-y-5">
           <h2
-            //   data-aos="fade-in"
-            //   data-aos-easing="linear"
-            //   data-aos-duration="800"
+            data-aos="fade-in"
+            data-aos-easing="linear"
+            data-aos-duration="800"
             className="text-xl font-sans tracking-widest font-medium text-secondary uppercase"
           >
             Project Details

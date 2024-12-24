@@ -27,7 +27,7 @@ const OurClientsSection = () => {
             </h2>
           </BlurFade>
         </div>
-        <div className="mt-20 lg:block hidden rounded-full h-24 px-16">
+        <div className="mt-20 md:block hidden rounded-full h-24 px-16">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
@@ -56,7 +56,7 @@ const OurClientsSection = () => {
             ))}
           </Swiper>
         </div>
-        <div className="mt-10 lg:hidden block rounded-2xl h-16 px-3">
+        <div className="mt-10 md:hidden block rounded-2xl h-16 px-3">
           <Swiper
             slidesPerView={4}
             spaceBetween={50}

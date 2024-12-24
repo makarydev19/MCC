@@ -13,7 +13,7 @@ const ContactUsSection = () => {
         </BlurFade>
         <div>
           <BlurFade delay={0.25 * 2} inView>
-            <p className="text-center font-sans w-full md:w-[90%] mx-auto tracking-wide lg:text-2xl text-base dark:text-gray-400">
+            <p className="font-title w-full md:w-[90%] mx-auto tracking-wide dark:text-gray-400">
               Contact the Experts – Let’s Build Your Future
             </p>
           </BlurFade>

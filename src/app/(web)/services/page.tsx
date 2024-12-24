@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
       <LandingSection />
-      <section className="lg:px-1 px-5 lg:-mt-28 md:-mt-[4.6rem] -mt-36 sticky">
+      <section className="lg:px-1 px-5 md:-mt-5 -mt-48 sticky rounded-3xl bg-LightModeBG dark:bg-DarkModeBG">
         <FeaturesSection />
         <section className="mt-10">
           <ServicesCards />

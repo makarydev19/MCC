@@ -6,10 +6,10 @@ import {
 
 const page = () => {
   return (
-    <section className="pb-28 sm:pb-16 lg:pb-36">
+    <section className="lg:pb-20 pb-10">
       <LandingSection />
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="max-w-5xl mx-auto mt-12 sm:mt-16 flex flex-col gap-y-5">
+      <div className="px-4 mx-auto py-10 sm:px-6 lg:px-8 max-w-7xl bg-LightModeBG dark:bg-DarkModeBG rounded-3xl -mt-20 relative">
+        <div className="max-w-5xl mx-auto my-1 sm:my-5 flex flex-col gap-y-5">
           <MCCInformation />
           {/* Map Location */}
           <iframe
