@@ -5,6 +5,7 @@ import LoadingSpinner from '../../loading';
 import useSWR from 'swr';
 import ProjectPhotoGallery from '@/components/SingleProjectPage/ProjectPhotoGallery';
 import FindConstructionTeam from '@/components/4-ProjectsComponents/FindConstructionTeam';
+import { motion } from 'framer-motion';
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
   const {
@@ -35,9 +36,18 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             coverImage={project.coverImage}
           />
         </div>
-        <p className="absolute z-10 lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4">
-          {project.projectName}
-        </p>
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="absolute z-10 lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4"
+        >
+          <p className="">{project.projectName}</p>
+        </motion.div>
         {/* <hr className="bg-slate-700 w-[80%] mb-10" /> */}
       </div>
       <div className="w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-56 pt-32 lg:pb-32 pb-20">
