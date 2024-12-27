@@ -153,6 +153,7 @@ const ProjectPhotoGallery: FC<{
                           src={photo.url}
                           alt={`Photo ${index + 1}`}
                           fill
+                          unoptimized
                           className="object-cover"
                         />
                       </motion.div>
