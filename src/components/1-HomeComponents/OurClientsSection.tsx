@@ -23,11 +23,11 @@ const OurClientsSection = () => {
         <div className="mx-auto text-center">
           <BlurFade delay={0.25} inView>
             <h2 className="font-heading dark:text-[whitesmoke]">
-              Trusted by world class companies, design teams & popular designers
+              Trusted by world class companies
             </h2>
           </BlurFade>
         </div>
-        <div className="mt-20 md:block hidden rounded-full h-24 px-16">
+        <div className="lg:mt-20 mt-10 rounded-full lg:h-24 h-20 lg:px-16 px-3">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
@@ -35,9 +35,12 @@ const OurClientsSection = () => {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            // pagination={{
-            //   clickable: true,
-            // }}
+            breakpoints={{
+              320: { slidesPerView: 4, spaceBetween: 30 },
+              640: { slidesPerView: 4, spaceBetween: 50 },
+              1024: { slidesPerView: 5, spaceBetween: 100 },
+              1280: { slidesPerView: 5, spaceBetween: 100 },
+            }}
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
@@ -50,35 +53,6 @@ const OurClientsSection = () => {
                     width={400}
                     height={400}
                     className="dark:bg-white rounded-full p-1"
-                  />
-                </BoxReveal>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <div className="mt-10 md:hidden block rounded-2xl h-16 px-3">
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={50}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            // pagination={{
-            //   clickable: true,
-            // }}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            {Clients.map((clients) => (
-              <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal duration={0.5}>
-                  <Image
-                    src={clients.img}
-                    alt=""
-                    width={400}
-                    height={400}
-                    className="dark:bg-white rounded-full"
                   />
                 </BoxReveal>
               </SwiperSlide>

@@ -53,8 +53,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
       <div className="w-full flex lg:flex-row flex-col gap-y-10 items-start justify-between lg:px-20 px-5 lg:pt-56 pt-32 lg:pb-32 pb-20">
         <div className="lg:w-[80%] flex flex-col lg:gap-y-10 gap-y-5">
           <h2
-            data-aos="fade-in"
-            data-aos-easing="linear"
+            data-aos="fade-right"
             data-aos-duration="800"
             className="text-xl font-sans tracking-widest font-medium text-secondary uppercase"
           >
@@ -62,84 +61,162 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           </h2>
           {project.projectContent1 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 {project.projectContent1}
               </h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.details1}
               </h4>
             </div>
           )}
           {project.projectContent2 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 {project.projectContent2}
               </h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.details2}
               </h4>
             </div>
           )}
           {project.projectContent3 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 {project.projectContent3}
               </h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.details3}
               </h4>
             </div>
           )}
           {project.projectContent4 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 {project.projectContent4}
               </h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.details4}
               </h4>
             </div>
           )}
           {project.projectContent5 && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 {project.projectContent5}
               </h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.details5}
               </h4>
             </div>
           )}
           {project.constructionWorks && (
             <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-              <h1 className="lg:text-5xl text-3xl">Construction Works</h1>
-              <h4 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
+                Construction Works
+              </h1>
+              <h4
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.constructionWorks}
               </h4>
             </div>
           )}
           {project.finishingWorks && (
             <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-              <h1 className="lg:text-5xl text-3xl">Finishing Works</h1>
-              <h3 className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
+                Finishing Works
+              </h1>
+              <h3
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl  tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.finishingWorks}
               </h3>
             </div>
           )}
           {project.complementaryWorks && (
             <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-              <h1 className="lg:text-5xl text-3xl">Complementary Works</h1>
-              <h3 className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
+                Complementary Works
+              </h1>
+              <h3
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.complementaryWorks}
               </h3>
             </div>
           )}
           {project.restaurantFinishingWorks && (
             <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-              <h1 className="lg:text-5xl text-3xl">
+              <h1
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="lg:text-5xl text-3xl"
+              >
                 Restaurant Finishing Works
               </h1>
-              <h3 className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600">
+              <h3
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
+              >
                 {project.restaurantFinishingWorks}
               </h3>
             </div>

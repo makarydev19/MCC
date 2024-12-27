@@ -25,7 +25,7 @@ const ChairmanOfBoardsSection = () => {
           >
             <Image
               alt=""
-              src={'/IMG-20231011-WA0002.jpg'}
+              src={'/Coral-Sea/Layer 53 copy.png'}
               width={500}
               height={500}
               className="img scale-animation"
@@ -74,7 +74,7 @@ const ChairmanOfBoardsSection = () => {
           >
             <Image
               alt=""
-              src={'/IMG_20210809_144241.jpg'}
+              src={'/Porto-Minya/building5.jpg'}
               width={500}
               height={500}
               className="img scale-animation"

@@ -141,6 +141,22 @@ export const LandingPageBackgrounds = [
     id: 6,
     image: '/Porto-October/252.jpg',
   },
+  {
+    id: 7,
+    image: '/Administrative-building/IMG-20241107-WA0010.jpg',
+  },
+  {
+    id: 8,
+    image: '/Porto-October/SAM_HGFHHF32.jpg',
+  },
+  {
+    id: 9,
+    image: '/Porto-Minya/building2.jpg',
+  },
+  {
+    id: 10,
+    image: '/The-Pearl/pearl.jpg',
+  },
 ];
 
 export const FeaturedProject = [
@@ -167,5 +183,22 @@ export const FeaturedProject = [
   {
     id: 6,
     coverImg: '/Porto-October/IMG_0053.JPG',
+  },
+  {
+    id: 7,
+    coverImg: '/Sia-Lagoons/WhatsApp Image 2024-08-26 at 1.27.42 PM (3).jpeg',
+  },
+  {
+    id: 8,
+    coverImg: '/administrative-building.jpg',
+  },
+  {
+    id: 9,
+    coverImg: '/Vinci/IMG_5579.JPG',
+  },
+  {
+    id: 10,
+    coverImg:
+      '/The-Pearl/صورة واتساب بتاريخ 1445-03-18 في 13.54.32_8552acde.jpg',
   },
 ];
