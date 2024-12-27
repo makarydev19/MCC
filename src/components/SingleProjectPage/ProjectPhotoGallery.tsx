@@ -125,7 +125,8 @@ const ProjectPhotoGallery: FC<{
               <div className="w-screen relative">
                 <Swiper
                   effect="coverflow"
-                  initialSlide={1}
+                  watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
+                  initialSlide={currentPhotoIndex}
                   coverflowEffect={coverflowEffectConfig}
                   centeredSlides={true}
                   breakpoints={{
@@ -153,8 +154,8 @@ const ProjectPhotoGallery: FC<{
                           src={photo.url}
                           alt={`Photo ${index + 1}`}
                           fill
-                          unoptimized
                           className="object-cover"
+                          loading="eager" // Disable lazy loading
                         />
                       </motion.div>
                     </SwiperSlide>
