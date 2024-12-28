@@ -26,6 +26,7 @@ const ServicesCard = () => {
               width={200}
               height={200}
               className="img"
+              loading="eager"
             />
           </div>
         </div>

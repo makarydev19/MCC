@@ -44,6 +44,7 @@ const FeaturedProjects: React.FC = () => {
         onSlideChange={handleProgressUpdate}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs, Pagination, Autoplay]}
+        watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
         navigation={{
           nextEl: '.swiper-button-next-custom',
           prevEl: '.swiper-button-prev-custom',
@@ -65,6 +66,7 @@ const FeaturedProjects: React.FC = () => {
               src={project.coverImg}
               alt="projectImage"
               className="object-cover w-full h-full"
+              loading="eager"
             />
             <div className="absolute bottom-0 left-0 right-0">
               <div className="bg-gradient-to-t from-zinc-950 to-transparent py-72 lg:px-32 px-8 flex items-start justify-start" />
@@ -95,6 +97,7 @@ const FeaturedProjects: React.FC = () => {
                 src={project.coverImg}
                 alt="projectImage"
                 className="img rounded-xl"
+                loading="eager"
               />
             </SwiperSlide>
           ))}
@@ -115,7 +118,7 @@ const FeaturedProjects: React.FC = () => {
             <div
               className="h-full bg-white transition-all duration-300"
               style={{ width: `${progress}%` }}
-            ></div>
+            />
           </div>
         </div>
       </div>

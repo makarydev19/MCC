@@ -26,6 +26,7 @@ const ProjectCard: FC<Props> = (props) => {
             width={1000}
             height={1000}
             className="img"
+            loading="eager"
           />
           {/* Overlay */}
           <Link href={`projects/${slug.current}`}>

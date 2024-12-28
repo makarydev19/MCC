@@ -29,6 +29,7 @@ const ChairmanOfBoardsSection = () => {
               width={500}
               height={500}
               className="img scale-animation"
+              loading="eager"
             />
           </div>
           <div
@@ -78,6 +79,7 @@ const ChairmanOfBoardsSection = () => {
               width={500}
               height={500}
               className="img scale-animation"
+              loading="eager"
             />
           </div>
         </div>
@@ -93,6 +95,7 @@ const ChairmanOfBoardsSection = () => {
               width={500}
               height={500}
               className="img scale-animation"
+              loading="eager"
             />
           </div>
           <div

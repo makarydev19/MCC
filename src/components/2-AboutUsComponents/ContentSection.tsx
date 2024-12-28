@@ -44,6 +44,7 @@ const ContentSection = () => {
                       className="rounded-2xl"
                       src="/Eng-Magdy.png"
                       alt="Eng.Magdy"
+                      loading="eager"
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
@@ -76,6 +77,7 @@ const ContentSection = () => {
                   height={100}
                   src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
                   alt=""
+                  loading="eager"
                 />
                 <BoxReveal duration={0.5}>
                   <div>
@@ -85,6 +87,7 @@ const ContentSection = () => {
                       className="img relative rounded-2xl"
                       src="/Porto-October/20180203_132117.jpg"
                       alt=""
+                      loading="eager"
                     />
                   </div>
                 </BoxReveal>
@@ -163,6 +166,7 @@ const ContentSection = () => {
                       className="ml-auto img rounded-2xl"
                       src="/IMG-20211024-WA0014.jpg"
                       alt=""
+                      loading="eager"
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">

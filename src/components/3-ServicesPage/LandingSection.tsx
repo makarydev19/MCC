@@ -32,6 +32,7 @@ const LandingSection = () => {
               src={'/Porto-October/IMG_00449.JPG'}
               alt={'img'}
               className="img"
+              loading="eager"
             />
           </div>
         </ContainerScroll>

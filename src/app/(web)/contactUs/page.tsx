@@ -20,6 +20,7 @@ const page = () => {
             allowFullScreen
             title="Location Map"
             referrerPolicy="no-referrer-when-downgrade"
+            loading="eager"
           />
           <ContactUsForm />
         </div>

@@ -48,6 +48,7 @@ const ServicesSection = () => {
                             className="img transitpion-all duration-200 transform group-hover:scale-110"
                             src={services.img2}
                             alt="thumbnail-1"
+                            loading="eager"
                           />
                         </Link>
                         <div className="flex-1 px-4 py-5 sm:p-6">

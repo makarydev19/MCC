@@ -31,6 +31,7 @@ const OurClientsSection = () => {
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
+            watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
@@ -53,6 +54,7 @@ const OurClientsSection = () => {
                     width={400}
                     height={400}
                     className="dark:bg-white rounded-full p-1"
+                    loading="eager"
                   />
                 </BoxReveal>
               </SwiperSlide>

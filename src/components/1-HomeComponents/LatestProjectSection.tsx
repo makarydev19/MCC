@@ -56,6 +56,7 @@ const LatestProject: FC<Props> = (props) => {
                       width={2000}
                       height={2000}
                       className="img scale-animation"
+                      loading="eager"
                     />
                   </div>
                 </BoxReveal>

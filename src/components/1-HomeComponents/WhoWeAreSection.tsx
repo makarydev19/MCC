@@ -47,6 +47,7 @@ const WhoWeAreSection = () => {
                   width={3000}
                   height={3000}
                   className="img scale-animation"
+                  loading="eager"
                 />
               </div>
             </BoxReveal>
@@ -59,6 +60,7 @@ const WhoWeAreSection = () => {
                     width={1500}
                     height={1500}
                     className="scale-animation img"
+                    loading="eager"
                   />
                 </div>
               </BoxReveal>

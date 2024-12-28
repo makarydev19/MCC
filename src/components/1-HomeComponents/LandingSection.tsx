@@ -10,11 +10,11 @@ import { TextGenerateEffect } from '../ui/text-generate-effect';
 const LandingSection = () => {
   return (
     <section className="h-[100vh] relative">
-      {/* Swiper for background images */}
       <Swiper
         loop={true}
         speed={1000}
         parallax={true}
+        watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -32,6 +32,7 @@ const LandingSection = () => {
                 layout="fill"
                 objectFit="cover"
                 className="img"
+                loading="eager"
               />
               {/* Bottom-to-top gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />

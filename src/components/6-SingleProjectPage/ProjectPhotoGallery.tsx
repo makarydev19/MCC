@@ -73,6 +73,7 @@ const ProjectPhotoGallery: FC<{
                 width={2000}
                 height={2000}
                 onClick={openModal.bind(this, 0)}
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent" />
             </motion.div>
@@ -95,6 +96,7 @@ const ProjectPhotoGallery: FC<{
                   src={photos[maximiumVisiblePhotos - 1].url}
                   alt={`Project Photo ${maximiumVisiblePhotos}`}
                   className="img"
+                  loading="eager"
                 />
                 <div className="absolute cursor-pointer text-white inset-0 flex justify-center items-center text-2xl bg-[rgba(0,0,0,0.5)]">
                   + {remainingPhotosCount}
