@@ -4,6 +4,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import useSWR from 'swr';
 import { getProjects } from '@/libs/apis';
 import { Project } from '@/models/project';
+import LoadingSpinner from '../loading';
 import {
   FilterButton,
   LandingSection,
@@ -20,7 +21,7 @@ const Projects = () => {
 
   const fetchData = useCallback(() => getProjects(), []);
 
-  const { data, error } = useSWR('get/projectSectors', fetchData, {
+  const { data, error, isLoading } = useSWR('get/projectSectors', fetchData, {
     revalidateOnFocus: false,
     dedupingInterval: 60000,
   });
@@ -66,13 +67,11 @@ const Projects = () => {
     );
   }, [filteredProjects, currentPage]);
 
-  if (error) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        Error loading projects
-      </div>
-    );
-  }
+  if (error) throw new Error('Cannot fetch data');
+  if (typeof data === 'undefined' && !isLoading)
+    throw new Error('Cannot fetch data');
+
+  if (!data) return <LoadingSpinner />;
 
   return (
     <section>

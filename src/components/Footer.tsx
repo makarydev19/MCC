@@ -16,13 +16,15 @@ const Footer = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-wrap items-center justify-around gap-7">
           <div className="w-16 flex items-center justify-center">
-            <Image
-              src={`/MCC-LOGO.png`}
-              alt=""
-              width={100}
-              height={100}
-              loading="eager"
-            />
+            <Link href="/">
+              <Image
+                src={`/MCC-LOGO.png`}
+                alt=""
+                width={100}
+                height={100}
+                loading="eager"
+              />
+            </Link>
           </div>
           <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7 lg:px-0 px-28">
             {Links.slice(1).map((link) => (
@@ -39,18 +41,18 @@ const Footer = () => {
             <li>
               <Link
                 href={''}
-                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-12 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
+                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
               >
-                <FaFacebook className="text-4xl" />
+                <FaFacebook className="text-3xl" />
               </Link>
             </li>
 
             <li>
               <Link
                 href={''}
-                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-12 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
+                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
               >
-                <RiLinkedinFill className="text-4xl" />
+                <RiLinkedinFill className="text-3xl" />
               </Link>
             </li>
           </ul>
