@@ -29,64 +29,31 @@ const projects = {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'projectContent1',
-      title: 'Project Content 1',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'details1',
-      title: 'Details 1',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'projectContent2',
-      title: 'Project Content 2',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'details2',
-      title: 'Details 2',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'projectContent3',
-      title: 'Project Content 3',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'details3',
-      title: 'Details 3',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'projectContent4',
-      title: 'Project Content 4',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'details4',
-      title: 'Details 4',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'projectContent5',
-      title: 'Project Content 5',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
-    }),
-    defineField({
-      name: 'details5',
-      title: 'Details 5',
-      type: 'text',
-      validation: (Rule) => Rule.max(500).error('Minimum 500 Characters'),
+      name: 'contentDetails',
+      title: 'Content Details',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'contentDetail',
+          fields: [
+            {
+              name: 'content',
+              title: 'Content',
+              type: 'text',
+              validation: (Rule) =>
+                Rule.max(500).error('Maximum 500 characters allowed'),
+            },
+            {
+              name: 'details',
+              title: 'Details',
+              type: 'text',
+              validation: (Rule) =>
+                Rule.max(500).error('Maximum 500 characters allowed'),
+            },
+          ],
+        },
+      ],
     }),
     defineField({
       name: 'constructionWorks',

@@ -16,30 +16,9 @@ export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject
     isHidden
 }`;
 
-// export const getFeaturedProjectsQuery = groq`*[_type == "projects" && featuredProject == true][0] {
-//     _id,
-//     projectName,
-//     slug,
-//     coverImage,
-//     client,
-//     startDate,
-//     endDate,
-//     location,
-//     projectSector,
-// }`;
-
-export const getProjectsQuery = groq`*[_type == "projects"] {
+export const getProjectsQuery = groq`
+*[_type == "projects"] {
     _id,
-    projectContent1,
-    projectContent2,
-    projectContent3,
-    projectContent4,
-    projectContent5,
-    details1,
-    details2,
-    details3,
-    details4,
-    details5,
     constructionWorks,
     finishingWorks,
     images,
@@ -53,21 +32,16 @@ export const getProjectsQuery = groq`*[_type == "projects"] {
     location,
     stillInProgress,
     projectSector,
-    isHidden
+    isHidden,
+    contentDetails[] {
+      content,
+      details
+    }
 }`;
 
-export const getProject = groq`*[_type == "projects" && slug.current == $slug][0] {
-     _id,
-    projectContent1,
-    projectContent2,
-    projectContent3,
-    projectContent4,
-    projectContent5,
-    details1,
-    details2,
-    details3,
-    details4,
-    details5,
+export const getProject = groq`
+*[_type == "projects" && slug.current == $slug][0] {
+    _id,
     constructionWorks,
     finishingWorks,
     complementaryWorks,
@@ -83,5 +57,9 @@ export const getProject = groq`*[_type == "projects" && slug.current == $slug][0
     location,
     stillInProgress,
     projectSector,
-    isHidden
+    isHidden,
+    contentDetails[] {
+      content,
+      details
+    }
 }`;

@@ -155,7 +155,7 @@ const ProjectPhotoGallery: FC<{
                           alt={`Photo ${index + 1}`}
                           fill
                           className="object-cover"
-                          loading="eager" // Disable lazy loading
+                          loading="eager"
                         />
                       </motion.div>
                     </SwiperSlide>

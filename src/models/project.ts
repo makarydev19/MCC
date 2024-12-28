@@ -14,21 +14,17 @@ type Slug = {
   current: string;
 };
 
+type ContentDetail = {
+  content: string;
+  details: string;
+};
+
 export type Project = {
   project: Image;
   _id: string;
   projectName: string;
   slug: Slug;
-  projectContent1: string;
-  projectContent2: string;
-  projectContent3: string;
-  projectContent4: string;
-  projectContent5: string;
-  details1: string;
-  details2: string;
-  details3: string;
-  details4: string;
-  details5: string;
+  contentDetails: ContentDetail[];
   constructionWorks: string;
   finishingWorks: string;
   complementaryWorks: string;
