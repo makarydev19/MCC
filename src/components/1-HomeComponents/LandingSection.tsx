@@ -3,9 +3,9 @@
 import { Parallax, Autoplay } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 import { Swiper } from 'swiper/react';
-import { LandingPageBackgrounds } from '@/data/data';
 import Image from 'next/image';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
+import { HomeBackgrounds } from './Data/HomeData';
 
 const LandingSection = () => {
   return (
@@ -22,7 +22,7 @@ const LandingSection = () => {
         modules={[Parallax, Autoplay]}
         className="mySwiper"
       >
-        {LandingPageBackgrounds.map((image) => (
+        {HomeBackgrounds.map((image) => (
           <SwiperSlide key={image.id}>
             <div className="relative w-full h-[100vh]">
               {/* Image */}

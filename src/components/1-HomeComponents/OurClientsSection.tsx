@@ -1,11 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-
 import React from 'react';
+
+import Image from 'next/image';
+import { Clients } from './Data/HomeData';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Clients } from '@/data/data';
 
 // Import Swiper styles
 import 'swiper/css';

@@ -1,6 +1,6 @@
 'use client';
 
-import { Links } from '@/data/data';
+import { Links } from '@/components/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

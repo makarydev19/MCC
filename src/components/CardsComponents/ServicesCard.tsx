@@ -1,5 +1,5 @@
-import { Services } from '@/data/data';
 import Image from 'next/image';
+import { Services } from '../3-ServicesPage/Data/ServicesData';
 
 const ServicesCard = () => {
   return (
@@ -13,7 +13,14 @@ const ServicesCard = () => {
         >
           <div className="flex flex-col gap-y-7">
             <h2 className="lg:text-4xl text-3xl">{services.title}</h2>
-            <p className="text-lg w-60 line-clamp-2">{services.works1}</p>
+            <div className="text-lg w-60">
+              {/* Displaying the titles of all works */}
+              {services.works.slice(0, 1).map((work, index) => (
+                <p key={index} className="line-clamp-2">
+                  {work.title}
+                </p>
+              ))}
+            </div>
           </div>
           <div
             data-aos="fade-up"

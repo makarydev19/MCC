@@ -6,7 +6,7 @@ import { BlurFade } from '../ui/blur-fade';
 const ContentSection = () => {
   return (
     <>
-      <section className="lg:px-20 px-0 py-10">
+      <section className="lg:px-20 px-0 lg:pt-44 py-10">
         <section className="pb-24 sm:pb-16 lg:pb-24">
           <div className="w-full px-4 mx-auto sm:px-6 lg:px-8">
             <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
@@ -16,12 +16,12 @@ const ContentSection = () => {
                     Chairman Of Boards
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 2} inView>
                   <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
                     Key to our success,
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 3} inView>
                   <p className="mt-4 lg:text-xl text-base leading-relaxed text-gray-600 dark:text-gray-400">
                     is building long term relationships. Our aim is to achieve
                     this with our clients’ by consistently delivering
@@ -36,11 +36,11 @@ const ContentSection = () => {
               </div>
 
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
-                <div className="relative lg:w-[50%] w-full max-w-xs mt-4 mb-10 ml-auto">
+                <div className="relative z-10 lg:w-[50%] w-full max-w-xs mt-4 mb-10 ml-auto">
                   <BoxReveal duration={0.5}>
                     <Image
-                      width={250}
-                      height={250}
+                      width={200}
+                      height={200}
                       className="rounded-2xl"
                       src="/Eng-Magdy.png"
                       alt="Eng.Magdy"
@@ -48,19 +48,21 @@ const ContentSection = () => {
                     />
                   </BoxReveal>
                   <div className="absolute -bottom-10 -left-16">
-                    <BoxReveal duration={0.5}>
-                      <div className="bg-red-300 rounded-2xl">
-                        <div className="px-8 py-10">
-                          <span className="block text-xl font-bold text-black lg:text-2xl">
-                            General Director
-                          </span>
-                          <span className="block mt-2 text-lg leading-snug text-black">
-                            {' '}
-                            Magdy Shaker Gabra
-                          </span>
-                        </div>
+                    <div
+                      data-aos="fade-right"
+                      data-aos-duration="800"
+                      className="backdrop-blur-custom z-20 relative rounded-2xl"
+                    >
+                      <div className="px-8 py-10">
+                        <span className="block text-xl font-bold text-black dark:text-white lg:text-2xl">
+                          General Director
+                        </span>
+                        <span className="block mt-2 text-lg leading-snug text-black dark:text-white">
+                          {' '}
+                          Magdy Shaker Gabra
+                        </span>
                       </div>
-                    </BoxReveal>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -115,12 +117,12 @@ const ContentSection = () => {
                     Our Vision
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 2} inView>
                   <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl lg:leading-tight">
                     To be the preferred contractor of choice.
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 3} inView>
                   <p className="mt-4 text-xl leading-relaxed text-gray-900 dark:text-gray-400">
                     A company that our customers want to work with and our
                     employees are proud to work for.
@@ -139,12 +141,12 @@ const ContentSection = () => {
                     Our Mission
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 2} inView>
                   <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
                     To provide quality workmanship,
                   </h2>
                 </BlurFade>
-                <BlurFade delay={0.25} inView>
+                <BlurFade delay={0.25 * 3} inView>
                   <p className="mt-4 text-xl leading-relaxed text-gray-600 dark:text-gray-400">
                     customer service and maintain the highest level of
                     professionalism, honesty and fairness in our relationships
