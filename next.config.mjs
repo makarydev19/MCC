@@ -1,55 +1,50 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.pexels.com",
+        protocol: 'https',
+        hostname: 'images.pexels.com',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "freepik.com",
+        protocol: 'https',
+        hostname: 'freepik.com',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "img.freepik.com",
+        protocol: 'https',
+        hostname: 'img.freepik.com',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "i.ibb.co",
+        protocol: 'https',
+        hostname: 'i.ibb.co',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "ibb.co",
+        protocol: 'https',
+        hostname: 'ibb.co',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
       {
-        protocol: "https",
-        hostname: "files.fm",
+        protocol: 'https',
+        hostname: 'files.fm',
         port: '',
-        pathname: "/**"
+        pathname: '/**',
       },
     ],
   },
-  
 };
-
-
-
-export default nextConfig;   
+export default nextConfig;

@@ -1,7 +1,7 @@
 'use client';
 
 import CountUp from 'react-countup';
-import { CountsBox } from './Data/HomeData';
+import { CountsBox } from '@/Data/Data';
 
 const CountsSection = () => {
   return (

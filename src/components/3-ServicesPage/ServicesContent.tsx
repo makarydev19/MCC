@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Services } from './Data/ServicesData';
+import { Services } from '@/Data/Data';
 
 const ServiceDetails = ({ works, index }: { works: any[]; index: number }) => (
   <div className={`flex flex-col pb-5 ${index === 1 ? 'gap-y-10' : ''}`}>

@@ -8,7 +8,7 @@ const LandingSection = () => {
   return (
     <div className="flex flex-col overflow-hidden">
       <div className="w-full rounded-md flex md:items-center md:justify-center antialiased dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative overflow-hidden">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-zinc-900 bg-zinc-100 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-zinc-900 bg-zinc-100 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
         <Spotlight className="top-40 left-0 md:left-60 md:-top-20" fill="red" />
         <Spotlight className="top-50 left-0 md:left-100 md:top-20" fill="red" />
 

@@ -1,6 +1,6 @@
-"use client";
-import React, { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+'use client';
+import React, { useRef } from 'react';
+import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
 
 export const ContainerScroll = ({
   titleComponent,
@@ -20,9 +20,9 @@ export const ContainerScroll = ({
       setIsMobile(window.innerWidth <= 768);
     };
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener('resize', checkMobile);
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -36,13 +36,13 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20 md:-mt-0 -mt-20"
       ref={containerRef}
     >
       <div
         className="py-10 md:py-40 w-full relative"
         style={{
-          perspective: "1000px",
+          perspective: '1000px',
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
@@ -83,7 +83,7 @@ export const Card = ({
         rotateX: rotate,
         scale,
         boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
       }}
       className="lg:max-w-6xl -mt-12 mx-auto h-[20rem] md:h-[40rem] w-full rounded-[30px] shadow-2xl"
     >

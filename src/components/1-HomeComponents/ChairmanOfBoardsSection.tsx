@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BlurFade } from '../ui/blur-fade';
-import { chairmanOfBoardsData } from './Data/HomeData';
+import { chairmanOfBoardsData } from '@/Data/Data';
 
 const ChairmanOfBoardsSection = () => {
   return (

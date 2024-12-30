@@ -1,12 +1,12 @@
 'use client';
 
-import { Links } from '@/components/data';
 import Link from 'next/link';
 import Image from 'next/image';
 import ThemeContext from '@/Context/themeContext';
 import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa6';
 import { RiLinkedinFill } from 'react-icons/ri';
+import { Links } from '@/Data/Data';
 
 const Footer = () => {
   const { darkTheme } = useContext(ThemeContext);

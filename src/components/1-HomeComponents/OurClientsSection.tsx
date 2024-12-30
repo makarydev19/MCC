@@ -3,7 +3,6 @@
 import React from 'react';
 
 import Image from 'next/image';
-import { Clients } from './Data/HomeData';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +15,7 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import BoxReveal from '../ui/box-reveal';
 import { BlurFade } from '../ui/blur-fade';
+import { Clients } from '@/Data/Data';
 
 const OurClientsSection = () => {
   return (

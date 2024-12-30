@@ -62,11 +62,9 @@ const LatestProject: FC<Props> = (props) => {
                 </BoxReveal>
 
                 <div className="absolute bottom-5 lg:-left-16 -left-10 z-50">
-                  <div className="backdrop-blur-custom shadow-2xl rounded-md">
+                  <div className="backdrop-blur-custom2 text-white shadow-2xl rounded-md">
                     <BoxReveal duration={0.5}>
                       <div className="py-4 pl-4 pr-10 sm:py-6 sm:pl-8 sm:pr-16">
-                        {/* <h2 className="lg:text-xl font-bold">Category :{""}</h2> */}
-
                         <span className="block text-xl font-boldsm:text-4xl lg:text-2xl capitalize">
                           {latestProject.projectSector}
                         </span>

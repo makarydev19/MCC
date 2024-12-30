@@ -1,10 +1,10 @@
 'use client';
 
-import { Links } from '@/components/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ToggleTheme, ToggleMenu } from './ToggleComponents';
+import { Links } from '@/Data/Data';
 
 const Header = () => {
   const pathname = usePathname();

@@ -14,8 +14,8 @@ import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 import Image from 'next/image';
 import styles from './FeaturedProjects.module.css';
-import { FeaturedProject } from './Data/ProjectLandingData';
 import { BlurFade } from '../ui/blur-fade';
+import { FeaturedProject } from '@/Data/Data';
 
 const FeaturedProjects: React.FC = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);

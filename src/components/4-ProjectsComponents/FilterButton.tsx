@@ -69,8 +69,8 @@ const Filters: React.FC<FiltersProps> = ({
       <div
         className={`fixed rounded-xl shadow-2xl bg-zinc-50 dark:bg-zinc-900 z-[6000] transform transition-transform duration-500 ${
           drawerOpen
-            ? 'lg:-translate-x-0 lg:left-0 lg:top-20 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 overflow-auto hide-scrollbar'
-            : 'lg:-translate-y-full lg:left-0 lg:top-0 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 translate-y-full'
+            ? 'lg:translate-x-0 lg:left-0 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 overflow-auto hide-scrollbar'
+            : 'lg:-translate-x-full lg:left-0 lg:w-96 lg:h-[80%] bottom-0 w-full h-96 lg:translate-y-0 translate-y-full'
         }`}
       >
         <div className="lg:px-5 px-0 py-10 flex flex-col gap-y-4 h-full justify-start items-start lg:py-24">

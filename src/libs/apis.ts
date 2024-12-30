@@ -12,16 +12,6 @@ export async function getLatestProject() {
   return result;
 }
 
-// export async function getFeaturedProject() {
-//   const result = await sanityClient.fetch<Project[]>(
-//     queries.getFeaturedProjectsQuery,
-//     {},
-//     { cache: "no-cache" }
-//   );
-
-//   return result;
-// }
-
 export async function getProjects() {
   const result = await sanityClient.fetch<Project[]>(
     queries.getProjectsQuery,

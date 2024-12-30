@@ -1,9 +1,9 @@
-import { Links } from '@/components/data';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import Image from 'next/image';
+import { Links } from '@/Data/Data';
 
 const ToggleMenu = () => {
   const [showMenu, setShowMenu] = useState(false);

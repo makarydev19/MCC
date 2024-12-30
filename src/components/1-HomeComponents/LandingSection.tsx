@@ -5,7 +5,7 @@ import { SwiperSlide } from 'swiper/react';
 import { Swiper } from 'swiper/react';
 import Image from 'next/image';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-import { HomeBackgrounds } from './Data/HomeData';
+import { HomeBackgrounds } from '@/Data/Data';
 
 const LandingSection = () => {
   return (

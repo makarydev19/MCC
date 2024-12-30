@@ -16,8 +16,7 @@ export const getLatestProjectQuery = groq`*[_type == "projects" && latestProject
     isHidden
 }`;
 
-export const getProjectsQuery = groq`
-*[_type == "projects"] {
+export const getProjectsQuery = groq`*[_type == "projects"] {
     _id,
     constructionWorks,
     finishingWorks,
@@ -39,8 +38,7 @@ export const getProjectsQuery = groq`
     }
 }`;
 
-export const getProject = groq`
-*[_type == "projects" && slug.current == $slug][0] {
+export const getProject = groq`*[_type == "projects" && slug.current == $slug][0] {
     _id,
     constructionWorks,
     finishingWorks,

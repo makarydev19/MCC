@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Services } from '../3-ServicesPage/Data/ServicesData';
+import { Services } from '@/Data/Data';
 
 const ServicesCard = () => {
   return (

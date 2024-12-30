@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import BoxReveal from '../ui/box-reveal';
-import { Services } from '../3-ServicesPage/Data/ServicesData';
+import { Services } from '@/Data/Data';
 
 const ServicesSection = () => {
   return (

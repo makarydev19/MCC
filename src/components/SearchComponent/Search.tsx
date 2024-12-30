@@ -34,12 +34,16 @@ const Search: FC<Props> = ({
     'All',
     'El-Obour City',
     'Giza',
-    'Minya',
+    'Minya Governorate',
     'New Cairo',
+    'New Mansoura',
+    'Mostakbel City',
+    'El-Ain Sokhna',
     'North Coast',
     'Octobor',
     'Port-Said',
     'Sharm El-Sheikh',
+    'Suez Road Fifth Settlement',
     'New Administrative Capital',
   ];
   const years = [

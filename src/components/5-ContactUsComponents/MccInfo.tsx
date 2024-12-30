@@ -1,5 +1,5 @@
+import { contactData } from '@/Data/Data';
 import React from 'react';
-import { contactData } from './Data/ContactData';
 
 const MccInfo = () => {
   return (

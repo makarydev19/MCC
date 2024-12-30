@@ -38,7 +38,7 @@ const WhoWeAreSection = () => {
               </p>
             </BlurFade>
           </div>
-          <div className="flex flex-grow lg:w-3/6 justify-end lg:ml-10">
+          <div className="flex flex-grow lg:w-3/6 justify-end items-end lg:ml-10">
             <BoxReveal duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh] shadow-xl shadow-black">
                 <Image

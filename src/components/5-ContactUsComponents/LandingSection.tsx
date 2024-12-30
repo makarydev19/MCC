@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import React from 'react';
-import { BlurFade } from '../ui/blur-fade';
+import { motion } from 'framer-motion';
 
 const LandingSection = () => {
   return (
