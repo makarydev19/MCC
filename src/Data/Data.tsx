@@ -65,9 +65,8 @@ interface CountsBoxItem {
 }
 
 export const CountsBox: CountsBoxItem[] = [
-  { id: 1, num: 20, title: 'Projects' },
   { id: 2, num: 15, title: 'Clients' },
-  { id: 3, num: 100, title: 'Employees' },
+  { id: 3, num: 200, title: 'Employees' },
   { id: 4, num: 10, title: 'Cities' },
 ];
 
@@ -88,13 +87,11 @@ export const chairmanOfBoardsData: SectionData[] = [
     imageClasses:
       'lg:w-[55%] mx-4 w-full lg:h-96 h-60 shadow-xl overflow-hidden rounded-2xl dark:block z-10',
     content: `Key to our success <br />
-    is building long term relationships. Our aim is to achieve this
-    with our clients by consistently delivering exceptional results
-    that are on time and within budget reflecting the needs of our
-    clients and end users. This achievement to date is the result of
-    our highly dedicated and experienced project team. Our approach
-    allows for the project team you start with to be the team that
-    celebrates with you the successful completion of the project.`,
+    is developing long term relationships. Our aim is to achieve customer satisfaction
+    by consistently delivering results
+    on time and within budget reflecting the needs of all our stakeholders. This achievement to date is the result of the efforts of 
+    our highly dedicated and experienced project teams. 
+    Our approach allows for the project team you start with to be the team you celebrate with the successful completion of the project.`,
     contentClasses:
       'lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-36 z-50',
   },
@@ -103,28 +100,27 @@ export const chairmanOfBoardsData: SectionData[] = [
     imageAlt: 'Porto Minya Building',
     imageClasses:
       'lg:w-[45%] w-full mx-4 lg:h-72 h-52 overflow-hidden shadow-xl rounded-2xl lg:absolute lg:left-[40%] z-10',
-    content: `We have a long term vision <br />
+    content: `Our long term vision <br />
     We are passionate about fostering a strong, sustainable and
-    profitable growth through which every individual has an
+    profitable growth through which every stakeholder has an
     opportunity to attain quality of life. To make our vision a reality,
-    it is our responsibility to look after our clients, end users,
-    employees, and the environment.`,
+    we commit to delivering excellence and value across all levels of engagement.`,
     contentClasses:
       'lg:w-[55%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl z-50 -mt-28',
   },
-  {
-    imageSrc: '/administrative-building.jpg',
-    imageAlt: 'Administrative Building',
-    imageClasses:
-      'lg:w-[55%] mx-4 w-full lg:h-60 h-40 overflow-hidden shadow-xl rounded-2xl z-10',
-    content: `Through this site <br />
-    I am pleased to introduce our business and history since we
-    established this company in 1998. Thanks to all our clients, staff,
-    and suppliers who helped us achieve our goals and sustain our
-    success.`,
-    contentClasses:
-      'lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-24 z-50',
-  },
+  // {
+  //   imageSrc: '/administrative-building.jpg',
+  //   imageAlt: 'Administrative Building',
+  //   imageClasses:
+  //     'lg:w-[55%] mx-4 w-full lg:h-60 h-40 overflow-hidden shadow-xl rounded-2xl z-10',
+  //   content: `Through this site <br />
+  //   I am pleased to introduce our business and history since we
+  //   established this company in 1998. Thanks to all our clients, staff,
+  //   and suppliers who helped us achieve our goals and sustain our
+  //   success.`,
+  //   contentClasses:
+  //     'lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-24 z-50',
+  // },
 ];
 
 // <>------------------<>
@@ -185,7 +181,7 @@ export const Services: Service[] = [
     title: 'Concrete work of all kinds',
     works: [],
     img: '/construction-crane-concept-illustration.png',
-    img2: '/Porto-Said/IMG_0489.JPG',
+    img2: '/Porto-October/IMG_0040.JPG',
   },
   {
     id: 2,
@@ -229,7 +225,7 @@ export const Services: Service[] = [
   {
     id: 3,
     num: '03',
-    title: 'Electro-Mechanic Works',
+    title: 'Electro-Mechanical Works',
     works: [
       {
         title: 'Swimming pool works, Sanitary drainage works',
@@ -246,7 +242,7 @@ export const Services: Service[] = [
   {
     id: 4,
     num: '04',
-    title: 'Roads and Landscape Works',
+    title: 'Landscape Works',
     works: [
       {
         title:
@@ -322,11 +318,6 @@ export interface ContactItem {
 }
 
 export const contactData: ContactItem[] = [
-  {
-    iconPath:
-      'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
-    details: ['+ 0233373078', '01227422587'],
-  },
   {
     iconPath:
       'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',

@@ -37,6 +37,7 @@ module.exports = {
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
         aurora: 'aurora 60s linear infinite',
+        'infinite-loop': 'infinite-loop 20s linear infinite',
       },
       keyframes: {
         aurora: {
@@ -56,6 +57,10 @@ module.exports = {
             opacity: 1,
             transform: 'translate(-50%,-40%) scale(1)',
           },
+        },
+        'infinite-loop': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

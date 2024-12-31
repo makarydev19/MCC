@@ -12,7 +12,7 @@ const Footer = () => {
   const { darkTheme } = useContext(ThemeContext);
 
   return (
-    <section className="py-3 dark:bg-zinc-950 bg-[#fdfdfd] pt-16 lg:pt-10">
+    <section className="py-3 dark:bg-zinc-950 bg-[#fdfdfd] pt-16 lg:pt-8">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-wrap items-center justify-around gap-7">
           <div className="w-16 flex items-center justify-center">
@@ -60,7 +60,7 @@ const Footer = () => {
         <hr className="my-10 dark:border-gray-800" />
         <div className="flex flex-col w-full justify-center items-center ">
           <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
-            © Copyright 2024, All Rights Reserved by{' '}
+            © Copyright 2025, All Rights Reserved by{' '}
             <br className="block lg:hidden" />
             <span className="font-semibold font-inter">
               {' '}

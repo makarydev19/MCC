@@ -3,15 +3,15 @@ import {
   ContactUsSection,
   CountsSection,
   LandingSection,
-  LatestProjectSection,
   OurClientsSection,
   ServicesSection,
   WhoWeAreSection,
 } from '@/components/1-HomeComponents';
-import { getLatestProject } from '@/libs/apis';
+
+// import { getLatestProject } from '@/libs/apis';
 
 const Home = async () => {
-  const latestProject = await getLatestProject();
+  // const latestProject = await getLatestProject();
   return (
     <>
       <LandingSection />
@@ -24,7 +24,7 @@ const Home = async () => {
       <div className="lg:px-20">
         <OurClientsSection />
       </div>
-      <LatestProjectSection latestProject={latestProject} />
+      {/* <LatestProjectSection latestProject={latestProject} /> */}
       <ContactUsSection />
     </>
   );

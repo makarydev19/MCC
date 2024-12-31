@@ -17,7 +17,7 @@ const ChairmanOfBoardsSection = () => {
           </p>
         </BlurFade>
       </div>
-      <div className="flex flex-col lg:gap-y-40 gap-y-12">
+      <div className="flex flex-col lg:gap-y-18 gap-y-3">
         {chairmanOfBoardsData.map((section, index) => (
           <div
             key={index}

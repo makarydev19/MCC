@@ -5,6 +5,9 @@ import { Header, Footer } from '@/components';
 import { ThemeProvider, AOSProvider } from '@/components/Providers';
 import './globals.css';
 
+// Import Swiper styles
+import 'swiper/css';
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700', '900'],

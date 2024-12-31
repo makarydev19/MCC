@@ -19,7 +19,7 @@ const LandingSection = () => {
                 Building the future with
               </h1>
               <WordPullUp
-                className="text-5xl md:text-[7rem] font-bold mt-1 leading-none"
+                className="text-5xl md:text-[7rem] font-bold mt-1 lg:mb-10 leading-none"
                 words="Comprehensive Construction Solutions"
               />
             </>

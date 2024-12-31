@@ -5,7 +5,7 @@ import { BlurFade } from '../ui/blur-fade';
 
 const WhoWeAreSection = () => {
   return (
-    <section className="lg:px-32 md:px-20 px-5 py-10 pt-72 lg:py-10 lg:pt-48">
+    <section className="lg:px-32 md:px-20 px-5 py-10 pt-72 lg:py-10 lg:pt-28">
       <div className="lg:m-0">
         <BlurFade delay={0.2} inView>
           <h2 className="text-lg font-sans font-medium text-secondary uppercase">
@@ -16,7 +16,7 @@ const WhoWeAreSection = () => {
           <div className="flex-grow lg:w-5/12 lg:mb-0 mb-10 ">
             <BlurFade delay={0.2 * 2} inView>
               <h1 className="text-4xl mt-4">
-                For over 20 years, MCC has transformed visions and ideas into
+                For over 20 years, MCC has transformed visions and concepts into
                 steel, masonry, and concrete realities.
               </h1>
             </BlurFade>
@@ -24,7 +24,7 @@ const WhoWeAreSection = () => {
               <p className="mt-8 text-base rounded-2xl px-4 py-3">
                 Our clients represent a broad spectrum of industries and
                 business sectors, allowing us the opportunity to apply our
-                extensive experience, know-how, and passion for excellence to
+                extensive experiences, know-how, and passion for excellence to
                 each specific project in order to successfully handle every
                 challenge and special circumstance.
               </p>
@@ -32,9 +32,9 @@ const WhoWeAreSection = () => {
             <BlurFade delay={0.2 * 2} inView>
               <p className="mt-5 text-base rounded-2xl px-4 py-3">
                 With a well-respected track record behind us, and a solid
-                outlook ahead, we’ve learned that our collaborative experience
+                outlook ahead, we’ve learned that our collaborative experiences
                 with a variety of projects creates exceptional solutions and
-                results for our clients, no matter what they are building.
+                results for our clients.
               </p>
             </BlurFade>
           </div>

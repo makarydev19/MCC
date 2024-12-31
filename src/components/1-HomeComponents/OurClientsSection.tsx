@@ -19,7 +19,7 @@ import { Clients } from '@/Data/Data';
 
 const OurClientsSection = () => {
   return (
-    <section className="py-10 sm:py-16 lg:py-24">
+    <section className="py-10 sm:py-16 lg:pb-14">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-20">
         <div className="mx-auto text-center">
           <BlurFade delay={0.25} inView>
@@ -28,7 +28,7 @@ const OurClientsSection = () => {
             </h2>
           </BlurFade>
         </div>
-        <div className="lg:mt-20 mt-10 rounded-full lg:h-24 h-20 lg:px-16 px-3">
+        <div className="mt-10 rounded-full lg:h-24 h-20 lg:px-16 px-3">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
@@ -63,8 +63,8 @@ const OurClientsSection = () => {
           </Swiper>
         </div>
       </div>
-      <p className="mt-10 text-base text-center text-gray-500 md:mt-20">
-        and, 1000+ more companies
+      <p className="mt-8 text-base text-center text-gray-500 ">
+        and many more...
       </p>
     </section>
   );

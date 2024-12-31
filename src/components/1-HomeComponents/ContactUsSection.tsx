@@ -8,13 +8,13 @@ const ContactUsSection = () => {
       <div className="flex flex-col gap-4">
         <BlurFade delay={0.25} inView>
           <h1 className="text-center font-heading w-[80%] md:w-[90%] mx-auto dark:text-[whitesmoke]">
-            What Can Us Do <br className="lg:hidden block" /> For You ?
+            How may <br className="block lg:hidden" /> we assist you...
           </h1>
         </BlurFade>
         <div>
           <BlurFade delay={0.25 * 2} inView>
             <p className="font-title w-full md:w-[90%] mx-auto tracking-wide dark:text-gray-400">
-              Contact the Experts – Let’s Build Your Future
+              Contact the Experts – Let us craft your dreams to existence
             </p>
           </BlurFade>
         </div>

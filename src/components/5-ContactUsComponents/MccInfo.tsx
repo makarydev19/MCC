@@ -3,12 +3,10 @@ import React from 'react';
 
 const MccInfo = () => {
   return (
-    <div className="grid grid-cols-1 gap-6 text-center md:px-0 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-6 text-center md:px-0 md:grid-cols-2">
       {contactData.map((item, index) => (
         <div
           key={index}
-          data-aos="fade-up"
-          data-aos-duration="800"
           className="overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl"
         >
           <div className="p-6">

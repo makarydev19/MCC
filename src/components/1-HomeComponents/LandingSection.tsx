@@ -1,8 +1,10 @@
 'use client';
 
-import { Parallax, Autoplay } from 'swiper/modules';
-import { SwiperSlide } from 'swiper/react';
-import { Swiper } from 'swiper/react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// import required modules
+import { Autoplay, Parallax } from 'swiper/modules';
 import Image from 'next/image';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import { HomeBackgrounds } from '@/Data/Data';
@@ -46,7 +48,9 @@ const LandingSection = () => {
         <p className="lg:text-2xl text-xl">We build your dreams</p>
         <TextGenerateEffect
           className="uppercase lg:text-6xl text-4xl text-left"
-          words={'From concept to completion, we bring your dreams to life'}
+          words={
+            'From concept to completion, We craft your dreams into existence...'
+          }
         />
       </div>
     </section>
