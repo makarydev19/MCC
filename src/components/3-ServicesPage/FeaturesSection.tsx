@@ -7,7 +7,7 @@ const FeaturesSection = () => {
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-28">
-        <div className="max-w-xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center">
           {/* <BlurFade delay={0.25} inView>
             <div className="inline-flex px-4 py-1.5 mx-auto rounded-full bg-gradient-to-r from-fuchsia-600 to-red-600">
               <p className="text-xs font-semibold tracking-widest text-white uppercase">
@@ -16,7 +16,7 @@ const FeaturesSection = () => {
             </div>
           </BlurFade> */}
           <BlurFade delay={0.25} inView>
-            <h2 className="mt-6 text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading mt-6 font-bold leading-tight text-black dark:text-[whitesmoke]">
               Celebration helps you build beautiful website
             </h2>
           </BlurFade>

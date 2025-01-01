@@ -15,7 +15,7 @@ const ServicesCards = () => {
         <p
           data-aos="fade-up"
           data-aos-duration="800"
-          className="text-lg text-center lg:w-[50%] dark:text-gray-100"
+          className="text-lg text-center lg:w-[50%] text-gray-600 dark:text-gray-400"
         >
           General constructions which include designing and constructing
           buildings, residential neighborhoods, hotels, resorts, commercial and

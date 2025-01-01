@@ -135,7 +135,7 @@ const ContentSection = () => {
         </section>
         <section className="py-10 sm:py-16 lg:pb-14">
           <div className="max-w-full px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
+            <div className="grid items-end grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
               <div>
                 <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
@@ -157,15 +157,15 @@ const ContentSection = () => {
                 </BlurFade>
               </div>
 
-              <div className="relative pr-6 sm:pl-6 md:px-0">
-                <div className="relative justify-self-end">
+              <div className="relative">
+                <div className="relative lg:justify-self-end justify-self-center">
                   <BoxReveal duration={0.5}>
                     <Image
-                      width={310}
-                      height={310}
-                      className="ml-auto img rounded-2xl"
+                      width={510}
+                      height={510}
+                      className="aspect-video img rounded-2xl"
                       src="/IMG-20211024-WA0014.jpg"
-                      alt=""
+                      alt="img"
                       loading="eager"
                     />
                   </BoxReveal>
