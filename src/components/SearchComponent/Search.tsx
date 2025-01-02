@@ -10,8 +10,8 @@ type Props = {
   setProjectSectorFilter: (value: string) => void;
   locationFilter: string;
   setLocationFilter: (value: string) => void;
-  endDateFilter: string;
-  setEndDateFilter: (value: string) => void;
+  // endDateFilter: string;
+  // setEndDateFilter: (value: string) => void;
 };
 
 const Search: FC<Props> = ({
@@ -19,8 +19,8 @@ const Search: FC<Props> = ({
   setProjectSectorFilter,
   locationFilter,
   setLocationFilter,
-  endDateFilter,
-  setEndDateFilter,
+  // endDateFilter,
+  // setEndDateFilter,
 }) => {
   const projectSectors = [
     'All',
@@ -46,13 +46,13 @@ const Search: FC<Props> = ({
     'Suez Road Fifth Settlement',
     'New Administrative Capital',
   ];
-  const years = [
-    'All',
-    'Still In Progress',
-    ...Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) =>
-      (2000 + i).toString()
-    ),
-  ];
+  // const years = [
+  //   'All',
+  //   'Still In Progress',
+  //   ...Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) =>
+  //     (2000 + i).toString()
+  //   ),
+  // ];
 
   return (
     <div className="lg:w-full mx-auto w-[90%] lg:bg-transparent lg:dark:bg-transparent dark:bg-zinc-900 px-2 py-4 rounded-md ">
@@ -76,7 +76,7 @@ const Search: FC<Props> = ({
             </div>
           </div>
 
-          {/* End Date Select with Icon */}
+          {/* End Date Select with Icon
           <div className="flex flex-col border-l-[1.5px]  border-[#00000022] dark:border-zinc-700">
             <div className="pl-4 flex gap-x-4 items-center pb-1">
               <FaCalendarAlt className="text-zinc-900 dark:text-gray-200" />
@@ -92,7 +92,7 @@ const Search: FC<Props> = ({
                 placeholder="Select end date"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Location Select with Icon */}
           <div className="flex flex-col border-l-[1.5px] border-[#00000022] dark:border-zinc-700">

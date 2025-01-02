@@ -130,6 +130,7 @@ const projects = {
           ],
         },
       ],
+      validation: (Rule) => Rule.required().max(8),
     }),
     defineField({
       name: 'coverImage',

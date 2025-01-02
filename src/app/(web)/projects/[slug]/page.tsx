@@ -61,7 +61,6 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
           project={{
             projectSector: project.projectSector,
             location: project.location,
-            startDate: project.startDate,
             endDate: project.endDate,
             client: project.client,
           }}

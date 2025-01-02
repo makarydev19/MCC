@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-export const getProjectsQuery = groq`*[_type == "projects"] {
+export const getProjectsQuery = groq`*[_type == "projects"] | order(projectName asc) {
   _id,
   constructionWorks,
   finishingWorks,

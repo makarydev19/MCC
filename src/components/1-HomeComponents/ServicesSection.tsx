@@ -10,8 +10,8 @@ const ServicesSection = () => {
         <div className="lg:px-10 px-5 lg:py-28 pt-10 mx-auto">
           <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
             <BoxReveal duration={0.5}>
-              <h1 className="md:text-5xl text-4xl text-wrap text-white mb-5 lg:text-left text-center font-roboto">
-                We Provide Strong Services For You
+              <h1 className="md:text-7xl text-4xl text-wrap text-white mb-5 lg:text-left text-center font-roboto">
+                Our Services...
               </h1>
             </BoxReveal>
             <BoxReveal duration={0.5}>

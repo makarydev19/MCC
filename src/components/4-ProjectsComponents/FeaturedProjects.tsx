@@ -65,11 +65,8 @@ const FeaturedProjects: React.FC = () => {
         }}
         className={styles.customSwiper}
       >
-        {FeaturedProject.map((project) => (
-          <SwiperSlide
-            key={project.id}
-            className={`${styles.customSlide} relative`}
-          >
+        {FeaturedProject.map((project, index) => (
+          <SwiperSlide key={index} className={`${styles.customSlide} relative`}>
             <Image
               width={1000}
               height={1000}
@@ -99,8 +96,8 @@ const FeaturedProjects: React.FC = () => {
             prevEl: '.swiper-button-prev-custom',
           }}
         >
-          {FeaturedProject.map((project) => (
-            <SwiperSlide key={project.id} className="thumbs">
+          {FeaturedProject.map((project, index) => (
+            <SwiperSlide key={index} className="thumbs">
               <Image
                 width={1000}
                 height={1000}

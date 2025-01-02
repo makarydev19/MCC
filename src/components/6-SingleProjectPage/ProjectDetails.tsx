@@ -8,7 +8,6 @@ const ProjectSidebar = ({
   project: {
     projectSector: string;
     location: string;
-    startDate: string;
     endDate: string | null;
     client: string;
   };
@@ -54,19 +53,16 @@ const ProjectSidebar = ({
           <h2
             data-aos="fade-up"
             data-aos-duration="800"
-            className="font-thin text-nowrap text-lg uppercase tracking-widest text-zinc-400"
+            className="font-thin text-lg uppercase tracking-widest text-zinc-400"
           >
-            Start Date
+            Client
           </h2>
           <h1
             data-aos="fade-up"
             data-aos-duration="800"
             className="text-base capitalize"
           >
-            {new Date(project.startDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-            })}
+            {project.client}
           </h1>
         </div>
         <div>
@@ -90,22 +86,6 @@ const ProjectSidebar = ({
               : 'Still In Progress'}
           </h1>
         </div>
-      </div>
-      <div className="pt-5">
-        <h2
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-        >
-          Client
-        </h2>
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="text-base capitalize"
-        >
-          {project.client}
-        </h1>
       </div>
     </div>
   );

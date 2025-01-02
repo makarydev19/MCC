@@ -22,7 +22,7 @@ const LandingSection = () => {
           <h1 className="lg:text-7xl text-4xl text-white">
             We specialize in turning <br className="lg:block hidden" /> your{' '}
             <br className="block lg:hidden" />
-            <span className="text-secondary"> vision</span> into reality
+            <span className="text-secondary"> vision</span> into reality...
           </h1>
         </motion.div>
       </main>

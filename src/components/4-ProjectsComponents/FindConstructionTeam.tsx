@@ -6,11 +6,12 @@ const FindConstructionTeam = () => {
       <div className="w-full h-full flex flex-col gap-y-7 items-center justify-center backdrop-brightness-[.3]">
         <div className="flex flex-col gap-y-5 items-center justify-center">
           <h1 className="text-white lg:text-5xl text-3xl text-center">
-            Find Construction Team
+            Partner with us for success
           </h1>
           <p className="lg:text-lg text-md text-white text-center w-[70%]">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
-            sequi quod tempore totam magni ex consequatur ad ipsam.
+            Whether you have inquiries, project proposals, or feedback, we
+            welcome your engagement as a valued partner in achieving project
+            success...
           </p>
         </div>
         <Link href={'/contactUs'}>
