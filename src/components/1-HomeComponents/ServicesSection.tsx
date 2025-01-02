@@ -6,21 +6,13 @@ import { Services } from '@/Data/Data';
 const ServicesSection = () => {
   return (
     <section className="my-20 services-bg h-full w-full">
-      <div className="w-full h-full lg:flex gap-20 items-center justify-center backdrop-brightness-[.3]">
-        <div className="lg:px-10 px-5 py-10 mx-auto">
+      <div className="w-full h-full gap-20 backdrop-brightness-[.3]">
+        <div className="lg:px-10 px-5 lg:py-28 pt-10 mx-auto">
           <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
             <BoxReveal duration={0.5}>
-              <h1 className="md:text-5xl text-4xl md:w-[80%] lg:mx-0 md:mx-auto text-wrap text-white mb-5 lg:text-left text-center font-roboto">
+              <h1 className="md:text-5xl text-4xl text-wrap text-white mb-5 lg:text-left text-center font-roboto">
                 We Provide Strong Services For You
               </h1>
-            </BoxReveal>
-            <BoxReveal duration={0.5}>
-              <p className="md:text-lg lg:text-sm md:w-[85%] lg:mx-0 md:mx-auto text-white mb-5 lg:text-left text-center font-roboto">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptatum eveniet explicabo quae. Quaerat a fugit est mollitia
-                quae nihil placeat eius iusto ullam aut, illo nesciunt beatae
-                unde vel recusandae!
-              </p>
             </BoxReveal>
             <BoxReveal duration={0.5}>
               <Link href="/services" className="relative z-10">
@@ -41,7 +33,7 @@ const ServicesSection = () => {
                   >
                     <BoxReveal duration={0.5}>
                       <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
-                        <Link href="/services" className="w-full lg:h-72 h-48">
+                        <Link href="/services" className="w-full lg:h-72 h-52">
                           <Image
                             width={1000}
                             height={1000}
@@ -52,11 +44,11 @@ const ServicesSection = () => {
                           />
                         </Link>
                         <div className="flex-1 px-4 py-5 sm:p-6">
-                          <a href="/services" title="" className="">
-                            <p className="text-lg font-bold text-gray-900 dark:text-white">
+                          <Link href="/services">
+                            <p className="text-base font-bold text-gray-900 dark:text-white">
                               {services.title}
                             </p>
-                          </a>
+                          </Link>
                         </div>
                         <div className="px-4 py-5 mt-auto border-t border-gray-100 dark:border-gray-500 sm:px-6">
                           <div className="flex items-center justify-between">

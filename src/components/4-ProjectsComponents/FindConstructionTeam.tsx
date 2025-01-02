@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const FindConstructionTeam = () => {
   return (
-    <section className="h-[60vh] mb-20 findConstructionTeam-bg">
+    <section className="h-[60vh] findConstructionTeam-bg">
       <div className="w-full h-full flex flex-col gap-y-7 items-center justify-center backdrop-brightness-[.3]">
         <div className="flex flex-col gap-y-5 items-center justify-center">
           <h1 className="text-white lg:text-5xl text-3xl text-center">

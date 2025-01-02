@@ -16,6 +16,7 @@ import Image from 'next/image';
 import styles from './FeaturedProjects.module.css';
 import { BlurFade } from '../ui/blur-fade';
 import { FeaturedProject } from '@/Data/Data';
+import { motion } from 'framer-motion';
 
 const FeaturedProjects: React.FC = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -32,12 +33,21 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <div className="relative h-[100vh]">
-      <div className="absolute lg:bottom-56 bottom-40 lg:w-[50%] w-[20%] lg:left-28 left-6 right-0 z-50">
-        <BlurFade delay={0.8} inView>
+      <div className="absolute lg:bottom-20 bottom-40 lg:w-[50%] w-[20%] lg:left-28 left-6 right-0 z-50">
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="relative"
+        >
           <h2 className="text-white lg:text-7xl tracking-wide text-5xl font-bold">
             Our Projects
           </h2>
-        </BlurFade>
+        </motion.div>
       </div>
       <Swiper
         loop={true}

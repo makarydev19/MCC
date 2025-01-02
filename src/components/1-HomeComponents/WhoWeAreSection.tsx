@@ -13,15 +13,15 @@ const WhoWeAreSection = () => {
           </h2>
         </BlurFade>
         <div className="flex flex-wrap lg:w-full items-center">
-          <div className="flex-grow lg:w-5/12 lg:mb-0 mb-10 ">
+          <div className="flex-grow flex flex-col gap-y-7 lg:w-5/12 lg:mb-0 mb-10">
             <BlurFade delay={0.2 * 2} inView>
-              <h1 className="text-4xl mt-4">
+              <h1 className="text-4xl text-gray-800 dark:text-[whitesmoke] font-roboto font-bold mt-4">
                 For over 20 years, MCC has transformed visions and concepts into
                 steel, masonry, and concrete realities.
               </h1>
             </BlurFade>
             <BlurFade delay={0.2 * 3} inView>
-              <p className="mt-8 text-base rounded-2xl px-4 py-3">
+              <p className="text-base dark:text-white/85 rounded-2xl pl-3">
                 Our clients represent a broad spectrum of industries and
                 business sectors, allowing us the opportunity to apply our
                 extensive experiences, know-how, and passion for excellence to
@@ -30,7 +30,7 @@ const WhoWeAreSection = () => {
               </p>
             </BlurFade>
             <BlurFade delay={0.2 * 2} inView>
-              <p className="mt-5 text-base rounded-2xl px-4 py-3">
+              <p className="text-base dark:text-white/85 rounded-2xl pl-3">
                 With a well-respected track record behind us, and a solid
                 outlook ahead, we’ve learned that our collaborative experiences
                 with a variety of projects creates exceptional solutions and
@@ -42,7 +42,7 @@ const WhoWeAreSection = () => {
             <BoxReveal duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh] shadow-xl shadow-black">
                 <Image
-                  src={`/Porto-October/IMG_0044.JPG`}
+                  src={`/Porto-October/SAM_683FFF.jpg`}
                   alt=""
                   width={3000}
                   height={3000}

@@ -23,37 +23,53 @@ export const Links: Links[] = [
 // Home Background
 
 interface HomeBackground {
-  id: number;
   image: string;
 }
 
 export const HomeBackgrounds: HomeBackground[] = [
-  { id: 1, image: '/Porto-October/IMG_0045.JPG' },
-  { id: 2, image: '/Porto-October/IMG-1.JPG' },
-  { id: 3, image: '/Porto-Said/IMG-20200815-WA0058.jpg' },
-  { id: 4, image: '/Oriental-Wavers/DSC00999.png' },
-  { id: 5, image: '/Porto-Sharm/IMG_20180422_112345.png' },
-  { id: 6, image: '/Porto-October/252.jpg' },
-  { id: 7, image: '/Administrative-building/IMG-20241107-WA0010.jpg' },
-  { id: 8, image: '/Porto-October/SAM_HGFHHF32.jpg' },
-  { id: 9, image: '/Porto-Minya/building2.jpg' },
-  { id: 10, image: '/The-Pearl/pearl.jpg' },
+  { image: '/LandingImages/IMG_0045.JPG' },
+  { image: '/Administrative-building/IMG-20241107-WA0010.jpg' },
+  { image: '/LandingImages/IMG_0053.JPG' },
+  { image: '/The-Pearl/pearl.jpg' },
+  { image: '/LandingImages/WhatsApp Image 2024-08-25 at 2.38.35 PM (3).jpeg' },
+  { image: '/Porto-Sharm/IMG_20180422_112345.png' },
+  { image: '/LandingImages/252.jpg' },
+  { image: '/LandingImages/IMG-20200815-WA0059.jpg' },
+  { image: '/LandingImages/IMG_0025.JPG' },
+  { image: '/LandingImages/IMG_0044.JPG' },
+  { image: '/LandingImages/IMG_0054.JPG' },
+  { image: '/LandingImages/IMG_0494.JPG' },
+  { image: '/LandingImages/SAM_6832.jpg' },
+  { image: '/LandingImages/SAM_6832.jpg' },
+  { image: '/LandingImages/SAM_FFGG32.jpg' },
+  { image: '/LandingImages/WhatsApp Image 2024-08-25 at 2.38.34 PM (2).jpeg' },
 ];
 
 // Clients Logo
 
 interface Client {
-  id: number;
   img: string;
 }
 
 export const Clients: Client[] = [
-  { id: 1, img: `/Amer_group-removebg-preview.png` },
-  { id: 2, img: `/Coral_Sea-removebg-preview.png` },
-  { id: 3, img: `/SMG-removebg-preview.png` },
-  { id: 4, img: `/Sharming-removebg-preview.png` },
-  { id: 5, img: `/MI-removebg-preview.png` },
-  { id: 6, img: `/Oriental_Weaver-removebg-preview.png` },
+  { img: `/Logos/images..2.png` },
+  { img: `/Logos/imagesss.png` },
+  { img: `/Logos/Layer 59.png` },
+  { img: `/Logos/Layer 60.png` },
+  { img: `/Logos/Layer 61.png` },
+  { img: `/Logos/Layer 63.png` },
+  { img: `/Logos/Layer 64.png` },
+  { img: `/Logos/logo-2-white.png` },
+  { img: `/Logos/logo-3-white.png` },
+  { img: `/Logos/logo.png` },
+  { img: `/Logos/logos neyoum-arab-03.png` },
+  { img: `/Logos/misr_italia_properties_logo_003.png` },
+  { img: `/Logos/october-03.png` },
+  { img: `/Logos/porto said.png` },
+  { img: `/Logos/montazalogo (2).png` },
+  { img: `/Logos/porto_group.png` },
+  { img: `/Logos/Sharming Inn Logo.png` },
+  { img: `/Logos/OW1.png` },
 ];
 
 // CountsBox
@@ -66,8 +82,8 @@ interface CountsBoxItem {
 
 export const CountsBox: CountsBoxItem[] = [
   { id: 2, num: 15, title: 'Clients' },
-  { id: 3, num: 200, title: 'Employees' },
   { id: 4, num: 10, title: 'Cities' },
+  { id: 3, num: 200, title: 'Employees' },
 ];
 
 // Chariman of boards Data
@@ -160,16 +176,11 @@ export const features: Feature[] = [
 
 // Define types for the works and service
 
-interface Work {
-  title: string;
-  description: string;
-}
-
 interface Service {
   id: number;
   num: string;
   title: string;
-  works: Work[];
+  works: string;
   img: string;
   img2: string;
 }
@@ -179,78 +190,46 @@ export const Services: Service[] = [
     id: 1,
     num: '01',
     title: 'Concrete work of all kinds',
-    works: [],
+    works:
+      'Our concrete works are executed with meticulous adherence to the principles of project integration management, ensuring seamless coordination of scope, schedule, and quality. Leveraging high-grade materials and advanced construction methodologies, we deliver outputs that meet stakeholder requirements and conform to industry standards. Our deliverables include reinforced concrete structures, foundations, and pavements, each crafted to ensure durability and alignment with the defined project baselines.',
+
     img: '/construction-crane-concept-illustration.png',
     img2: '/Porto-October/IMG_0040.JPG',
   },
   {
     id: 2,
     num: '02',
-    title: 'Architectural Finishing Works',
-    works: [
-      {
-        title: 'Building Work, Plastering Works, Insulation works',
-        description:
-          '( Ceramic - Porcelain - Parquet - Marble - Vinyl - Interlock Soft Concrete - Formed Concrete - Basalt - Refractory Stone - Rubble Mound )',
-      },
-      {
-        title: 'Walls coating works',
-        description:
-          '( Ceramic - Porcelain - Marble - Basalt - Refractory Stone - Rubble Mound - All kind of Natural and Artificial stones )',
-      },
-      {
-        title:
-          'Tile cladding works, Aluminum works, Metal works, Carpentry works',
-        description:
-          '( Wooden doors - Pergolas - Establishing and cladding ceiling and walls )',
-      },
-      {
-        title: 'Interior paints work, Sanitations works',
-        description:
-          '( Inner feeding and drainage grids - Public feeding and drainage grids )',
-      },
-      {
-        title: 'Electric works',
-        description:
-          '( Install all electrical outlets - Break Public Panels Major electrical transformers work )',
-      },
-      {
-        title: 'Firefighting, alarm works, Air Conditioning works',
-        description: '',
-      },
-    ],
-    img: '/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview.png',
+    title: 'Infrastructure Works',
+    works:
+      'Our infrastructure projects are managed through a structured approach to scope and schedule management, emphasizing comprehensive Work Breakdown Structures (WBS) and milestone tracking. We specialize in developing essential deliverables, such as roads, bridges, and utility systems, employing risk management techniques to mitigate project uncertainties. Quality assurance processes and continuous stakeholder engagement ensure that the outcomes align with the projects objectives and community impact assessments.',
+    img: '/rb_109175.png',
     img2: '/Porto-October/SA832.jpg',
   },
   {
     id: 3,
     num: '03',
-    title: 'Electro-Mechanical Works',
-    works: [
-      {
-        title: 'Swimming pool works, Sanitary drainage works',
-        description: '',
-      },
-      {
-        title: 'Irrigation tanks works, Treatment plant works',
-        description: '',
-      },
-    ],
-    img: '/aae4de92-663c-4cc8-b391-4ffa06c932b1-removebg-preview.png',
-    img2: '/SwimmingPool2.jpg',
+    title: 'Finishing Works',
+    works:
+      'Our finishing works are governed by detailed project scope management and quality control plans, ensuring the final deliverables meet both functional and aesthetic requirements. From interior partitions and ceiling designs to exterior cladding and decorative finishes, our focus remains on stakeholder satisfaction and alignment with the project charter. Utilizing advanced resource scheduling and change management practices, we ensure the project achieves its intended objectives within the specified constraints.',
+    img: '/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview2.png',
+    img2: '/Porto-October/SA832.jpg',
   },
   {
     id: 4,
     num: '04',
+    title: 'Electro-Mechanical Works',
+    works:
+      'Electromechanical works are planned and executed using resource optimization techniques and robust procurement management strategies. Our team integrates mechanical and electrical deliverables, such as HVAC systems, electrical installations, and fire safety solutions, into cohesive project environments. Emphasizing compliance, safety standards, and value engineering, we ensure all systems align with the defined project constraints and deliver maximum efficiency and sustainability.',
+    img: '/freepik__background__99288.png',
+    img2: '/SwimmingPool2.jpg',
+  },
+  {
+    id: 5,
+    num: '05',
     title: 'Landscape Works',
-    works: [
-      {
-        title:
-          'Curbstone works, Interlock works, Formed concrete, works Soft, concrete works, Basalt floors, walls work and Gravel works',
-        description: '',
-      },
-    ],
-    img: '/engineer-7689854_1280-removebg-preview (1).png',
+    works:
+      'Our landscape works are executed through meticulous project planning and integration processes, ensuring alignment with the overall project charter and environmental management plans. Deliverables include hardscape and softscape installations, irrigation systems, and outdoor lighting solutions, each tailored to meet stakeholder expectations. Through effective resource leveling, risk mitigation strategies, and adherence to sustainability practices, we enhance the projects value by creating functional and aesthetically pleasing outdoor environments that align with the projects defined baselines.',
+    img: '/40315-removebg-preview.png',
     img2: '/Porto-October/IMG_0040.JPG',
   },
 ];

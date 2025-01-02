@@ -36,7 +36,6 @@ export type Project = {
   images: Image[];
   coverImage: CoverImage;
   location: string;
-  latestProject: boolean;
   projectSector: string;
   isHidden: boolean;
 };

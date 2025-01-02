@@ -8,6 +8,7 @@ import { Autoplay, Parallax } from 'swiper/modules';
 import Image from 'next/image';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import { HomeBackgrounds } from '@/Data/Data';
+import { motion } from 'framer-motion';
 
 const LandingSection = () => {
   return (
@@ -24,8 +25,8 @@ const LandingSection = () => {
         modules={[Parallax, Autoplay]}
         className="mySwiper"
       >
-        {HomeBackgrounds.map((image) => (
-          <SwiperSlide key={image.id}>
+        {HomeBackgrounds.map((image, index) => (
+          <SwiperSlide key={index}>
             <div className="relative w-full h-[100vh]">
               {/* Image */}
               <Image
@@ -44,14 +45,36 @@ const LandingSection = () => {
       </Swiper>
 
       {/* Text Content - Outside the Swiper for stability */}
-      <div className="absolute lg:w-[80%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-24 px-5 lg:py-20 py-24">
-        <p className="lg:text-2xl text-xl">We build your dreams</p>
-        <TextGenerateEffect
-          className="uppercase lg:text-6xl text-4xl text-left"
-          words={
-            'From concept to completion, We craft your dreams into existence...'
-          }
-        />
+      <div className="absolute lg:w-[90%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-24 px-5 lg:py-20 py-24">
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="relative"
+        >
+          <p className="lg:text-2xl text-xl">We build your dreams</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="relative"
+        >
+          <TextGenerateEffect
+            className="uppercase lg:text-6xl text-4xl text-left"
+            words={
+              'From concept to completion, We craft your dreams into existence...'
+            }
+          />
+        </motion.div>
       </div>
     </section>
   );

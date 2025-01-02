@@ -157,13 +157,6 @@ const projects = {
       validation: (Rule) => Rule.required().error('Location is required'),
     }),
     defineField({
-      name: 'latestProject',
-      title: 'Latest Project',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    // Add the 'isHidden' field to control whether a project is hidden
-    defineField({
       name: 'isHidden',
       title: 'Hide this project',
       type: 'boolean',

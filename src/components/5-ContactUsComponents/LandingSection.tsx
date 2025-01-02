@@ -18,9 +18,7 @@ const LandingSection = () => {
           }}
           className="relative"
         >
-          <h1 className="lg:text-7xl text-4xl text-white">
-            Your Dream Project <br /> Starts Here
-          </h1>
+          <h1 className="lg:text-7xl text-4xl text-white">Contact Us</h1>
         </motion.div>
       </main>
     </section>

@@ -28,14 +28,13 @@ const OurClientsSection = () => {
             </h2>
           </BlurFade>
         </div>
-        <div className="mt-10 rounded-full lg:h-24 h-20 lg:px-16 px-3">
+        <div className="rounded-3xl lg:px-16 px-5 lg:mt-16 mt-5 py-3 bg-LightModeBG/95">
           <Swiper
             slidesPerView={5}
             spaceBetween={100}
             watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
             }}
             breakpoints={{
               320: { slidesPerView: 4, spaceBetween: 30 },
@@ -46,17 +45,18 @@ const OurClientsSection = () => {
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
-            {Clients.map((clients) => (
-              <SwiperSlide key={clients.id} className="mb-10 ml-0">
-                <BoxReveal duration={0.5}>
-                  <Image
-                    src={clients.img}
-                    alt=""
-                    width={400}
-                    height={400}
-                    className="dark:bg-white rounded-full p-1"
-                    loading="eager"
-                  />
+            {Clients.map((clients, index) => (
+              <SwiperSlide key={index} className="">
+                <BoxReveal duration={0.5} boxColor="white">
+                  <div className="lg:size-20 size-14 flex items-center justify-center">
+                    <Image
+                      src={clients.img}
+                      alt=""
+                      width={500}
+                      height={500}
+                      loading="eager"
+                    />
+                  </div>
                 </BoxReveal>
               </SwiperSlide>
             ))}

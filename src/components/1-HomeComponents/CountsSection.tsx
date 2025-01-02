@@ -13,7 +13,7 @@ const CountsSection = () => {
       {CountsBox.map((counts) => (
         <div
           key={counts.id}
-          className="hover:-translate-y-1 group bg-LightModeBG shadow-xl dark:shadow-white/10 dark:shadow-lg dark:bg-DarkModeBG duration-500 w-32 h-32 flex dark:text-white text-text flex-col justify-center items-center relative rounded-3xl overflow-hidden"
+          className="hover:-translate-y-1 group bg-LightModeBG shadow-xl dark:shadow-white/10 dark:shadow-lg dark:bg-DarkModeBG duration-500 w-36 h-32 flex dark:text-white text-text flex-col justify-center items-center relative rounded-3xl overflow-hidden"
         >
           <div className="z-20 flex flex-col justify-center items-center">
             <div className="flex gap-x-1">
