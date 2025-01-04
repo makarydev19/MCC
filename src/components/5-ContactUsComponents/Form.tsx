@@ -67,7 +67,7 @@ const ContactForm: React.FC = () => {
   return (
     <BlurFade delay={0.25 * 3} inView>
       <div className="my-6 overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl">
-        <div className="px-6 py-12 sm:p-12">
+        <div className="lg:px-12 px-5 py-12 sm:p-12">
           <h3 className="text-3xl font-semibold text-center text-gray-900 dark:text-[whitesmoke]">
             Send Us A Message
           </h3>

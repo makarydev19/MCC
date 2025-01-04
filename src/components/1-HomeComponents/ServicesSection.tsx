@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BoxReveal from '../ui/box-reveal';
 import { Services } from '@/Data/Data';
+import { BlurFade } from '../ui/blur-fade';
 
 const ServicesSection = () => {
   return (
@@ -31,8 +32,8 @@ const ServicesSection = () => {
                     key={services.id}
                     className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
                   >
-                    <BoxReveal duration={0.5}>
-                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
+                    <BlurFade duration={0.5} inView>
+                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-b-2xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
                         <Link href="/services" className="w-full lg:h-72 h-52">
                           <Image
                             width={1000}
@@ -86,7 +87,7 @@ const ServicesSection = () => {
                           </div>
                         </div>
                       </div>
-                    </BoxReveal>
+                    </BlurFade>
                   </div>
                 ))}
               </div>

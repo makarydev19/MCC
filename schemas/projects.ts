@@ -1,4 +1,4 @@
-import { defineField, Rule } from 'sanity';
+import { defineField } from 'sanity';
 
 const projectSector = [
   { title: 'Commercial', value: 'commercial' },
@@ -83,12 +83,6 @@ const projects = {
       type: 'string',
       validation: (Rule) =>
         Rule.required().max(100).error('Maximum 100 Characters'),
-    }),
-    defineField({
-      name: 'startDate',
-      title: 'Start Date',
-      type: 'date',
-      validation: (Rule) => Rule.required().error('Start Date is required'),
     }),
     defineField({
       name: 'endDate',

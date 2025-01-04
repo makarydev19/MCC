@@ -1,5 +1,6 @@
-import { contactData } from '@/Data/Data';
 import React from 'react';
+import { contactData } from '@/Data/Data';
+import Link from 'next/link';
 
 const MccInfo = () => {
   return (
@@ -10,28 +11,16 @@ const MccInfo = () => {
           className="overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-xl"
         >
           <div className="p-6">
-            <svg
-              className="flex-shrink-0 w-10 h-10 mx-auto text-gray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d={item.iconPath}
-              />
-            </svg>
-            {item.details.map((detail, i) => (
-              <p
-                key={i}
-                className="mt-6 text-lg font-medium leading-relaxed text-gray-900 dark:text-gray-100"
+            <Link href={item.link}>
+              <div
+                className={`flex items-center justify-center ${index === 0 ? 'cursor-default' : ''}`}
               >
-                {detail}
-              </p>
-            ))}
+                {item.icon}
+              </div>
+            </Link>
+            <p className="mt-6 text-lg font-medium leading-relaxed text-gray-900 dark:text-gray-100">
+              {item.details}
+            </p>
           </div>
         </div>
       ))}

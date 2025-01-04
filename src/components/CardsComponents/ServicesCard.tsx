@@ -9,7 +9,7 @@ const ServicesCard = () => {
           key={services.id}
           data-aos="fade-up"
           data-aos-duration="800"
-          className="relative dark:bg-zinc-900 bg-rose-50 shadow-xl dark:shadow-2xl rounded-lg md:w-[27rem] w-full h-40 p-4 flex items-start"
+          className="relative dark:bg-zinc-900 bg-zinc-100 shadow-xl dark:shadow-2xl rounded-lg md:w-[27rem] w-full h-40 p-4 flex items-start"
         >
           <div className="flex flex-col gap-y-7 lg:w-full w-[50%]">
             <h2 className="lg:text-4xl text-3xl">{services.title}</h2>

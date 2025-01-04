@@ -33,7 +33,7 @@ const ChairmanOfBoardsSection = () => {
                 src={section.imageSrc}
                 width={500}
                 height={500}
-                className="img scale-animation"
+                className="img"
                 loading="eager"
               />
             </div>

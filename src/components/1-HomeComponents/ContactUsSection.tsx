@@ -4,7 +4,7 @@ import { BlurFade } from '../ui/blur-fade';
 
 const ContactUsSection = () => {
   return (
-    <section className="container mx-auto lg:px-32 md:px-10 px-5 py-20">
+    <section className="container mx-auto lg:px-32 md:px-10 px-2 py-20">
       <div className="flex flex-col gap-4">
         <BlurFade delay={0.25} inView>
           <h1 className="text-center font-heading w-[80%] md:w-[90%] mx-auto dark:text-[whitesmoke]">

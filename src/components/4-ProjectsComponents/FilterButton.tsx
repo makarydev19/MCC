@@ -8,8 +8,6 @@ interface FiltersProps {
   setProjectSectorFilter: React.Dispatch<React.SetStateAction<string>>;
   locationFilter: string;
   setLocationFilter: React.Dispatch<React.SetStateAction<string>>;
-  endDateFilter: string;
-  setEndDateFilter: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Filters: React.FC<FiltersProps> = ({
@@ -17,8 +15,6 @@ const Filters: React.FC<FiltersProps> = ({
   setProjectSectorFilter,
   locationFilter,
   setLocationFilter,
-  endDateFilter,
-  setEndDateFilter,
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [showFilterButton, setShowFilterButton] = useState(false);
@@ -88,8 +84,6 @@ const Filters: React.FC<FiltersProps> = ({
             setProjectSectorFilter={setProjectSectorFilter}
             locationFilter={locationFilter}
             setLocationFilter={setLocationFilter}
-            // endDateFilter={endDateFilter}
-            // setEndDateFilter={setEndDateFilter}
           />
         </div>
       </div>

@@ -30,7 +30,6 @@ export type Project = {
   complementaryWorks: string;
   restaurantFinishingWorks: string;
   client: string;
-  startDate: string;
   endDate: string;
   stillInProgress: boolean;
   images: Image[];

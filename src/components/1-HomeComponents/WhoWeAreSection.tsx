@@ -46,7 +46,7 @@ const WhoWeAreSection = () => {
                   alt=""
                   width={3000}
                   height={3000}
-                  className="img scale-animation"
+                  className="img"
                   loading="eager"
                 />
               </div>
@@ -59,7 +59,7 @@ const WhoWeAreSection = () => {
                     alt=""
                     width={1500}
                     height={1500}
-                    className="scale-animation img"
+                    className="img"
                     loading="eager"
                   />
                 </div>

@@ -15,11 +15,11 @@ const LandingSection = () => {
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="lg:text-4xl text-xl font-semibold text-black dark:text-white">
+              <h1 className="lg:text-4xl text-xl font-semibold text-black dark:text-white/80">
                 Building the future with
               </h1>
               <WordPullUp
-                className="text-5xl md:text-[7rem] font-bold mt-1 lg:mb-10 leading-none"
+                className="text-5xl md:text-[7rem] font-bold dark:text-[whitesmoke] mt-1 lg:mb-10 leading-none"
                 words="Comprehensive Construction Solutions"
               />
             </>

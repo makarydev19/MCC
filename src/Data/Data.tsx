@@ -1,3 +1,6 @@
+import { FaLocationDot } from 'react-icons/fa6';
+import { MdEmail } from 'react-icons/md';
+
 // <>------------------<>
 // 0-Page Links
 //<>-------------------<>
@@ -282,18 +285,24 @@ export const FeaturedProject: FeaturedBackground[] = [
 
 export interface ContactItem {
   iconPath: string;
-  details: string[];
+  details: string;
+  link: string;
+  icon: any;
 }
 
 export const contactData: ContactItem[] = [
   {
     iconPath:
       'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-    details: ['info@mcc-egy.com'],
+    details: '',
+    link: '',
+    icon: <MdEmail className="text-4xl" />,
   },
   {
     iconPath:
       'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z',
-    details: ['52 El-Ansar, Ad Doqi, Dokki, Giza Governorate 3751060'],
+    details: '52 El-Ansar, Ad Doqi, Dokki, Giza Governorate 3751060',
+    link: 'https://www.google.com/maps/place/MCC+-+%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%D8%A7%D8%AA+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB%D8%A9+%D9%84%D9%84%D9%85%D9%82%D8%A7%D9%88%D9%84%D8%A7%D8%AA%E2%80%AD/@30.040874,31.198817,16z/data=!4m6!3m5!1s0x145847dfadab6abb:0x613111d2768cb9b8!8m2!3d30.0408737!4d31.1988167!16s%2Fg%2F11fkvym5s7?hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D',
+    icon: <FaLocationDot className="text-4xl" />,
   },
 ];

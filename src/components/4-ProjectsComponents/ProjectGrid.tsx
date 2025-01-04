@@ -11,7 +11,7 @@ interface ProjectGridProps {
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => (
   <>
     <div className="flex flex-col gap-y-2 lg:mt-32 mt-24">
-      <h1 className="lg:text-6xl text-4xl text-center">
+      <h1 className="font-heading dark:text-[whitesmoke] text-center">
         What we have accomplished...
       </h1>
       <p className="font-title dark:text-zinc-300">

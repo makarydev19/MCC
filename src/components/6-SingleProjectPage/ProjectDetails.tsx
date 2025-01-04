@@ -21,34 +21,55 @@ const ProjectSidebar = ({
             data-aos-duration="800"
             className="font-thin text-lg uppercase tracking-widest text-zinc-400"
           >
-            Sector
-          </h2>
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="text-base capitalize"
-          >
-            {project.projectSector}
-          </h1>
-        </div>
-        <div>
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-          >
             Location
           </h2>
           <h1
             data-aos="fade-up"
             data-aos-duration="800"
-            className="text-base text-wrap w-32 capitalize"
+            className="text-base text-nowrap w-32 capitalize"
           >
             {project.location}
           </h1>
         </div>
-      </div>
-      <div className="space-y-5">
+        <div className="flex items-center gap-x-20 justify-between">
+          <div>
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="font-thin text-lg uppercase tracking-widest text-zinc-400"
+            >
+              Sector
+            </h2>
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="text-base capitalize"
+            >
+              {project.projectSector}
+            </h1>
+          </div>
+          <div>
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="font-thin text-lg uppercase tracking-widest text-zinc-400"
+            >
+              End Date
+            </h2>
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="text-base capitalize text-nowrap"
+            >
+              {project.endDate
+                ? new Date(project.endDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                  })
+                : 'Still In Progress'}
+            </h1>
+          </div>
+        </div>
         <div>
           <h2
             data-aos="fade-up"
@@ -63,27 +84,6 @@ const ProjectSidebar = ({
             className="text-base capitalize"
           >
             {project.client}
-          </h1>
-        </div>
-        <div>
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-          >
-            End Date
-          </h2>
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="text-base capitalize text-nowrap"
-          >
-            {project.endDate
-              ? new Date(project.endDate).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                })
-              : 'Still In Progress'}
           </h1>
         </div>
       </div>

@@ -2,16 +2,19 @@
 
 import { Image as ImageType } from '@/models/project';
 import { CoverImage } from '@/models/project';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { MdCancel } from 'react-icons/md';
 import BoxReveal from '../ui/box-reveal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
+import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
-import { EffectCoverflow } from 'swiper/modules';
+SwiperCore.use([Navigation]);
 
 const ProjectPhotoGallery: FC<{
   photos: ImageType[];
@@ -19,6 +22,7 @@ const ProjectPhotoGallery: FC<{
 }> = ({ photos, coverImage }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   const openModal = (index: number) => {
     setCurrentPhotoIndex(index);
@@ -40,6 +44,23 @@ const ProjectPhotoGallery: FC<{
     modifier: 1,
     slideShadows: true,
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (!showModal || !swiperInstance) return;
+      if (e.key === 'ArrowLeft') {
+        swiperInstance.slidePrev(); // Move to previous slide
+      } else if (e.key === 'ArrowRight') {
+        swiperInstance.slideNext(); // Move to next slide
+      }
+    };
+
+    window.addEventListener('keydown', handleKeydown);
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  }, [showModal, swiperInstance]);
 
   // Modal Background Animation
   const modalVariants = {
@@ -127,10 +148,15 @@ const ProjectPhotoGallery: FC<{
               <div className="w-screen relative">
                 <Swiper
                   effect="coverflow"
-                  watchSlidesProgress={true} // Ensures Swiper tracks slide loading progress
-                  initialSlide={currentPhotoIndex}
+                  onSwiper={setSwiperInstance} // Capture Swiper instance
+                  watchSlidesProgress
                   coverflowEffect={coverflowEffectConfig}
-                  centeredSlides={true}
+                  centeredSlides
+                  keyboard={{ enabled: true }} // Enable keyboard control
+                  navigation={{
+                    nextEl: '.custom-next', // Custom next button
+                    prevEl: '.custom-prev', // Custom prev button
+                  }}
                   breakpoints={{
                     320: { slidesPerView: 1.2, spaceBetween: 20 },
                     640: { slidesPerView: 2, spaceBetween: 30 },
@@ -163,6 +189,22 @@ const ProjectPhotoGallery: FC<{
                     </SwiperSlide>
                   ))}
                 </Swiper>
+
+                {/* Custom Navigation Buttons */}
+                <div className="absolute -bottom-20 left-0 right-0 flex justify-evenly space-x-36 z-50">
+                  <button
+                    className="custom-prev bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
+                    aria-label="Previous Slide"
+                  >
+                    <FaArrowLeft />
+                  </button>
+                  <button
+                    className="custom-next bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
+                    aria-label="Next Slide"
+                  >
+                    <FaArrowRight />
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}
