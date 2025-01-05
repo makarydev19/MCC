@@ -29,7 +29,7 @@ const Header = () => {
               <Link
                 key={`link-${idx}`}
                 href={navItem.href}
-                className={`${isActive(navItem.href)} relative items-center flex hover:text-neutral-300 transition-all`}
+                className={`${isActive(navItem.href)} relative items-center flex hover:text-secondary dark:hover:text-red-500 hover:border-b-[1.2px] border-spacing-12 border-secondary hover:translate-y-1 hover:font-bold transition-all`}
               >
                 <span className="hidden sm:block text-[1rem] font-inter tracking-wider uppercase">
                   {navItem.title}

@@ -50,7 +50,7 @@
 }
 
 .active {
-  @apply border-b-[1.2px] border-spacing-12 border-black dark:border-white/[0.3] dark:text-zinc-50 text-zinc-950;
+  @apply border-b-[1.2px] border-spacing-12 border-secondary dark:text-red-500 text-secondary font-bold;
 }
 
 .services-bg {
@@ -274,18 +274,4 @@ p {
   100% {
     transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
   }
-}
-
-/* Add this to your global CSS or scoped styles */
-.zoom-container {
-  position: relative;
-}
-
-.zoom-container img {
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.zoom-container:hover img {
-  transform: scale(1.2);
 }
