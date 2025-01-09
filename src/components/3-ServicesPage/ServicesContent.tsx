@@ -10,7 +10,6 @@ const ServicesContent = () => {
           key={service.id}
           className={`flex flex-col lg:flex-row gap-x-20 gap-y-10  ${index === 1 || index === 3 ? 'items-start lg:flex-row-reverse' : ''}`}
         >
-          {/* Text content */}
           <div className="self-center lg:w-[60%]">
             <span
               data-aos="fade-up"
@@ -33,7 +32,6 @@ const ServicesContent = () => {
             </div>
           </div>
 
-          {/* Image */}
           <div
             data-aos="fade-right"
             data-aos-duration="800"

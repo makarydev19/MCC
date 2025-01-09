@@ -93,24 +93,7 @@ const ContentSection = () => {
                     />
                   </div>
                 </BoxReveal>
-                <div className="absolute left-0 pr-12 bottom-8 xl:bottom-20">
-                  <div className="max-w-xs backdrop-blur-3xl rounded-lg sm:max-w-md xl:max-w-md">
-                    <BoxReveal duration={0.5}>
-                      <div className="px-3 py-4 sm:px-5 sm:py-8">
-                        <div className="flex items-start">
-                          <blockquote className="ml-5">
-                            <p className="text-sm font-medium text-white sm:text-lg">
-                              “You made it so simple. My new site is so much
-                              faster and easier to work with than my old site.”
-                            </p>
-                          </blockquote>
-                        </div>
-                      </div>
-                    </BoxReveal>
-                  </div>
-                </div>
               </div>
-
               <div className="2xl:pl-16">
                 <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
@@ -122,12 +105,6 @@ const ContentSection = () => {
                     To be <span className="text-secondary">"the"</span>{' '}
                     contractor of your choice.
                   </h2>
-                </BlurFade>
-                <BlurFade delay={0.25 * 3} inView>
-                  <p className="mt-4 text-xl leading-relaxed text-gray-900 dark:text-gray-400">
-                    {/* A company that our customers want to work with and our
-                    employees are proud to work for. */}
-                  </p>
                 </BlurFade>
               </div>
             </div>
@@ -159,34 +136,26 @@ const ContentSection = () => {
 
               <div className="relative">
                 <div className="relative lg:justify-self-end justify-self-center">
-                  <BoxReveal duration={0.5}>
+                  <div className="relative">
                     <Image
-                      width={510}
-                      height={510}
-                      className="aspect-video img rounded-2xl"
-                      src="/IMG-20211024-WA0014.jpg"
-                      alt="img"
+                      className="absolute -right-0 -bottom-8 xl:-bottom-12 xl:-right-4"
+                      width={100}
+                      height={100}
+                      src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
+                      alt=""
                       loading="eager"
                     />
-                  </BoxReveal>
-                  {/* <div className="absolute -bottom-10 -left-16">
                     <BoxReveal duration={0.5}>
-                      <div className="bg-red-300 rounded-2xl">
-                        <div className="px-8 py-10">
-                          <span className="block text-4xl font-bold text-black lg:text-5xl">
-                            {' '}
-                            53%{' '}
-                          </span>
-                          <span className="block mt-2 text-base leading-tight text-black">
-                            {' '}
-                            High Conversions
-                            <br />
-                            Everything{' '}
-                          </span>
-                        </div>
-                      </div>
+                      <Image
+                        width={510}
+                        height={510}
+                        className="aspect-video img rounded-2xl"
+                        src="/IMG-20211024-WA0014.jpg"
+                        alt="img"
+                        loading="eager"
+                      />
                     </BoxReveal>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>

@@ -26,13 +26,14 @@ const ServicesSection = () => {
 
           <div className="pt-10 lg:absolute lg:inset-0">
             <div className="flex flex-col items-center justify-center lg:absolute lg:right-0 lg:w-1/2">
-              <div className="flex justify-start w-full gap-6 pb-8 overflow-x-scroll snap-x hide-scrollbar">
+              <div className="flex justify-start w-full pb-8 overflow-x-scroll snap-x hide-scrollbar">
                 {Services.map((services) => (
-                  <div
+                  <BlurFade
                     key={services.id}
-                    className="relative snap-start scroll-ml-6 shrink-0 first:pl-6 last:pr-6"
+                    delay={0.25 + services.id * 0.1}
+                    inView
                   >
-                    <BlurFade duration={0.5} inView>
+                    <div className="relative snap-start scroll-ml-6 shrink-0 last:pr-6">
                       <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-b-2xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
                         <Link href="/services" className="w-full lg:h-72 h-52">
                           <Image
@@ -87,8 +88,8 @@ const ServicesSection = () => {
                           </div>
                         </div>
                       </div>
-                    </BlurFade>
-                  </div>
+                    </div>
+                  </BlurFade>
                 ))}
               </div>
             </div>

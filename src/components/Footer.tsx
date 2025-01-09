@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ThemeContext from '@/Context/themeContext';
 import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa6';
-import { RiLinkedinFill } from 'react-icons/ri';
+// import { RiLinkedinFill } from 'react-icons/ri';
 import { Links } from '@/Data/Data';
 
 const Footer = () => {
@@ -40,21 +40,23 @@ const Footer = () => {
           <ul className="flex items-center space-x-3 md:order-3">
             <li>
               <Link
-                href={''}
+                href={
+                  'https://www.facebook.com/MCCEGY1998?mibextid=rS40aB7S9Ucbxw6v'
+                }
                 className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
               >
                 <FaFacebook className="text-3xl" />
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link
                 href={''}
                 className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
               >
                 <RiLinkedinFill className="text-3xl" />
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <hr className="my-10 dark:border-gray-800" />

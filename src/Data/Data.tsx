@@ -119,7 +119,7 @@ export const chairmanOfBoardsData: SectionData[] = [
       'lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-36 z-50',
   },
   {
-    imageSrc: '/Porto-Minya/building5.jpg',
+    imageSrc: '/Porto-Minya/building2.jpg',
     imageAlt: 'Porto Minya Building',
     imageClasses:
       'lg:w-[45%] w-full mx-4 lg:h-72 h-52 overflow-hidden shadow-xl rounded-2xl lg:absolute lg:left-[40%] z-10',
@@ -131,19 +131,6 @@ export const chairmanOfBoardsData: SectionData[] = [
     contentClasses:
       'lg:w-[55%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl z-50 -mt-28',
   },
-  // {
-  //   imageSrc: '/administrative-building.jpg',
-  //   imageAlt: 'Administrative Building',
-  //   imageClasses:
-  //     'lg:w-[55%] mx-4 w-full lg:h-60 h-40 overflow-hidden shadow-xl rounded-2xl z-10',
-  //   content: `Through this site <br />
-  //   I am pleased to introduce our business and history since we
-  //   established this company in 1998. Thanks to all our clients, staff,
-  //   and suppliers who helped us achieve our goals and sustain our
-  //   success.`,
-  //   contentClasses:
-  //     'lg:w-[45%] lg:m-0 p-5 bg-LightModeBG dark:bg-DarkModeBG shadow-2xl dark:shadow-white/10 dark:border-white/5 dark:border-2 rounded-2xl lg:absolute lg:left-[40%] -mt-24 z-50',
-  // },
 ];
 
 // <>------------------<>
@@ -210,7 +197,7 @@ export const Services: Service[] = [
     works:
       'Our infrastructure projects are managed through a structured approach to scope and schedule management, emphasizing comprehensive Work Breakdown Structures (WBS) and milestone tracking. We specialize in developing essential deliverables, such as roads, bridges, and utility systems, employing risk management techniques to mitigate project uncertainties. Quality assurance processes and continuous stakeholder engagement ensure that the outcomes align with the projects objectives and community impact assessments.',
     img: '/rb_109175.png',
-    img2: '/Porto-October/SA832.jpg',
+    img2: '/Porto-October/15.jpg',
   },
   {
     id: 3,
@@ -219,7 +206,7 @@ export const Services: Service[] = [
     works:
       'Our finishing works are governed by detailed project scope management and quality control plans, ensuring the final deliverables meet both functional and aesthetic requirements. From interior partitions and ceiling designs to exterior cladding and decorative finishes, our focus remains on stakeholder satisfaction and alignment with the project charter. Utilizing advanced resource scheduling and change management practices, we ensure the project achieves its intended objectives within the specified constraints.',
     img: '/46f9eb42-9260-49d1-a977-4b6d991cfad1-removebg-preview2.png',
-    img2: '/Porto-October/SA832.jpg',
+    img2: '/Porto-October/IMG_2372ee.jpg',
   },
   {
     id: 4,
@@ -237,7 +224,7 @@ export const Services: Service[] = [
     works:
       'Our landscape works are executed through meticulous project planning and integration processes, ensuring alignment with the overall project charter and environmental management plans. Deliverables include hardscape and softscape installations, irrigation systems, and outdoor lighting solutions, each tailored to meet stakeholder expectations. Through effective resource leveling, risk mitigation strategies, and adherence to sustainability practices, we enhance the projects value by creating functional and aesthetically pleasing outdoor environments that align with the projects defined baselines.',
     img: '/40315-removebg-preview.png',
-    img2: '/Porto-October/IMG_0040.JPG',
+    img2: '/Landscape.jpg',
   },
 ];
 
@@ -266,6 +253,9 @@ export const FeaturedProject: FeaturedBackground[] = [
     coverImg: '/Oriental-Wavers/DSC00999.png',
   },
   {
+    coverImg: '/The-Pearl/pearl.jpg',
+  },
+  {
     coverImg: '/Porto-October/252.jpg',
   },
   {
@@ -280,6 +270,9 @@ export const FeaturedProject: FeaturedBackground[] = [
   {
     coverImg:
       '/The-Pearl/صورة واتساب بتاريخ 1445-03-18 في 13.54.32_8552acde.jpg',
+  },
+  {
+    coverImg: '/Porto-October/IMG_2372ee.jpg',
   },
 ];
 

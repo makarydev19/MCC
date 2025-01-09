@@ -25,17 +25,27 @@ const Header = () => {
 
         <div className="flex items-center lg:gap-x-10">
           <div className="hidden lg:flex items-center lg:gap-x-16">
-            {Links.slice(0, 4).map((navItem, idx: number) => (
-              <Link
-                key={`link-${idx}`}
-                href={navItem.href}
-                className={`${isActive(navItem.href)} relative items-center flex hover:text-secondary dark:hover:text-red-500 hover:border-b-[1.2px] border-spacing-12 border-secondary hover:translate-y-1 hover:font-bold transition-all`}
-              >
-                <span className="hidden sm:block text-[1rem] font-inter tracking-wider uppercase">
-                  {navItem.title}
-                </span>
-              </Link>
-            ))}
+            {Links.slice(0, 4).map((navItem, idx: number) => {
+              const isActiveLink = isActive(navItem.href);
+              return (
+                <Link
+                  key={`link-${idx}`}
+                  href={navItem.href}
+                  className={`relative items-center flex hover:text-secondary dark:hover:text-red-500 hover:translate-y-1 hover:font-bold transition-all ${
+                    isActiveLink
+                      ? 'text-secondary dark:text-red-500 font-bold'
+                      : ''
+                  }`}
+                >
+                  <span className="hidden sm:block text-[1rem] font-inter tracking-wider uppercase">
+                    {navItem.title}
+                  </span>
+                  {isActiveLink && (
+                    <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

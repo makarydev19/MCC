@@ -42,7 +42,7 @@ const WhoWeAreSection = () => {
             <BoxReveal duration={0.5}>
               <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh] shadow-xl shadow-black">
                 <Image
-                  src={`/Porto-October/SAM_683FFF.jpg`}
+                  src={`/Porto-October/G6832.jpg`}
                   alt=""
                   width={3000}
                   height={3000}

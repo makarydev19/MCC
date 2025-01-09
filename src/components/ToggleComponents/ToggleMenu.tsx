@@ -1,5 +1,8 @@
+'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import Image from 'next/image';
@@ -10,6 +13,10 @@ const ToggleMenu = () => {
   const toggleMenu = () => {
     setShowMenu((prevOpen) => !prevOpen);
   };
+
+  const pathname = usePathname();
+
+  const isActive = (href: string) => (pathname === href ? 'active' : '');
 
   const menuVars = {
     initial: {
@@ -83,11 +90,11 @@ const ToggleMenu = () => {
             className="fixed left-0 top-0 w-full h-screen py-10 origin-top bg-[whitesmoke] dark:bg-zinc-950 dark:text-[whitesmoke] text-primary z-[9999]"
           >
             <div className="flex h-full flex-col">
-              <div className="flex justify-between px-5">
+              <div className="flex justify-between px-10">
                 <Link
                   onClick={toggleMenu}
                   href="/"
-                  className="flex gap-x-2 items-center"
+                  className="flex items-center"
                 >
                   <Image
                     src={`/MCC-LOGO.png`}
@@ -95,7 +102,6 @@ const ToggleMenu = () => {
                     width={70}
                     height={70}
                   />
-                  <h1>Modern Construction Company</h1>
                 </Link>
                 <button
                   title="toggle"
@@ -113,25 +119,37 @@ const ToggleMenu = () => {
                 exit="initial"
                 className="flex flex-col h-full justify-center font-roboto items-start pl-6 gap-7"
               >
-                {Links.map((links) => (
-                  <motion.div key={links.id} className="overflow-hidden">
-                    <motion.div
-                      variants={mobileLinkVars}
-                      className="text-4xl uppercase"
-                    >
-                      <Link
-                        onClick={toggleMenu}
-                        href={links.href}
-                        className="uppercase"
+                {Links.map((links) => {
+                  const isActiveLink = isActive(links.href);
+                  return (
+                    <motion.div key={links.id} className="overflow-hidden">
+                      <motion.div
+                        variants={mobileLinkVars}
+                        className="text-4xl uppercase"
                       >
-                        {links.title}
-                      </Link>
+                        <Link
+                          onClick={toggleMenu}
+                          href={links.href}
+                          className={`relative items-center flex hover:text-secondary dark:hover:text-red-500 transition-all ${
+                            isActiveLink
+                              ? 'text-secondary dark:text-red-500'
+                              : ''
+                          }`}
+                        >
+                          {links.title}
+                        </Link>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                ))}
+                  );
+                })}
               </motion.div>
-              <p className="w-full mt-8 text-sm text-center text-gray-600 md:mt-0 md:w-auto md:order-2">
-                © Copyright 2021, All Rights Reserved by MCC
+              <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
+                © Copyright 2025, All Rights Reserved by{' '}
+                <br className="block lg:hidden" />
+                <span className="font-semibold font-inter">
+                  {' '}
+                  Modern Construction Company
+                </span>
               </p>
             </div>
           </motion.div>
