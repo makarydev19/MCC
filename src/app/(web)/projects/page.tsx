@@ -77,6 +77,11 @@ const Projects = () => {
     currentPage * projectsPerPage
   );
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    console.log('Current Page:', page);
+  };
+
   return (
     <section>
       <LandingSection />
@@ -93,13 +98,7 @@ const Projects = () => {
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          goToPreviousPage={() =>
-            setCurrentPage((prev) => Math.max(prev - 1, 1))
-          }
-          goToNextPage={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
-          handlePageClick={(pageNumber) => setCurrentPage(pageNumber)}
+          onPageChange={handlePageChange}
         />
       </div>
 

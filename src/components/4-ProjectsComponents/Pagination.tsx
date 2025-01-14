@@ -1,63 +1,65 @@
-'use client';
 import React from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
-  goToPreviousPage: () => void;
-  goToNextPage: () => void;
-  handlePageClick: (pageNumber: number) => void;
+  onPageChange: (page: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
-  goToPreviousPage,
-  goToNextPage,
-  handlePageClick,
-}) => (
-  <div className="flex flex-wrap justify-center my-20 gap-2">
-    {/* Previous Button */}
-    <button
-      onClick={goToPreviousPage}
-      disabled={currentPage === 1}
-      className={`py-2 px-4 rounded-xl shadow-2xl transition-transform ${
-        currentPage === 1
-          ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
-          : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
-      }`}
-    >
-      Previous
-    </button>
+  onPageChange,
+}) => {
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-    {/* Page Number Buttons */}
-    {[...Array(totalPages)].map((_, idx) => (
+  return (
+    <div className="flex items-center justify-center space-x-2 my-20">
+      {/* Previous Button */}
       <button
-        key={idx}
-        onClick={() => handlePageClick(idx + 1)}
-        className={`py-2 px-4 rounded-xl transition-transform ${
-          currentPage === idx + 1
-            ? 'bg-white dark:bg-slate-50 dark:text-black shadow-lg translate-y-1'
+        title="Previous"
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className={`px-4 py-2 text-sm font-medium rounded-md ${
+          currentPage === 1
+            ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
             : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
         }`}
       >
-        {idx + 1}
+        <FaArrowLeft />
       </button>
-    ))}
 
-    {/* Next Button */}
-    <button
-      onClick={goToNextPage}
-      disabled={currentPage === totalPages}
-      className={`py-2 px-4 rounded-xl shadow-2xl transition-transform ${
-        currentPage === totalPages
-          ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
-          : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
-      }`}
-    >
-      Next
-    </button>
-  </div>
-);
+      {/* Page Numbers */}
+      {pageNumbers.map((page) => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={`px-4 py-2 text-sm font-medium rounded-md ${
+            page === currentPage
+              ? 'bg-white dark:bg-slate-50 dark:text-black shadow-lg translate-y-1'
+              : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
+          }`}
+        >
+          {page}
+        </button>
+      ))}
+
+      {/* Next Button */}
+      <button
+        title="Next"
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className={`px-4 py-2 text-sm font-medium rounded-md ${
+          currentPage === totalPages
+            ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
+            : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
+        }`}
+      >
+        <FaArrowRight />
+      </button>
+    </div>
+  );
+};
 
 export default Pagination;
