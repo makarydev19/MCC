@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import useSWR from 'swr';
 import { getProjects } from '@/libs/apis';
 import { Project } from '@/models/project';
@@ -19,6 +19,7 @@ const Projects = () => {
   const [endDateFilter, setEndDateFilter] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const projectCardsRef = useRef<HTMLDivElement>(null);
   const projectsPerPage = 6;
 
   const fetchData = useCallback(() => getProjects(), []);
@@ -79,6 +80,10 @@ const Projects = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+    // Scroll to the top of the ProjectCards container
+    if (projectCardsRef.current) {
+      projectCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
     console.log('Current Page:', page);
   };
 
@@ -94,7 +99,9 @@ const Projects = () => {
       />
 
       <div className="lg:px-20 px-5">
-        <ProjectCards projects={displayedProjects} />
+        <div ref={projectCardsRef}>
+          <ProjectCards projects={displayedProjects} />
+        </div>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

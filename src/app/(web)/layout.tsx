@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import { Roboto, Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { Header, Footer } from '@/components';
-import { ThemeProvider, AOSProvider } from '@/components/Providers';
+import {
+  ThemeProvider,
+  AOSProvider,
+  ViewportProvider,
+} from '@/components/Providers';
 import './globals.css';
 
 // Import Swiper styles
@@ -40,12 +44,14 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ThemeProvider>
           <AOSProvider>
-            <main className="font-normal">
-              <Header />
-              {children}
-              <Footer />
-            </main>
-            <Toaster />
+            <ViewportProvider>
+              <main className="font-normal">
+                <Header />
+                {children}
+                <Footer />
+              </main>
+              <Toaster />
+            </ViewportProvider>
           </AOSProvider>
         </ThemeProvider>
       </body>

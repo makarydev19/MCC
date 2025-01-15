@@ -21,7 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({
         title="Previous"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`px-4 py-2 text-sm font-medium rounded-md ${
+        className={`px-4 py-[0.67rem] text-sm font-medium rounded-md ${
           currentPage === 1
             ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
             : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
@@ -50,7 +50,7 @@ const Pagination: React.FC<PaginationProps> = ({
         title="Next"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`px-4 py-2 text-sm font-medium rounded-md ${
+        className={`px-4 py-[0.67rem] text-sm font-medium rounded-md ${
           currentPage === totalPages
             ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
             : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'

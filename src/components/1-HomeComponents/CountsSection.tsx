@@ -2,6 +2,7 @@
 
 import CountUp from 'react-countup';
 import { CountsBox } from '@/Data/Data';
+import { FaPlus } from 'react-icons/fa6';
 
 const CountsSection = () => {
   return (
@@ -23,7 +24,9 @@ const CountsSection = () => {
                 duration={4}
                 className="font-bold text-4xl ml-2 font-roboto"
               />
-              <span className="text-3xl font-sans font-extrabold">+</span>
+              <span className="flex items-center justify-center text-2xl font-sans font-extrabold">
+                <FaPlus />
+              </span>
             </div>
             <p className="font-semibold text-2xl font-sans">{counts.title}</p>
           </div>

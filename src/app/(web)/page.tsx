@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <LandingSection />
-      <div className="absolute w-full md:top-[95%] top-[95%] z-50">
+      <div className="absolute w-full md:top-[95%] top-[96%] z-50">
         <CountsSection />
       </div>
       <WhoWeAreSection />
