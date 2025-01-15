@@ -45,7 +45,7 @@ const LandingSection = () => {
       </Swiper>
 
       {/* Text Content - Outside the Swiper for stability */}
-      <div className="absolute lg:w-[90%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-24 px-5 lg:py-20 py-24">
+      <div className="absolute lg:w-[90%] inset-0 z-20 flex flex-col items-start justify-end text-white lg:px-24 px-5 lg:py-20 pb-32">
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
