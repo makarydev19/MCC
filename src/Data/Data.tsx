@@ -43,7 +43,6 @@ export const HomeBackgrounds: HomeBackground[] = [
   { image: '/LandingImages/IMG_0054.JPG' },
   { image: '/LandingImages/IMG_0494.JPG' },
   { image: '/LandingImages/SAM_6832.jpg' },
-  { image: '/LandingImages/SAM_6832.jpg' },
   { image: '/LandingImages/SAM_FFGG32.jpg' },
   { image: '/LandingImages/WhatsApp Image 2024-08-25 at 2.38.34 PM (2).jpeg' },
 ];
