@@ -33,7 +33,7 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <div className="relative h-[100vh]">
-      <div className="absolute lg:bottom-20 bottom-40 lg:w-[50%] w-[20%] lg:left-28 left-6 right-0 z-50">
+      <div className="absolute lg:bottom-20 md:bottom-72 bottom-40 lg:w-[50%] w-[20%] lg:left-28 left-6 right-0 z-50">
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

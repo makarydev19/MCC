@@ -26,7 +26,7 @@ const ServicesContent = () => {
               data-aos-duration="800"
               className="lg:w-[95%] w-full"
             >
-              <h2 className="lg:text-lg text-base text-black/90 dark:text-white/60 leading-2">
+              <h2 className="md:text-lg text-base text-black/90 dark:text-white/60 leading-2">
                 {service.works}
               </h2>
             </div>

@@ -48,7 +48,7 @@ const ProjectsDetails = (props: { params: { slug: string } }) => {
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="absolute z-10 lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4"
+          className="absolute z-10 lg:top-[40%] top-[35%] lg:w-[60%] w-[85%] md:text-6xl text-4xl font-extrabold tracking-tight lg:text-5xl text-white lg:px-24 px-4"
         >
           <p>{project.projectName}</p>
         </motion.div>

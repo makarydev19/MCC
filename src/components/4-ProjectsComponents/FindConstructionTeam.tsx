@@ -8,7 +8,7 @@ const FindConstructionTeam = () => {
           <h1 className="text-white lg:text-5xl text-3xl text-center">
             Partner with us for success
           </h1>
-          <p className="lg:text-lg text-md text-white text-center lg:w-[60%] w-full">
+          <p className="lg:text-lg text-md text-white text-center md:w-[60%] w-full">
             Whether you have inquiries, project proposals, or feedback, we
             welcome your engagement as a valued partner in achieving project
             success...

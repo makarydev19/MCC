@@ -9,7 +9,7 @@ const ContentSection = () => {
       <section className="lg:px-20 px-0 lg:pt-44 py-10">
         <section className="pb-24 sm:pb-16 lg:pb-14">
           <div className="w-full px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
+            <div className="grid items-center grid-cols-1 gap-y-6 md:grid-cols-2 lg:gap-x-20 md:gap-x-10">
               <div>
                 <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
@@ -36,7 +36,7 @@ const ContentSection = () => {
               </div>
 
               <div className="relative pl-20 pr-6 sm:pl-6 md:px-0">
-                <div className="relative z-10 lg:w-[50%] w-full max-w-xs mt-4 mb-10 ml-auto">
+                <div className="relative z-10 md:w-[50%] w-full max-w-xs mt-4 mb-10 ml-auto">
                   <BoxReveal duration={0.5}>
                     <Image
                       width={200}
@@ -101,7 +101,7 @@ const ContentSection = () => {
                   </h2>
                 </BlurFade>
                 <BlurFade delay={0.25 * 2} inView>
-                  <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] sm:text-4xl lg:text-5xl lg:leading-tight">
+                  <h2 className="text-3xl font-bold leading-tight text-black dark:text-[whitesmoke] md:text-5xl lg:leading-tight">
                     To be <span className="text-secondary">"the"</span>{' '}
                     contractor of your choice.
                   </h2>
@@ -112,7 +112,7 @@ const ContentSection = () => {
         </section>
         <section className="py-10 sm:py-16 lg:pb-14">
           <div className="max-w-full px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="grid items-end grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-20">
+            <div className="grid items-end grid-cols-1 gap-y-6 lg:grid-cols-2 lg:gap-x-20">
               <div>
                 <BlurFade delay={0.25} inView>
                   <h2 className="text-lg font-sans font-medium text-secondary uppercase">
@@ -149,7 +149,7 @@ const ContentSection = () => {
                       <Image
                         width={510}
                         height={510}
-                        className="aspect-video img rounded-2xl"
+                        className="aspect-video md:w-[100vw] md:h-[50vh] img rounded-2xl"
                         src="/IMG-20211024-WA0014.jpg"
                         alt="img"
                         loading="eager"
