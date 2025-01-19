@@ -268,10 +268,6 @@ export const FeaturedProject: FeaturedBackground[] = [
     coverImg: '/administrative-building.jpg',
   },
   {
-    coverImg:
-      '/The-Pearl/صورة واتساب بتاريخ 1445-03-18 في 13.54.32_8552acde.jpg',
-  },
-  {
     coverImg: '/Porto-October/IMG_2372ee.jpg',
   },
 ];
