@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import WordRotate from '../ui/word-rotate';
+import WordRotate from '../../components/ui/word-rotate';
 
 const LandingSection = () => {
   const words = ['construction', 'building', 'architectural'];

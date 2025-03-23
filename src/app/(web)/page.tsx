@@ -6,7 +6,7 @@ import {
   OurClientsSection,
   ServicesSection,
   WhoWeAreSection,
-} from '@/components/1-HomeComponents';
+} from '@/sections/1-HomeSections';
 
 const Home = () => {
   return (

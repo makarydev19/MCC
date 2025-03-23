@@ -2,7 +2,7 @@
 import React from 'react';
 import ProjectCard from '@/components/CardsComponents/ProjectCard';
 import { Project } from '@/models/project';
-import { BlurFade } from '../ui/blur-fade';
+import { BlurFade } from '../../components/ui/blur-fade';
 
 interface ProjectGridProps {
   projects: Project[];

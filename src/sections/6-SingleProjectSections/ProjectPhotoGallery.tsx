@@ -5,7 +5,6 @@ import { CoverImage } from '@/models/project';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { MdCancel } from 'react-icons/md';
-import BoxReveal from '../ui/box-reveal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
@@ -13,6 +12,7 @@ import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import BoxReveal from '@/components/ui/box-reveal';
 
 SwiperCore.use([Navigation]);
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContactUsForm, MCCInformation } from '../5-ContactUsComponents';
-import { BlurFade } from '../ui/blur-fade';
+import { ContactUsForm, MCCInformation } from '../5-ContactSections';
+import { BlurFade } from '../../components/ui/blur-fade';
 
 const ContactUsSection = () => {
   return (

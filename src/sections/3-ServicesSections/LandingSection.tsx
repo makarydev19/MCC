@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import React from 'react';
-import { ContainerScroll } from '../ui/container-scroll-animation';
-import { Spotlight } from '../ui/Spotlight';
-import WordPullUp from '../ui/word-pull-up';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
+import WordPullUp from '@/components/ui/word-pull-up';
+import Image from 'next/image';
 
 const LandingSection = () => {
   return (

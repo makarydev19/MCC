@@ -1,7 +1,7 @@
 import React from 'react';
-import BoxReveal from '../ui/box-reveal';
+import BoxReveal from '../../components/ui/box-reveal';
 import Image from 'next/image';
-import { BlurFade } from '../ui/blur-fade';
+import { BlurFade } from '../../components/ui/blur-fade';
 
 const ContentSection = () => {
   return (

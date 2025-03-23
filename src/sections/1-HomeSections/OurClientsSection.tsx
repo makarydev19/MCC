@@ -13,8 +13,8 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
-import BoxReveal from '../ui/box-reveal';
-import { BlurFade } from '../ui/blur-fade';
+import BoxReveal from '../../components/ui/box-reveal';
+import { BlurFade } from '../../components/ui/blur-fade';
 import { Clients } from '@/Data/Data';
 
 const OurClientsSection = () => {

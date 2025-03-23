@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { TbFilterSearch } from 'react-icons/tb';
-import Search from '@/components/SearchComponent/Search';
+import Search from '@/components/Search/Search';
 
 interface FiltersProps {
   projectSectorFilter: string;

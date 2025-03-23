@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BoxReveal from '../ui/box-reveal';
-import { BlurFade } from '../ui/blur-fade';
+import BoxReveal from '../../components/ui/box-reveal';
+import { BlurFade } from '../../components/ui/blur-fade';
 
 const WhoWeAreSection = () => {
   return (

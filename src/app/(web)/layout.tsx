@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
 import { Roboto, Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
-import { Header, Footer } from '@/components';
-import {
-  ThemeProvider,
-  AOSProvider,
-  ViewportProvider,
-} from '@/components/Providers';
+import { Footer, Header } from '@/layout';
+import { ThemeProvider, AOSProvider, ViewportProvider } from '@/Providers';
 import './globals.css';
 
 // Import Swiper styles

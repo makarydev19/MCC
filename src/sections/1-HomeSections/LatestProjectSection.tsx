@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 import { Project } from '@/models/project';
 import { FC } from 'react';
-import BoxReveal from '../ui/box-reveal';
-import { BlurFade } from '../ui/blur-fade';
+import BoxReveal from '../../components/ui/box-reveal';
+import { BlurFade } from '../../components/ui/blur-fade';
 import Link from 'next/link';
 
 type Props = {

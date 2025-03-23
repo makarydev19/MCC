@@ -1,9 +1,8 @@
 import {
-  FeaturesSection,
   LandingSection,
   ServicesCards,
   ServicesContent,
-} from '@/components/3-ServicesPage';
+} from '@/sections/3-ServicesSections';
 
 const page = () => {
   return (

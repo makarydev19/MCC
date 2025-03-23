@@ -11,7 +11,7 @@ import {
   Pagination,
   ProjectCards,
   FindConstructionTeam,
-} from '@/components/4-ProjectsComponents';
+} from '@/sections/4-ProjectsSections';
 
 const Projects = () => {
   // State for filters

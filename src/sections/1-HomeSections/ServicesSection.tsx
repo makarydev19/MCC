@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import BoxReveal from '../ui/box-reveal';
+import BoxReveal from '../../components/ui/box-reveal';
 import { Services } from '@/Data/Data';
-import { BlurFade } from '../ui/blur-fade';
+import { BlurFade } from '../../components/ui/blur-fade';
 
 const ServicesSection = () => {
   return (

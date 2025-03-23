@@ -2,7 +2,7 @@ import {
   ContactUsForm,
   LandingSection,
   MCCInformation,
-} from '@/components/5-ContactUsComponents';
+} from '@/sections/5-ContactSections';
 
 const page = () => {
   return (

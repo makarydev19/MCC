@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ToggleTheme, ToggleMenu } from './ToggleComponents';
+import { ToggleTheme, ToggleMenu } from '../components/Toggle';
 import { Links } from '@/Data/Data';
 
 const Header = () => {

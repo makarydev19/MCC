@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { useToast } from '@/hooks/use-toast'; // Make sure to import from your custom hook
-import { BlurFade } from '../ui/blur-fade';
+import { BlurFade } from '@/components/ui/blur-fade';
 
 interface FormData {
   name: string;

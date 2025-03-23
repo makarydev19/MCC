@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
 import { Autoplay, Parallax } from 'swiper/modules';
 import Image from 'next/image';
-import { TextGenerateEffect } from '../ui/text-generate-effect';
+import { TextGenerateEffect } from '../../components/ui/text-generate-effect';
 import { HomeBackgrounds } from '@/Data/Data';
 import { motion } from 'framer-motion';
 

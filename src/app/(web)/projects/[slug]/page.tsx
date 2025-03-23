@@ -3,13 +3,13 @@
 import { getProject } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
 import useSWR from 'swr';
-import {
-  ProjectContent,
-  ProjectImages,
-  SideBarDetails,
-} from '@/components/6-SingleProjectPage';
-import FindConstructionTeam from '@/components/4-ProjectsComponents/FindConstructionTeam';
 import { motion } from 'framer-motion';
+import {
+  ProjectImages,
+  ProjectContent,
+  SideBarDetails,
+} from '@/sections/6-SingleProjectSections';
+import FindConstructionTeam from '@/sections/4-ProjectsSections/FindConstructionTeam';
 
 const ProjectsDetails = (props: { params: { slug: string } }) => {
   const {

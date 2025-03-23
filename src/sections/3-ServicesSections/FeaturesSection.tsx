@@ -1,7 +1,7 @@
 import React from 'react';
-import BoxReveal from '../ui/box-reveal';
-import { BlurFade } from '../ui/blur-fade';
 import { Feature, features } from '@/Data/Data';
+import { BlurFade } from '@/components/ui/blur-fade';
+import BoxReveal from '@/components/ui/box-reveal';
 
 const FeaturesSection = () => {
   return (

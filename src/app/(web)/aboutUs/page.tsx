@@ -4,7 +4,7 @@ import {
   LandingSection,
   ContentSection,
   OurClientsSection,
-} from '@/components/2-AboutUsComponents';
+} from '@/sections/2-AboutSections';
 
 const page = () => {
   return (
