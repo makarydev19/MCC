@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast'; // Make sure to import from your custom hook
 import { BlurFade } from '@/components/ui/blur-fade';
 
