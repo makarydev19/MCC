@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ProjectCard from '@/components/CardsComponents/ProjectCard';
+import ProjectCard from '@/components/Cards/ProjectCard';
 import { Project } from '@/models/project';
 import { BlurFade } from '../../components/ui/blur-fade';
 
