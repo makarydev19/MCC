@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="bg-LightModeBG dark:bg-DarkModeBG shadow-xl flex lg:max-w-[85%] w-full fixed inset-x-0 mx-auto border lg:rounded-b-3xl rounded-b-xl z-[5000] lg:px-12 px-8 py-3 items-center justify-between dark:border-zinc-100/10 dark:shadow-black transition-all duration-300">
+      <nav className="bg-LightModeBG dark:bg-DarkModeBG shadow-xl flex lg:max-w-[80%] w-full fixed inset-x-0 mx-auto border lg:rounded-b-3xl rounded-b-xl z-[5000] lg:px-16 px-8 py-3 items-center justify-between dark:border-zinc-100/10 dark:shadow-black transition-all duration-300">
         <Link href="/" className="lg:w-[3.4rem] w-12">
           <Image
             src="/MCC-LOGO.png"
@@ -60,7 +60,7 @@ const Header = () => {
             <ToggleMenu />
           </div>
 
-          <Link href="/contactUs" className="hidden lg:block">
+          <Link href="/contact" className="hidden lg:block">
             <button className="uppercase border text-[1rem] font-inter tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-3 rounded-xl">
               <span>Contact Us</span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />

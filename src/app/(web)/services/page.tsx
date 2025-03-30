@@ -1,8 +1,11 @@
+import { metadataConfig } from '@/libs/metadata';
 import {
   LandingSection,
   ServicesCards,
   ServicesContent,
 } from '@/sections/3-ServicesSections';
+
+export const metadata = metadataConfig.services;
 
 const page = () => {
   return (

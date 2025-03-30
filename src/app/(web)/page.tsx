@@ -1,3 +1,4 @@
+import { metadataConfig } from '@/libs/metadata';
 import {
   ChairmanOfBoardsSection,
   ContactUsSection,
@@ -7,6 +8,8 @@ import {
   ServicesSection,
   WhoWeAreSection,
 } from '@/sections/1-HomeSections';
+
+export const metadata = metadataConfig.home;
 
 const Home = () => {
   return (

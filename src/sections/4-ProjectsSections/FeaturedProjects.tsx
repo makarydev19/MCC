@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 import Image from 'next/image';
-import styles from './FeaturedProjects.module.css';
+import styles from '@/styles/FeaturedProjects.module.css';
 import { FeaturedProject } from '@/Data/Data';
 import { motion } from 'framer-motion';
 

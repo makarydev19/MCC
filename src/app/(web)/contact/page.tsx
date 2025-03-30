@@ -1,8 +1,11 @@
+import { metadataConfig } from '@/libs/metadata';
 import {
   ContactUsForm,
   LandingSection,
   MCCInformation,
 } from '@/sections/5-ContactSections';
+
+export const metadata = metadataConfig.contact;
 
 const page = () => {
   return (
