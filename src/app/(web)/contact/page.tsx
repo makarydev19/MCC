@@ -25,8 +25,10 @@ const page = () => {
             referrerPolicy="no-referrer-when-downgrade"
             loading="eager"
           />
-          <ContactUsForm />
         </div>
+      </div>
+      <div className="mx-auto max-w-5xl">
+        <ContactUsForm />
       </div>
     </section>
   );
