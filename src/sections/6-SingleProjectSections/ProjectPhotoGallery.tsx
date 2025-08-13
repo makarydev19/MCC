@@ -147,6 +147,8 @@ const ProjectPhotoGallery: FC<{
               </button>
               <div className="w-screen relative">
                 <Swiper
+                  observer={true}
+                  observeParents={true}
                   effect="coverflow"
                   onSwiper={setSwiperInstance} // Capture Swiper instance
                   watchSlidesProgress
@@ -176,12 +178,13 @@ const ProjectPhotoGallery: FC<{
                         animate="visible"
                         exit="exit"
                         variants={imageVariants}
-                        className="relative lg:h-[400px] h-[200px] overflow-hidden rounded-xl"
+                        className="relative aspect-video overflow-hidden rounded-xl"
                       >
                         <Image
                           src={photo.url}
                           alt={`Photo ${index + 1}`}
-                          fill
+                          width={1000}
+                          height={1000}
                           className="object-cover"
                           loading="eager"
                         />
