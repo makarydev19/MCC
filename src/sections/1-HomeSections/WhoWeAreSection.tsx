@@ -67,7 +67,7 @@ const WhoWeAreSection = () => {
               <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
             </div>
           </div>
-          <Link href="/aboutUs" className="relative mx-auto mt-10">
+          <Link href="/about" className="relative mx-auto mt-10">
             <button className="btn-primary px-12 md:px-[30px] lg:px-[35px]">
               Explore more
             </button>

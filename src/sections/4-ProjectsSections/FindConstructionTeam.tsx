@@ -14,7 +14,7 @@ const FindConstructionTeam = () => {
             success...
           </p>
         </div>
-        <Link href={'/contactUs'}>
+        <Link href={'/contact'}>
           <button className="btn-primary px-12 md:px-[30px] lg:px-[35px]">
             Contact Us
           </button>
