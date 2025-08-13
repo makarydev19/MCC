@@ -177,7 +177,7 @@ const ProjectPhotoGallery: FC<{
                       animate="visible"
                       exit="exit"
                       variants={imageVariants}
-                      className="relative aspect-video overflow-hidden rounded-xl"
+                      className="relative aspect-[3/2] overflow-hidden rounded-xl"
                     >
                       <Image
                         src={photo.url}
