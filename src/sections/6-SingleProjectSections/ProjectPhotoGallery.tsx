@@ -141,7 +141,7 @@ const ProjectPhotoGallery: FC<{
               <button
                 title="Close Modal"
                 onClick={closeModal}
-                className="absolute lg:bottom-10 md:bottom-96 bottom-48 text-white text-lg z-[1000000]"
+                className="absolute lg:bottom-10 md:bottom-96 bottom-28 text-white text-lg z-[1000000]"
               >
                 <MdCancel className="font-medium text-2xl text-tertiary-dark" />
               </button>
@@ -176,7 +176,7 @@ const ProjectPhotoGallery: FC<{
                         animate="visible"
                         exit="exit"
                         variants={imageVariants}
-                        className="relative aspect-[3/2] overflow-hidden rounded-xl"
+                        className="relative lg:h-[400px] h-[200px] overflow-hidden rounded-xl"
                       >
                         <Image
                           src={photo.url}
