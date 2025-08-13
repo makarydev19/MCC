@@ -128,90 +128,88 @@ const ProjectPhotoGallery: FC<{
         </div>
 
         {/* Modal with Enter and Exit Animations */}
-        <AnimatePresence>
-          {showModal && (
-            <motion.div
-              key="modal"
-              className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[100000000]"
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={modalVariants}
+        {showModal && (
+          <motion.div
+            key="modal"
+            className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[100000000]"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={modalVariants}
+          >
+            <button
+              title="Close Modal"
+              onClick={closeModal}
+              className="absolute lg:bottom-10 md:bottom-96 bottom-28 text-white text-lg z-[1000000]"
             >
-              <button
-                title="Close Modal"
-                onClick={closeModal}
-                className="absolute lg:bottom-10 md:bottom-96 bottom-28 text-white text-lg z-[1000000]"
+              <MdCancel className="font-medium text-2xl text-tertiary-dark" />
+            </button>
+            <div className="w-screen relative">
+              <Swiper
+                observer={true}
+                observeParents={true}
+                effect="coverflow"
+                onSwiper={setSwiperInstance} // Capture Swiper instance
+                watchSlidesProgress
+                coverflowEffect={coverflowEffectConfig}
+                centeredSlides
+                keyboard={{ enabled: true }} // Enable keyboard control
+                navigation={{
+                  nextEl: '.custom-next', // Custom next button
+                  prevEl: '.custom-prev', // Custom prev button
+                }}
+                breakpoints={{
+                  320: { slidesPerView: 1.2, spaceBetween: 20 },
+                  640: { slidesPerView: 2, spaceBetween: 30 },
+                  1024: { slidesPerView: 2, spaceBetween: 40 },
+                  1280: { slidesPerView: 2, spaceBetween: 50 },
+                }}
+                modules={[EffectCoverflow]}
+                className="h-full"
               >
-                <MdCancel className="font-medium text-2xl text-tertiary-dark" />
-              </button>
-              <div className="w-screen relative">
-                <Swiper
-                  observer={true}
-                  observeParents={true}
-                  effect="coverflow"
-                  onSwiper={setSwiperInstance} // Capture Swiper instance
-                  watchSlidesProgress
-                  coverflowEffect={coverflowEffectConfig}
-                  centeredSlides
-                  keyboard={{ enabled: true }} // Enable keyboard control
-                  navigation={{
-                    nextEl: '.custom-next', // Custom next button
-                    prevEl: '.custom-prev', // Custom prev button
-                  }}
-                  breakpoints={{
-                    320: { slidesPerView: 1.2, spaceBetween: 20 },
-                    640: { slidesPerView: 2, spaceBetween: 30 },
-                    1024: { slidesPerView: 2, spaceBetween: 40 },
-                    1280: { slidesPerView: 2, spaceBetween: 50 },
-                  }}
-                  modules={[EffectCoverflow]}
-                  className="h-full"
-                >
-                  {photos.map((photo, index) => (
-                    <SwiperSlide
-                      key={index}
-                      className="flex justify-center items-center"
+                {photos.map((photo, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className="flex justify-center items-center"
+                  >
+                    <motion.div
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={imageVariants}
+                      className="relative aspect-video overflow-hidden rounded-xl"
                     >
-                      <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={imageVariants}
-                        className="relative aspect-video overflow-hidden rounded-xl"
-                      >
-                        <Image
-                          src={photo.url}
-                          alt={`Photo ${index + 1}`}
-                          width={1000}
-                          height={1000}
-                          className="object-cover"
-                          loading="eager"
-                        />
-                      </motion.div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                      <Image
+                        src={photo.url}
+                        alt={`Photo ${index + 1}`}
+                        width={1000}
+                        height={1000}
+                        className="object-cover"
+                        loading="eager"
+                      />
+                    </motion.div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-                {/* Custom Navigation Buttons */}
-                <div className="absolute -bottom-20 left-0 right-0 flex justify-evenly space-x-36 z-50">
-                  <button
-                    className="custom-prev bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
-                    aria-label="Previous Slide"
-                  >
-                    <FaArrowLeft />
-                  </button>
-                  <button
-                    className="custom-next bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
-                    aria-label="Next Slide"
-                  >
-                    <FaArrowRight />
-                  </button>
-                </div>
+              {/* Custom Navigation Buttons */}
+              <div className="absolute -bottom-20 left-0 right-0 flex justify-evenly space-x-36 z-50">
+                <button
+                  className="custom-prev bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
+                  aria-label="Previous Slide"
+                >
+                  <FaArrowLeft />
+                </button>
+                <button
+                  className="custom-next bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
+                  aria-label="Next Slide"
+                >
+                  <FaArrowRight />
+                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );
