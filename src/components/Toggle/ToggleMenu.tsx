@@ -2,156 +2,136 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import Image from 'next/image';
-import { Links } from '@/Data/Data';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { IconArrowUpRight, IconMenu2, IconX } from '@tabler/icons-react';
+import { Links, contactData } from '@/Data/Data';
+import { cn } from '@/libs/utils';
 
-const ToggleMenu = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const toggleMenu = () => {
-    setShowMenu((prevOpen) => !prevOpen);
-  };
+const EASE = [0.22, 1, 0.36, 1] as const;
 
+const ToggleMenu = ({ light = false }: { light?: boolean }) => {
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  const isActive = (href: string) => (pathname === href ? 'active' : '');
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
 
-  const menuVars = {
-    initial: {
-      scaleY: 0,
-    },
-    animate: {
-      scaleY: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.12, 0, 0.39, 0],
-      },
-    },
-    exit: {
-      scaleY: 0,
-      transition: {
-        delay: 0.5,
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
+  // Lock scroll + close on Escape while open
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
 
-  const containerVars = {
-    initial: {
-      transition: {
-        staggerChildren: 0.09,
-        staggerDirection: -1,
-      },
-    },
-    open: {
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.09,
-        staggerDirection: 1,
-      },
-    },
-  };
-
-  const mobileLinkVars = {
-    initial: {
-      y: '30vh',
-      transition: {
-        duration: 0.5,
-        ease: [0.37, 0, 0.63, 1],
-      },
-    },
-    open: {
-      y: 0,
-      transition: {
-        ease: [0, 0.55, 0.45, 1],
-        duration: 0.7,
-      },
-    },
-  };
   return (
     <>
       <button
-        title="toggle"
-        className="text-3xl lg:hidden transition-transform transform hover:scale-110"
-        onClick={toggleMenu}
+        type="button"
+        aria-label="Open menu"
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
+        className={cn(
+          'grid size-11 place-items-center rounded-xl border transition-colors lg:hidden',
+          light
+            ? 'border-white/20 text-white hover:bg-white/10'
+            : 'border-line text-fg hover:bg-muted'
+        )}
       >
-        <HiMenuAlt3 />
+        <IconMenu2 size={22} stroke={2} />
       </button>
-      <AnimatePresence>
-        {showMenu && (
-          <motion.div
-            variants={menuVars}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className="fixed left-0 top-0 w-full h-screen py-10 origin-top bg-[whitesmoke] dark:bg-zinc-950 dark:text-[whitesmoke] text-primary z-[9999]"
-          >
-            <div className="flex h-full flex-col">
-              <div className="flex justify-between px-10">
-                <Link
-                  onClick={toggleMenu}
-                  href="/"
-                  className="flex items-center"
-                >
-                  <Image
-                    src={`/MCC-LOGO.png`}
-                    alt="Modern Construction Company"
-                    width={70}
-                    height={70}
-                  />
-                </Link>
-                <button
-                  title="toggle"
-                  className="text-3xl lg:hidden transition-transform transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  <HiOutlineX />
-                </button>
-              </div>
 
-              <motion.div
-                variants={containerVars}
-                initial="initial"
-                animate="open"
-                exit="initial"
-                className="flex flex-col h-full justify-center font-roboto items-start pl-6 gap-7"
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+            initial={{ clipPath: 'inset(0 0 100% 0)' }}
+            animate={{ clipPath: 'inset(0 0 0% 0)' }}
+            exit={{ clipPath: 'inset(0 0 100% 0)' }}
+            transition={{ duration: 0.55, ease: EASE }}
+            className="fixed inset-0 z-[9999] flex flex-col bg-ink text-white"
+          >
+            <div className="flex items-center justify-between px-5 pt-5">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-3"
               >
-                {Links.map((links) => {
-                  const isActiveLink = isActive(links.href);
-                  return (
-                    <motion.div key={links.id} className="overflow-hidden">
-                      <motion.div
-                        variants={mobileLinkVars}
-                        className="text-4xl uppercase"
-                      >
-                        <Link
-                          onClick={toggleMenu}
-                          href={links.href}
-                          className={`relative items-center flex hover:text-secondary dark:hover:text-red-500 transition-all ${
-                            isActiveLink
-                              ? 'text-secondary dark:text-red-500'
-                              : ''
-                          }`}
-                        >
-                          {links.title}
-                        </Link>
-                      </motion.div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-              <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
-                © Copyright 2025, All Rights Reserved by{' '}
-                <br className="block lg:hidden" />
-                <span className="font-semibold font-inter">
-                  {' '}
-                  Modern Construction Company
+                <Image src="/MCC-LOGO.png" alt="" width={44} height={44} />
+                <span className="font-display text-lg font-black tracking-[0.2em]">
+                  MCC
                 </span>
-              </p>
+              </Link>
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setOpen(false)}
+                className="grid size-11 place-items-center rounded-xl border border-white/20 hover:bg-white/10"
+              >
+                <IconX size={22} stroke={2} />
+              </button>
             </div>
+
+            <nav className="flex flex-1 flex-col justify-center px-6">
+              <ul className="flex flex-col gap-2">
+                {Links.map((link, i) => (
+                  <li key={link.id} className="overflow-hidden">
+                    <motion.div
+                      initial={{ y: '110%' }}
+                      animate={{ y: 0 }}
+                      exit={{ y: '110%' }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.15 + i * 0.06,
+                        ease: EASE,
+                      }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          'flex items-baseline gap-4 py-1 font-display text-5xl font-extrabold tracking-tight transition-colors sm:text-6xl',
+                          isActive(link.href)
+                            ? 'text-[#E5383B]'
+                            : 'text-white hover:text-white/70'
+                        )}
+                      >
+                        <span className="font-display text-sm font-bold tracking-[0.2em] text-white/40">
+                          0{i + 1}
+                        </span>
+                        {link.title}
+                      </Link>
+                    </motion.div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 0.5 } }}
+              exit={{ opacity: 0 }}
+              className="flex flex-col gap-4 border-t border-white/10 px-6 py-6"
+            >
+              <p className="text-sm text-white/60">{contactData[0].details}</p>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="btn-brand w-full"
+              >
+                Get a quote
+                <IconArrowUpRight stroke={2.2} />
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

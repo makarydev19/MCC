@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
-import { Roboto, Inter } from 'next/font/google';
+import { Archivo, Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { Footer, Header } from '@/layout';
-import { ThemeProvider, AOSProvider, ViewportProvider } from '@/Providers';
+import {
+  ThemeProvider,
+  AOSProvider,
+  ViewportProvider,
+  MotionProvider,
+} from '@/Providers';
 import { metadataConfig } from '@/libs/metadata'; // ✅ Import metadata
 import Script from 'next/script';
 import '@/styles/globals.css';
@@ -32,18 +37,18 @@ const structuredData = {
   },
 };
 
-const roboto = Roboto({
+const archivo = Archivo({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
-  style: ['italic', 'normal'],
-  variable: '--font-roboto',
+  weight: ['500', '600', '700', '800', '900'],
+  variable: '--font-archivo',
+  display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['normal'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = metadataConfig.home;
@@ -54,7 +59,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`scroll-smooth ${inter.variable} ${archivo.variable}`}
+    >
       <head>
         <link rel="shortcut icon" href="/MCC-LOGO.png" type="image/png" />
         <Script
@@ -64,16 +72,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={roboto.className}>
+      <body className="font-body antialiased">
         <ThemeProvider>
           <AOSProvider>
             <ViewportProvider>
-              <main className="font-normal">
-                <Header />
-                {children}
-                <Footer />
-              </main>
-              <Toaster />
+              <MotionProvider>
+                <main className="relative overflow-x-clip">
+                  <Header />
+                  {children}
+                  <Footer />
+                </main>
+                <Toaster />
+              </MotionProvider>
             </ViewportProvider>
           </AOSProvider>
         </ThemeProvider>

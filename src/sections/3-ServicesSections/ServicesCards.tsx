@@ -1,22 +1,16 @@
-import React from 'react';
 import ServicesCard from '@/components/Cards/ServicesCard';
+import SectionHeading from '@/components/ui/section-heading';
 
 const ServicesCards = () => {
   return (
-    <>
-      <div className="flex flex-col gap-y-3 items-center">
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="font-heading text-center dark:text-[whitesmoke]"
-        >
-          Our Services
-        </h1>
+    <section className="pt-20 md:pt-28">
+      <div className="container-x">
+        <SectionHeading eyebrow="What we do" title="Our Services" />
+        <div className="mt-12">
+          <ServicesCard />
+        </div>
       </div>
-      <div className="my-10">
-        <ServicesCard />
-      </div>
-    </>
+    </section>
   );
 };
 

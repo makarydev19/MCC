@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import { cn } from '@/libs/utils';
 
 interface PaginationProps {
   currentPage: number;
@@ -12,53 +13,56 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  if (totalPages <= 1) return <div className="h-20" />;
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const base =
+    'grid size-11 place-items-center rounded-xl font-display text-[0.9375rem] font-bold transition-all duration-200';
 
   return (
-    <div className="flex items-center justify-center space-x-2 my-20">
-      {/* Previous Button */}
+    <nav
+      aria-label="Pagination"
+      className="my-16 flex items-center justify-center gap-2 md:my-20"
+    >
       <button
-        title="Previous"
+        aria-label="Previous page"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`px-4 py-[0.67rem] text-sm font-medium rounded-md ${
-          currentPage === 1
-            ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
-            : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
-        }`}
+        className={cn(
+          base,
+          'border border-line bg-surface text-fg hover:border-fg disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-line'
+        )}
       >
-        <FaArrowLeft />
+        <IconChevronLeft size={18} />
       </button>
 
-      {/* Page Numbers */}
       {pageNumbers.map((page) => (
         <button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`px-4 py-2 text-sm font-medium rounded-md ${
+          aria-current={page === currentPage ? 'page' : undefined}
+          className={cn(
+            base,
             page === currentPage
-              ? 'bg-white dark:bg-slate-50 dark:text-black shadow-lg translate-y-1'
-              : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
-          }`}
+              ? 'bg-ink text-white shadow-card dark:bg-white dark:text-ink'
+              : 'border border-line bg-surface text-fg hover:-translate-y-0.5 hover:border-fg'
+          )}
         >
           {page}
         </button>
       ))}
 
-      {/* Next Button */}
       <button
-        title="Next"
+        aria-label="Next page"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`px-4 py-[0.67rem] text-sm font-medium rounded-md ${
-          currentPage === totalPages
-            ? 'dark:bg-black/50 bg-white/50 cursor-not-allowed text-gray-400 dark:text-white/15 translate-y-1' // Disabled state
-            : 'bg-primary dark:bg-zinc-800 text-white hover:translate-y-1'
-        }`}
+        className={cn(
+          base,
+          'border border-line bg-surface text-fg hover:border-fg disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-line'
+        )}
       >
-        <FaArrowRight />
+        <IconChevronRight size={18} />
       </button>
-    </div>
+    </nav>
   );
 };
 

@@ -1,6 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import { IconArrowUpRight } from '@tabler/icons-react';
+import { Reveal } from '@/components/ui/reveal';
 
 const ProjectSidebar = ({
   project,
@@ -12,82 +15,43 @@ const ProjectSidebar = ({
     client: string;
   };
 }) => {
+  const facts = [
+    { label: 'Location', value: project.location },
+    { label: 'Sector', value: project.projectSector },
+    {
+      label: 'End Date',
+      value: project.endDate
+        ? new Date(project.endDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+          })
+        : 'Still In Progress',
+    },
+    { label: 'Client', value: project.client },
+  ];
+
   return (
-    <div className="flex flex-wrap gap-x-10 lg:w-[30%] w-[90%] sticky top-28 lg:border-0 dark:border-white/5 border-t-2 lg:pt-0 pt-10">
-      <div className="space-y-5">
-        <div>
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="font-thin text-lg uppercase tracking-widest text-zinc-400"
+    <Reveal className="card sticky top-28 p-7 shadow-card md:p-8">
+      <dl>
+        {facts.map((fact) => (
+          <div
+            key={fact.label}
+            className="border-b border-line py-5 first:pt-0"
           >
-            Location
-          </h2>
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="text-base text-nowrap w-32 capitalize"
-          >
-            {project.location}
-          </h1>
-        </div>
-        <div className="flex items-center gap-x-20 justify-between">
-          <div>
-            <h2
-              data-aos="fade-up"
-              data-aos-duration="800"
-              className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-            >
-              Sector
-            </h2>
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="800"
-              className="text-base capitalize"
-            >
-              {project.projectSector}
-            </h1>
+            <dt className="font-display text-xs font-bold uppercase tracking-[0.14em] text-subtle">
+              {fact.label}
+            </dt>
+            <dd className="mt-1.5 font-display text-xl font-bold capitalize tracking-tight text-fg">
+              {fact.value || '—'}
+            </dd>
           </div>
-          <div>
-            <h2
-              data-aos="fade-up"
-              data-aos-duration="800"
-              className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-            >
-              End Date
-            </h2>
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="800"
-              className="text-base capitalize text-nowrap"
-            >
-              {project.endDate
-                ? new Date(project.endDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                  })
-                : 'Still In Progress'}
-            </h1>
-          </div>
-        </div>
-        <div>
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="font-thin text-lg uppercase tracking-widest text-zinc-400"
-          >
-            Client
-          </h2>
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="text-base capitalize"
-          >
-            {project.client}
-          </h1>
-        </div>
-      </div>
-    </div>
+        ))}
+      </dl>
+      <Link href="/contact" className="btn-brand mt-7 w-full">
+        Start a similar project
+        <IconArrowUpRight stroke={2.2} />
+      </Link>
+    </Reveal>
   );
 };
 

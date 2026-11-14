@@ -1,85 +1,205 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ==========================================================================
+   MCC · "Built Solid" design system tokens
+   RGB channels so Tailwind can apply opacity (e.g. bg-brand/10).
+   ========================================================================== */
+@layer base {
+  :root {
+    --bg: 247 246 243;
+    --surface: 255 255 255;
+    --muted: 239 237 232;
+    --line: 228 225 218;
+    --fg: 15 23 42;
+    --subtle: 71 85 105;
+    --brand: 199 33 36;
+    --brand-hover: 165 27 30;
+    --ink: 11 15 20;
+    --vh: 1vh;
+  }
+
+  /* Force light tokens inside a dark section (e.g. a white form card) */
+  .light {
+    --bg: 247 246 243;
+    --surface: 255 255 255;
+    --muted: 239 237 232;
+    --line: 228 225 218;
+    --fg: 15 23 42;
+    --subtle: 71 85 105;
+    --brand: 199 33 36;
+    --brand-hover: 165 27 30;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 11 15 20;
+    --surface: 19 26 34;
+    --muted: 26 34 44;
+    --line: 36 48 64;
+    --fg: 238 242 246;
+    --subtle: 148 163 184;
+    --brand: 229 56 59;
+    --brand-hover: 242 82 85;
+    --ink: 7 10 13;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg font-body text-fg;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    @apply font-body;
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-bg;
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-y {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Eyebrow: red bar + small caps label */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 font-display text-[0.8125rem] font-bold uppercase tracking-[0.18em] text-brand;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply block h-[3px] w-8 bg-current;
+  }
+
+  .h-display {
+    @apply font-display font-black leading-[0.95] tracking-[-0.04em];
+  }
+  .h-section {
+    @apply font-display text-[2.25rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-fg md:text-5xl lg:text-[3.25rem];
+  }
+  .lead {
+    @apply text-base leading-[1.75] text-subtle md:text-[1.0625rem];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply relative inline-flex min-h-[48px] select-none items-center justify-center gap-2.5 whitespace-nowrap rounded-xl px-6 py-3 font-display text-[0.9375rem] font-bold tracking-[0.02em] transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-out active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn svg {
+    @apply size-[18px] shrink-0 transition-transform duration-200 ease-out;
+  }
+  .btn:hover svg {
+    transform: translate(3px, -3px);
+  }
+  .btn-brand {
+    @apply btn bg-brand text-white hover:bg-brand-hover hover:shadow-brand;
+  }
+  .btn-ink {
+    @apply btn bg-ink text-white hover:bg-ink/85 dark:bg-white dark:text-ink dark:hover:bg-white/90;
+  }
+  .btn-ghost {
+    @apply btn border-[1.5px] border-line text-fg hover:border-fg;
+  }
+  .btn-ghost-light {
+    @apply btn border-[1.5px] border-white/40 text-white hover:border-white hover:bg-white/10;
+  }
+
+  /* Legacy button names, restyled */
+  .btn-primary {
+    @apply btn-brand;
+  }
+  .btn-tertiary {
+    @apply btn-brand;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+
+  .field {
+    @apply block w-full rounded-lg border border-line bg-bg px-4 py-3.5 text-[0.9375rem] text-fg placeholder:text-subtle/80 transition-[border-color,box-shadow] duration-150 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/15;
+  }
+  .label {
+    @apply mb-2 block text-sm font-semibold text-fg;
+  }
+
+  .img {
+    @apply h-full w-full object-cover;
+  }
+
+  /* Legacy helpers */
+  .font-heading {
+    @apply h-section;
+  }
+  .font-title {
+    @apply lead text-center;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+  }
 }
 
-/* Custom class to hide scrollbar */
+/* ==========================================================================
+   Global bits
+   ========================================================================== */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
-/*scrollbar style*/
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: rgb(0, 0, 0);
+  background: rgb(var(--bg));
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgba(211, 211, 211, 0.326);
-  border-radius: 5px;
+  background: rgb(var(--subtle) / 0.35);
+  border-radius: 999px;
+  border: 2px solid rgb(var(--bg));
 }
-
-.sidebar:hover::-webkit-scrollbar-thumb {
-  background: #454545;
-}
-
-.rounded-background-home {
-  border-radius: 0rem 0rem 40rem 40rem;
-}
-
-.rounded-background-pages {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  /* height: 90vh; */
-  border-radius: 0rem 0rem 100rem 100rem;
-}
-
-.active {
-  @apply border-b-[1.2px] border-spacing-12 border-secondary dark:text-red-500 text-secondary font-bold;
-}
-
-.services-bg {
-  background: url(/Porto-October/IMG_0025.JPG) no-repeat center / cover;
-}
-
-.findConstructionTeam-bg {
-  background: url(/IMG_20210809_144241.jpg) no-repeat center / cover;
-}
-
-.aboutUs-page-bg {
-  background: url(/Porto-October/IMG_20171019_160406.jpg) no-repeat center /
-    cover;
-}
-
-.contactUs-page-bg {
-  background: url(/Porto-October/IMG_0053.JPG) no-repeat center / cover;
-}
-
-hr {
-  height: 1.4px;
-  margin: 0 auto;
-  margin-top: 2.5rem;
-}
-
-.underline {
-  color: #141414;
-  height: 1.5px;
-  margin-top: 0.7rem;
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--subtle) / 0.6);
 }
 
 .swiper {
@@ -87,213 +207,52 @@ hr {
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  @apply font-inter;
-}
-
-.btn-primary {
-  @apply py-3 md:py-4 bg-secondary dark:bg-zinc-900 dark:text-white border-[1px] border-[#efefef22] text-white rounded-xl md:rounded-2xl shadow-lg shadow-black font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
-}
-
-.btn-tertiary {
-  @apply px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-secondary rounded-lg md:rounded-2xl shadow-sm shadow-primary text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
-}
-
-.img {
-  @apply object-cover w-full h-full;
-}
-
-.scale-animation {
-  @apply hover:scale-125 transition-all duration-700;
-}
-
-.font-heading {
-  @apply md:text-6xl text-4xl font-roboto text-gray-800 font-bold;
-}
-
-.font-title {
-  @apply md:text-2xl text-center text-lg text-gray-800;
-}
-
-.font-normal {
-  @apply text-sm md:text-base;
-}
-
-.custom-swiper-button-next,
-.custom-swiper-button-prev {
-  /* color: #fff; */
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 35%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.custom-swiper-button-next {
-  right: 10px;
-}
-
-.custom-swiper-button-prev {
-  left: 10px;
-}
-
-.custom-swiper-button-next::after,
-.custom-swiper-button-prev::after {
-  font-family: 'Swiper';
-  font-size: 20px;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: 0;
-  text-transform: none;
-  content: '';
-}
-
-.custom-swiper-button-next:hover,
-.custom-swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.backdrop-blur-custom {
-  -webkit-backdrop-filter: blur(3rem); /* Safari */
-  backdrop-filter: blur(3rem); /* Other browsers */
-}
-
-.backdrop-blur-custom2 {
-  -webkit-backdrop-filter: blur(5rem); /* Safari */
-  backdrop-filter: blur(5rem); /* Other browsers */
-}
-
-.overlay {
-  border-image: fill 0 linear-gradient(#0001, #000);
-}
-
-.customSwiper {
-  --swiper-navigation-color: #fff;
-  --swiper-pagination-color: #fff;
-}
-
-.customSlide {
-  transition:
-    transform 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-.customSwiper .swiper-slide-active .customSlide {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.customSwiper .swiper-slide-prev .customSlide,
-.customSwiper .swiper-slide-next .customSlide {
-  opacity: 0.5;
-  transform: translateX(-50%);
-}
-
-.mySwiper .thumbs {
-  width: 25%;
-  height: 100%;
-  opacity: 0.5;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-/* Loading Style */
+/* Loader: three structural bars */
 .loader {
-  width: 50px;
-  aspect-ratio: 1.154;
-  position: relative;
-  background: conic-gradient(
-    from 120deg at 50% 64%,
-    #0000,
-    #ff1919 1deg 120deg,
-    #0000 121deg
-  );
-  animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  height: 40px;
 }
-
-.loader:before,
-.loader:after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  transform-origin: 50% 66%;
-  animation: l27-1 1.5s infinite;
+.loader span {
+  width: 8px;
+  border-radius: 2px;
+  background: rgb(var(--brand));
+  animation: loader-bar 1s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
-
-.loader:after {
-  --s: -1;
+.loader span:nth-child(2) {
+  animation-delay: 0.12s;
 }
-
-@keyframes l27-0 {
+.loader span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+@keyframes loader-bar {
   0%,
-  30% {
-    transform: rotate(0);
-  }
-
-  70% {
-    transform: rotate(120deg);
-  }
-
-  70.01%,
   100% {
-    transform: rotate(360deg);
+    height: 12px;
+    opacity: 0.4;
   }
-}
-
-@keyframes l27-1 {
-  0% {
-    transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+  50% {
+    height: 40px;
+    opacity: 1;
   }
-
-  30%,
-  70% {
-    transform: rotate(calc(var(--s, 1) * 120deg))
-      translate(calc(var(--s, 1) * -5px), 10px);
-  }
-
-  100% {
-    transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
-  }
-}
-
-:root {
-  --vh: 1vh; /* Fallback value */
 }
 
 html,
 body {
-  height: calc(var(--vh) * 100); /* Use the fixed viewport height */
+  min-height: calc(var(--vh) * 100);
 }
 
-/* Use the --vh variable for heights */
-.full-height {
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-#__next {
-  height: 100%; /* Ensure full height for the Next.js app wrapper */
-}
-
-.h-screen {
-  height: calc(var(--vh) * 100); /* Tailwind utility for full-height */
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

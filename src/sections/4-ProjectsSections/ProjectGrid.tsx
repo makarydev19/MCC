@@ -1,31 +1,48 @@
 'use client';
+
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCard from '@/components/Cards/ProjectCard';
 import { Project } from '@/models/project';
-import { BlurFade } from '../../components/ui/blur-fade';
 
 interface ProjectGridProps {
   projects: Project[];
 }
 
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => (
-  <>
-    <div className="flex flex-col gap-y-2 lg:mt-32 mt-24">
-      <h1 className="font-heading dark:text-[whitesmoke] text-center">
-        What we have accomplished...
-      </h1>
-      <p className="font-title dark:text-zinc-300">
-        From blueprints to grand openings, see our projects come to life
-      </p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-16 pt-28">
+  <motion.div
+    layout
+    className="grid grid-cols-1 gap-x-6 gap-y-12 pt-10 md:grid-cols-2 lg:grid-cols-3"
+  >
+    <AnimatePresence mode="popLayout">
       {projects.map((project, idx) => (
-        <BlurFade key={project._id} delay={0.25 + idx * 0.1} inView>
+        <motion.div
+          key={project._id}
+          layout
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{
+            duration: 0.5,
+            delay: idx * 0.05,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           <ProjectCard project={project} />
-        </BlurFade>
+        </motion.div>
       ))}
-    </div>
-  </>
+    </AnimatePresence>
+    {projects.length === 0 && (
+      <div className="col-span-full rounded-2xl border border-dashed border-line py-20 text-center">
+        <p className="font-display text-xl font-bold text-fg">
+          No projects match these filters
+        </p>
+        <p className="mt-2 text-subtle">
+          Try another sector or location.
+        </p>
+      </div>
+    )}
+  </motion.div>
 );
 
 export default ProjectGrid;

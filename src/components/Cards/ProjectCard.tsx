@@ -1,8 +1,8 @@
 import { Project } from '@/models/project';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+import { IconArrowUpRight, IconMapPin } from '@tabler/icons-react';
 
 type Props = {
   project: Project;
@@ -10,35 +10,43 @@ type Props = {
 
 const ProjectCard: FC<Props> = (props) => {
   const {
-    project: { projectName, location, slug, coverImage },
+    project: { projectName, location, slug, coverImage, projectSector },
   } = props;
 
   return (
-    <>
-      <div className="relative hover:-translate-y-3 transition-all duration-200">
-        <div className="absolute top-7 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center rounded-3xl py-3 min-w-[70%] border-[0.5rem] border-LightModeBG dark:border-DarkModeBG -mt-6 text-white dark:text-black bg-DarkModeBG dark:bg-LightModeBG z-50">
-          <p>{location}</p>
-        </div>
-        <div className="overflow-hidden rounded-xl h-64 shadow-lg shadow-black">
-          <Image
-            src={coverImage.url}
-            alt={projectName}
-            width={1000}
-            height={1000}
-            className="img"
-            loading="eager"
+    <Link href={`/projects/${slug.current}`} className="group block">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-muted shadow-card transition-shadow duration-300 group-hover:shadow-lift">
+        <Image
+          src={coverImage.url}
+          alt={projectName}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold capitalize text-ink backdrop-blur">
+          <IconMapPin size={13} stroke={2} />
+          {location}
+        </span>
+        <span className="absolute bottom-4 right-4 grid size-11 place-items-center rounded-full bg-white text-ink transition-all duration-300 ease-out group-hover:bg-brand group-hover:text-white">
+          <IconArrowUpRight
+            size={18}
+            stroke={2.2}
+            className="transition-transform duration-300 group-hover:rotate-45"
           />
-          {/* Overlay */}
-          <Link href={`projects/${slug.current}`}>
-            <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
-              <div className=" text-center text-white w-[90%] flex flex-col gap-y-3">
-                <h1 className="text-xl">{projectName}</h1>
-              </div>
-            </div>
-          </Link>
-        </div>
+        </span>
       </div>
-    </>
+      <div className="mt-5">
+        {projectSector && (
+          <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-brand">
+            {projectSector}
+          </p>
+        )}
+        <h3 className="mt-1.5 font-display text-2xl font-bold tracking-tight text-fg transition-colors group-hover:text-brand">
+          {projectName}
+        </h3>
+      </div>
+    </Link>
   );
 };
 

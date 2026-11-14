@@ -15,15 +15,11 @@ const Home = () => {
   return (
     <>
       <LandingSection />
-      <div className="absolute w-full md:top-[95%] top-[96%] z-50">
-        <CountsSection />
-      </div>
+      <CountsSection />
       <WhoWeAreSection />
       <ServicesSection />
       <ChairmanOfBoardsSection />
-      <div className="lg:px-20">
-        <OurClientsSection />
-      </div>
+      <OurClientsSection />
       <ContactUsSection />
     </>
   );

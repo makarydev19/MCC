@@ -12,6 +12,7 @@ import {
 import { useState, useRef, useCallback, useEffect } from 'react';
 import useSWR from 'swr';
 import LoadingSpinner from '../loading';
+import SectionHeading from '@/components/ui/section-heading';
 
 const Projects = () => {
   // State for filters
@@ -95,15 +96,25 @@ const Projects = () => {
     <section>
       <LandingSection />
 
-      <FilterButton
-        projectSectorFilter={projectSectorFilter}
-        setProjectSectorFilter={setProjectSectorFilter}
-        locationFilter={locationFilter}
-        setLocationFilter={setLocationFilter}
-      />
+      <div className="container-x pt-20 md:pt-28">
+        <SectionHeading
+          eyebrow="Portfolio"
+          title="What we have accomplished..."
+          description="From blueprints to grand openings, see our projects come to life"
+        />
+      </div>
 
-      <div className="lg:px-20 px-5">
-        <div ref={projectCardsRef}>
+      <div className="mt-10">
+        <FilterButton
+          projectSectorFilter={projectSectorFilter}
+          setProjectSectorFilter={setProjectSectorFilter}
+          locationFilter={locationFilter}
+          setLocationFilter={setLocationFilter}
+        />
+      </div>
+
+      <div className="container-x">
+        <div ref={projectCardsRef} className="scroll-mt-48">
           <ProjectCards projects={displayedProjects} />
         </div>
         <Pagination

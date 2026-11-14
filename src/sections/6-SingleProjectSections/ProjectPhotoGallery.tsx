@@ -4,22 +4,31 @@ import { Image as ImageType } from '@/models/project';
 import { CoverImage } from '@/models/project';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { MdCancel } from 'react-icons/md';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Keyboard, Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
-import BoxReveal from '@/components/ui/box-reveal';
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconMapPin,
+  IconPhoto,
+  IconX,
+} from '@tabler/icons-react';
+import { EASE_OUT, WordsReveal } from '@/components/ui/reveal';
 
-SwiperCore.use([Navigation]);
+const VISIBLE_THUMBS = 4;
 
 const ProjectPhotoGallery: FC<{
   photos: ImageType[];
   coverImage: CoverImage;
-}> = ({ photos, coverImage }) => {
+  title?: string;
+  sector?: string;
+  location?: string;
+}> = ({ photos = [], coverImage, title, sector, location }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
@@ -28,190 +37,222 @@ const ProjectPhotoGallery: FC<{
     setCurrentPhotoIndex(index);
     setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  const thumbs = photos.slice(0, VISIBLE_THUMBS);
+  const remaining = photos.length - VISIBLE_THUMBS;
 
-  const maximiumVisiblePhotos = 1;
-  const totalPhotos = photos.length;
-  const remainingPhotosCount = totalPhotos - maximiumVisiblePhotos;
-
-  const coverflowEffectConfig = {
-    rotate: 30,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  };
-
-  // Keyboard navigation
+  // Keyboard: arrows navigate, Escape closes; lock page scroll while open
   useEffect(() => {
+    if (!showModal) return;
     const handleKeydown = (e: KeyboardEvent) => {
-      if (!showModal || !swiperInstance) return;
-      if (e.key === 'ArrowLeft') {
-        swiperInstance.slidePrev(); // Move to previous slide
-      } else if (e.key === 'ArrowRight') {
-        swiperInstance.slideNext(); // Move to next slide
-      }
+      if (e.key === 'Escape') closeModal();
+      if (!swiperInstance) return;
+      if (e.key === 'ArrowLeft') swiperInstance.slidePrev();
+      if (e.key === 'ArrowRight') swiperInstance.slideNext();
     };
-
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', handleKeydown);
     return () => {
+      document.body.style.overflow = prev;
       window.removeEventListener('keydown', handleKeydown);
     };
   }, [showModal, swiperInstance]);
 
-  // Modal Background Animation
-  const modalVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.3 } },
-    exit: { opacity: 0, transition: { duration: 0.3 } },
-  };
-
-  // Image Animation Variants
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-    exit: { opacity: 0, scale: 0.9, transition: { duration: 0.5 } },
-  };
-
   return (
-    <div className="mx-auto">
-      <div className="relative flex items-center justify-center">
-        <div className="relative lg:rounded-b-2xl rounded-b-2xl overflow-hidden">
-          <BoxReveal duration={0.5}>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={imageVariants}
-              className="w-screen md:w- lg:h-[70vh] mx-auto md:h-[50vh] h-[70vh] shadow-xl"
-            >
-              <Image
-                src={coverImage.url}
-                alt={`Project Photo`}
-                className="img scale-animation cursor-pointer"
-                width={2000}
-                height={2000}
-                onClick={openModal.bind(this, 0)}
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent" />
-            </motion.div>
-          </BoxReveal>
-        </div>
+    <>
+      {/* Cover hero */}
+      <section className="p-2 sm:p-3">
+        <div className="relative isolate flex min-h-[78svh] items-end overflow-hidden rounded-[1.25rem] bg-ink sm:rounded-[1.75rem] lg:min-h-[680px]">
+          <motion.div
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.4, ease: EASE_OUT }}
+            className="absolute inset-0 -z-10"
+          >
+            <Image
+              src={coverImage.url}
+              alt={title ?? 'Project photo'}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
+          <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-ink via-ink/60 to-ink/10" />
 
-        <div className="absolute lg:left-[59%] md:left-[50%] lg:top-[70%] top-[90%]">
-          {remainingPhotosCount > 0 && (
-            <BoxReveal duration={0.5}>
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={imageVariants}
-                className="cursor-pointer relative lg:h-64 h-40 lg:w-[30rem] w-[20rem] rounded-2xl overflow-hidden shadow-xl shadow-black dark:shadow-white/5"
-                onClick={openModal.bind(this, maximiumVisiblePhotos)}
+          <div className="container-x flex flex-col gap-8 pb-10 pt-36 md:pb-14 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <nav
+                aria-label="Breadcrumb"
+                className="mb-6 flex items-center gap-2 text-sm font-medium text-white/60"
+              >
+                <Link href="/" className="hover:text-white">
+                  Home
+                </Link>
+                <span aria-hidden>/</span>
+                <Link href="/projects" className="hover:text-white">
+                  Projects
+                </Link>
+              </nav>
+              {(sector || location) && (
+                <p className="eyebrow mb-5 text-white">
+                  {[sector, location].filter(Boolean).join(' · ')}
+                </p>
+              )}
+              {title && (
+                <h1 className="h-display max-w-4xl text-[2.75rem] text-white sm:text-6xl lg:text-[5rem]">
+                  <WordsReveal text={title} delay={0.2} />
+                </h1>
+              )}
+            </div>
+            {photos.length > 0 && (
+              <button
+                type="button"
+                onClick={() => openModal(0)}
+                className="btn-ghost-light w-fit backdrop-blur-sm"
+              >
+                <IconPhoto />
+                View gallery ({photos.length})
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Thumbnail strip */}
+      {thumbs.length > 0 && (
+        <div className="container-x mt-3 grid grid-cols-2 gap-3 sm:mt-4 md:grid-cols-4">
+          {thumbs.map((photo, i) => {
+            const isLast = i === thumbs.length - 1 && remaining > 0;
+            return (
+              <motion.button
+                key={photo._key ?? photo.url}
+                type="button"
+                onClick={() => openModal(i)}
+                aria-label={`Open photo ${i + 1}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + i * 0.08, ease: EASE_OUT }}
+                className="group relative aspect-[5/3] overflow-hidden rounded-2xl bg-muted"
               >
                 <Image
-                  width={2000}
-                  height={2000}
-                  src={photos[maximiumVisiblePhotos - 1].url}
-                  alt={`Project Photo ${maximiumVisiblePhotos}`}
-                  className="img"
-                  loading="eager"
+                  src={photo.url}
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute cursor-pointer text-white inset-0 flex justify-center items-center text-2xl bg-[rgba(0,0,0,0.5)]">
-                  + {remainingPhotosCount}
-                </div>
-              </motion.div>
-            </BoxReveal>
-          )}
+                {isLast && (
+                  <span className="absolute inset-0 grid place-items-center bg-ink/60 font-display text-xl font-bold text-white backdrop-blur-[2px] transition-colors group-hover:bg-ink/70">
+                    + {remaining} photos
+                  </span>
+                )}
+              </motion.button>
+            );
+          })}
         </div>
+      )}
 
-        {/* Modal with Enter and Exit Animations */}
+      {/* Lightbox */}
+      <AnimatePresence>
         {showModal && (
           <motion.div
             key="modal"
-            className="fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[100000000]"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={modalVariants}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Project gallery"
+            className="fixed inset-0 z-[100000000] flex flex-col justify-center bg-ink/95 backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <button
-              title="Close Modal"
-              onClick={closeModal}
-              className="absolute lg:bottom-10 md:bottom-96 bottom-28 text-white text-lg z-[1000000]"
+            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 text-white">
+              <p className="font-display text-sm font-bold tracking-[0.1em]">
+                {String(currentPhotoIndex + 1).padStart(2, '0')}
+                <span className="text-white/50">
+                  {' '}
+                  / {String(photos.length).padStart(2, '0')}
+                </span>
+              </p>
+              <button
+                type="button"
+                aria-label="Close gallery"
+                onClick={closeModal}
+                className="grid size-11 place-items-center rounded-xl border border-white/20 hover:bg-white/10"
+              >
+                <IconX size={22} />
+              </button>
+            </div>
+
+            <motion.div
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              transition={{ duration: 0.4, ease: EASE_OUT }}
+              className="w-screen"
             >
-              <MdCancel className="font-medium text-2xl text-tertiary-dark" />
-            </button>
-            <div className="w-screen relative">
               <Swiper
-                observer={true}
-                observeParents={true}
+                observer
+                observeParents
                 effect="coverflow"
-                onSwiper={setSwiperInstance} // Capture Swiper instance
+                initialSlide={currentPhotoIndex}
+                onSwiper={setSwiperInstance}
+                onSlideChange={(s) => setCurrentPhotoIndex(s.activeIndex)}
                 watchSlidesProgress
-                coverflowEffect={coverflowEffectConfig}
+                coverflowEffect={{
+                  rotate: 20,
+                  stretch: 0,
+                  depth: 120,
+                  modifier: 1,
+                  slideShadows: false,
+                }}
                 centeredSlides
-                keyboard={{ enabled: true }} // Enable keyboard control
-                navigation={{
-                  nextEl: '.custom-next', // Custom next button
-                  prevEl: '.custom-prev', // Custom prev button
-                }}
+                keyboard={{ enabled: true }}
+                navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
                 breakpoints={{
-                  320: { slidesPerView: 1.2, spaceBetween: 20 },
-                  640: { slidesPerView: 2, spaceBetween: 30 },
-                  1024: { slidesPerView: 2, spaceBetween: 40 },
-                  1280: { slidesPerView: 2, spaceBetween: 50 },
+                  320: { slidesPerView: 1.15, spaceBetween: 16 },
+                  640: { slidesPerView: 1.6, spaceBetween: 24 },
+                  1024: { slidesPerView: 1.8, spaceBetween: 40 },
                 }}
-                modules={[EffectCoverflow]}
-                className="h-full"
+                modules={[EffectCoverflow, Navigation, Keyboard]}
               >
                 {photos.map((photo, index) => (
-                  <SwiperSlide
-                    key={index}
-                    className="flex justify-center items-center"
-                  >
-                    <motion.div
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={imageVariants}
-                      className="relative aspect-video overflow-hidden rounded-xl"
-                    >
+                  <SwiperSlide key={photo._key ?? index}>
+                    <div className="relative aspect-video overflow-hidden rounded-2xl bg-white/5">
                       <Image
                         src={photo.url}
                         alt={`Photo ${index + 1}`}
-                        width={1000}
-                        height={1000}
+                        fill
+                        sizes="(min-width: 1024px) 55vw, 90vw"
                         className="object-cover"
-                        loading="eager"
                       />
-                    </motion.div>
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
+            </motion.div>
 
-              {/* Custom Navigation Buttons */}
-              <div className="absolute -bottom-20 left-0 right-0 flex justify-evenly space-x-36 z-50">
-                <button
-                  className="custom-prev bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
-                  aria-label="Previous Slide"
-                >
-                  <FaArrowLeft />
-                </button>
-                <button
-                  className="custom-next bg-gray-100 text-black rounded-full p-3 hover:bg-gray-800 hover:text-white"
-                  aria-label="Next Slide"
-                >
-                  <FaArrowRight />
-                </button>
-              </div>
+            <div className="mt-8 flex justify-center gap-3">
+              <button
+                className="custom-prev grid size-12 place-items-center rounded-full bg-white text-ink transition-colors hover:bg-brand hover:text-white"
+                aria-label="Previous photo"
+              >
+                <IconArrowLeft size={20} />
+              </button>
+              <button
+                className="custom-next grid size-12 place-items-center rounded-full bg-white text-ink transition-colors hover:bg-brand hover:text-white"
+                aria-label="Next photo"
+              >
+                <IconArrowRight size={20} />
+              </button>
             </div>
           </motion.div>
         )}
-      </div>
-    </div>
+      </AnimatePresence>
+    </>
   );
 };
 

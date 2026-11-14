@@ -1,80 +1,98 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import BoxReveal from '../../components/ui/box-reveal';
-import { BlurFade } from '../../components/ui/blur-fade';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { IconArrowUpRight } from '@tabler/icons-react';
+import { Reveal } from '@/components/ui/reveal';
 
 const WhoWeAreSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  // Gentle parallax between the two photos
+  const yBack = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const yFront = useTransform(scrollYProgress, [0, 1], [90, -60]);
+
   return (
-    <section className="lg:px-32 md:px-20 px-5 py-10 pt-72 lg:py-10 lg:pt-28">
-      <div className="lg:m-0">
-        <BlurFade delay={0.2} inView>
-          <h2 className="text-lg font-sans font-medium text-secondary uppercase">
-            Who We Are
-          </h2>
-        </BlurFade>
-        <div className="flex flex-wrap lg:w-full items-center">
-          <div className="flex-grow flex flex-col gap-y-7 lg:w-5/12 lg:mb-0 mb-10">
-            <BlurFade delay={0.2 * 2} inView>
-              <h1 className="text-4xl text-gray-800 dark:text-[whitesmoke] font-roboto font-bold mt-4">
-                For over 20 years, MCC has transformed visions and concepts into
-                steel, masonry, and concrete realities.
-              </h1>
-            </BlurFade>
-            <BlurFade delay={0.2 * 3} inView>
-              <p className="text-base dark:text-white/85 rounded-2xl pl-3">
-                Our clients represent a broad spectrum of industries and
-                business sectors, allowing us the opportunity to apply our
-                extensive experiences, know-how, and passion for excellence to
-                each specific project in order to successfully handle every
-                challenge and special circumstance.
-              </p>
-            </BlurFade>
-            <BlurFade delay={0.2 * 2} inView>
-              <p className="text-base dark:text-white/85 rounded-2xl pl-3">
-                With a well-respected track record behind us, and a solid
-                outlook ahead, we’ve learned that our collaborative experiences
-                with a variety of projects creates exceptional solutions and
-                results for our clients.
-              </p>
-            </BlurFade>
-          </div>
-          <div className="flex flex-grow lg:w-3/6 justify-end items-end lg:ml-10">
-            <BoxReveal duration={0.5}>
-              <div className="lg:mt-5 mr-3 overflow-hidden rounded-2xl lg:min-h-[60vh] lg:w-[20vw] h-[40vh] shadow-xl shadow-black">
-                <Image
-                  src={`/Porto-October/G6832.jpg`}
-                  alt=""
-                  width={3000}
-                  height={3000}
-                  className="img"
-                  loading="eager"
-                />
-              </div>
-            </BoxReveal>
-            <div className="-mt-3">
-              <BoxReveal duration={0.5}>
-                <div className="mb-3 rounded-2xl overflow-hidden lg:min-h-[60vh] lg:w-[20vw] w-[45vw] h-[40vh] shadow-xl shadow-black">
-                  <Image
-                    src={`/Porto-October/IMG_20181016_161451.jpg`}
-                    alt=""
-                    width={1500}
-                    height={1500}
-                    className="img"
-                    loading="eager"
-                  />
-                </div>
-              </BoxReveal>
-              <div className="absolute bg-bgcolor size-10 rounded-full ml-8 -mt-5 opacity-90"></div>
-            </div>
-          </div>
-          <Link href="/about" className="relative mx-auto mt-10">
-            <button className="btn-primary px-12 md:px-[30px] lg:px-[35px]">
+    <section className="section-y overflow-hidden">
+      <div className="container-x grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="flex flex-col gap-7">
+          <Reveal>
+            <p className="eyebrow">Who We Are</p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h2 className="h-section">
+              For over 20 years, MCC has transformed visions and concepts into
+              steel, masonry, and concrete realities.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="lead">
+              Our clients represent a broad spectrum of industries and business
+              sectors, allowing us the opportunity to apply our extensive
+              experiences, know-how, and passion for excellence to each
+              specific project in order to successfully handle every challenge
+              and special circumstance.
+            </p>
+          </Reveal>
+          <Reveal delay={0.22}>
+            <p className="lead">
+              With a well-respected track record behind us, and a solid outlook
+              ahead, we’ve learned that our collaborative experiences with a
+              variety of projects creates exceptional solutions and results for
+              our clients.
+            </p>
+          </Reveal>
+          <Reveal delay={0.28}>
+            <Link href="/about" className="btn-ink mt-2 w-fit">
               Explore more
-            </button>
-          </Link>
+              <IconArrowUpRight stroke={2.2} />
+            </Link>
+          </Reveal>
+        </div>
+
+        <div ref={ref} className="relative mx-auto h-[460px] w-full max-w-[560px] sm:h-[580px]">
+          <motion.div
+            style={{ y: yBack }}
+            className="absolute left-0 top-0 h-[78%] w-[62%] overflow-hidden rounded-[1.25rem] shadow-lift"
+          >
+            <Image
+              src="/Porto-October/G6832.jpg"
+              alt="MCC residential project"
+              fill
+              sizes="(min-width: 1024px) 340px, 60vw"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </motion.div>
+          <motion.div
+            style={{ y: yFront }}
+            className="absolute bottom-0 right-0 h-[62%] w-[50%] overflow-hidden rounded-[1.25rem] shadow-lift ring-8 ring-bg"
+          >
+            <Image
+              src="/Porto-October/IMG_20181016_161451.jpg"
+              alt="MCC building under construction"
+              fill
+              sizes="(min-width: 1024px) 280px, 50vw"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </motion.div>
+          <Reveal
+            delay={0.3}
+            className="absolute right-[4%] top-[6%] rounded-2xl bg-brand px-6 py-5 text-white shadow-brand"
+          >
+            <p className="font-display text-4xl font-black leading-none tracking-tight">
+              20+
+            </p>
+            <p className="mt-1 text-xs font-medium text-white/85">
+              Years of excellence
+            </p>
+          </Reveal>
         </div>
       </div>
-      <hr className="bg-slate-700 w-[80%]" />
     </section>
   );
 };

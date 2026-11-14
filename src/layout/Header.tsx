@@ -3,71 +3,115 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { IconArrowUpRight } from '@tabler/icons-react';
 import { ToggleTheme, ToggleMenu } from '../components/Toggle';
 import { Links } from '@/Data/Data';
+import { cn } from '@/libs/utils';
+
+// Routes that open with a full-bleed image hero (nav starts transparent).
+const HERO_ROUTES = ['/', '/about', '/services', '/projects', '/contact'];
 
 const Header = () => {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
-  const isActive = (href: string) => (pathname === href ? 'active' : '');
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const hasHero = HERO_ROUTES.some((r) =>
+    r === '/' ? pathname === '/' : pathname.startsWith(r)
+  );
+  const solid = scrolled || !hasHero;
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
-    <header>
-      <nav className="bg-LightModeBG dark:bg-DarkModeBG shadow-xl flex lg:max-w-[80%] w-full fixed inset-x-0 mx-auto border lg:rounded-b-3xl rounded-b-xl z-[5000] lg:px-16 px-8 py-3 items-center justify-between dark:border-zinc-100/10 dark:shadow-black transition-all duration-300">
-        <Link href="/" className="lg:w-[3.4rem] w-12">
+    <header className="fixed inset-x-0 top-0 z-[5000] px-2 pt-2 sm:px-3 sm:pt-3">
+      <motion.nav
+        initial={{ y: -24, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={cn(
+          'mx-auto flex max-w-container items-center justify-between gap-4 rounded-2xl border py-2 pl-4 pr-2 backdrop-blur-xl transition-[background-color,border-color,box-shadow,color] duration-300 ease-out sm:pl-6 lg:mt-3',
+          solid
+            ? 'border-line bg-surface/85 text-fg shadow-card'
+            : 'border-white/15 bg-ink/30 text-white'
+        )}
+      >
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          aria-label="Modern Construction Company, home"
+        >
           <Image
             src="/MCC-LOGO.png"
-            alt="Modern Construction Company"
-            width={70}
-            height={70}
+            alt=""
+            width={44}
+            height={44}
+            className="size-10 object-contain lg:size-11"
+            priority
           />
+          <span className="hidden flex-col leading-none sm:flex">
+            <span className="font-display text-lg font-black tracking-[0.2em]">
+              MCC
+            </span>
+            <span
+              className={cn(
+                'mt-1 text-[0.6875rem] font-medium',
+                solid ? 'text-subtle' : 'text-white/70'
+              )}
+            >
+              Modern Construction
+            </span>
+          </span>
         </Link>
 
-        <div className="flex items-center lg:gap-x-10">
-          <div className="hidden lg:flex items-center lg:gap-x-16">
-            {Links.slice(0, 4).map((navItem, idx: number) => {
-              const isActiveLink = isActive(navItem.href);
-              return (
+        <ul className="hidden items-center gap-1 lg:flex">
+          {Links.slice(0, 4).map((navItem) => {
+            const active = isActive(navItem.href);
+            return (
+              <li key={navItem.id}>
                 <Link
-                  key={`link-${idx}`}
                   href={navItem.href}
-                  className={`relative items-center flex hover:text-secondary dark:hover:text-red-500 hover:translate-y-1 hover:font-bold transition-all ${
-                    isActiveLink
-                      ? 'text-secondary dark:text-red-500 font-bold'
-                      : ''
-                  }`}
-                >
-                  <span className="hidden sm:block text-[1rem] font-inter tracking-wider uppercase">
-                    {navItem.title}
-                  </span>
-                  {isActiveLink && (
-                    <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'group relative flex flex-col items-center px-4 py-2.5 text-[0.9375rem] font-medium transition-colors duration-200',
+                    active
+                      ? 'font-semibold'
+                      : solid
+                        ? 'text-subtle hover:text-fg'
+                        : 'text-white/75 hover:text-white'
                   )}
+                >
+                  {navItem.title}
+                  <span
+                    className={cn(
+                      'absolute bottom-1 h-0.5 w-4 origin-center rounded-full bg-brand transition-transform duration-300 ease-out',
+                      active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    )}
+                  />
                 </Link>
-              );
-            })}
-          </div>
-        </div>
+              </li>
+            );
+          })}
+        </ul>
 
-        <div className="flex items-center lg:gap-x-5">
-          <div className="hidden lg:block">
-            <ToggleTheme />
-          </div>
-          <div className="flex items-center gap-5 lg:hidden">
-            <div className="lg:hidden block">
-              <ToggleTheme />
-            </div>
-            <ToggleMenu />
-          </div>
-
-          <Link href="/contact" className="hidden lg:block">
-            <button className="uppercase border text-[1rem] font-inter tracking-wider relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-3 rounded-xl">
-              <span>Contact Us</span>
-              <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-red-500 to-transparent h-px" />
-            </button>
+        <div className="flex items-center gap-2">
+          <ToggleTheme light={!solid} />
+          <Link href="/contact" className="btn-brand hidden lg:inline-flex">
+            Contact Us
+            <IconArrowUpRight stroke={2.2} />
           </Link>
+          <ToggleMenu light={!solid} />
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 };

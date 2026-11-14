@@ -17,12 +17,18 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     setRenderComponent(true);
   }, []);
 
+  // Mirror the theme on <html> so the page background (overscroll,
+  // scrollbar) matches in dark mode too.
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkTheme);
+  }, [darkTheme]);
+
   if (!renderComponent) return <></>;
 
   return (
     <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
       <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
-        <div className="dark:text-white bg-LightModeBG dark:bg-DarkModeBG text-[#1E1E1E] transition-all duration-200 ">
+        <div className="bg-bg text-fg transition-colors duration-300">
           {children}
         </div>
       </div>

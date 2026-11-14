@@ -1,5 +1,7 @@
 'use client';
 
+import { IconRefresh } from '@tabler/icons-react';
+
 export default function Error({
   error,
   reset,
@@ -8,17 +10,17 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="container mx-auto lg:px-24 max-sm:px-10 py-44">
-      <h2 className="font-heading text-secondary mb-10">
-        Something went wrong!
-      </h2>
+    <div className="container-x flex min-h-[80vh] flex-col items-start justify-center gap-8 py-44">
+      <p className="eyebrow">Error</p>
+      <h2 className="h-section">Something went wrong!</h2>
       <button
         onClick={() => {
           reset();
-          window.location.reload(); // Reload the page
+          window.location.reload();
         }}
-        className="btn-primary px-8"
+        className="btn-brand"
       >
+        <IconRefresh />
         Try Again
       </button>
     </div>

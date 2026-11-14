@@ -1,99 +1,107 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import BoxReveal from '../../components/ui/box-reveal';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { IconArrowUpRight } from '@tabler/icons-react';
 import { Services } from '@/Data/Data';
-import { BlurFade } from '../../components/ui/blur-fade';
+import SectionHeading from '@/components/ui/section-heading';
+import { Reveal } from '@/components/ui/reveal';
+import { cn } from '@/libs/utils';
 
 const ServicesSection = () => {
-  return (
-    <section className="my-20 services-bg h-full w-full">
-      <div className="w-full h-full gap-20 backdrop-brightness-[.3]">
-        <div className="lg:px-10 px-5 lg:py-28 pt-10 mx-auto">
-          <div className="lg:w-[40%] flex flex-col lg:items-start items-center">
-            <BoxReveal duration={0.5}>
-              <h1 className="md:text-7xl text-4xl text-wrap text-white mb-5 lg:text-left text-center font-roboto">
-                Our Services...
-              </h1>
-            </BoxReveal>
-            <BoxReveal duration={0.5}>
-              <Link href="/services" className="relative z-10">
-                <button className="btn-primary dark:bg-zinc-900 dark:text-white px-12 md:px-[30px] lg:px-[35px]">
-                  Explore All Services
-                </button>
-              </Link>
-            </BoxReveal>
-          </div>
+  const [active, setActive] = useState(0);
 
-          <div className="pt-10 lg:absolute lg:inset-0">
-            <div className="flex flex-col items-center justify-center lg:absolute lg:right-0 lg:w-1/2">
-              <div className="flex justify-start w-full pb-8 overflow-x-scroll snap-x hide-scrollbar">
-                {Services.map((services) => (
-                  <BlurFade
-                    key={services.id}
-                    delay={0.25 + services.id * 0.1}
-                    inView
+  return (
+    <section className="dark section-y bg-ink text-fg">
+      <div className="container-x">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <SectionHeading
+            light
+            eyebrow="Our Services"
+            title={
+              <>
+                Everything it takes to build,
+                <br className="hidden md:block" /> under one roof.
+              </>
+            }
+          />
+          <Reveal delay={0.2}>
+            <Link href="/services" className="btn-ghost-light w-fit">
+              Explore All Services
+              <IconArrowUpRight stroke={2.2} />
+            </Link>
+          </Reveal>
+        </div>
+
+        {/* Desktop: expanding accordion cards. Mobile: snap scroller. */}
+        <div className="-mx-4 mt-14 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 hide-scrollbar lg:mx-0 lg:h-[480px] lg:overflow-visible lg:px-0 lg:pb-0">
+          {Services.map((service, i) => {
+            const isActive = active === i;
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{
+                  duration: 0.7,
+                  delay: i * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+                className={cn(
+                  'group relative h-[420px] w-[78vw] max-w-[320px] shrink-0 snap-start overflow-hidden rounded-[1.25rem] bg-muted sm:w-[300px] lg:h-full lg:w-auto lg:max-w-none lg:shrink lg:transition-[flex-grow] lg:duration-700 lg:ease-out',
+                  isActive ? 'lg:flex-[2.4]' : 'lg:flex-1'
+                )}
+              >
+                <Link
+                  href="/services"
+                  className="absolute inset-0 z-20"
+                  aria-label={service.title}
+                />
+                <Image
+                  src={service.img2}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 80vw"
+                  className={cn(
+                    'object-cover transition-transform duration-700 ease-out',
+                    isActive ? 'lg:scale-105' : 'scale-100'
+                  )}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
+
+                <span className="absolute left-6 top-6 font-display text-sm font-bold tracking-[0.12em] text-white">
+                  {service.num}
+                </span>
+                <span
+                  className={cn(
+                    'absolute right-5 top-5 grid size-10 place-items-center rounded-full text-white transition-colors duration-300',
+                    isActive ? 'bg-brand' : 'bg-white/15 backdrop-blur-sm'
+                  )}
+                >
+                  <IconArrowUpRight size={18} stroke={2.2} />
+                </span>
+
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="font-display text-xl font-bold leading-tight tracking-tight text-white lg:text-2xl">
+                    {service.title}
+                  </h3>
+                  <p
+                    className={cn(
+                      'mt-3 line-clamp-3 max-w-md text-sm leading-relaxed text-white/75 transition-all duration-500 lg:max-h-0 lg:opacity-0',
+                      isActive && 'lg:max-h-24 lg:opacity-100'
+                    )}
                   >
-                    <div className="relative snap-start scroll-ml-6 shrink-0 last:pr-6">
-                      <div className="relative flex flex-col overflow-hidden transition-all duration-200 transform bg-LightModeBG dark:bg-DarkModeBG dark:shadow-white/5 border-gray-100 w-60 md:w-80 group rounded-b-2xl hover:-translate-y-1 shadow-xl dark:shadow-2xl z-10">
-                        <Link href="/services" className="w-full lg:h-72 h-52">
-                          <Image
-                            width={1000}
-                            height={1000}
-                            className="img transitpion-all duration-200 transform group-hover:scale-110"
-                            src={services.img2}
-                            alt="thumbnail-1"
-                            loading="eager"
-                          />
-                        </Link>
-                        <div className="flex-1 px-4 py-5 sm:p-6">
-                          <Link href="/services">
-                            <p className="text-base font-bold text-gray-900 dark:text-white">
-                              {services.title}
-                            </p>
-                          </Link>
-                        </div>
-                        <div className="px-4 py-5 mt-auto border-t border-gray-100 dark:border-gray-500 sm:px-6">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-2">
-                              <p className="text-sm font-medium text-gray-900 dark:text-white">
-                                {services.num}
-                              </p>
-                              <span className="text-sm font-medium text-gray-900 dark:text-white">
-                                •
-                              </span>
-                              <p className="text-sm font-medium text-gray-900 dark:text-white">
-                                Explore
-                              </p>
-                            </div>
-                            <Link href="/services">
-                              <svg
-                                className="w-5 h-5 text-gray-300 transition-all duration-200 group-hover:text-gray-500"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                strokeWidth="2"
-                                stroke="currentColor"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path
-                                  stroke="none"
-                                  d="M0 0h24v24H0z"
-                                  fill="none"
-                                ></path>
-                                <line x1="17" y1="7" x2="7" y2="17"></line>
-                                <polyline points="8 7 17 7 17 16"></polyline>
-                              </svg>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </BlurFade>
-                ))}
-              </div>
-            </div>
-          </div>
+                    {service.works}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

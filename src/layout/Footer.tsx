@@ -2,100 +2,126 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeContext from '@/Context/themeContext';
-import { useContext } from 'react';
-import { FaFacebook } from 'react-icons/fa6';
-// import { RiLinkedinFill } from 'react-icons/ri';
-import { Links } from '@/Data/Data';
+import { IconArrowUpRight, IconBrandFacebook } from '@tabler/icons-react';
+import { Links, contactData } from '@/Data/Data';
+
+const FACEBOOK_URL =
+  'https://www.facebook.com/MCCEGY1998?mibextid=rS40aB7S9Ucbxw6v';
 
 const Footer = () => {
-  const { darkTheme } = useContext(ThemeContext);
-
   return (
-    <section className="py-3 dark:bg-zinc-950 bg-[#fdfdfd] pt-16 lg:pt-8">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-wrap items-center justify-around gap-7">
-          <div className="w-16 flex items-center justify-center">
-            <Link href="/">
-              <Image
-                src={`/MCC-LOGO.png`}
-                alt=""
-                width={100}
-                height={100}
-                loading="eager"
-              />
+    <footer className="dark relative overflow-hidden bg-ink text-white">
+      {/* Oversized wordmark */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-[0.18em] left-1/2 -translate-x-1/2 select-none font-display text-[28vw] font-black leading-none tracking-[-0.06em] text-white/[0.03]"
+      >
+        MCC
+      </div>
+
+      <div className="container-x relative pt-20 md:pt-24">
+        <div className="grid gap-12 border-b border-white/10 pb-14 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image src="/MCC-LOGO.png" alt="" width={52} height={52} />
+              <span className="font-display text-3xl font-black tracking-[0.2em]">
+                MCC
+              </span>
+            </Link>
+            <p className="mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-white/60">
+              Modern Construction Company. From concept to completion, we
+              craft your dreams into existence.
+            </p>
+            <Link href="/contact" className="btn-brand mt-8">
+              Start a project
+              <IconArrowUpRight stroke={2.2} />
             </Link>
           </div>
-          <div className="flex flex-wrap items-center justify-center lg:gap-x-14 gap-7 lg:px-0 px-28">
-            {Links.slice(1).map((link) => (
-              <ul key={link.id}>
-                <Link href={link.href}>
-                  <li className="dark:text-[whitesmoke] text-balance tracking-wider uppercase text-base">
-                    {link.title}
-                  </li>
-                </Link>
-              </ul>
-            ))}
-          </div>
-          <ul className="flex items-center space-x-3 md:order-3">
-            <li>
-              <Link
-                href={
-                  'https://www.facebook.com/MCCEGY1998?mibextid=rS40aB7S9Ucbxw6v'
-                }
-                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
-              >
-                <FaFacebook className="text-3xl" />
-              </Link>
-            </li>
 
-            {/* <li>
-              <Link
-                href={''}
-                className="flex items-center justify-center dark:text-white transition-all duration-200 bg-transparent border border-gray-700 rounded-full size-10 focus:bg-blue-500 hover:bg-blue-500 hover:border-blue-500 focus:border-blue-500"
-              >
-                <RiLinkedinFill className="text-3xl" />
-              </Link>
-            </li> */}
-          </ul>
+          <div className="md:col-span-3">
+            <h3 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-[#E5383B]">
+              Company
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {Links.slice(1).map((link) => (
+                <li key={link.id}>
+                  <Link
+                    href={link.href}
+                    className="group inline-flex items-center gap-1.5 text-[0.9375rem] text-white/80 transition-colors hover:text-white"
+                  >
+                    {link.title}
+                    <IconArrowUpRight
+                      size={14}
+                      className="opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-4">
+            <h3 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-[#E5383B]">
+              Contact
+            </h3>
+            <ul className="mt-5 space-y-3 text-[0.9375rem] text-white/80">
+              {contactData.map((item) => (
+                <li key={item.details}>
+                  {item.link ? (
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-white"
+                    >
+                      {item.details}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`mailto:${item.details}`}
+                      className="transition-colors hover:text-white"
+                    >
+                      {item.details}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="MCC on Facebook"
+              className="mt-6 inline-grid size-11 place-items-center rounded-xl border border-white/15 text-white transition-colors hover:border-[#1877F2] hover:bg-[#1877F2]"
+            >
+              <IconBrandFacebook size={20} stroke={1.8} />
+            </Link>
+          </div>
         </div>
-        <hr className="my-10 dark:border-gray-800" />
-        <div className="flex flex-col w-full justify-center items-center ">
-          <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
+
+        <div className="flex flex-col items-center justify-between gap-4 py-8 text-sm text-white/50 md:flex-row">
+          <p>
             © Copyright 2025, All Rights Reserved by{' '}
-            <br className="block lg:hidden" />
-            <span className="font-semibold font-inter">
-              {' '}
+            <span className="font-semibold text-white/80">
               Modern Construction Company
             </span>
           </p>
-          <div className="flex items-center justify-center">
-            <p className="dark:text-gray-100 text-sm">SITE BY</p>
-            <div className="w-16">
-              <Link href={'https://makend.vercel.app/'}>
-                {darkTheme ? (
-                  <Image
-                    src={`/batch-5---design-6-1__2_-removebg-preview.png`}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="img"
-                  />
-                ) : (
-                  <Image
-                    src={`/myLogo.png`}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="img"
-                  />
-                )}
-              </Link>
-            </div>
-          </div>
+          <Link
+            href="https://makend.vercel.app/"
+            className="flex items-center gap-2 transition-colors hover:text-white"
+          >
+            SITE BY
+            <Image
+              src="/batch-5---design-6-1__2_-removebg-preview.png"
+              alt="Makend"
+              width={64}
+              height={32}
+              className="h-8 w-16 object-contain"
+            />
+          </Link>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

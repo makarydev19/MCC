@@ -1,110 +1,50 @@
 'use client';
 
 import React from 'react';
+import { Reveal } from '@/components/ui/reveal';
+
+const Block = ({ title, body }: { title?: string; body?: string }) => (
+  <div className="flex flex-col gap-4 border-b border-line pb-10 last:border-0">
+    {title && (
+      <Reveal>
+        <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-fg md:text-4xl">
+          {title}
+        </h2>
+      </Reveal>
+    )}
+    {body && (
+      <Reveal delay={0.08}>
+        <p className="lead whitespace-pre-line text-lg first-letter:capitalize">
+          {body}
+        </p>
+      </Reveal>
+    )}
+  </div>
+);
 
 const ProjectContent = ({ project }: { project: any }) => {
   return (
-    <div className="lg:w-[80%] flex flex-col lg:gap-y-10 gap-y-5">
-      <h2
-        data-aos="fade-right"
-        data-aos-duration="800"
-        className="text-xl font-sans tracking-widest font-medium text-secondary uppercase"
-      >
-        Project Details
-      </h2>
+    <div className="flex flex-col gap-10">
+      <Reveal>
+        <p className="eyebrow">Project Details</p>
+      </Reveal>
       {project.contentDetails?.map((item: any, index: number) => (
-        <div key={index} className="flex flex-col gap-y-5 lg:max-w-[90%]">
-          {item.content && (
-            <h1
-              data-aos="fade-right"
-              data-aos-duration="800"
-              className="lg:text-5xl text-3xl"
-            >
-              {item.content}
-            </h1>
-          )}
-          {item.details && (
-            <h4
-              data-aos="fade-right"
-              data-aos-duration="800"
-              className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
-            >
-              {item.details}
-            </h4>
-          )}
-        </div>
+        <Block key={index} title={item.content} body={item.details} />
       ))}
       {project.constructionWorks && (
-        <div className="flex flex-col gap-y-5 lg:max-w-[90%]">
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="lg:text-5xl text-3xl"
-          >
-            Construction Works
-          </h1>
-          <h4
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
-          >
-            {project.constructionWorks}
-          </h4>
-        </div>
+        <Block title="Construction Works" body={project.constructionWorks} />
       )}
       {project.finishingWorks && (
-        <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="lg:text-5xl text-3xl"
-          >
-            Finishing Works
-          </h1>
-          <h3
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
-          >
-            {project.finishingWorks}
-          </h3>
-        </div>
+        <Block title="Finishing Works" body={project.finishingWorks} />
       )}
       {project.complementaryWorks && (
-        <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="lg:text-5xl text-3xl"
-          >
-            Complementary Works
-          </h1>
-          <h3
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
-          >
-            {project.complementaryWorks}
-          </h3>
-        </div>
+        <Block title="Complementary Works" body={project.complementaryWorks} />
       )}
       {project.restaurantFinishingWorks && (
-        <div className="flex flex-col gap-y-5 lg:max-w-[80%]">
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="lg:text-5xl text-3xl"
-          >
-            Restaurant Finishing Works
-          </h1>
-          <h3
-            data-aos="fade-right"
-            data-aos-duration="800"
-            className="scroll-m-20 text-xl tracking-tight capitalize dark:text-zinc-500 text-zinc-600"
-          >
-            {project.restaurantFinishingWorks}
-          </h3>
-        </div>
+        <Block
+          title="Restaurant Finishing Works"
+          body={project.restaurantFinishingWorks}
+        />
       )}
     </div>
   );

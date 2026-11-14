@@ -1,13 +1,16 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef, FC } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { useState, useEffect, useRef, FC, ReactNode } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { IconCheck, IconChevronDown } from '@tabler/icons-react';
+import { cn } from '@/libs/utils';
 
 type CustomSelectProps = {
   options: string[];
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  icon?: ReactNode;
 };
 
 const CustomSelect: FC<CustomSelectProps> = ({
@@ -15,18 +18,10 @@ const CustomSelect: FC<CustomSelectProps> = ({
   value,
   onChange,
   placeholder,
+  icon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleOptionClick = (option: string) => {
-    onChange(option);
-    setIsOpen(false);
-  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,45 +32,77 @@ const CustomSelect: FC<CustomSelectProps> = ({
         setIsOpen(false);
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside);
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpen(false);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', onKey);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', onKey);
     };
   }, []);
 
+  const label = value && value !== 'All' ? value : placeholder || 'Select';
+
   return (
     <div className="relative" ref={selectRef}>
-      {/* Select Box */}
-      <div
-        className="flex items-center flex-wrap justify-between w-full p-2 bg-transparent dark:bg-transparent cursor-pointer"
-        onClick={toggleDropdown}
+      <button
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((o) => !o)}
+        className="flex min-h-[44px] w-full items-center justify-between gap-3 rounded-xl border border-line bg-surface px-4 text-sm font-semibold text-fg transition-colors hover:border-subtle/50"
       >
-        <span>{value || placeholder || "Select an option"}</span>
-        <FaChevronDown
-          className={`text-sm transform transition-transform duration-300 ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
+        <span className="flex items-center gap-2.5 truncate">
+          <span className="text-subtle">{icon}</span>
+          <span className="truncate">{label}</span>
+        </span>
+        <IconChevronDown
+          size={16}
+          className={cn(
+            'shrink-0 text-subtle transition-transform duration-300',
+            isOpen && 'rotate-180'
+          )}
         />
-      </div>
+      </button>
 
-      {/* Dropdown Options */}
-      <div
-        className={`z-10 w-full mt-2 bg-transparent dark:bg-transparent hide-scrollbar transition-all duration-300 ${
-          isOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-        }`}
-        style={{ overflowY: isOpen ? "auto" : "hidden" }} // Ensures smooth scrolling once opened
-      >
-        {options.map((option) => (
-          <div
-            key={option}
-            className="relative px-4 py-2 text-sm text-gray-900 dark:text-white cursor-pointer dark:hover:bg-zinc-950 hover:bg-gray-100 hover:rounded-lg"
-            onClick={() => handleOptionClick(option)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            role="listbox"
+            initial={{ opacity: 0, y: -6, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.98 }}
+            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute right-0 z-50 mt-2 max-h-72 w-full min-w-[240px] origin-top overflow-auto rounded-xl border border-line bg-surface p-1.5 shadow-lift hide-scrollbar"
           >
-            {option}
-          </div>
-        ))}
-      </div>
+            {options.map((option) => {
+              const selected = (value || 'All') === option;
+              return (
+                <li key={option}>
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={selected}
+                    onClick={() => {
+                      onChange(option);
+                      setIsOpen(false);
+                    }}
+                    className={cn(
+                      'flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm transition-colors',
+                      selected
+                        ? 'bg-brand/10 font-semibold text-brand'
+                        : 'text-fg hover:bg-muted'
+                    )}
+                  >
+                    {option}
+                    {selected && <IconCheck size={16} />}
+                  </button>
+                </li>
+              );
+            })}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
